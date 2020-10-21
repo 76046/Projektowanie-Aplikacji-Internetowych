@@ -16,6 +16,14 @@ header{
     clear: both;
 }
 
+main{
+    background-color: darkslateblue;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    height: 2000px;
+    margin-top: 130px;
+}
 .nawigacja-menu{
     background-color: #72e7ff;
     position:relative;
@@ -63,7 +71,7 @@ header{
 }
 
 .strona-glowna, .kurs-walut, .kurs-kruszcow, .forum{
-    background-image: linear-gradient(#10b237, #386edc);
+    background-image: linear-gradient(#10b237, #dc1738);
     float: left;
     width: 150px;
     height: 100%;

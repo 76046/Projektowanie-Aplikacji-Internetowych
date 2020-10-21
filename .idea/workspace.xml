@@ -4,7 +4,6 @@
     <list default="true" id="b66e8ea2-378a-4cec-84c3-d67acd077d7b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSS/styleGlowne.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleGlowne.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +51,7 @@
       <updated>1603298592726</updated>
       <workItem from="1603298594020" duration="600000" />
       <workItem from="1603299491121" duration="7261000" />
-      <workItem from="1603309329903" duration="107000" />
+      <workItem from="1603309329903" duration="369000" />
     </task>
     <servers />
   </component>

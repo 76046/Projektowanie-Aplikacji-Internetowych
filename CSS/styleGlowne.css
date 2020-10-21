@@ -7,8 +7,6 @@ header{
     width: 100%;
     top: 0px;
     left: 0px;
-    margin: 0px;
-    padding: 0px;
     height: 120px;
     background-color:#3c3c3c;
     z-index: 10;
@@ -28,8 +26,6 @@ main{
     background-color: #72e7ff;
     position:relative;
     width: 800px;
-    left: 0px;
-    bottom: 0px;
     height: 100%;
     /*text-align: center;*/
     margin-left: auto;
@@ -45,16 +41,17 @@ main{
     position:relative;
 }
 
-.logo{
-    background-image: linear-gradient(#267e1a, #b2b106);
+.logo, .logowanie-rejestracja{
     height: 100%;
     width: 300px;
+}
+
+.logo{
+    background-image: linear-gradient(#267e1a, #b2b106);
     float: left;
 }
 .logowanie-rejestracja{
     background-image: linear-gradient(#1b6cd6, #111db2);
-    height: 100%;
-    width: 300px;
     float: right;
 }
 .logo, .logowanie-rejestracja{

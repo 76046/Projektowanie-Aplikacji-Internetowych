@@ -1,0 +1,78 @@
+body{
+    background-color: #ffaf5c;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
+    height: 120px;
+    background-color:#3c3c3c;
+    z-index: 10;
+    /*text-align: center;*/
+    clear: both;
+}
+
+.nawigacja-menu{
+    background-color: #72e7ff;
+    position:relative;
+    width: 800px;
+    left: 0px;
+    bottom: 0px;
+    height: 100%;
+    /*text-align: center;*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.czesc-gorna{
+    background-color: crimson;
+    width: 800px;;
+    height: 70px;
+    padding: 10px;
+    box-sizing: border-box;
+    position:relative;
+}
+
+.logo{
+    background-image: linear-gradient(#267e1a, #b2b106);
+    height: 100%;
+    width: 300px;
+    float: left;
+}
+.logowanie-rejestracja{
+    background-image: linear-gradient(#1b6cd6, #111db2);
+    height: 100%;
+    width: 300px;
+    float: right;
+}
+.logo, .logowanie-rejestracja{
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.czesc-dolna{
+    background-color: #386edc;
+    width: 800px;;
+    height: 50px;
+    box-sizing: border-box;
+}
+
+.strona-glowna, .kurs-walut, .kurs-kruszcow, .forum{
+    background-image: linear-gradient(#10b237, #386edc);
+    float: left;
+    width: 150px;
+    height: 100%;
+    padding: 15px;
+    margin-left: 40px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+
+
+

@@ -78,6 +78,21 @@ main{
     box-sizing: border-box;
 }
 
+#calculator{
+    width: 300px;
+    height: 150px;
+    margin: 0px auto;
+    border: 2px solid black;
+}
+
+#calculator-header{
+    text-align: center;
+}
+
+#calculator-table{
+    margin: 0px auto;
+}
+
 
 
 

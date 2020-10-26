@@ -49,9 +49,9 @@
         </header>
 
         <main>
-            <div id="box">
-                <h2>Currency converter</h2>
-                <table>
+            <div id="calculator">
+                <h2 id="calculator-header">Currency converter</h2>
+                <table id="calculator-table">
                     <tr>
                         <td><input id="fromAmount" type="text" value="100" onkeyup="convertCurrency();"></td>
                         <td>
@@ -68,7 +68,7 @@
                         <td><input id="toAmount" type="text" disabled></td>
                         <td>
                             <select id="to" onchange="convertCurrency();">
-                                <option value="PLN">Polski złoty (PLN)</option>
+                                <option value="PLN" selected>Polski złoty (PLN)</option>
                                 <option value="EUR">Euro (EUR)</option>
                                 <option value="USD" selected>Dolar amerykański (USD)</option>
                                 <option value="GBP">Funt brytyjski (GBP)</option>

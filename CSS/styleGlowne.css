@@ -22,6 +22,16 @@ main{
     height: 2000px;
     margin-top: 130px;
 }
+
+footer{
+    width: 800px;
+    height: 100px;
+    background-color: #758b2e;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
 .nawigacja-menu{
     background-color: #72e7ff;
     position:relative;
@@ -32,7 +42,7 @@ main{
     margin-right: auto;
 }
 
-.czesc-gorna{
+.nawigacja-czesc-gorna{
     background-color: crimson;
     width: 800px;;
     height: 70px;
@@ -60,7 +70,7 @@ main{
     text-align: center;
 }
 
-.czesc-dolna{
+.nawigacja-czesc-dolna{
     background-color: #386edc;
     width: 800px;;
     height: 50px;

@@ -4,6 +4,7 @@
     <list default="true" id="b66e8ea2-378a-4cec-84c3-d67acd077d7b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSS/styleGlowne.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleGlowne.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +40,11 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\MarKo\Desktop\semestr1\Projektowanie Aplikacji Internetowych\Projektowanie-Aplikacji-Internetowych\Projektowanie-Aplikacji-Internetowych" />
+    </key>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -52,6 +58,9 @@
       <workItem from="1603298594020" duration="600000" />
       <workItem from="1603299491121" duration="7261000" />
       <workItem from="1603309329903" duration="369000" />
+      <workItem from="1605016638108" duration="131000" />
+      <workItem from="1606665724542" duration="3646000" />
+      <workItem from="1606725415181" duration="295000" />
     </task>
     <servers />
   </component>
@@ -63,21 +72,22 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2587" y="110" key="#PHP/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603306447244" />
-    <state x="2660" y="274" key="FileChooserDialogImpl" timestamp="1603300867508">
+    <state x="3126" y="231" key="FileChooserDialogImpl" timestamp="1606666308600">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2660" y="274" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603300867508" />
-    <state x="2714" y="443" key="NewPhpFileDialog" timestamp="1603298730304">
+    <state x="3126" y="231" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606666308600" />
+    <state x="2714" y="443" key="NewPhpFileDialog" timestamp="1606668722470">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2714" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603298730304" />
+    <state x="2714" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606668722470" />
     <state x="2381" y="162" key="SettingsEditor" timestamp="1603309318351">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2381" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603309318351" />
-    <state x="2576" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1603309354738">
+    <state x="2576" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1606725415154">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2576" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603309354738" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605016640140" />
+    <state x="2576" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606725415154" />
   </component>
 </project>

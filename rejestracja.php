@@ -19,18 +19,18 @@ rysowanieGlownegoMenu();
 
 
 <main>
-    <article class="artykol">
+    <article class="artykol-rejestracji">
 
-        <div class="tytul_artykulu">
+        <div class="tytul-artykulu-rejestracji">
             Rejestracja
         </div>
 
 
-        <section class="sekcja"><div class="hhhhh">Aby się zarejestrować<br>wypełnij formularz</div>
+        <section class="sekcja">
             <form method="post">
                 <div class="rejestracja">
 
-                    <input class="form_rej" type="text" name="uzytkownik"
+                    <input class="form_rejestracja" type="text" name="uzytkownik"
 
                            value="<?php
                            if(isset($_SESSION['zap_nick']))
@@ -51,7 +51,7 @@ rysowanieGlownegoMenu();
 
                     ?>
 
-                    <input class="form_rej" type="email" name="email"
+                    <input class="form_rejestracja" type="email" name="email"
 
                            value="<?php
                            if(isset($_SESSION['zap_email']))
@@ -71,7 +71,7 @@ rysowanieGlownegoMenu();
                     }
 
                     ?>
-                    <input class="form_rej" type="password" name="haslo1"
+                    <input class="form_rejestracja" type="password" name="haslo1"
 
                            value="<?php
                            if(isset($_SESSION['zap_haslo1']))
@@ -90,7 +90,7 @@ rysowanieGlownegoMenu();
                     }
 
                     ?>
-                    <input class="form_rej" type="password" name="haslo2"
+                    <input class="form_rejestracja" type="password" name="haslo2"
 
                            value="<?php
                            if(isset($_SESSION['zap_haslo2']))
@@ -113,7 +113,7 @@ rysowanieGlownegoMenu();
 
                     ?>
 
-                    <select id="pom" class="form_rejs" name="rok">
+                    <select id="pom" class="form_rejestracja-rozsuwane" name="rok">
                         <option value="1950">1950</option>
                         <option value="1951">1951</option>
                         <option value="1952">1952</option>
@@ -194,7 +194,7 @@ rysowanieGlownegoMenu();
                     }
                     ?>
 
-                    <select class="form_rejs" name="miesiac">
+                    <select class="form_rejestracja-rozsuwane" name="miesiac">
                         <option value="1" selected>1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -215,7 +215,7 @@ rysowanieGlownegoMenu();
                     }
                     ?>
 
-                    <select class="form_rejs" name="dzien">
+                    <select class="form_rejestracja-rozsuwane" name="dzien">
 
                         <option value="1" selected>1</option>
                         <option value="2">2</option>

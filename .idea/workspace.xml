@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b66e8ea2-378a-4cec-84c3-d67acd077d7b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/styleGlowne.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleGlowne.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logowanie.php" beforeDir="false" afterPath="$PROJECT_DIR$/logowanie.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +35,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="F:/Marka/Studia/UWB/Licencjat/Projekty/ProjektMemland" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -60,7 +59,7 @@
       <workItem from="1603309329903" duration="369000" />
       <workItem from="1605016638108" duration="131000" />
       <workItem from="1606665724542" duration="3646000" />
-      <workItem from="1606725415181" duration="295000" />
+      <workItem from="1606725415181" duration="3052000" />
     </task>
     <servers />
   </component>
@@ -72,10 +71,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2587" y="110" key="#PHP/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603306447244" />
-    <state x="3126" y="231" key="FileChooserDialogImpl" timestamp="1606666308600">
+    <state x="3126" y="231" key="FileChooserDialogImpl" timestamp="1606725841761">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="3126" y="231" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606666308600" />
+    <state x="3126" y="231" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606725841761" />
     <state x="2714" y="443" key="NewPhpFileDialog" timestamp="1606668722470">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

@@ -43,7 +43,7 @@
                             <input type="submit" value="Zaloguj się" name="zal">
                         </form>
 
-                        <form action="rejestracjaphp.php" method="post">
+                        <form action="rejestracja.php" method="post">
                             <div class="nie-posiadasz-konta">Jeśli nie posiadasz konta</div>
                             <input class="przycisk_log" type="submit" value="Zarejestruj się !">
                         </form>

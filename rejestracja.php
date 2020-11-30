@@ -25,7 +25,6 @@ rysowanieGlownegoMenu();
             Rejestracja
         </div>
 
-
         <section class="sekcja">
             <form method="post">
                 <div class="rejestracja">
@@ -113,7 +112,7 @@ rysowanieGlownegoMenu();
 
                     ?>
 
-                    <select id="pom" class="form_rejestracja-rozsuwane" name="rok">
+                    <select id="data_rok" class="form_rejestracja-rozsuwane" name="rok">
                         <option value="1950">1950</option>
                         <option value="1951">1951</option>
                         <option value="1952">1952</option>

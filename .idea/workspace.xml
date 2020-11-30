@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="b66e8ea2-378a-4cec-84c3-d67acd077d7b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/styleGlowne.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleGlowne.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSS/styleRejestracja.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleRejestracja.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rejestracja.php" beforeDir="false" afterPath="$PROJECT_DIR$/rejestracja.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rysowanieMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/rysowanieMenu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/waluty.php" beforeDir="false" afterPath="$PROJECT_DIR$/waluty.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +64,8 @@
       <workItem from="1603309329903" duration="369000" />
       <workItem from="1605016638108" duration="131000" />
       <workItem from="1606665724542" duration="3646000" />
-      <workItem from="1606725415181" duration="5424000" />
+      <workItem from="1606725415181" duration="10786000" />
+      <workItem from="1606767309283" duration="3415000" />
     </task>
     <servers />
   </component>
@@ -72,10 +77,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2587" y="110" key="#PHP/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603306447244" />
-    <state x="3126" y="231" key="FileChooserDialogImpl" timestamp="1606725841761">
+    <state x="3126" y="231" key="FileChooserDialogImpl" timestamp="1606768073347">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="3126" y="231" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606725841761" />
+    <state x="3126" y="231" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606768073347" />
     <state x="2714" y="443" key="NewPhpFileDialog" timestamp="1606668722470">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -84,10 +89,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2381" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603309318351" />
-    <state x="2576" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1606725415154">
+    <state x="2576" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1606767310023">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605016640140" />
-    <state x="2576" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606725415154" />
+    <state x="2576" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606767310023" />
   </component>
 </project>

@@ -15,8 +15,6 @@
     include_once('rysowanieMenu.php');
     rysowanieGlownegoMenu();
     ?>
-
-
         <main>
             <div id="calculator">
                 <h2 id="calculator-header">Kalkulator walutowy</h2>
@@ -35,8 +33,6 @@
                 </div>
             </div>
         </main>
-
-
     <?php
     include_once('rysowanieStopki.php');
     rysowanieStopki();

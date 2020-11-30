@@ -7,7 +7,7 @@ function rysowanieGlownegoMenu()
         <nav class="nawigacja-menu">
             <div class="nawigacja-czesc-gorna">
                 <div class="logo">Logo</div>
-                <div class="logowanie-rejestracja">Logowanie / Rejestracja</div>
+                <div class="logowanie-rejestracja"><a href="logowanie.php">Logowanie</a>/ <a href="rejestracja.php">Rejestracja</a></div>
             </div>
             <div class="nawigacja-czesc-dolna">
                 <div class="strona-glowna"> <a href="index.php"  >Strona główna</a></div>

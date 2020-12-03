@@ -8,7 +8,6 @@
         <meta charset="utf-8">
         <title>KANT-MEN</title>
         <link href="CSS/styleGlowne.css" rel="stylesheet" type="text/css">
-        <script type="text/javascript" src="scripts/currencyConverter.js" async></script>
     </head>
     <body onload="currencyConverter();">
     <?php
@@ -132,7 +131,6 @@
                     <label for="radio3" class="manual-btn"></label>
                     <label for="radio4" class="manual-btn"></label>
                 </div>
-
             </div>
 
             <div class="nagrody">
@@ -171,5 +169,18 @@
     include_once('rysowanieStopki.php');
     rysowanieStopki();
     ?>
+
+        <script type="text/javascript" src="scripts/currencyConverter.js" async></script>
+        <script type="text/javascript">
+                    var counter = 1;
+                    setInterval(function(){
+                        document.getElementById('radio' + counter).checked = true;
+                        counter++;
+                        if(counter > 4) {
+                            counter = 1;
+                        }
+                    }, 5000);
+        </script>
+
     </body>
 </html>

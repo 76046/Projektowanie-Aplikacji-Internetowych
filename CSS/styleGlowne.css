@@ -1,5 +1,8 @@
 body{
     background-color: #ffaf5c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 header{
@@ -104,6 +107,177 @@ footer{
     margin: 0px auto;
 }
 
+.slider{
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
 
+.slides{
+    width: 500px;
+    height: 500px;
+    display: flex;
+}
 
+.slides input{
+    display: none;
+}
 
+.slide{
+    width: 20%;
+    transition: 2s;
+}
+
+.slide img{
+    width: 800px;
+    height: 500px;
+}
+
+.navigation-manual{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn{
+    border: 2px solid blue;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+.manual-btn:hover{
+    background: blue;
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .first{
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .first{
+    margin-left: -60%;
+}
+
+.navigation-auto{
+    position: absolute;
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    margin-top: 460px;
+}
+
+.navigation-auto div{
+    border: 2px solid blue;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background: blue;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background: blue;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background: blue;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background: blue;
+}
+
+.informacje{
+    background-color: rgb(111, 111, 111);
+    width: 100%;
+    margin: 20px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+}
+.transakcja{
+    background-color: blueviolet;
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+}
+.transakcja-lewa{
+    background-color: coral;
+    float: left;
+}
+.transakcja-lewa-naglowek{
+    background-color: darkred;
+}
+.transakcja-lewa-tresc{
+    background-color: deepskyblue;
+}
+.transakcja-prawa{
+    background-color: darkgreen;
+    float: left;
+}
+.benefity{
+    background-color: gold;
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+}
+.benefit1, .benefit2, .benefit3{
+    background-color: greenyellow;
+    float: left;
+}
+.benefit1-img, .benefit2-img, .benefit3-img{
+    background-color: indigo;
+}
+.benefit1-naglowek, .benefit2-naglowek, .benefit3-naglowek{
+    background-color: lawngreen;
+}
+.benefit1-tresc, .benefit2-tresc, .benefit3-tresc{
+    background-color: lightcoral;
+}
+
+.nagrody{
+    background-color: rgb(111, 111, 111);
+    width: 100%;
+    margin: 20px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+}
+.nagrody-tytul{
+    background-color: blueviolet;
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+}
+.nagrody-dolne{
+    background-color: lightcoral;
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+}
+.nagroda1, .nagroda2, .nagroda3{
+    background-color: lightgoldenrodyellow;
+    float: left;
+}
+.nagroda1-img, .nagroda2-img, .nagroda3-img{
+    background-color: lightgreen;
+}
+.nagroda1-info, .nagroda2-info, .nagroda3-info{
+    background-color: lime;
+}

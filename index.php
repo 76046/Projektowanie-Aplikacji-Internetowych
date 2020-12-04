@@ -9,7 +9,7 @@
         <title>KANT-MEN</title>
         <link href="CSS/styleGlowne.css" rel="stylesheet" type="text/css">
     </head>
-    <body onload="currencyConverter();">
+    <body>
     <?php
     include_once('rysowanieMenu.php');
     rysowanieGlownegoMenu();
@@ -18,8 +18,8 @@
             <div class="calculator">
                 <h2 class="calculator-header">Kalkulator walutowy</h2>
                 <div class="calculator-from">
-                    <input id="fromAmount" type="number" value="100" onkeyup="currencyConverter();">
-                    <select id="from" onchange="currencyConverter();">
+                    <input id="fromAmount" type="number">
+                    <select id="from">
                         <option value="currency">Wybierz walutę</option>
                     </select>
                 </div>
@@ -27,8 +27,8 @@
                     <span> = </span>
                 </div>
                 <div class="calculator-to">
-                    <input id="toAmount" type="number" disabled>
-                    <select id="to" onchange="currencyConverter();">
+                    <input id="toAmount" type="number">
+                    <select id="to">
                         <option value="currency">Wybierz walutę</option>
                     </select>
                 </div>
@@ -185,7 +185,44 @@
             ?>
         </main>
 
-        <script type="text/javascript" src="scripts/currencyConverter.js" async></script>
+        <script>
+            const from = document.getElementById("from");
+            const to = document.getElementById("to");
+            const fromAmount = document.getElementById("fromAmount");
+            const toAmount = document.getElementById("toAmount");
+            const API_URL = "https://api.exchangeratesapi.io/latest";
+            let html = '';
+            
+            async function currency(){
+                const res = await fetch(API_URL);
+                const data = await res.json();
+                const rates = data.rates;
+                const arrKeys = Object.keys(rates);
+                arrKeys.map(item => {
+                    return html += `<option value=${item}>${item}</option>`;
+                });
+                for(let i = 0; i<from.length; i++){
+                    from.innerHTML = html;
+                    to.innerHTML = html;
+                };
+
+                fromAmount.addEventListener('keyup', () => {
+                    toAmount.value = (fromAmount.value * rates[to.value] / rates[from.value]).toFixed(2);
+                });
+                toAmount.addEventListener('keyup', () => {
+                    fromAmount.value = (toAmount.value * rates[from.value] / rates[to.value]).toFixed(2);
+                });
+                from.addEventListener('change', () => {
+                    toAmount.value = (fromAmount.value * rates[to.value] / rates[from.value]).toFixed(2);
+                });
+                to.addEventListener('change', () => {
+                    fromAmount.value = (toAmount.value * rates[from.value] / rates[to.value]).toFixed(2);
+                });
+            };
+
+            currency();
+        </script>
+
         <script type="text/javascript">
                     var counter = 1;
                     setInterval(function(){

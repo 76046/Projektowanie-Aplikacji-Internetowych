@@ -100,6 +100,12 @@ footer{
     padding: 5px;
     margin: 0px auto;
     border: 2px solid black;
+    text-align: center;
+}
+
+#fromAmount, #from, #toAmount, #to{
+    border: 1px solid lightblue;
+    outline: none;
 }
 
 .calculator-from{
@@ -123,6 +129,9 @@ footer{
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
+    color: crimson;
+    font-size: 2em;
+    font-weight: 900;
 }
 
 .slider{

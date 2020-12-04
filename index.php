@@ -45,6 +45,7 @@
                     <div class="transakcja-prawa">
                         <img src="" alt="zdjęcie">
                     </div>
+                    <div style="clear: both;"></div>
                 </div>
                 <div class="benefity">
                     <div class="benefit1">
@@ -57,8 +58,8 @@
                         <div class="benefit1-tresc">
                             <p>treść tekstu1</p>
                         </div>
-                    </div class="benefit2"> 
-                    <div>
+                    </div> 
+                    <div class="benefit2">
                         <div class="benefit2-img">
                             <img src="" alt="ikonka2">
                         </div>
@@ -80,6 +81,7 @@
                             <p>treść tekstu3</p>
                         </div>
                     </div>
+                    <div style="clear: both;"></div>
                 </div>
             </div>
 
@@ -92,26 +94,34 @@
                     <input type="radio" name="radio-btn" id="radio4">
 
                     <div class="slide first">
-                        <img src="" alt="zdjęcie1">
-                        <div>
+                        <div class="slide-img">
+                            <img src="" alt="zdjęcie1">
+                        </div>                       
+                        <div class="slide-naglowek">
                             <h2>Nagłówek artykułu 1</h2>
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="" alt="zdjęcie2">
-                        <div>
+                        <div class="slide-img">
+                            <img src="" alt="zdjęcie2">
+                        </div> 
+                        <div class="slide-naglowek">
                             <h2>Nagłówek artykułu 2</h2>
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="" alt="zdjęcie3">
-                        <div>
+                        <div class="slide-img">
+                            <img src="" alt="zdjęcie3">
+                        </div> 
+                        <div class="slide-naglowek">
                             <h2>Nagłówek artykułu 3</h2>
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="" alt="zdjęcie4">
-                        <div>
+                        <div class="slide-img">
+                            <img src="" alt="zdjęcie4">
+                        </div> 
+                        <div class="slide-naglowek">
                             <h2>Nagłówek artykułu 4</h2>
                         </div>
                     </div>
@@ -131,6 +141,7 @@
                     <label for="radio3" class="manual-btn"></label>
                     <label for="radio4" class="manual-btn"></label>
                 </div>
+
             </div>
 
             <div class="nagrody">
@@ -161,7 +172,8 @@
                         <div class="nagroda3-info">
                             <p>info o nagrodzie3</p> 
                         </div>
-                    </div> 
+                    </div>
+                    <div style="clear: both;"></div> 
                 </div>
             </div>
         </main>

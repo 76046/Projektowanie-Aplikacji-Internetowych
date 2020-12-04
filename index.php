@@ -15,16 +15,18 @@
     rysowanieGlownegoMenu();
     ?>
         <main>
-            <div id="calculator">
-                <h2 id="calculator-header">Kalkulator walutowy</h2>
-                <div>
+            <div class="calculator">
+                <h2 class="calculator-header">Kalkulator walutowy</h2>
+                <div class="calculator-from">
                     <input id="fromAmount" type="number" value="100" onkeyup="currencyConverter();">
                     <select id="from" onchange="currencyConverter();">
                         <option value="currency">Wybierz walutę</option>
                     </select>
                 </div>
-                <span> = </span>
-                <div>
+                <div class="calculator-span">
+                    <span> = </span>
+                </div>
+                <div class="calculator-to">
                     <input id="toAmount" type="number" disabled>
                     <select id="to" onchange="currencyConverter();">
                         <option value="currency">Wybierz walutę</option>
@@ -176,11 +178,12 @@
                     <div style="clear: both;"></div> 
                 </div>
             </div>
+
+            <?php
+                include_once('rysowanieStopki.php');
+                rysowanieStopki();
+            ?>
         </main>
-    <?php
-    include_once('rysowanieStopki.php');
-    rysowanieStopki();
-    ?>
 
         <script type="text/javascript" src="scripts/currencyConverter.js" async></script>
         <script type="text/javascript">

@@ -21,20 +21,22 @@ main{
     background-color: darkslateblue;
     margin-left: auto;
     margin-right: auto;
-    width: 800px;
-    height: 900px;
+    width: 1000px;
+    height: auto;
     margin-top: 130px;
+    align-items: center;
 }
 
 
 footer{
-    width: 800px;
+    width: 100%;
     height: 100px;
     background-color: #758b2e;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0px;
     margin-top: 10px;
+    text-align: center;
 }
 .nawigacja-menu{
     background-color: #72e7ff;
@@ -92,19 +94,35 @@ footer{
     box-sizing: border-box;
 }
 
-#calculator{
+.calculator{
     width: 300px;
     height: 150px;
+    padding: 5px;
     margin: 0px auto;
     border: 2px solid black;
 }
 
-#calculator-header{
+.calculator-from{
+    margin-left: auto;
+    margin-right: auto;
+}
+.calculator-to{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.calculator-header{
     text-align: center;
 }
 
-#calculator-table{
+.calculator-table{
     margin: 0px auto;
+}
+
+.calculator-span{
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .slider{

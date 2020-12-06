@@ -1,6 +1,5 @@
 body{
     background-color: #ffaf5c;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -34,8 +33,6 @@ footer{
     background-color: #758b2e;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 0px;
-    margin-top: 10px;
     text-align: center;
 }
 .nawigacja-menu{

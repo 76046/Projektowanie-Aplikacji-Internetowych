@@ -179,12 +179,12 @@
                 </div>
             </div>
 
-            <?php
-                include_once('rysowanieStopki.php');
-                rysowanieStopki();
-            ?>
-        </main>
 
+        </main>
+    <?php
+    include_once('rysowanieStopki.php');
+    rysowanieStopki();
+    ?>
         <script>
             const from = document.getElementById("from");
             const to = document.getElementById("to");

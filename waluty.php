@@ -24,17 +24,64 @@ rysowanieGlownegoMenu();
                 Kursy Walut
         </div>
         <section class="tablica-walut">
-            <div class="naglowek-walut">
-<div class="nazwa-waluty">
-    Waluta
-</div>
-<div class="kupno-waluty">
-    Kupno
-</div>
-<div class="sprzedaz-waluty">
-    Sprzedaż
-</div>
-            </div>
+            <div class="tabliczki">
+                <table>
+                    <tr>
+                        <th class="nazwa-waluty">Waluta</th>
+                        <th class="kupno-waluty">Kupno</th>
+                        <th class="sprzedaz-waluty">Sprzedaż</th>
+                        <th class="operacje-waluty">Operacje</th>
+                    </tr>
+                    <tr class="co-drugi">
+                        <td class="nazwa-waluty">
+                            <div class="flaga"></div>
+                            <div class="nazwa-skrocona">USD</div>
+                            <div class="nazwa-calkowita">Dolar Amerykański</div>
+                        </td>
+                        <td class="kupno-waluty">
+                            200 PLN
+                        </td>
+                        <td class="sprzedaz-waluty">
+                            100PLN
+                        </td>
+                        <td class="operacje-waluty">
+
+                        </td>
+                    </tr>
+                    <tr class="co-drugi">
+                        <td class="nazwa-waluty">
+                            <div class="flaga"></div>
+                            <div class="nazwa-skrocona">USD</div>
+                            <div class="nazwa-calkowita">Dolar Amerykański</div>
+                        </td>
+                        <td class="kupno-waluty">
+                            200 PLN
+                        </td>
+                        <td class="sprzedaz-waluty">
+                            100PLN
+                        </td>
+                        <td class="operacje-waluty">
+
+                        </td>
+                    </tr>
+                    <tr class="co-drugi">
+                        <td class="nazwa-waluty">
+                            <div class="flaga"></div>
+                            <div class="nazwa-skrocona">USD</div>
+                            <div class="nazwa-calkowita">Dolar Amerykański</div>
+                        </td>
+                        <td class="kupno-waluty">
+                            200 PLN
+                        </td>
+                        <td class="sprzedaz-waluty">
+                            100PLN
+                        </td>
+                        <td class="operacje-waluty">
+
+                        </td>
+                    </tr>
+
+                </table>
         </section>
     </article>
 </main>

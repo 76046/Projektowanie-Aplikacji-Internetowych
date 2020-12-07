@@ -25,7 +25,7 @@
                 <article class="artykul">
                     <div class="glowny-kontener-artykulu">
                         <div class="tytul-watku">
-                            Tytuł Tytuł Tytuł Tytuł Tytuł Tytuł
+                            <a href="watek.php" target=" blank" >Tytuł Tytuł Tytuł Tytuł Tytuł Tytuł</a>
                         </div>
                         <div class="ilosc-odwiedzin">
 270
@@ -44,7 +44,7 @@ X
                 <article class="artykul">
                     <div class="glowny-kontener-artykulu">
                         <div class="tytul-watku">
-                            Tytuł Tytuł Tytuł Tytuł Tytuł Tytuł
+                            <a href="watek.php" target=" blank" >Tytuł Tytuł Tytuł Tytuł Tytuł Tytuł</a>
                         </div>
                         <div class="ilosc-odwiedzin">
                             270
@@ -63,7 +63,7 @@ X
                 <article class="artykul">
                     <div class="glowny-kontener-artykulu">
                         <div class="tytul-watku">
-                            Tytuł Tytuł Tytuł Tytuł Tytuł Tytuł
+                            <a href="watek.php" target=" blank" >Tytuł Tytuł Tytuł Tytuł Tytuł Tytuł</a>
                         </div>
                         <div class="ilosc-odwiedzin">
                             270

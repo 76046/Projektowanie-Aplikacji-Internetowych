@@ -53,6 +53,7 @@ rysowanieGlownegoMenu();
                     XXXXXx
                 </div>
             </div>
+            <div style="clear: both;"></div>
         </div>
         <div class="artykul-wypowiedz">
             <div class="wiadomosc-profil">
@@ -72,6 +73,7 @@ rysowanieGlownegoMenu();
                 </div>
 
             </div>
+            <div style="clear: both;"></div>
         </div>
         <div class="artykul-wypowiedz">
             <div class="wiadomosc-profil">
@@ -91,6 +93,7 @@ rysowanieGlownegoMenu();
                 </div>
 
             </div>
+            <div style="clear: both;"></div>
         </div>
     </div>
 </article>

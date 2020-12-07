@@ -55,7 +55,23 @@ rysowanieGlownegoMenu();
             </div>
         </div>
         <div class="artykul-wypowiedz">
+            <div class="wiadomosc-profil">
+                <div class="awatar">avatar</div>
+                <div class="nickname">adam777</div>
+            </div>
+            <div class="wiadomosc-tresc">
+                <div class="czas-wyslania">
+                    2020-12-12 20:09
+                </div>
+                <div class="wiadomosc-trescwiadomosci">
+                    bla bla bla </br>
+                    bla bla bla </br>
+                </div>
+                <div class="panel-spolecznosci-admina">
+                    XXXXXx
+                </div>
 
+            </div>
         </div>
         <div class="artykul-wypowiedz">
             <div class="wiadomosc-profil">

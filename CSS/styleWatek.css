@@ -31,6 +31,7 @@
     float: left;
     margin-left: 10px;
     margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 .awatar{
@@ -53,6 +54,7 @@
     width: 820px;
     background-color: lightsalmon;
     float: left;
+    margin-bottom: 10px;
 }
 
 .czas-wyslania{

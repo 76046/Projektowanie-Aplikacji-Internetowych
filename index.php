@@ -27,7 +27,7 @@
                     <span> = </span>
                 </div>
                 <div class="calculator-to">
-                    <input id="toAmount" type="number">
+                    <input id="toAmount" type="number" disabled>
                     <select id="to">
                         <option value="currency">Wybierz walutę</option>
                     </select>

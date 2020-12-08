@@ -209,14 +209,15 @@
                 fromAmount.addEventListener('keyup', () => {
                     toAmount.value = (fromAmount.value * rates[to.value] / rates[from.value]).toFixed(2);
                 });
-                toAmount.addEventListener('keyup', () => {
-                    fromAmount.value = (toAmount.value * rates[from.value] / rates[to.value]).toFixed(2);
-                });
+                // toAmount.addEventListener('keyup', () => {
+                //     fromAmount.value = (toAmount.value * rates[from.value] / rates[to.value]).toFixed(2);
+                // });
                 from.addEventListener('change', () => {
                     toAmount.value = (fromAmount.value * rates[to.value] / rates[from.value]).toFixed(2);
                 });
                 to.addEventListener('change', () => {
-                    fromAmount.value = (toAmount.value * rates[from.value] / rates[to.value]).toFixed(2);
+                    // fromAmount.value = (toAmount.value * rates[from.value] / rates[to.value]).toFixed(2);
+                    toAmount.value = (fromAmount.value * rates[to.value] / rates[from.value]).toFixed(2);
                 });
             };
 

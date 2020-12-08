@@ -185,55 +185,9 @@
     include_once('rysowanieStopki.php');
     rysowanieStopki();
     ?>
-        <script>
-            const from = document.getElementById("from");
-            const to = document.getElementById("to");
-            const fromAmount = document.getElementById("fromAmount");
-            const toAmount = document.getElementById("toAmount");
-            const API_URL = "https://api.exchangeratesapi.io/latest";
-            let html = '';
-            
-            async function currency(){
-                const res = await fetch(API_URL);
-                const data = await res.json();
-                const rates = data.rates;
-                const arrKeys = Object.keys(rates);
-                arrKeys.map(item => {
-                    return html += `<option value=${item}>${item}</option>`;
-                });
-                for(let i = 0; i<from.length; i++){
-                    from.innerHTML = html;
-                    to.innerHTML = html;
-                };
+        <script type="text/javascript" src="scripts/currencyConverter.js"></script>
 
-                fromAmount.addEventListener('keyup', () => {
-                    toAmount.value = (fromAmount.value * rates[to.value] / rates[from.value]).toFixed(2);
-                });
-                // toAmount.addEventListener('keyup', () => {
-                //     fromAmount.value = (toAmount.value * rates[from.value] / rates[to.value]).toFixed(2);
-                // });
-                from.addEventListener('change', () => {
-                    toAmount.value = (fromAmount.value * rates[to.value] / rates[from.value]).toFixed(2);
-                });
-                to.addEventListener('change', () => {
-                    // fromAmount.value = (toAmount.value * rates[from.value] / rates[to.value]).toFixed(2);
-                    toAmount.value = (fromAmount.value * rates[to.value] / rates[from.value]).toFixed(2);
-                });
-            };
-
-            currency();
-        </script>
-
-        <script type="text/javascript">
-                    var counter = 1;
-                    setInterval(function(){
-                        document.getElementById('radio' + counter).checked = true;
-                        counter++;
-                        if(counter > 4) {
-                            counter = 1;
-                        }
-                    }, 5000);
-        </script>
+        <script type="text/javascript" src="scripts/slider.js"></script>
 
     </body>
 </html>

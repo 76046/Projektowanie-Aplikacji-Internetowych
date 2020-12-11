@@ -1,5 +1,165 @@
 <?php
 
+  session_start();
+
+  if(isset($_POST['email']))
+  {
+  // udana walidacja
+  $wszystko_ok=true;
+
+//nick----------------------------------------------------------------
+  $nick = $_POST['uzytkownik'];
+  // sprawdzenie dlugosci
+  if(strlen($nick)< 4 || strlen($nick) > 15)
+  {
+    $wszystko_ok = false;
+    $_SESSION['e_nick']="Nick musi posiadać od 4 do 15 znakow!";
+
+  }
+
+  if(ctype_alnum($nick)==false)
+  {
+    $wszystko_ok = false;
+    $_SESSION['e_nick']="Nick musi składać się tylko z liter i cyfr!";
+
+  }
+
+//email----------------------------------------------------------------
+  $email=$_POST['email'];
+  $emailb = filter_var($email,FILTER_SANITIZE_EMAIL);
+
+
+  if((filter_var($emailb,FILTER_VALIDATE_EMAIL)==false) || ($email != $emailb))
+  {
+    $wszystko_ok = false;
+    $_SESSION['e_email']="Email nie jest poprawny składniowo !";
+  }
+//haslo --------------------------------------------------------------
+  $haslo1 = $_POST['haslo1'];
+  $haslo2 = $_POST['haslo2'];
+
+  if(strlen($haslo1)< 8 || strlen($haslo1) > 40)
+  {
+    $wszystko_ok = false;
+    $_SESSION['e_haslo']="Hasło musi posiadać od 8 do 40 znaków !";
+
+  }
+
+  if($haslo1 != $haslo2)
+  {
+    $wszystko_ok = false;
+    $_SESSION['e_haslo']="Hasła nie są takie same !";
+  }
+
+  $haslo_hash = password_hash($haslo1,PASSWORD_DEFAULT);
+
+//checkbox-regulamin--------------------------------------------------------
+
+  if(!isset($_POST['regulamin']))
+  {
+    $wszystko_ok = false;
+    $_SESSION['e_regulamin']="Potwierdź akceptację regulaminu !";
+  }
+
+//rekapcza -----------------------------------------------------------------
+  //klucz sekretny
+  $sekret = "6Le3raAUAAAAAABMd-Itb1e5SuUv2-qRviR8BeO4";
+
+  $sprawdz = file_get_contents('https://google.com/recaptcha/api/siteverify?secret='.$sekret.'&response='.$_POST['g-recaptcha-response']);
+
+  $odp = json_decode($sprawdz);
+
+  if($odp->success==false)
+  {
+    $wszystko_ok==false;
+    $_SESSION['e_bot']="Potwierdz ze nie jesteś botem !";
+  }
+// zapamietanie wprowadzonych danych
+
+$_SESSION['zap_nick'] = $nick;
+$_SESSION['zap_email'] = $email;
+$_SESSION['zap_haslo1'] = $haslo1;
+$_SESSION['zap_haslo2'] = $haslo2;
+//if(isset($_POST['regulamin']))$_SESSION['zap_regulamin']=true;
+
+
+
+
+// polaczenie
+  require_once "PolaczeniezMySQL.php";
+
+//sposob raportowanie bledow
+mysqli_report(MYSQLI_REPORT_STRICT);
+
+  try {
+
+        $polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
+
+        if($polaczenie->connect_errno!=0)
+        {
+            throw new Exception(mysqli_connect_errno());
+        }else
+        {
+          //Sprawdzenie emaila ------------------------------------------------
+          $rezultat = $polaczenie->query("SELECT ID_USER FROM user WHERE EMAIL = '$email'");
+
+          if(!$rezultat){throw new Exception($polaczenie->error);}
+
+          $liczbatakichemaili = $rezultat->num_rows;
+
+          if($liczbatakichemaili > 0)
+          {
+            $wszystko_ok = false;
+            $_SESSION['e_email']="Istnieje już konto przypisane do tego adresu !";
+
+          }
+
+          //Sprawdzenie loginu ------------------------------------------------
+          $rezultat = $polaczenie->query("SELECT ID_USER FROM user WHERE EMAIL = '$nick'");
+
+          if(!$rezultat){throw new Exception($polaczenie->error);}
+
+          $liczbatakichnickow = $rezultat->num_rows;
+
+          if($liczbatakichnickow > 0)
+          {
+            $wszystko_ok = false;
+            $_SESSION['e_nick']="Istnieje już konto z takim Loginem !";
+
+          }
+
+          //jesli wszystko jest ok ---------------------------------------------------
+
+            if($wszystko_ok==true)
+            {
+              if($polaczenie->query("INSERT INTO user VALUES (NULL,'$nick','$haslo_hash','','','$email','','','',NULL,NULL,0,0,'USER')"))
+              {
+                $_SESSION['udanarejestracja']=true;
+                header('Location: index.php '); //sciezka po udanym logowaniu
+              }
+              else
+              {
+                throw new Exception($polaczenie->error);
+              }
+
+            }
+
+
+          $polaczenie->close();
+        }
+
+
+      }
+      catch (Exception $e)
+      {
+        echo 'Błąd serwera Zapraszamy za chwilę !';
+
+        echo 'informacja deweloperska: '.$e;
+      }
+
+}
+
+
 
 ?>
 <!DOCTYPE HTML>

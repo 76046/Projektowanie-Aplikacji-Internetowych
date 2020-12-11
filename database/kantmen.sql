@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 08 Gru 2020, 16:31
+-- Czas generowania: 11 Gru 2020, 20:33
 -- Wersja serwera: 10.4.14-MariaDB
 -- Wersja PHP: 7.4.11
 
@@ -29,12 +29,22 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `artykul` (
   `ID_ARTYKULU` int(10) NOT NULL,
-  `ZDJECIE_ARTYKUL` blob NOT NULL,
+  `ZDJECIE_ARTYKUL` blob DEFAULT NULL,
   `TEMAT` varchar(100) COLLATE utf8_polish_ci NOT NULL,
   `TRESC` longtext COLLATE utf8_polish_ci NOT NULL,
   `DATA` timestamp NOT NULL DEFAULT current_timestamp(),
   `AUTOR` varchar(50) COLLATE utf8_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+--
+-- Zrzut danych tabeli `artykul`
+--
+
+INSERT INTO `artykul` (`ID_ARTYKULU`, `ZDJECIE_ARTYKUL`, `TEMAT`, `TRESC`, `DATA`, `AUTOR`) VALUES
+(1, NULL, 'temat1', 'blablabla', '2020-12-11 18:52:02', 'autor1'),
+(2, NULL, 'temat2', 'blablabla', '2020-12-11 18:52:06', 'autor2'),
+(3, NULL, 'temat3', 'blablabla', '2020-12-11 18:53:04', 'autor3'),
+(4, NULL, 'temat4', 'blablablabla', '2020-12-11 18:53:36', 'autor4');
 
 -- --------------------------------------------------------
 
@@ -47,8 +57,6 @@ CREATE TABLE `komentarz` (
   `ID_WATEK` int(10) NOT NULL,
   `ID_USER` int(10) NOT NULL,
   `DATA` timestamp NOT NULL DEFAULT current_timestamp(),
-  `PLUS` int(10) DEFAULT 0,
-  `MINUS` int(10) NOT NULL DEFAULT 0,
   `TRESC_KOMENTARZA` longtext COLLATE utf8_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
@@ -99,11 +107,17 @@ CREATE TABLE `user` (
   `OPIS_PROFILU` text COLLATE utf8_polish_ci DEFAULT NULL,
   `ZDJECIE` blob DEFAULT NULL,
   `STW_WATKI` int(10) NOT NULL DEFAULT 0,
-  `PLUS` int(10) DEFAULT 0,
-  `MINUS` int(10) NOT NULL DEFAULT 0,
   `LICZ_KOMENTARZY` int(10) NOT NULL DEFAULT 0,
   `UPRAWNIENIA` varchar(10) COLLATE utf8_polish_ci NOT NULL DEFAULT 'USER'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+--
+-- Zrzut danych tabeli `user`
+--
+
+INSERT INTO `user` (`ID_USER`, `LOGIN`, `HASLO`, `IMIE`, `NAZWISKO`, `EMAIL`, `WIEK`, `MIASTO`, `KRAJ`, `OPIS_PROFILU`, `ZDJECIE`, `STW_WATKI`, `LICZ_KOMENTARZY`, `UPRAWNIENIA`) VALUES
+(1, 'login1', 'haslo1', 'imie1', 'nazwisko1', 'email1@wp.pl', 11, 'Białystok', 'Polska', NULL, NULL, 0, 0, 'USER'),
+(4, 'jakislogin', 'haslo1', 'imie1', 'nazwisko1', 'email@wp.pl', 11, 'Białystok', 'Polska', NULL, NULL, 0, 0, 'USER');
 
 -- --------------------------------------------------------
 
@@ -113,10 +127,10 @@ CREATE TABLE `user` (
 
 CREATE TABLE `waluta` (
   `ID_WALUTA` int(11) NOT NULL,
-  `KOD_WALUTA` varchar(3) COLLATE utf8_polish_ci NOT NULL,
+  `KOD_WALUTA` varchar(3) COLLATE utf8_polish_ci DEFAULT NULL,
   `NAZWA` varchar(30) COLLATE utf8_polish_ci NOT NULL,
-  `KUPNO` double NOT NULL,
-  `SPRZEDAZ` double NOT NULL
+  `KUPNO` double NOT NULL DEFAULT 0,
+  `SPRZEDAZ` double NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
@@ -124,26 +138,39 @@ CREATE TABLE `waluta` (
 --
 
 INSERT INTO `waluta` (`ID_WALUTA`, `KOD_WALUTA`, `NAZWA`, `KUPNO`, `SPRZEDAZ`) VALUES
-(1, 'EUR', 'Euro', 4.4597, 4.4897),
-(2, 'USD', 'Dolar amerykański', 3.6775, 3.7075),
-(3, 'CHF', 'Frank szwajcarski', 4.1411, 4.1811),
-(4, 'GBP', 'Funt brytyjski', 4.9047, 4.9444),
-(5, 'AUD', 'Dolar australijski', 2.7233, 2.7533),
-(6, 'BGN', 'Lew bułgarski', 2.2758, 2.3008),
-(7, 'CAD', 'Dolar kanadyjski', 2.8705, 2.9005),
-(8, 'CZK', 'Korona czeska', 0.1683, 0.1703),
-(9, 'DKK', 'Korona duńska', 0.5981, 0.6041),
-(10, 'HKD', 'Dolar hongkoński', 0.4742, 0.4784),
-(11, 'HRK', 'Kuna chorwacka', 0.5903, 0.5963),
-(12, 'MXN', 'Peso meksykańskie', 0.1844, 0.187),
-(13, 'NOK', 'Korona norweska', 0.4185, 0.4245),
-(14, 'NZD', 'Dolar nowozelandzki', 2.5815, 2.6115),
-(15, 'RON', 'Lej rumuński', 0.9124, 0.9244),
-(16, 'RUB', 'Rubel rosyjski', 0.0494, 0.0514),
-(17, 'SEK', 'Korona szwedzka', 0.4354, 0.4404),
-(18, 'SGD', 'Dolar singapurski', 2.7473, 2.7743),
-(19, 'TRY', 'Lira turecka', 0.464, 0.48),
-(20, 'ZAR', 'Rand południowoafrykański', 0.2431, 0.2465);
+(24, 'CAD', 'Dolar kanadyjski', 0, 0),
+(25, 'HKD', 'Dolar hongkoński', 0, 0),
+(26, 'ISK', 'Korona islandzka', 0, 0),
+(27, 'PHP', 'Peso filipińskie', 0, 0),
+(28, 'DKK', 'Korona duńska', 0, 0),
+(29, 'HUF', 'Forint węgierski', 0, 0),
+(30, 'CZK', 'Korona czeska', 0, 0),
+(31, 'AUD', 'Dolar australijski', 0, 0),
+(32, 'RON', 'Lej rumuński', 0, 0),
+(33, 'SEK', 'Korona szwedzka', 0, 0),
+(34, 'IDR', 'Rupia indonezyjska', 0, 0),
+(35, 'INR', 'Rupia indyjska', 0, 0),
+(36, 'BRL', 'Real brazylijski', 0, 0),
+(37, 'RUB', 'Rubel rosyjski', 0, 0),
+(38, 'HRK', 'Kuna chorwacka', 0, 0),
+(39, 'JPY', 'Jen japoński', 0, 0),
+(40, 'THB', 'Bat tajlandzki', 0, 0),
+(41, 'CHF', 'Frank szwajcarski', 0, 0),
+(42, 'SGD', 'Dolar singapurski', 0, 0),
+(43, 'BGN', 'Lew bułgarski', 0, 0),
+(44, 'TRY', 'Lira turecka', 0, 0),
+(45, 'CNY', 'Yuan chiński', 0, 0),
+(46, 'NOK', 'Korona norweska', 0, 0),
+(47, 'NZD', 'Dolar nowozelandzki', 0, 0),
+(48, 'ZAR', 'Rand południowoafrykański', 0, 0),
+(49, 'USD', 'Dolar amerykański', 0, 0),
+(50, 'MXN', 'Peso meksykańskie', 0, 0),
+(51, 'ILS', 'Szekel izraelski', 0, 0),
+(52, 'GBP', 'Funt brytyjski', 0, 0),
+(53, 'KRW', 'Won południowokoreański', 0, 0),
+(54, 'MYR', 'Ringgit malezyjski', 0, 0),
+(56, 'EUR', 'Euro', 0, 0),
+(57, 'PLN', 'Polski złoty', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -156,11 +183,18 @@ CREATE TABLE `watek` (
   `ID_USER` int(10) NOT NULL,
   `TEMAT` varchar(100) COLLATE utf8_polish_ci NOT NULL,
   `DATA` timestamp NOT NULL DEFAULT current_timestamp(),
-  `PLUSY` int(10) DEFAULT 0,
-  `MINUSY` int(10) NOT NULL DEFAULT 0,
   `TRESC_WATKU` longtext COLLATE utf8_polish_ci NOT NULL,
-  `LICZBA_KOMENTARZY` int(10) NOT NULL DEFAULT 0
+  `LICZBA_KOMENTARZY` int(10) NOT NULL DEFAULT 0,
+  `ILOSC_ODWIEDZIN` int(10) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+--
+-- Zrzut danych tabeli `watek`
+--
+
+INSERT INTO `watek` (`ID_WATEK`, `ID_USER`, `TEMAT`, `DATA`, `TRESC_WATKU`, `LICZBA_KOMENTARZY`, `ILOSC_ODWIEDZIN`) VALUES
+(2, 1, 'temattemattemat', '2020-12-11 18:41:17', 'tresctresctresctresctresctresctresctresc', 0, 3),
+(3, 1, 'temattemattemat', '2020-12-11 18:42:57', 'tresctresctresctresctresctresctresctresc', 0, 0);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -215,7 +249,7 @@ ALTER TABLE `watek`
 -- AUTO_INCREMENT dla tabeli `artykul`
 --
 ALTER TABLE `artykul`
-  MODIFY `ID_ARTYKULU` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_ARTYKULU` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT dla tabeli `komentarz`
@@ -233,19 +267,19 @@ ALTER TABLE `kruszec`
 -- AUTO_INCREMENT dla tabeli `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID_USER` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_USER` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT dla tabeli `waluta`
 --
 ALTER TABLE `waluta`
-  MODIFY `ID_WALUTA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `ID_WALUTA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT dla tabeli `watek`
 --
 ALTER TABLE `watek`
-  MODIFY `ID_WATEK` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_WATEK` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Ograniczenia dla zrzutów tabel
@@ -263,6 +297,14 @@ ALTER TABLE `komentarz`
 --
 ALTER TABLE `watek`
   ADD CONSTRAINT `watek_fk_1` FOREIGN KEY (`ID_USER`) REFERENCES `user` (`ID_USER`);
+
+DELIMITER $$
+--
+-- Zdarzenia
+--
+CREATE DEFINER=`root`@`localhost` EVENT `select_event` ON SCHEDULE EVERY 5 MINUTE STARTS '2020-12-11 12:01:52' ON COMPLETION NOT PRESERVE ENABLE DO SELECT KUPNO, SPRZEDAZ FROM waluta$$
+
+DELIMITER ;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

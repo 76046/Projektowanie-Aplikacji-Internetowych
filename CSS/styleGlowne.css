@@ -105,6 +105,10 @@ footer{
     outline: none;
 }
 
+#toAmount{
+    background-color: white;
+}
+
 .calculator-from{
     margin-left: auto;
     margin-right: auto;
@@ -167,6 +171,10 @@ footer{
     margin: 10px;
     width: 910px;
 }
+
+/* #sld2, #sld3, #sld4{
+    display: none;
+} */
 
 .navigation-manual{
     position: absolute;

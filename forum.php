@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 ?>
 <!DOCTYPE HTML>
@@ -22,26 +22,64 @@
                 <div class="pas-tytulowy">
                     Forum
                 </div>
+                <?php
+                    require_once "polaczeniezMySQL.php";
+
+                    $polaczenie = @new mysqli($host,$db_user,$db_password,$db_name);
+                    
+                    if($polaczenie->connect_errno!=0)
+                    {
+                        echo "Error: ".$polaczenie->connect_errno;
+                    }
+                    else
+                    {
+                        $rezultat = $polaczenie->query("SELECT * FROM watek");
+
+                        if(!$rezultat)
+                        {
+                        throw new Exception($polaczenie->error);
+                        }
+                        else
+                        {
+                        while($row = mysqli_fetch_array($rezultat))
+                        {
+                ?>
                 <article class="artykul">
                     <div class="glowny-kontener-artykulu">
                         <div class="tytul-watku">
-                            <a href="watek.php" target=" blank" >Tytuł Tytuł Tytuł Tytuł Tytuł Tytuł</a>
+                            <?php echo '<a href="watek.php?id='.$row['ID_WATEK'].'"  target=" blank" >'.$row['TEMAT'].'</a>'; ?>
+                            <!-- <a href="watek.php" target=" blank" >Tytuł Tytuł Tytuł Tytuł Tytuł Tytuł</a> -->
                         </div>
                         <div class="ilosc-odwiedzin">
-270
+                            <?php echo $row['ILOSC_ODWIEDZIN']; ?>
+                            <!-- 270 -->
                         </div>
                         <div class="autor">
-Adam777
+                            <?php 
+                                $row_autor = mysqli_fetch_array($wyciagniecie_nicku_autora = $polaczenie->query("SELECT * FROM user WHERE ID_USER=".$row['ID_USER']));
+                                echo '<a href="user.php?user='.$row['ID_USER'].'" target=" blank"><k style=" font-weight: 700;">'.$row_autor['LOGIN'].'</k></a>';
+                            ?>
+                            <!-- Adam777 -->
                         </div>
                         <div class="czas-wstawienia">
-2020-12-05 12:30
+                            <?php echo $row['DATA']; ?>
+                            <!-- 2020-12-05 12:30 -->
                         </div>
                         <div class="admin-mini-panel">
-X
+                            X
                         </div>
                     </div>
                 </article>
-                <article class="artykul">
+                <?php
+                    }
+                    }
+                    // $wyciagniecie_nicku_autora->close();
+                    $rezultat->close();
+                    }
+                    $polaczenie->close();
+                ?>
+
+                <!-- <article class="artykul">
                     <div class="glowny-kontener-artykulu">
                         <div class="tytul-watku">
                             <a href="watek.php" target=" blank" >Tytuł Tytuł Tytuł Tytuł Tytuł Tytuł</a>
@@ -78,7 +116,7 @@ X
                             X
                         </div>
                     </div>
-                </article>
+                </article> -->
 
             </section>
         </main>

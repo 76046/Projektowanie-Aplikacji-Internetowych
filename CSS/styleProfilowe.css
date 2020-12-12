@@ -1,0 +1,387 @@
+
+
+body{
+    background-image: linear-gradient(#3c3c3c, #3e3c3a);
+}
+header{
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
+    height: 70px;
+    background-color:#3c3c3c;
+    z-index: 10;
+    /*text-align: center;*/
+    clear: both;
+}
+
+main{
+    margin-left: auto;
+    margin-right: auto;
+    width: 640px;
+    padding: 0px 0px 0px 0px;
+
+    margin-bottom: 170px;
+}
+
+.nawigacja{
+    background-color:rgba(0, 0, 255, 0);
+    position:relative;
+    width: 800px;;
+    left: 0px;
+    bottom: 0px;
+    height: 100%;
+    /*text-align: center;*/
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.logo{
+    float: left;
+    vertical-align:middle;
+}
+
+.przycisk{
+    width: 100%;
+    background-color: #b2b984;
+    margin: 20px 0px 0px 0px;
+    border-radius: 30px;
+}
+.przycisk:hover{
+    background-color: rgba(114, 132, 172, 0.79);
+}
+
+.glowna,.poczekalnia,.topka,.dodaj,.loginrejestracja{
+    /* wszystko co jest w hederze*/
+    float: left;
+    font-family: Comic Sans MS,Impact,Arial,sans-serif;
+    height: 100%;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+
+}
+
+.glowna{
+    width: 100px;
+    background-color: rgba(39, 100, 39, 0);
+
+}
+
+.poczekalnia{
+    width: 140px;
+    background-color: rgba(21, 36, 114, 0);
+}
+
+.topka{
+    width: 100px;
+    background-color: rgba(114, 75, 21, 0);
+}
+
+.dodaj{
+    width: 100px;
+    background-color: rgba(37, 211, 226, 0);
+}
+
+
+
+
+.artykol{
+    background-color:rgb(85, 81, 74);
+    position:relative;
+    top: 140px;
+    padding: 10px;
+
+}
+
+.loginrejestracja{
+    width: 160px;
+    background-color: rgba(203, 145, 65, 0);
+    font-size: 10px;
+
+}
+
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+.stopka{
+    background-color:#6f4c2f;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    margin: 0px;
+    padding: 10px;
+    height: 20px;
+    text-align: center;
+}
+/* profil*/
+
+.pro_avatar{
+    position:relative;
+    height: 150px;
+    width: 150px;
+    background-color: rgba(48, 56, 47, 0.98);
+}
+
+.p_avatar{
+    height: 150px;
+    width: 150px;
+    border-radius: 75px;
+    background-image:url("../OBRAZY/un.jpg");
+    background-size: 150px;
+}
+
+.lewybaner{
+    width: 150px;
+    background-color: rgba(48, 56, 47, 0.98);
+    height: 450px;
+    float: left;
+}
+.prawybaner{
+    width: 470px;
+    background-color: rgba(67, 72, 66, 0.98);
+    height: 450px;
+    float: left;
+    text-align: center;
+}
+.koniec,.o_sobie{
+    clear: both;
+}
+.pro_statystyki{
+    width: 150px;
+    background-color: rgba(48, 56, 47, 0.98);
+    height: 300px;
+    text-align: center;
+}
+.pro_nicname{
+    width: 470px;
+    background-color: rgba(67, 72, 66, 0.98);
+    height: 50px;
+    margin: 30px 0px 0px 0px;
+    text-align: center;
+    font-family: Comic Sans MS,Impact,Arial,sans-serif;
+    font-size: 30px;
+}
+.pro_szczegolowe{
+    width: 350px;
+    background-color: rgba(67, 72, 66, 0.98);
+    height: 300px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+.staty{
+    margin: 0px 0px 10px 0px;
+    font-family: Comic Sans MS,Impact,Arial,sans-serif;
+}
+
+.lewy_szcz{
+    width: 80px;
+    height: 190px;
+    background-color: rgba(67, 72, 66, 0.98);
+    float: left;
+    text-align: right;
+    padding: 5px 0px 0px 0px;
+}
+.prawy_szcz{
+    background-color: rgba(67, 72, 66, 0.98);
+    width: 265px;
+    height: 190px;
+    float: left;
+    padding: 5px 0px 0px 5px;
+}
+.o_sobie{
+    text-align: center;
+    padding: 5px;
+}
+
+.staty_opis{
+    background-color: rgba(67, 72, 66, 0.98);
+    text-align: center;
+    margin: 0px;
+    padding: 5px;
+    height: 80px;
+
+}
+
+/* komentarze*/
+
+
+.komentarz_contener{
+   background-color:rgba(93, 93, 93, 0.74);
+    width: 600px;
+    height: auto;
+    margin: 10px;
+    text-align: center;
+    font-family: Comic Sans MS,Impact,Arial,sans-serif;
+    font-size: 15px;
+    top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+.kom_skomentuj,.kom_kom{
+    background-color:rgba(93, 93, 93, 0.74);
+    top: 10px;
+    text-align: left;
+    height: 20px;
+    margin: 10px;
+}
+
+textarea{
+    border: none;
+    border-radius: 20px;
+    width: 73%;
+    margin: 10px;
+    height: 50px;
+    float: left;
+    padding: 5px 10px 5px 10px;
+    resize: none;
+    background-color: #7b7977;
+
+}
+.przycisk_dodaj{
+    border: none;
+    border-radius: 20px;
+    width: 100px;
+    height: 60px;
+    margin: 10px;
+    padding: 5px;
+    clear: both;
+    font-family: Impact,Arial,sans-serif;
+    letter-spacing: 2px;
+    background-color:#7b7977;
+    transition: background .6s;
+    font-size: 20px;
+}
+
+.przycisk_dodaj:hover{
+  background-color: #313022;
+    color: aliceblue;
+}
+
+.kom_komentarz{
+    background-color:rgba(57, 38, 119, 0);
+    text-align: left;
+    height: 20px;
+    margin: 20px 10px 10px 10px;
+    height: 150px;
+}
+
+.kom_avatar{
+    background-color:rgba(67, 72, 66, 0.98);
+    height: 80%;
+    width: 100px;
+    float: left;
+}
+.kom_tresc{
+    background-color:rgba(67, 72, 66, 0.98);
+    height: 80%;
+    width: 350px;
+    float: left;
+}
+.kom_oceny{
+    background-color:rgba(67, 72, 66, 0.98);
+    height: 80%;
+    width: 130px;
+    float: left;
+}
+.kom_stopka{
+    background-color:rgba(67, 72, 66, 0.98);
+    height: 20%;
+    width: 100%;
+    clear: both;
+}
+.kom_nickdzien{
+    background-color:rgba(90, 95, 89, 0.98);
+    height: 20px;
+    padding: 10px 0px 0px 0px;
+    width: 350px;
+    float: left;
+    text-align: center;
+     font-size: 10px;
+}
+.kom_adminpanel1{
+    background-color:rgba(90, 95, 89, 0.98);
+    height: 27px;
+    padding: 3px 0px 0px 0px;
+    width: 100px;
+    float: left;
+     text-align: center;
+}
+
+.kom_adminpanel2{
+    background-color:rgba(90, 95, 89, 0.98);
+    height: 27px;
+    padding: 3px 0px 0px 0px;
+    width: 130px;
+    float: left;
+    text-align: center;
+}
+.kom_profilowe{
+    height: 80px;
+    width: 80px;
+
+    margin: 20px 10px 10px 10px;
+    border-radius: 40px;
+    background-image:url("../OBRAZY/un.jpg");
+}
+.kom_wiadomosc{
+    margin: 5px;
+    height: 100px;
+    width: 330px;
+    background-color: #7b7977;
+    border-radius: 8px;
+    padding: 5px;
+}
+.licznik{
+    margin: 6px 50px 5px 50px;
+    text-align: center;
+}
+.plus_button,.minus_button{
+    margin: 5px 50px 5px 50px;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+
+}
+
+.plus_button,.minus_button,.ban_button,.mute_button,.del_button{
+    border: none;
+    border-radius: 50px;
+    transition: background .6s;
+}
+.plus_button{
+    background-color: #2f8424;
+}
+.minus_button,.ban_button{
+    background-color: #a03232;
+}
+.mute_button{
+    background-color: #a07a32;
+}
+.del_button{
+    background-color: #87a032;
+}
+.ban_button:hover,.mute_button:hover,.del_button:hover{
+    background-color:  #687d90;
+}
+.plus_button:hover{
+    background-color: #45be35;
+}
+.minus_button:hover{
+    background-color: #dd4949;
+}

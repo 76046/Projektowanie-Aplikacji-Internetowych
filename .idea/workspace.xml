@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b66e8ea2-378a-4cec-84c3-d67acd077d7b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/stylePanelAdmina.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/stylePanelAdmina.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel_admin_f.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel_admin_f.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel_admin_u.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel_admin_u.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel_admin_z.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel_admin_z.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,12 +34,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/CSS" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Projektowanie-Aplikacji-Internetowych\CSS" />
       <recent name="C:\Users\MarKo\Desktop\semestr1\Projektowanie Aplikacji Internetowych\Projektowanie-Aplikacji-Internetowych\Projektowanie-Aplikacji-Internetowych" />
     </key>
   </component>
@@ -66,7 +63,7 @@
       <workItem from="1606767309283" duration="3415000" />
       <workItem from="1607193525964" duration="209000" />
       <workItem from="1607255460928" duration="5479000" />
-      <workItem from="1607788278067" duration="301000" />
+      <workItem from="1607788278067" duration="3671000" />
     </task>
     <servers />
   </component>
@@ -78,14 +75,14 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2587" y="110" key="#PHP/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603306447244" />
-    <state x="3126" y="231" key="FileChooserDialogImpl" timestamp="1607259741579">
+    <state x="3126" y="231" key="FileChooserDialogImpl" timestamp="1607790176413">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="3126" y="231" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607259741579" />
-    <state x="2714" y="443" key="NewPhpFileDialog" timestamp="1606668722470">
+    <state x="3126" y="231" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607790176413" />
+    <state x="2714" y="443" key="NewPhpFileDialog" timestamp="1607790467692">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2714" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606668722470" />
+    <state x="2714" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607790467692" />
     <state x="2381" y="162" key="SettingsEditor" timestamp="1603309318351">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

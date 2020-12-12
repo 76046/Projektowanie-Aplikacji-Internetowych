@@ -57,7 +57,9 @@ rysowanieGlownegoMenu();
                     ?>
                     <tr class="co-drugi">
                         <td class="nazwa-waluty">
-                            <div class="flaga"></div>
+                            <div class="flaga">
+                                <?php echo '<img src="data:image/jpeg;base64,'.base64_decode($row['FLAGA']).'" alt="flaga"/>;' ?>
+                            </div>
                             <div class="nazwa-skrocona">
                                 <?php echo $row['KOD_WALUTA']; ?>
                                 <!-- USD -->

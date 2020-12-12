@@ -38,10 +38,11 @@ session_start();
                 <div class="transakcja">
                     <div class="transakcja-lewa">
                         <div class="transakcja-lewa-naglowek">
-                            <h2>nagłówek tekstu</h2>
+                            <h2>Nadzorujemy każdą transakcję</h2>
                         </div>
                         <div class="transakcja-lewa-tresc">
-                            <p>treść tekstu</p>
+                            <p>W naszym zespole pracuje 100 doświadczonych specjalistów w dziedzinie wymiany walut. 
+                            Nadzorujemy każdą transakcję, by zredukować ryzyko utraty pieniędzy do zera.</p>
                         </div>
                     </div>
                     <div class="transakcja-prawa">
@@ -55,10 +56,10 @@ session_start();
                             <img src="" alt="ikonka1">
                         </div>
                         <div class="benefit1-naglowek">
-                            <h3>nagłówek1</h3>
+                            <h3>Zaufanie</h3>
                         </div>
                         <div class="benefit1-tresc">
-                            <p>treść tekstu1</p>
+                            <p>Do tej pory zaufało nam 100 tysięcy klientów</p>
                         </div>
                     </div> 
                     <div class="benefit2">
@@ -66,10 +67,10 @@ session_start();
                             <img src="" alt="ikonka2">
                         </div>
                         <div class="benefit2-naglowek">
-                            <h3>nagłówek2</h3>
+                            <h3>Bezpieczeństwo</h3>
                         </div>
                         <div class="benefit2-tresc">
-                            <p>treść tekstu2</p>
+                            <p>Nasza firma posiada zaawansowane systemy zabezpieczające przed utratą pieniędzy</p>
                         </div>
                     </div>
                     <div class="benefit3">
@@ -77,10 +78,10 @@ session_start();
                             <img src="" alt="ikonka3">
                         </div>
                         <div class="benefit3-naglowek">
-                            <h3>nagłówek3</h3>
+                            <h3>Najlepsza jakość obsługi</h3>
                         </div>
                         <div class="benefit3-tresc">
-                            <p>treść tekstu3</p>
+                            <p>Jakość naszej obsługi została pozytywnie oceniona przez klientów</p>
                         </div>
                     </div>
                     <div style="clear: both;"></div>
@@ -194,7 +195,7 @@ session_start();
                             <img src="" alt="obrazek1">
                         </div>
                         <div class="nagroda1-info">
-                            <p>info o nagrodzie1</p> 
+                            <p>Laur Konsumenta</p> 
                         </div>
                     </div>
                     <div class="nagroda2">
@@ -202,7 +203,7 @@ session_start();
                             <img src="" alt="obrazek2">
                         </div>
                         <div class="nagroda2-info">
-                            <p>info o nagrodzie2</p> 
+                            <p>Nagroda za najlepszą obsługę</p> 
                         </div>
                     </div>
                     <div class="nagroda3">
@@ -210,7 +211,7 @@ session_start();
                             <img src="" alt="obrazek3">
                         </div>
                         <div class="nagroda3-info">
-                            <p>info o nagrodzie3</p> 
+                            <p>Otrzymanie tytułu kantora roku</p> 
                         </div>
                     </div>
                     <div style="clear: both;"></div> 

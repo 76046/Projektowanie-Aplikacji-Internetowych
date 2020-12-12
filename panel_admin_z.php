@@ -30,16 +30,16 @@ rysowanieGlownegoMenu();
             <table>
                 <tr>
                     <th class="panel_artykuly">
-                        <a href="panel_admina_a.php">Artykuly</a>
+                        <a href="panel_admin_a.php">Artykuly</a>
                     </th>
                     <th class="panel_uzytkownicy">
-                        <a href="panel_admina_u.php">Użytkownicy</a>
+                        <a href="panel_admin_u.php">Użytkownicy</a>
                     </th>
                     <th class="panel_forum">
-                        <a href="panel_admina_f.php">Forum</a>
+                        <a href="panel_admin_f.php">Forum</a>
                     </th>
                     <th class="panel_zgloszenia">
-                        <a href="panel_admina_z.php">Zgłoszenia</a>
+                        <a href="panel_admin_z.php">Zgłoszenia</a>
                     </th>
                 </tr>
             </table>
@@ -70,9 +70,9 @@ rysowanieGlownegoMenu();
                     <tr>
                         <th class="ID">ID Artykulu</th>
                         <th class="uzytkownik_wst">Użytkownik wstawiajacy</th>
-                        <th class="miejsce_mema">Czas wstawienia</th>
-                        <th class="Lkom">Liczba odwiedzin</th>
-                        <th class="Padmin">Panel Administratora</th>
+                        <th class="czas_wstawienia">Czas wstawienia</th>
+                        <th class="liczba_odwiedzin">Liczba odwiedzin</th>
+                        <th class="panel_admin">Panel Administratora</th>
                     </tr>
                     <!--                    --><?php
                     //                    while($row = mysqli_fetch_array($rezultat))
@@ -87,9 +87,9 @@ rysowanieGlownegoMenu();
                     <tr>
                         <td class="ID"></td>
                         <td class="uzytkownik_wst"></td>
-                        <td class="miejsce_mema"></td>
-                        <td class="Lkom"></td>
-                        <td class="Padmin">
+                        <td class="czas_wstawienia"></td>
+                        <td class="liczba_odwiedzin"></td>
+                        <td class="panel_admin">
 
                             <a><button type="button" class="mute_glowna" name="butt_glowna" method="post">Glow</button></a>
 

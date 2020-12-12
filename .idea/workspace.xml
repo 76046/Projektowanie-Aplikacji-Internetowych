@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b66e8ea2-378a-4cec-84c3-d67acd077d7b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/styleGlowne.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleGlowne.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/styleWalutyKruszce.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleWalutyKruszce.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/waluty.php" beforeDir="false" afterPath="$PROJECT_DIR$/waluty.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/stylePanelAdmina.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/stylePanelAdmina.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel_admin_f.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel_admin_f.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel_admin_u.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel_admin_u.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel_admin_z.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel_admin_z.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +38,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="C:/xampp/htdocs/memland" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -66,6 +66,7 @@
       <workItem from="1606767309283" duration="3415000" />
       <workItem from="1607193525964" duration="209000" />
       <workItem from="1607255460928" duration="5479000" />
+      <workItem from="1607788278067" duration="301000" />
     </task>
     <servers />
   </component>

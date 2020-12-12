@@ -1,0 +1,144 @@
+
+
+body{
+    background-image: linear-gradient(#3c3c3c, #3e3c3a);
+}
+header{
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
+    height: 70px;
+    background-color:#3c3c3c;
+    z-index: 10;
+    /*text-align: center;*/
+    clear: both;
+}
+
+
+
+
+.artykol{
+    background-color:rgb(85, 81, 74);
+    position:relative;
+    top: 140px;
+    padding-bottom: 1px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sekcja{
+    position:relative;
+    background-color: rgb(111, 111, 111);
+    margin: 20px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+}
+
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+
+
+.tytul_artykulu{
+    position: relative;
+    background-color:rgb(124, 113, 104);
+    width: auto;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    font-family: Impact,Arial,sans-serif;
+    font-size: 30px;
+    top: 10px;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.tabliczki{
+
+    color: #111111;
+    margin: 20px auto 10px auto;
+}
+table{
+    width: 760px;
+    font-family: Arial, Verdana, sans-serif;
+}
+th, td{
+    padding: 7px 10px 10px 10px;
+}
+th{
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 90%;
+    border-bottom: 2px solid #999;
+    border-top: 1px solid #999;
+    text-align: center;
+}
+tr.codrugi{
+    background-color: #8e8787;
+}
+tr:hover{
+    background-color: #5c6060;
+}
+td:hover{
+    background-color: #7a7c7a;
+}
+
+td.panel_admin ,td.wstawione_memy,td.liczba_odwiedzin{
+    text-align: center;
+}
+
+
+th.panel_uzytkownicy, th.panel_forum, th.panel_artykuly, th.panel_zgloszenia{
+    width: 25%;
+}
+th.panel_uzytkownicy:hover, th.panel_forum:hover, th.panel_artykuly:hover, th.panel_zgloszenia:hover{
+    background-color: #af9f27;
+}
+
+th.ID,th.uzytkownik_wst, th.czas_wstawienia,th.liczba_odwiedzin,th.panel_admin{
+    font-size: 12px;
+}
+
+
+
+
+.plus_button,.minus_button{
+    margin: 10px 50px 10px 50px;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+
+}
+.ban_button,.mute_button,.mute_glowna,.del_button,.mod_button{
+    border: none;
+    border-radius: 50px;
+    transition: background .6s;
+    font-size: 11px;
+}
+.ban_button{
+    background-color: #bf3c3c;
+}
+.mute_glowna,.mute_button{
+    background-color: #57ad21;
+}
+.mod_button{
+    background-color: #1E90FF;
+}
+
+.del_button{
+    background-color: #be8427;
+}
+.ban_button:hover,.mute_glowna:hover,.del_button:hover,.mute_button:hover,.mod_button:hover{
+    background-color:  #FFFAFA;
+}

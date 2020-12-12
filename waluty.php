@@ -23,28 +23,7 @@ rysowanieGlownegoMenu();
         <div class="pas-tytulowy">
                 Kursy Walut
         </div>
-        <?php
-                    require_once "polaczeniezMySQL.php";
 
-                    $polaczenie = @new mysqli($host,$db_user,$db_password,$db_name);
-                    
-                    if($polaczenie->connect_errno!=0)
-                    {
-                        echo "Error: ".$polaczenie->connect_errno;
-                    }
-                    else
-                    {
-                        $rezultat = $polaczenie->query("SELECT * FROM waluta");
-
-                        if(!$rezultat)
-                        {
-                        throw new Exception($polaczenie->error);
-                        }
-                        else
-                        {
-                        while($row = mysqli_fetch_assoc($rezultat))
-                        {
-        ?>
         <section class="tablica-walut">
             <div class="tabliczki">
                 <table>
@@ -54,6 +33,28 @@ rysowanieGlownegoMenu();
                         <th class="sprzedaz-waluty">Sprzedaż</th>
                         <th class="operacje-waluty">Operacje</th>
                     </tr>
+                    <?php
+                    require_once "polaczeniezMySQL.php";
+
+                    $polaczenie = @new mysqli($host,$db_user,$db_password,$db_name);
+
+                    if($polaczenie->connect_errno!=0)
+                    {
+                        echo "Error: ".$polaczenie->connect_errno;
+                    }
+                    else
+                    {
+                    $rezultat = $polaczenie->query("SELECT * FROM waluta");
+
+                    if(!$rezultat)
+                    {
+                        throw new Exception($polaczenie->error);
+                    }
+                    else
+                    {
+                    while($row = mysqli_fetch_assoc($rezultat))
+                    {
+                    ?>
                     <tr class="co-drugi">
                         <td class="nazwa-waluty">
                             <div class="flaga"></div>
@@ -110,16 +111,16 @@ rysowanieGlownegoMenu();
 
                         </td>
                     </tr> -->
-
-                </table>
-        </section>
-        <?php
+                        <?php
                     }
                     }
-                    $rezultat->close();
+                        $rezultat->close();
                     }
                     $polaczenie->close();
-                ?>
+                    ?>
+                </table>
+        </section>
+
     </article>
 
     <?php

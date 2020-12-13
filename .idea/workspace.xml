@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b66e8ea2-378a-4cec-84c3-d67acd077d7b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/styleProfilowe.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleProfilowe.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/styleWatek.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleWatek.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profilowe.php" beforeDir="false" afterPath="$PROJECT_DIR$/profilowe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watek.php" beforeDir="false" afterPath="$PROJECT_DIR$/watek.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4" />
   <component name="ProjectId" id="1jCCGhxUR5gfyMtpn9CHe9KY2ee" />
   <component name="ProjectViewState">
@@ -34,7 +39,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/CSS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -63,7 +68,8 @@
       <workItem from="1606767309283" duration="3415000" />
       <workItem from="1607193525964" duration="209000" />
       <workItem from="1607255460928" duration="5479000" />
-      <workItem from="1607788278067" duration="3671000" />
+      <workItem from="1607788278067" duration="5482000" />
+      <workItem from="1607859696190" duration="8345000" />
     </task>
     <servers />
   </component>
@@ -75,6 +81,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2587" y="110" key="#PHP/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603306447244" />
+    <state x="2334" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607864666836">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2334" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607864666836" />
     <state x="3126" y="231" key="FileChooserDialogImpl" timestamp="1607790176413">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

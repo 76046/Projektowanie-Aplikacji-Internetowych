@@ -86,7 +86,7 @@ rysowanieGlownegoMenu();
                         ?>
                     <tr>
                         <td class="ID"><?php echo $row['ID_USER'];?></td>
-                        <td class="uzytkownik_wst"><?php echo'<a href="profilowe.php?user='.$row['ID_USER'].'">'.$row['IMIE'].'</a>';?></td>
+                        <td class="uzytkownik_wst"><?php echo'<a href="profilowe.php?user='.$row['ID_USER'].'">'.$row['LOGIN'].'</a>';?></td>
                         <td class="uzytkownik_wst"><?php echo $row['IMIE'];?></td>
                         <td class="uzytkownik_wst"><?php echo $row['NAZWISKO'];?></td>
                         <td class="uzytkownik_wst"><?php echo $row['EMAIL'];?></td>

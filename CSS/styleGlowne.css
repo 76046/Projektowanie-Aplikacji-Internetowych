@@ -66,9 +66,9 @@ footer{
 .logowanie-rejestracja{
     background-image: linear-gradient(#1b6cd6, #111db2);
     float: right;
+    padding: 12px;
 }
 .logo, .logowanie-rejestracja{
-    padding: 15px;
     box-sizing: border-box;
     text-align: center;
 }

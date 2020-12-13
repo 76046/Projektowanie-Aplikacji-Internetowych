@@ -77,6 +77,12 @@ rysowanieGlownegoMenu();
             <div style="clear: both;"></div>
         </div>
         </div>
+        <?php
+        $l_odwiedzin = $row['ILOSC_ODWIEDZIN'];
+        $l_odwiedzin++;
+        $polaczenie->query("UPDATE `watek` SET `ILOSC_ODWIEDZIN`= $l_odwiedzin WHERE `ID_WATEK`=".$_GET['id']);
+
+        ?>
 
         <?php
         }
@@ -90,66 +96,63 @@ rysowanieGlownegoMenu();
         }
         else
         {
-        if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true))
-        {
-        echo '<div class="kom_kom">';
-
-            if(isset($_POST['komentarz_user'])&& strlen($_POST['komentarz_user'])<=2000)
+            if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true))
             {
-            echo 'Skomentuj: max 2000 znaków: ';
+                echo '<div class="kom_kom">';
 
-            // dodanie do bazy komentarza
-            $id_watku = $_GET['id'];
-            $id_zalogowanego = $_SESSION['id_usera_zalog'];
-            $tresc = $_POST['komentarz_user'];
+                if(isset($_POST['komentarz_user'])&& strlen($_POST['komentarz_user'])<=2000)
+                {
+                    echo 'Skomentuj: max 2000 znaków: ';
+
+                    // dodanie do bazy komentarza
+                    $id_watku = $_GET['id'];
+                    $id_zalogowanego = $_SESSION['id_usera_zalog'];
+                    $tresc = $_POST['komentarz_user'];
 
 
-            if($polaczenie->query("INSERT INTO `komentarz` (`ID_WATEK`,`ID_USER`,`TRESC_KOMENTARZA`) VALUES ('$id_watku','$id_zalogowanego','$tresc');"))
-            {
-            echo ' ';
-            $_POST['komentarz_user']=0;
+                    if($polaczenie->query("INSERT INTO `komentarz` (`ID_WATEK`,`ID_USER`,`TRESC_KOMENTARZA`) VALUES ('$id_watku','$id_zalogowanego','$tresc');"))
+                    {
+                        echo ' ';
+                        $_POST['komentarz_user']=0;
 
-            $row_usera = mysqli_fetch_array($polaczenie->query("SELECT * FROM user WHERE ID_USER=".$_SESSION['id_usera_zalog']));
-            $liczba_komentarzy = $row_usera['LICZ_KOMENTARZY'];
-            $liczba_komentarzy++;
-            if($polaczenie->query("UPDATE `user` SET `LICZ_KOMENTARZY`= $liczba_komentarzy WHERE `ID_USER`= '$id_zalogowanego'"))
-            {
-            echo ' ';
+                        $row_usera = mysqli_fetch_array($polaczenie->query("SELECT * FROM user WHERE ID_USER=".$_SESSION['id_usera_zalog']));
+                        $liczba_komentarzy = $row_usera['LICZ_KOMENTARZY'];
+                        $liczba_komentarzy++;
+                        if($polaczenie->query("UPDATE `user` SET `LICZ_KOMENTARZY`= $liczba_komentarzy WHERE `ID_USER`= '$id_zalogowanego'"))
+                        {
+                            echo ' ';
+                        }
+                        else
+                        {
+                        echo 'Blad1'.$polaczenie->error;
+
+                        }
+                    }
+                    else
+                    {
+                    echo 'Blad2'.$polaczenie->error;
+                    }
+
+                }
+                elseif (isset($_POST['komentarz_user'])&& strlen($_POST['komentarz_user'])>2000)
+                {
+                echo 'Wpisany przez ciebie komentarz jest za długi ( max 2000 znaków)';
+                }
+                else
+                {
+                echo 'Skomentuj: max 2000 znaków: ';
+                }
+
+                echo '</div>';
+                echo '<form method="post" action="user.php?user='.$_GET['user'].'">';
+                echo '<textarea name="komentarz_user" required="required" ></textarea>';
+                echo '<input class="przycisk_dodaj" type="submit" value="Dodaj">';
+                echo '</form>';
             }
             else
             {
-            echo 'Blad1'.$polaczenie->error;
-
+            echo '<k style="font-size: 13px; font-weight: 700; color: rgb(40, 39, 0);"><center>Aby skomentować zaloguj się ! </center></k>';
             }
-            }
-            else
-            {
-            echo 'Blad2'.$polaczenie->error;
-            }
-
-
-
-
-
-            }
-            elseif (isset($_POST['komentarz_user'])&& strlen($_POST['komentarz_user'])>150)
-            {
-            echo 'Wpisany przez ciebie komentarz jest za długi ( max 150 znaków)';
-            }
-            else {
-            echo 'Skomentuj: max 150 znaków: ';
-            }
-
-            echo '</div>';
-        echo '<form method="post" action="user.php?user='.$_GET['user'].'">';
-            echo '<textarea name="komentarz_user" required="required" ></textarea>';
-            echo '<input class="przycisk_dodaj" type="submit" value="Dodaj">';
-            echo '</form>';
-        }
-        else
-        {
-        echo '<k style="font-size: 13px; font-weight: 700; color: rgb(40, 39, 0);"><center>Aby skomentować zaloguj się ! </center></k>';
-        }
 
         }
         ?>
@@ -222,7 +225,7 @@ rysowanieGlownegoMenu();
             <div class="kom_adminpanel1">
             </div>
             <div class="kom_nickdzien">
-                <?php echo $row_komentarz['DATA'].' przez <a href="user.php?profilowe='.$row_usera['ID_USER'].'" target=" blank"><k style=" font-weight: 700;">'.$row_usera['LOGIN'].'</k></a>'; ?>
+                <?php echo $row_komentarz['DATA'].' przez <a href="profilowe.php?user='.$row_usera['ID_USER'].'" target=" blank"><k style=" font-weight: 700;">'.$row_usera['LOGIN'].'</k></a>'; ?>
             </div>
             <?php
             if((isset($_SESSION['admin']))&&($_SESSION['admin']==true)){
@@ -241,6 +244,7 @@ rysowanieGlownegoMenu();
     $wyciagniecie_kom_usera->close();
     }
     $row_komentarze_profil->close();
+    $polaczenie->close();
     ?>
     <!-- jeden komentarz -->
 
@@ -248,19 +252,7 @@ rysowanieGlownegoMenu();
 
 
 </article>
-<?php
-//
-//    $l_odwiedzin = $row['ILOSC_ODWIEDZIN'];
-//    $l_odwiedzin++;
-//    $polaczenie->query("UPDATE `watek` SET `ILOSC_ODWIEDZIN`= $l_odwiedzin WHERE `ID_WATEK`=".$_GET['id']);
-//
-//                    }
-//                    }
-//                    $wyciagniecie_danych_autora->close();
-//                    $rezultat->close();
-//                    }
-//                    $polaczenie->close();
-//                ?>
+
 </main>
 
 <?php

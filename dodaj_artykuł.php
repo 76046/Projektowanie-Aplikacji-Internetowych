@@ -23,12 +23,12 @@ rysowanieGlownegoMenu();
         </div>
         <br class="pas-tytulowy">
         <p>Temat :</p>
-        <center><input type="text" required="required"></center>
+        <center><input type="text"></center>
         </br>
         <hr>
         </br>
         <p>Treść :</p>
-        <center><textarea required="required"></textarea></center>
+        <center><textarea></textarea></center>
         </div>
         </br>
         <hr>

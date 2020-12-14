@@ -59,10 +59,11 @@ footer{
     width: 300px;
 }
 
-.logo{
+.logo {
     background-image: linear-gradient(#267e1a, #b2b106);
     float: left;
 }
+
 .logowanie-rejestracja{
     background-image: linear-gradient(#1b6cd6, #111db2);
     float: right;

@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b66e8ea2-378a-4cec-84c3-d67acd077d7b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/database/kantmen.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/kantmen.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/styleGlowne.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleGlowne.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum.php" beforeDir="false" afterPath="$PROJECT_DIR$/forum.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +67,8 @@
       <workItem from="1607193525964" duration="209000" />
       <workItem from="1607255460928" duration="5479000" />
       <workItem from="1607788278067" duration="5482000" />
-      <workItem from="1607859696190" duration="19633000" />
+      <workItem from="1607859696190" duration="20217000" />
+      <workItem from="1607934381798" duration="6912000" />
     </task>
     <servers />
   </component>
@@ -85,10 +88,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="3126" y="231" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607790176413" />
-    <state x="2714" y="443" key="NewPhpFileDialog" timestamp="1607790467692">
+    <state x="2714" y="443" key="NewPhpFileDialog" timestamp="1607941405130">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2714" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607790467692" />
+    <state x="2714" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607941405130" />
     <state x="2381" y="162" key="SettingsEditor" timestamp="1603309318351">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

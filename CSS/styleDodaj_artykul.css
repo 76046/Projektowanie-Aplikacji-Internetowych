@@ -1,0 +1,30 @@
+.pas-tytulowy{
+    background-color: rgb(124, 113, 104);
+    width: auto;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    font-family: Impact,Arial,sans-serif;
+    font-size: 30px;
+}
+section{
+    padding: 5px;
+}
+section input{
+    height: 30px;
+    width: 800px;
+    font-size: 30px;
+}
+textarea{
+    height: 700px;
+    width: 800px;
+    font-size: 15px;
+    font-family: "Times New Roman";
+}
+section p{
+    margin-top: 0px;
+    text-align: center;
+    font-family: "Times New Roman";
+    color: #999999;
+    font-size: 30px;
+}

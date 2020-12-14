@@ -51,8 +51,7 @@
     $_SESSION['e_haslo']="Hasła nie są takie same !";
   }
 
-  $haslo_hash = hash("sha512",$haslo1);
-  $haslo_hash = password_hash($haslo_hash,PASSWORD_DEFAULT);
+  $haslo_hash = password_hash($haslo1,PASSWORD_DEFAULT);
 
 //checkbox-regulamin--------------------------------------------------------
 
@@ -64,17 +63,17 @@
 
 //rekapcza -----------------------------------------------------------------
   //klucz sekretny
-  // $sekret = "6Le3raAUAAAAAABMd-Itb1e5SuUv2-qRviR8BeO4";
+  $sekret = "6Le3raAUAAAAAABMd-Itb1e5SuUv2-qRviR8BeO4";
 
-  // $sprawdz = file_get_contents('https://google.com/recaptcha/api/siteverify?secret='.$sekret.'&response='.$_POST['g-recaptcha-response']);
+  $sprawdz = file_get_contents('https://google.com/recaptcha/api/siteverify?secret='.$sekret.'&response='.$_POST['g-recaptcha-response']);
 
-  // $odp = json_decode($sprawdz);
+  $odp = json_decode($sprawdz);
 
-  // if($odp->success==false)
-  // {
-  //   $wszystko_ok==false;
-  //   $_SESSION['e_bot']="Potwierdz ze nie jesteś botem !";
-  // }
+  if($odp->success==false)
+  {
+    $wszystko_ok==false;
+    $_SESSION['e_bot']="Potwierdz ze nie jesteś botem !";
+  }
 // zapamietanie wprowadzonych danych
 
 $_SESSION['zap_nick'] = $nick;
@@ -439,7 +438,7 @@ rysowanieGlownegoMenu();
                     ?>
 
 
-                    <!-- <div class="g-recaptcha" data-sitekey="6Le3raAUAAAAADj0QEZJp9AyLQTQlT8wdgaqi_3n"></div> -->
+                    <div class="g-recaptcha" data-sitekey="6Le3raAUAAAAADj0QEZJp9AyLQTQlT8wdgaqi_3n"></div>
                     <?php if(isset($_SESSION['e_bot']))
                     {
                         echo '<div class="error_f">'.$_SESSION['e_bot'].'<div>';

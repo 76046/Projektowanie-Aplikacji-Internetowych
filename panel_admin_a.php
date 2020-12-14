@@ -24,6 +24,7 @@ rysowanieGlownegoMenu();
             Panel Administracyjny
         </div>
 
+
         <section class="sekcja">
 
             <table>

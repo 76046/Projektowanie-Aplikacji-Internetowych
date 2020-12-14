@@ -46,14 +46,14 @@ session_start();
                         </div>
                     </div>
                     <div class="transakcja-prawa">
-                        <img src="img/waluty/waluty.jpg" alt="zdjęcie">
+                        <img src="" alt="zdjęcie">
                     </div>
                     <div style="clear: both;"></div>
                 </div>
                 <div class="benefity">
                     <div class="benefit1">
                         <div class="benefit1-img">
-                            <img src="img/benefity/hands.png" alt="ikonka1">
+                            <img src="" alt="ikonka1">
                         </div>
                         <div class="benefit1-naglowek">
                             <h3>Zaufanie</h3>
@@ -64,7 +64,7 @@ session_start();
                     </div> 
                     <div class="benefit2">
                         <div class="benefit2-img">
-                            <img src="img/benefity/tarcza.jpg" alt="ikonka2">
+                            <img src="" alt="ikonka2">
                         </div>
                         <div class="benefit2-naglowek">
                             <h3>Bezpieczeństwo</h3>
@@ -75,7 +75,7 @@ session_start();
                     </div>
                     <div class="benefit3">
                         <div class="benefit3-img">
-                            <img src="img/benefity/star.png" alt="ikonka3">
+                            <img src="" alt="ikonka3">
                         </div>
                         <div class="benefit3-naglowek">
                             <h3>Najlepsza jakość obsługi</h3>
@@ -131,25 +131,31 @@ session_start();
                     <div class="slide" id="sld2">
                         <div class="slide-img">
                             <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKUL'].'"><img src="data:image/jpeg;base64,'.base64_encode( $row['ZDJECIE_ARTYKUL'] ).'" alt="zdjecie2"/></a>;' ?>
+                            <!-- <img src="" alt="zdjęcie2"> -->
                         </div> 
                         <div class="slide-naglowek">
                             <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKUL'].'"  target=" blank" >'.$row['TEMAT'].'</a>'; ?>
+                            <!-- <h2>Nagłówek artykułu 2</h2> -->
                         </div>
                     </div>
                     <div class="slide" id="sld3">
                         <div class="slide-img">
                             <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKUL'].'"><img src="data:image/jpeg;base64,'.base64_encode( $row['ZDJECIE_ARTYKUL'] ).'" alt="zdjecie3"/></a>;' ?>
+                            <!-- <img src="" alt="zdjęcie3"> -->
                         </div> 
                         <div class="slide-naglowek">
                             <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKUL'].'"  target=" blank" >'.$row['TEMAT'].'</a>'; ?>
+                            <!-- <h2>Nagłówek artykułu 3</h2> -->
                         </div>
                     </div>
                     <div class="slide" id="sld4">
                         <div class="slide-img">
                             <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKUL'].'"><img src="data:image/jpeg;base64,'.base64_encode( $row['ZDJECIE_ARTYKUL'] ).'" alt="zdjecie4"/></a>;' ?>
+                            <!-- <img src="" alt="zdjęcie4"> -->
                         </div> 
                         <div class="slide-naglowek">
                             <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKUL'].'"  target=" blank" >'.$row['TEMAT'].'</a>'; ?>
+                            <!-- <h2>Nagłówek artykułu 4</h2> -->
                         </div>
                     </div>
 
@@ -186,15 +192,15 @@ session_start();
                 <div class="nagrody-dolne">
                     <div class="nagroda1">
                         <div class="nagroda1-img">
-                            <img src="img/nagrody/laur-konsumenta.png" alt="obrazek1">
+                            <img src="" alt="obrazek1">
                         </div>
                         <div class="nagroda1-info">
-                            <p>Laur Konsumenta 2021</p> 
+                            <p>Laur Konsumenta</p> 
                         </div>
                     </div>
                     <div class="nagroda2">
                         <div class="nagroda2-img">
-                            <img src="img/nagrody/puchar.jpg" alt="obrazek2">
+                            <img src="" alt="obrazek2">
                         </div>
                         <div class="nagroda2-info">
                             <p>Nagroda za najlepszą obsługę</p> 
@@ -202,7 +208,7 @@ session_start();
                     </div>
                     <div class="nagroda3">
                         <div class="nagroda3-img">
-                            <img src="img/nagrody/medal.jpg" alt="obrazek3">
+                            <img src="" alt="obrazek3">
                         </div>
                         <div class="nagroda3-info">
                             <p>Otrzymanie tytułu kantora roku</p> 

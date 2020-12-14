@@ -81,6 +81,38 @@ rysowanieGlownegoMenu();
 
                         </td>
                     </tr>
+                    <!-- <tr class="co-drugi">
+                        <td class="nazwa-waluty">
+                            <div class="flaga"></div>
+                            <div class="nazwa-skrocona">USD</div>
+                            <div class="nazwa-calkowita">Dolar Amerykański</div>
+                        </td>
+                        <td class="kupno-waluty">
+                            200 PLN
+                        </td>
+                        <td class="sprzedaz-waluty">
+                            100PLN
+                        </td>
+                        <td class="operacje-waluty">
+
+                        </td>
+                    </tr>
+                    <tr class="co-drugi">
+                        <td class="nazwa-waluty">
+                            <div class="flaga"></div>
+                            <div class="nazwa-skrocona">USD</div>
+                            <div class="nazwa-calkowita">Dolar Amerykański</div>
+                        </td>
+                        <td class="kupno-waluty">
+                            200 PLN
+                        </td>
+                        <td class="sprzedaz-waluty">
+                            100PLN
+                        </td>
+                        <td class="operacje-waluty">
+
+                        </td>
+                    </tr> -->
                         <?php
                     }
                     }

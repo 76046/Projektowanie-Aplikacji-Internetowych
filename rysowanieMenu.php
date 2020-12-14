@@ -6,10 +6,6 @@ function rysowanieGlownegoMenu()
     <header>
         <nav class="nawigacja-menu">
             <div class="nawigacja-czesc-gorna">
-<<<<<<< HEAD
-                <div class="logo"><a href="index.php"><img id="logo" src="img/logo/logo-duze.png" alt="logo"></a></div>
-                <div class="logowanie-rejestracja"><a href="logowanie.php">Logowanie</a>/ <a href="rejestracja.php">Rejestracja</a></div>
-=======
                 <div class="logo"><a href="index.php"><img src="img/logo-duze.png" alt="logo"></a></div>
                 <div class="logowanie-rejestracja">
                     <?php
@@ -43,7 +39,6 @@ function rysowanieGlownegoMenu()
 
                 </div>
 
->>>>>>> 9a4aceded769d53dd48183cfeadfb6e4d228715d
                 <div style="clear: both;"></div>
             </div>
             <div class="nawigacja-czesc-dolna">

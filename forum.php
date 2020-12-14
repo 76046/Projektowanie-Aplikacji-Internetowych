@@ -78,9 +78,9 @@ session_start();
                     }
                     $polaczenie->close();
                 ?>
-                <div class="pas-tytulowy">
-                    <a href="dodaj_artykuł.php">Stworz nowy temat</a>
-                </div>
+
+
+
             </section>
         </main>
 

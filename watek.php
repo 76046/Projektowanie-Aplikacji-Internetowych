@@ -30,62 +30,50 @@ rysowanieGlownegoMenu();
               echo "Error: ".$polaczenie->connect_errno;
           }
           else
-          {
-            $rezultat = $polaczenie->query("SELECT * FROM watek WHERE ID_WATEK=".$_GET['id']);
+    {
+    $rezultat = $polaczenie->query("SELECT * FROM watek WHERE ID_WATEK=" . $_GET['id']);
 
-            if(!$rezultat)
-            {
-              throw new Exception($polaczenie->error);
-            }
-            else
-            {
-              while($row = mysqli_fetch_array($rezultat))
-              {
+    if (!$rezultat)
+    {
+        throw new Exception($polaczenie->error);
+    }
+    else
+    {
+    while ($row = mysqli_fetch_array($rezultat))
+    {
     ?>
-<article>
-    <div class="artykul-glowny">
-        <div class="artykul-tytul">
-            <?php echo $row['TEMAT']; ?>
-            <!-- Tytul watku -->
-        </div>
-        <div class="artykul-wypowiedz">
-            <div class="wiadomosc-profil">
-                <?php $row_autor = mysqli_fetch_array($wyciagniecie_danych_autora = $polaczenie->query("SELECT * FROM user WHERE ID_USER=".$row['ID_USER'])); ?>
-                <div class="awatar">
-                <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row_autor['ZDJECIE'] ).'" alt="zdjecie"/>;' ?>
-                    <!-- avatar -->
-                </div>
-                <div class="nickname">
-                    <?php echo '<a href="user.php?user='.$row['ID_USER'].'" target=" blank"><k style=" font-weight: 700;">'.$row_autor['LOGIN'].'</k></a>'; ?>
-                    <!-- adam777 -->
-                </div>
+    <article>
+        <div class="artykul-glowny">
+            <div class="artykul-tytul">
+                <?php echo $row['TEMAT']; ?>
+                <!-- Tytul watku -->
             </div>
-            <div class="wiadomosc-tresc">
-                <div class="czas-wyslania">
-                    <?php echo $row['DATA']; ?>
-                    <!-- 2020-12-12 20:09 -->
+            <div class="artykul-wypowiedz">
+                <div class="wiadomosc-profil">
+                    <?php $row_autor = mysqli_fetch_array($wyciagniecie_danych_autora = $polaczenie->query("SELECT * FROM user WHERE ID_USER=" . $row['ID_USER'])); ?>
+                    <div class="awatar">
+                        <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($row_autor['ZDJECIE']) . '" alt="zdjecie"/>;' ?>
+                    </div>
+                    <div class="nickname">
+                        <?php echo '<a href="profilowe.php?user=' . $row['ID_USER'] . '" target=" blank"><k style=" font-weight: 700;">' . $row_autor['LOGIN'] . '</k></a>'; ?>
+                    </div>
                 </div>
-                <div class="wiadomosc-trescwiadomosci">
-                    <?php echo $row['TRESC_WATKU']; ?>
-                    <!-- bla bla bla </br>
-                    bla bla bla </br>
-                    bla bla bla </br>
-                    bla bla bla </br>
-                    bla bla bla </br>
-                    bla bla bla </br>
-                    bla bla bla </br>
-                    bla bla bla </br>
-                    bla bla bla </br>
-                    bla bla bla </br>
-                    bla bla bla </br>
-                    bla bla bla </br>
-                    bla bla bla </br>
-                    bla bla bla </br> -->
+                <div class="wiadomosc-tresc">
+                    <div class="czas-wyslania">
+                        <?php echo $row['DATA']; ?>
+
+                    </div>
+                    <div class="wiadomosc-trescwiadomosci">
+                        <?php echo $row['TRESC_WATKU']; ?>
+
+                    </div>
+                    <div class="panel-spolecznosci-admina">
+
+                    </div>
                 </div>
-                <div class="panel-spolecznosci-admina">
-                    XXXXXx
-                </div>
+                <div style="clear: both;"></div>
             </div>
+
             <div style="clear: both;"></div>
         </div>
         </div>
@@ -217,25 +205,24 @@ rysowanieGlownegoMenu();
                 echo $row_komentarz['TRESC_KOMENTARZA'];
                 ?>
             </div>
-            <div class="wiadomosc-tresc">
-                <div class="czas-wyslania">
-                    2020-12-12 20:09
-                </div>
-                <div class="wiadomosc-trescwiadomosci">
-                    bla bla bla </br>
-                    bla bla bla </br>
-                </div>
-                <div class="panel-spolecznosci-admina">
-                    XXXXXx
-                </div>
-
-            </div>
-            <div style="clear: both;"></div>
         </div>
-        <div class="artykul-wypowiedz">
-            <div class="wiadomosc-profil">
-                <div class="awatar">avatar</div>
-                <div class="nickname">adam777</div>
+        <div class="kom_oceny">
+
+            <div class="licznik"><?php
+
+
+                ?>
+            </div>
+            <?php
+            if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true))
+            {
+                echo '<button type="button" class="plus_button">+</button></a>';
+                echo '<button type="button" class="minus_button">-</button></a>';
+            }
+            ?>
+        </div>
+        <div class="kom_stopka">
+            <div class="kom_adminpanel1">
             </div>
             <div class="kom_nickdzien">
                 <?php echo $row_komentarz['DATA'].' przez <a href="profilowe.php?user='.$row_usera['ID_USER'].'" target=" blank"><k style=" font-weight: 700;">'.$row_usera['LOGIN'].'</k></a>'; ?>
@@ -250,8 +237,7 @@ rysowanieGlownegoMenu();
                 echo '</div>';
             }
 
-            </div> -->
-            <div style="clear: both;"></div>
+            ?>
         </div>
     </div>
     <?php

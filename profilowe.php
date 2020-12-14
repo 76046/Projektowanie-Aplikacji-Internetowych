@@ -1,28 +1,28 @@
 <?php
-session_start();
-
-require_once "PolaczeniezMySQL.php";
-
-$polaczenie = @new mysqli($host,$db_user,$db_password,$db_name);
-
-if($polaczenie->connect_errno!=0)
-{
-    echo "Error: ".$polaczenie->connect_errno;//." Opis ".$polaczenie->connect_error;
-}
-else
-{
-$rezultat = $polaczenie->query("SELECT * FROM user WHERE ID_USER=" . $_GET['user']);
-
-if (!$rezultat)
-{
-    throw new Exception($polaczenie->error);
-}
-else
-{
-
-$row = mysqli_fetch_array($rezultat);
-
-?>
+//session_start();
+//
+//require_once "PolaczeniezMySQL.php";
+//
+//$polaczenie = @new mysqli($host,$db_user,$db_password,$db_name);
+//
+//if($polaczenie->connect_errno!=0)
+//{
+//    echo "Error: ".$polaczenie->connect_errno;//." Opis ".$polaczenie->connect_error;
+//}
+//else
+//{
+//$rezultat = $polaczenie->query();
+//
+//if(!$rezultat)
+//{
+//    throw new Exception($polaczenie->error);
+//}
+//else
+//{
+//
+//$row = mysqli_fetch_array($rezultat);
+//
+//?>
 
 <!DOCTYPE HTML>
 <html>
@@ -46,13 +46,14 @@ rysowanieGlownegoMenu();
         <div class="lewybaner">
             <div class="pro_avatar">
 
-                <?php
-                if ($row['ZDJECIE'] != NULL) {
-                    echo '<div class="p_avatar" style="background-image:url("data:image/jpeg;base64,' . base64_encode($row['ZDJECIE']) . '");" alt="zdjecie profilowe" />';
-                } else {
-
-                    echo '<div class="p_avatar" alt="zmienilo"/>';
-                }
+<!--                --><?php
+//                if($row['ZDJECIE']!=NULL)
+//                {
+//                    echo '<div class="p_avatar" style="background-image:url("data:image/jpeg;base64,'.base64_encode( $row['ZDJECIE'] ).'");" alt="zdjecie profilowe" />';
+//                }else {
+//
+//                    echo '<div class="p_avatar" alt="zmienilo"/>';
+//                }
                 //<!--  DO ZROBIENIA -->
                 //style="background-image:url("'.$row_usera['ZDJECIE'].'");"
                 //style="background-image:url("../OBRAZY/un.jpg ");"
@@ -61,11 +62,11 @@ rysowanieGlownegoMenu();
 
             </div>
             <div class="pro_statystyki">
-                <div class="staty">Statystyki</div>
+                <div class="staty" id="reputacja">Statystyki</div>
                 <div class="staty">Liczba utworzonych wątków</div>
-                <div class="staty"><?php echo $row['STW_WATKI']; ?></div>
+                <div class="staty" id="plusy">50</div>
                 <div class="staty">Liczba komentarzy</div>
-                <div class="staty"><?php echo $row['LICZ_KOMENTARZY']; ?></div>
+                <div class="staty" id="s_memy">750</div>
 
             </div>
         </div>
@@ -84,25 +85,24 @@ rysowanieGlownegoMenu();
                     <div class="staty">Kraj:</div>
                 </div>
                 <div class="prawy_szcz">
-                    <div class="staty" id="imie"><?php echo $row['IMIE']; ?></div>
-                    <div class="staty" id="nazwisko"><?php echo $row['NAZWISKO']; ?></div>
-                    <div class="staty" id="email"><?php echo $row['EMAIL']; ?></div>
-                    <div class="staty" id="miasto"><?php echo $row['MIASTO']; ?></div>
-                    <div class="staty" id="wiek"><?php echo $row['WIEK']; ?></div>
-                    <div class="staty" id="kraj"><?php echo $row['KRAJ']; ?></div>
+                    <div class="staty" id="imie"><?php// echo $row['IMIE']; ?></div>
+                    <div class="staty" id="nazwisko"><?php// echo $row['NAZWISKO']; ?></div>
+                    <div class="staty" id="email"><?php// echo $row['EMAIL']; ?></div>
+                    <div class="staty" id="miasto"><?php// echo $row['MIASTO']; ?></div>
+                    <div class="staty" id="wiek"><?php //echo $row['WIEK']; ?></div>
+                    <div class="staty" id="kraj"><?php// echo $row['KRAJ']; ?></div>
                 </div>
                 <div class="o_sobie">Coś o sobie:</div>
-                <div class="staty_opis"><?php echo $row['OPIS_PROFILU']; ?></div>
+                <div class="staty_opis"><?php //echo $row['COS_O_SOBIE']; ?></div>
             </div>
         </div>
         <div class="koniec"></div>
 
     </article>
-    <?php
-    }
-    $polaczenie->close();
-    }
-    ?>
+<!--    --><?php
+//    $polaczenie->close();
+//
+//    ?>
 
 
 </main>

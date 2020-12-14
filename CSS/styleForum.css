@@ -1,11 +1,14 @@
 article{
-    background-color: green;
+    /* background-color: green; */
+    background-color: white;
     height: 100%;
 }
 
 .pas-tytulowy{
     position: relative;
-    background-color: rgb(124, 113, 104);
+    /* background-color: rgb(124, 113, 104); */
+    background-color: white;
+    color: orangered;
     width: auto;
     margin: 10px;
     padding: 10px;
@@ -16,7 +19,8 @@ article{
 }
 
 .artykul{
-    background-color: rgb(111, 111, 111);
+    /* background-color: rgb(111, 111, 111); */
+    background-color: white;
     margin: 20px 10px 10px 10px;
     padding: 10px 10px 10px 10px;
     text-align: center;

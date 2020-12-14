@@ -1,11 +1,14 @@
 article{
-    background-color: green;
+    background-color: white;
+    /* background-color: green; */
     width: 100%;
     height: 100%;
 }
 .pas-tytulowy{
     position: relative;
-    background-color: rgb(124, 113, 104);
+    background-color: white;
+    color: orangered;
+    /* background-color: rgb(124, 113, 104); */
     width: auto;
     margin: 10px;
     padding: 10px;
@@ -16,7 +19,8 @@ article{
 }
 
 .tablica-walut {
-    background-color: rgb(111, 111, 111);
+    background-color: white;
+    /* background-color: rgb(111, 111, 111); */
     margin: 20px 10px 10px 10px;
     padding: 10px 10px 10px 10px;
     text-align: center;
@@ -25,7 +29,8 @@ article{
 
 .naglowek-walut{
     position: relative;
-    background-color: rgb(56, 110, 220);
+    /* background-color: rgb(56, 110, 220); */
+    background-color: white;
     margin: 10px 10px 10px 10px;
     padding: 10px 10px 10px 10px;
 }
@@ -33,32 +38,33 @@ article{
 .nazwa-waluty{
      width:320px;
      height:50px;
-     background-color: rgb(220, 45, 41);
+     /* background-color: rgb(220, 45, 41); */
+     background-color: white;
      float: left;
  }
 
 .kupno-waluty,.sprzedaz-waluty{
     width:150px;
     height:50px;
-    background-color: rgb(84, 220, 77);
+    /* background-color: rgb(84, 220, 77); */
     float: left;
 }
 
 .kupno-waluty{
-    background-color: rgb(84, 220, 77);
+    /* background-color: rgb(84, 220, 77); */
+    background-color: white;
 }
 
 .sprzedaz-waluty{
-    background-color: rgb(148, 196, 220);
-
-
-
+    /* background-color: rgb(148, 196, 220); */
+    background-color: white;
 }
 
 .operacje-waluty{
     width:220px;
     height:50px;
-    background-color: rgb(220, 26, 27);
+    /* background-color: rgb(220, 26, 27); */
+    background-color: white;
     float: left;
 }
 
@@ -95,13 +101,16 @@ td:hover{
      width: 50px;
      height: 50px;
      float: left;
-     background-color: #72e7ff;
+     /* background-color: #72e7ff; */
+     background-color: white;
  }
 .nazwa-skrocona{
     width: 270px;
     height: 21px;
     float: left;
-    background-color: #91ff38;
+    /* background-color: #91ff38; */
+    background-color: white;
+    color: orangered;
     text-align: left;
     padding-top: 4px;
 }
@@ -110,7 +119,9 @@ td:hover{
     width: 270px;
     height: 21px;
     float: left;
-    background-color: #3033ff;
+    /* background-color: #3033ff; */
+    background-color: white;
+    color: orangered;
     text-align: left;
     padding-top: 4px;
 }

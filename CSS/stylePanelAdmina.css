@@ -113,28 +113,21 @@ th.ID,th.uzytkownik_wst, th.czas_wstawienia,th.liczba_odwiedzin,th.panel_admin{
     font-size: 12px;
 }
 
-
-
-
-.plus_button,.minus_button{
-    margin: 10px 50px 10px 50px;
-    text-align: center;
-    width: 30px;
-    height: 30px;
-
-}
 .ban_button,.mute_button,.mute_glowna,.del_button,.mod_button{
     border: none;
     border-radius: 50px;
     transition: background .6s;
     font-size: 11px;
 }
+
 .ban_button{
     background-color: #bf3c3c;
 }
+
 .mute_glowna,.mute_button{
     background-color: #57ad21;
 }
+
 .mod_button{
     background-color: #1E90FF;
 }
@@ -142,6 +135,7 @@ th.ID,th.uzytkownik_wst, th.czas_wstawienia,th.liczba_odwiedzin,th.panel_admin{
 .del_button{
     background-color: #be8427;
 }
+
 .ban_button:hover,.mute_glowna:hover,.del_button:hover,.mute_button:hover,.mod_button:hover{
     background-color:  #FFFAFA;
 }

@@ -354,23 +354,14 @@ textarea{
     margin: 6px 50px 5px 50px;
     text-align: center;
 }
-.plus_button,.minus_button{
-    margin: 5px 50px 5px 50px;
-    text-align: center;
-    width: 30px;
-    height: 30px;
 
-}
-
-.plus_button,.minus_button,.ban_button,.mute_button,.del_button{
+.ban_button,.mute_button,.del_button{
     border: none;
     border-radius: 50px;
     transition: background .6s;
 }
-.plus_button{
-    background-color: #2f8424;
-}
-.minus_button,.ban_button{
+
+.ban_button{
     background-color: #a03232;
 }
 .mute_button{
@@ -382,9 +373,4 @@ textarea{
 .ban_button:hover,.mute_button:hover,.del_button:hover{
     background-color:  #687d90;
 }
-.plus_button:hover{
-    background-color: #45be35;
-}
-.minus_button:hover{
-    background-color: #dd4949;
-}
+

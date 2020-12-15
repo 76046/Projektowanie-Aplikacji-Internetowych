@@ -407,6 +407,7 @@ a{
     text-align: center;
     clear:both;
 }
+
 .nagrody-tytul{
     background-color: white;
     color: orangered;
@@ -417,6 +418,7 @@ a{
     text-align: center;
     justify-content: center;
 }
+
 .nagrody-dolne{
     background-color: white;
     /* background-color: lightcoral; */
@@ -424,6 +426,7 @@ a{
     padding: 10px 10px 10px 10px;
     height: 140px;
 }
+
 .nagroda1, .nagroda2, .nagroda3{
     background-color: white;
     /* background-color: lightgoldenrodyellow; */
@@ -432,11 +435,13 @@ a{
     margin: 5px;
     height: 130px;
 }
+
 .nagroda1-img, .nagroda2-img, .nagroda3-img{
     background-color: white;
     /* background-color: lightgreen; */
     margin: 5px;
 }
+
 .nagroda1-info, .nagroda2-info, .nagroda3-info{
     background-color: orange;
     border-radius: 10px;

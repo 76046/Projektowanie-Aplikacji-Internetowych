@@ -54,9 +54,9 @@ rysowanieGlownegoMenu();
 
                     echo '<div class="p_avatar" alt="zmienilo"/>';
                 }
-                <div class="staty" id="zdjecie">
-                    <?php echo '<input type="file" name="zdjecie">' ?>
-                </div>
+                echo '<div class="staty" id="zdjecie">';
+                echo '<input type="file" name="zdjecie">';
+                echo '</div>';
                 //<!--  DO ZROBIENIA -->
                 //style="background-image:url("'.$row_usera['ZDJECIE'].'");"
                 //style="background-image:url("../OBRAZY/un.jpg ");"

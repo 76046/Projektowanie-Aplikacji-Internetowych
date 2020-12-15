@@ -144,7 +144,7 @@ rysowanieGlownegoMenu();
                 }
 
                 echo '</div>';
-                echo '<form method="post" action="user.php?user='.$_GET['user'].'">';
+                echo '<form method="post" action="profilowe.php?user='.$_GET['user'].'">';
                 echo '<textarea name="komentarz_user" required="required" ></textarea>';
                 echo '<input class="przycisk_dodaj" type="submit" value="Dodaj">';
                 echo '</form>';

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once "PolaczeniezMySQL.php";
+require_once "polaczeniezMySQL.php";
 
 $polaczenie = @new mysqli($host,$db_user,$db_password,$db_name);
 
@@ -43,75 +43,48 @@ rysowanieGlownegoMenu();
 <main>
     <article class="artykol">
 
-        <div class="lewybaner">
-            <div class="pro_avatar">
-
-                <?php
-                if ($row['ZDJECIE'] != NULL) {
-                    echo '<input type="file" name="zdjecie">';
-                } else {
-
-                    echo '<div class="p_avatar" alt="zmienilo"/>';
-                }
-                //<!--  DO ZROBIENIA -->
-                //style="background-image:url("'.$row_usera['ZDJECIE'].'");"
-                //style="background-image:url("../OBRAZY/un.jpg ");"
-
-                ?>
-
+    <form method="post" enctype="multipart/form-data">
+            <div class="lewy_szcz">
+                <div class="staty">Imie:</div>
+                <div class="staty">Nazwisko:</div>
+                <div class="staty">Email:</div>
+                <div class="staty">Miasto:</div>
+                <div class="staty">Wiek:</div>
+                <div class="staty">Kraj:</div>
             </div>
-
-        </div>
-        </div>
-        <div class="prawybaner">
-            <div class="pro_nicname">
-
-            </div>
-            <div class="pro_szczegolowe">
-                <div class="lewy_szcz">
-                    <div class="staty">Imie:</div>
-                    <div class="staty">Nazwisko:</div>
-                    <div class="staty">Email:</div>
-                    <div class="staty">Miasto:</div>
-                    <div class="staty">Wiek:</div>
-                    <div class="staty">Kraj:</div>
-                </div>
-                <div class="prawy_szcz">
-                <?php ?>
-                    <div class="staty" id="imie">
+            <div class="prawy_szcz">
+                <div class="staty" id="imie">
                     <?php $imie = $row['IMIE'];
                     echo '<input type="text" name="imie" value="'.$imie.'">' ?>
-                    </div>
-                    <div class="staty" id="nazwisko">
+                </div>
+                <div class="staty" id="nazwisko">
                     <?php $nazwisko = $row['NAZWISKO'];
                     echo '<input type="text" name="imie" value="'.$nazwisko.'">' ?>
-                    </div>
-                    <div class="staty" id="email">
+                </div>
+                <div class="staty" id="email">
                     <?php $email = $row['EMAIL'];
                     echo '<input type="text" name="imie" value="'.$email.'">' ?>
-                    </div>
-                    <div class="staty" id="miasto">
+                </div>
+                <div class="staty" id="miasto">
                     <?php $miasto = $row['MIASTO'];
                     echo '<input type="text" name="imie" value="'.$miasto.'">' ?>
-                    </div>
-                    <div class="staty" id="wiek">
+                </div>
+                <div class="staty" id="wiek">
                     <?php $wiek = $row['WIEK'];
                     echo '<input type="text" name="imie" value="'.$wiek.'">' ?>
-                    </div>
-                    <div class="staty" id="kraj">
+                </div>
+                <div class="staty" id="kraj">
                     <?php $kraj = $row['KRAJ'];
                     echo '<input type="text" name="imie" value="'.$kraj.'">' ?>
-                    </div>
                 </div>
-                <div class="o_sobie">Coś o sobie:</div>
-                <div class="staty_opis">
-                <?php $opisProfilu = $row['OPIS_PROFILU'];
-                echo '<input type="text" name="imie" value="'.$opisProfilu.'">' ?>
+                <div class="staty" id="opis">
+                    <?php $opisProfilu = $row['OPIS_PROFILU'];
+                    echo '<input type="text" name="imie" value="'.$opisProfilu.'">' ?>
                 </div>
             </div>
-            <div class="edycjaProfilu"><a href="profilowe.php"><input type="submit" value="Wprowadź zmiany" name="wprowadz_zmiany"></a></div>
-        </div>
-        <div class="koniec"></div>
+
+            <a href="profilowe.php"><button type="submit">Wprowadź zmiany</button></a>
+    </form>
 
     </article>
     <?php

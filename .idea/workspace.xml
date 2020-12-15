@@ -3,10 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="b66e8ea2-378a-4cec-84c3-d67acd077d7b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/styleProfilowe.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleProfilowe.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/styleWatek.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleWatek.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profilowe.php" beforeDir="false" afterPath="$PROJECT_DIR$/profilowe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watek.php" beforeDir="false" afterPath="$PROJECT_DIR$/watek.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/styleGlowne.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleGlowne.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logowanie.php" beforeDir="false" afterPath="$PROJECT_DIR$/logowanie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polaczeniezMySQL.php" beforeDir="false" afterPath="$PROJECT_DIR$/polaczeniezMySQL.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rejestracja.php" beforeDir="false" afterPath="$PROJECT_DIR$/rejestracja.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rysowanieMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/rysowanieMenu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zalogowanie.php" beforeDir="false" afterPath="$PROJECT_DIR$/zalogowanie.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +40,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../memland" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -69,6 +71,10 @@
       <workItem from="1607255460928" duration="5479000" />
       <workItem from="1607788278067" duration="5482000" />
       <workItem from="1607859696190" duration="4719000" />
+      <workItem from="1607978879632" duration="644000" />
+      <workItem from="1608042824937" duration="1794000" />
+      <workItem from="1608046289422" duration="6000" />
+      <workItem from="1608046872554" duration="10519000" />
     </task>
     <servers />
   </component>
@@ -84,10 +90,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2334" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607864666836" />
-    <state x="3126" y="231" key="FileChooserDialogImpl" timestamp="1607790176413">
+    <state x="3126" y="231" key="FileChooserDialogImpl" timestamp="1608055850896">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="3126" y="231" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607790176413" />
+    <state x="3126" y="231" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608055850896" />
     <state x="2714" y="443" key="NewPhpFileDialog" timestamp="1607790467692">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -96,10 +102,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2381" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603309318351" />
-    <state x="2576" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1607255460986">
+    <state x="2576" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1608046872585">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605016640140" />
-    <state x="2576" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607255460986" />
+    <state x="2576" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608046872585" />
   </component>
 </project>

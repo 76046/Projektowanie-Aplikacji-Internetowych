@@ -15,7 +15,7 @@ if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true))
         <title>KANT-MEN</title>
         <link href="CSS/styleGlowne.css" rel="stylesheet" type="text/css">
         <link href="CSS/styleLogowanie.css" rel="stylesheet" type="text/css">
-
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </head>
     <body>
     <?php
@@ -41,7 +41,7 @@ if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true))
 
                             ?>
 
-                            <input type="text" placeholder="Login" size="15" maxlength="40" name="User">
+                            <input type="text" placeholder="Login" size="15" maxlength="40" name="User" >
 
                             <input type="password" placeholder="Hasło" size="20" maxlength="40" name="Password">
 
@@ -52,21 +52,10 @@ if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true))
                             <div class="nie-posiadasz-konta">Jeśli nie posiadasz konta</div>
                             <input class="przycisk_log" type="submit" value="Zarejestruj się !">
                         </form>
-
-
-
-
                     </div>
-
-
-
-
                 </section>
-
-
             </article>
         </main>
-
     <?php
     include_once('rysowanieStopki.php');
     rysowanieStopki();

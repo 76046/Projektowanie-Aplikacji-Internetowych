@@ -46,6 +46,11 @@ footer{
     text-align: center;
     align-items: center;
 }
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
 /* .domena, .o-nas, .kontakt{
     padding: 10px;
     float: left;

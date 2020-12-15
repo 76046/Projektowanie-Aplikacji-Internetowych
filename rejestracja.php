@@ -51,7 +51,7 @@
     $_SESSION['e_haslo']="Hasła nie są takie same !";
   }
 
-  $haslo_hash = password_hash($haslo1,PASSWORD_DEFAULT);
+  $haslo_hash = hash('sha512', $haslo1);
 
 //checkbox-regulamin--------------------------------------------------------
 
@@ -63,7 +63,7 @@
 
 //rekapcza -----------------------------------------------------------------
   //klucz sekretny
-  $sekret = "6Le3raAUAAAAAABMd-Itb1e5SuUv2-qRviR8BeO4";
+  $sekret = "6LfZrQcaAAAAAGVAYwhAzxPxGTdRjqxnNicGUi5K";
 
   $sprawdz = file_get_contents('https://google.com/recaptcha/api/siteverify?secret='.$sekret.'&response='.$_POST['g-recaptcha-response']);
 
@@ -86,7 +86,7 @@ $_SESSION['zap_haslo2'] = $haslo2;
 
 
 // polaczenie
-  require_once "PolaczeniezMySQL.php";
+  require_once "polaczeniezMySQL.php";
 
 //sposob raportowanie bledow
 mysqli_report(MYSQLI_REPORT_STRICT);
@@ -111,7 +111,6 @@ mysqli_report(MYSQLI_REPORT_STRICT);
           {
             $wszystko_ok = false;
             $_SESSION['e_email']="Istnieje już konto przypisane do tego adresu !";
-
           }
 
           //Sprawdzenie loginu ------------------------------------------------
@@ -169,7 +168,7 @@ mysqli_report(MYSQLI_REPORT_STRICT);
     <title>KANT-MEN</title>
     <link href="CSS/styleGlowne.css" rel="stylesheet" type="text/css">
     <link href="CSS/styleRejestracja.css" rel="stylesheet" type="text/css">
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 <?php
@@ -438,7 +437,7 @@ rysowanieGlownegoMenu();
                     ?>
 
 
-                    <div class="g-recaptcha" data-sitekey="6Le3raAUAAAAADj0QEZJp9AyLQTQlT8wdgaqi_3n"></div>
+                    <div class="g-recaptcha" data-sitekey="6LfZrQcaAAAAAHw47IW1vJUx_12vla_yS0ofDVc6"></div>
                     <?php if(isset($_SESSION['e_bot']))
                     {
                         echo '<div class="error_f">'.$_SESSION['e_bot'].'<div>';

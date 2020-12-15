@@ -43,7 +43,6 @@ rysowanieGlownegoMenu();
 <main>
     <article class="artykol">
 
-        <form method="post" enctype="multipart/form-data">
         <div class="lewybaner">
             <div class="pro_avatar">
 
@@ -52,7 +51,7 @@ rysowanieGlownegoMenu();
                     echo '<div class="p_avatar" style="background-image:url("data:image/jpeg;base64,' . base64_decode($row['ZDJECIE']) . '");" alt="zdjecie profilowe" />';
                 } else {
 
-                    echo '<div class="p_avatar" alt="zmienilo" style="background-image:url("../img/un.jpg ")/>';
+                    echo '<div class="p_avatar" alt="zmienilo" style="background-image:url("img/un.jpg ")/>';
                 }
                 echo '<div class="staty" id="zdjecie">';
                 echo '<input type="file" name="zdjecie">';
@@ -62,6 +61,14 @@ rysowanieGlownegoMenu();
                 //style="background-image:url("../OBRAZY/un.jpg ");"
 
                 ?>
+
+            </div>
+            <div class="pro_statystyki">
+                <div class="staty">Statystyki</div>
+                <div class="staty">Liczba utworzonych wątków</div>
+                <div class="staty"><?php echo $row['STW_WATKI']; ?></div>
+                <div class="staty">Liczba komentarzy</div>
+                <div class="staty"><?php echo $row['LICZ_KOMENTARZY']; ?></div>
 
             </div>
         </div>
@@ -78,7 +85,6 @@ rysowanieGlownegoMenu();
                     <div class="staty">Miasto:</div>
                     <div class="staty">Wiek:</div>
                     <div class="staty">Kraj:</div>
-                    <div class="staty">Opis:</div>
                 </div>
                 <div class="prawy_szcz">
                 <div class="staty" id="imie">
@@ -105,14 +111,17 @@ rysowanieGlownegoMenu();
                     <?php $kraj = $row['KRAJ'];
                     echo '<input type="text" name="imie" value="'.$kraj.'">' ?>
                 </div>
-                <div class="staty" id="opis">
+                </div>
+                <div class="o_sobie">Coś o sobie:</div>
+                <div class="staty-opis" id="opis">
                     <?php $opisProfilu = $row['OPIS_PROFILU'];
                     echo '<input type="textarea" name="imie" value="'.$opisProfilu.'">' ?>
                 </div>
             </div>
+            <div class="edycjaProfilu"><?php echo '<a href="profilowe.php?user=' . $row['ID_USER'] . '">'?><input type="submit" value="Edytuj profil" name="edytuj_profil"></a></div>
 
-            <a href="profilowe.php"><button type="submit">Wprowadź zmiany</button></a>
-            </form>
+        </div>
+        <div class="koniec"></div>
 
     </article>
     <?php

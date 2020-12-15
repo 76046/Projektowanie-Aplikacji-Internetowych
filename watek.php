@@ -21,7 +21,7 @@ rysowanieGlownegoMenu();
 <main>
     <?php
 
-          require_once "PolaczeniezMySQL.php";
+          require_once "polaczeniezMySQL.php";
 
           $polaczenie = @new mysqli($host,$db_user,$db_password,$db_name);
 
@@ -144,7 +144,7 @@ rysowanieGlownegoMenu();
                 }
 
                 echo '</div>';
-                echo '<form method="post" action="profilowe.php?user='.$_GET['user'].'">';
+                echo '<form method="post" action="watek.php?id='.$_GET['id'].'">';
                 echo '<textarea name="komentarz_user" required="required" ></textarea>';
                 echo '<input class="przycisk_dodaj" type="submit" value="Dodaj">';
                 echo '</form>';

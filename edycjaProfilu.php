@@ -50,20 +50,13 @@ rysowanieGlownegoMenu();
                 if ($row['ZDJECIE'] != NULL) {
                     echo '<div class="p_avatar" style="background-image:url("data:image/jpeg;base64,' . base64_decode($row['ZDJECIE']) . '");" alt="zdjecie profilowe" />';
                 } else {
-
-                    echo '<div class="p_avatar" alt="zmienilo" style="background-image:url("img/un.jpg ")/>';
+                    echo '<div class="p_avatar" alt="zmienilo" />';
                 }
-                echo '<div class="staty" id="zdjecie">';
-                echo '<input type="file" name="zdjecie">';
-                echo '</div>';
-                //<!--  DO ZROBIENIA -->
-                //style="background-image:url("'.$row_usera['ZDJECIE'].'");"
-                //style="background-image:url("../OBRAZY/un.jpg ");"
-
                 ?>
 
             </div>
             <div class="pro_statystyki">
+                <div class="staty" id="zdjecie"><input type="file" name="zdjecie"></div>
                 <div class="staty">Statystyki</div>
                 <div class="staty">Liczba utworzonych wątków</div>
                 <div class="staty"><?php echo $row['STW_WATKI']; ?></div>

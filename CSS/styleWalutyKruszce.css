@@ -33,32 +33,26 @@ article{
 .nazwa-waluty{
      width:320px;
      height:50px;
-     background-color: rgb(220, 45, 41);
      float: left;
  }
 
 .kupno-waluty,.sprzedaz-waluty{
     width:150px;
     height:50px;
-    background-color: rgb(84, 220, 77);
     float: left;
 }
 
 .kupno-waluty{
-    background-color: rgb(84, 220, 77);
+
 }
 
 .sprzedaz-waluty{
-    background-color: rgb(148, 196, 220);
-
-
 
 }
 
 .operacje-waluty{
     width:220px;
     height:50px;
-    background-color: rgb(220, 26, 27);
     float: left;
 }
 
@@ -95,13 +89,13 @@ td:hover{
      width: 50px;
      height: 50px;
      float: left;
-     background-color: #72e7ff;
+
  }
 .nazwa-skrocona{
     width: 270px;
     height: 21px;
     float: left;
-    background-color: #91ff38;
+
     text-align: left;
     padding-top: 4px;
 }
@@ -110,7 +104,7 @@ td:hover{
     width: 270px;
     height: 21px;
     float: left;
-    background-color: #3033ff;
+
     text-align: left;
     padding-top: 4px;
 }

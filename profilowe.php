@@ -51,7 +51,7 @@ rysowanieGlownegoMenu();
                     echo '<div class="p_avatar" style="background-image:url("data:image/jpeg;base64,' . base64_decode($row['ZDJECIE']) . '");" alt="zdjecie profilowe" />';
                 } else {
 
-                    echo '<div class="p_avatar" alt="zmienilo"/>';
+                    echo '<div class="p_avatar" alt="zmienilo" />';
                 }
                 //<!--  DO ZROBIENIA -->
                 //style="background-image:url("'.$row_usera['ZDJECIE'].'");"

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 14 Gru 2020, 21:14
+-- Czas generowania: 15 Gru 2020, 22:24
 -- Wersja serwera: 10.4.11-MariaDB
 -- Wersja PHP: 7.4.2
 
@@ -69,7 +69,8 @@ INSERT INTO `komentarz` (`ID_KOMENTARZ`, `ID_WATEK`, `ID_USER`, `DATA`, `TRESC_K
 (1, 2, 4, '2020-12-14 19:32:50', 'Tak tak '),
 (2, 2, 1, '2020-12-14 19:32:50', 'Tak tak '),
 (3, 2, 1, '2020-12-14 19:32:50', 'Nie Nie '),
-(4, 2, 4, '2020-12-14 19:32:50', 'Nie nie');
+(4, 2, 4, '2020-12-14 19:32:50', 'Nie nie'),
+(5, 2, 7, '2020-12-15 20:17:36', 'Siemka');
 
 -- --------------------------------------------------------
 
@@ -108,7 +109,7 @@ INSERT INTO `kruszec` (`ID_KRUSZEC`, `NAZWA`, `CENA`, `JEDNOSTKA`) VALUES
 CREATE TABLE `user` (
   `ID_USER` int(10) NOT NULL,
   `LOGIN` varchar(20) COLLATE utf8_polish_ci NOT NULL,
-  `HASLO` char(64) COLLATE utf8_polish_ci NOT NULL,
+  `HASLO` char(255) COLLATE utf8_polish_ci NOT NULL,
   `IMIE` varchar(50) COLLATE utf8_polish_ci NOT NULL,
   `NAZWISKO` varchar(50) COLLATE utf8_polish_ci NOT NULL,
   `EMAIL` varchar(50) COLLATE utf8_polish_ci NOT NULL,
@@ -127,8 +128,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`ID_USER`, `LOGIN`, `HASLO`, `IMIE`, `NAZWISKO`, `EMAIL`, `WIEK`, `MIASTO`, `KRAJ`, `OPIS_PROFILU`, `ZDJECIE`, `STW_WATKI`, `LICZ_KOMENTARZY`, `UPRAWNIENIA`) VALUES
-(1, 'login1', 'haslo1', 'imie1', 'nazwisko1', 'email1@wp.pl', 11, 'Białystok', 'Polska', NULL, NULL, 0, 0, 'USER'),
-(4, 'jakislogin', 'haslo1', 'imie1', 'nazwisko1', 'email@wp.pl', 11, 'Białystok', 'Polska', NULL, NULL, 0, 0, 'USER');
+(1, 'Adam', '3c6e3550e97b872da67938d34f3740f11c94102a5bfd3ddd4501820e980b5ca778c2fbe88d2695affe9a53bb5064c5a8a717360db3ecb87e2c0c74feea2f37a8', 'imie1', 'nazwisko1', 'email1@wp.pl', 11, 'Białystok', 'Polska', NULL, NULL, 0, 0, 'USER'),
+(4, 'Admin', '3c6e3550e97b872da67938d34f3740f11c94102a5bfd3ddd4501820e980b5ca778c2fbe88d2695affe9a53bb5064c5a8a717360db3ecb87e2c0c74feea2f37a8', 'imie1', 'nazwisko1', 'email@wp.pl', 11, 'Białystok', 'Polska', NULL, NULL, 0, 0, 'USER'),
+(7, 'Marek', '3c6e3550e97b872da67938d34f3740f11c94102a5bfd3ddd4501820e980b5ca778c2fbe88d2695affe9a53bb5064c5a8a717360db3ecb87e2c0c74feea2f37a8', '', '', 'markor88@wp.pl', 0, '', '', NULL, NULL, 0, 1, 'ADMIN');
 
 -- --------------------------------------------------------
 
@@ -206,8 +208,8 @@ CREATE TABLE `watek` (
 --
 
 INSERT INTO `watek` (`ID_WATEK`, `ID_USER`, `TEMAT`, `DATA`, `TRESC_WATKU`, `LICZBA_KOMENTARZY`, `ILOSC_ODWIEDZIN`) VALUES
-(2, 1, 'temattemattemat', '2020-12-11 18:41:17', 'tresctresctresctresctresctresctresctresc', 0, 11),
-(3, 1, 'temattemattemat', '2020-12-11 18:42:57', 'tresctresctresctresctresctresctresctresc', 0, 0);
+(2, 1, 'temattemattemat', '2020-12-11 18:41:17', 'tresctresctresctresctresctresctresctresc', 0, 27),
+(3, 1, 'temattemattemat', '2020-12-11 18:42:57', 'tresctresctresctresctresctresctresctresc', 0, 3);
 
 -- --------------------------------------------------------
 
@@ -292,7 +294,7 @@ ALTER TABLE `artykul`
 -- AUTO_INCREMENT dla tabeli `komentarz`
 --
 ALTER TABLE `komentarz`
-  MODIFY `ID_KOMENTARZ` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID_KOMENTARZ` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT dla tabeli `kruszec`
@@ -304,7 +306,7 @@ ALTER TABLE `kruszec`
 -- AUTO_INCREMENT dla tabeli `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID_USER` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID_USER` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT dla tabeli `waluta`

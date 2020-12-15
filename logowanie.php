@@ -6,7 +6,7 @@ if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true))
   header('Location: index.php');
   exit();
 }
-// to sprawdza czy uzytkownik jest zalogowany i jesli jest przeżyci i wejdzie na srrone z logowaniem przerzuci go zpowrotem na usera
+
 ?>
 <!DOCTYPE HTML>
 <html>

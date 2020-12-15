@@ -45,14 +45,19 @@ rysowanieGlownegoMenu();
 
     <form method="post" enctype="multipart/form-data">
             <div class="lewy_szcz">
+                <div class="staty">Zdjecie:</div>
                 <div class="staty">Imie:</div>
                 <div class="staty">Nazwisko:</div>
                 <div class="staty">Email:</div>
                 <div class="staty">Miasto:</div>
                 <div class="staty">Wiek:</div>
                 <div class="staty">Kraj:</div>
+                <div class="staty">Opis profilu:</div>
             </div>
             <div class="prawy_szcz">
+                <div class="staty" id="zdjecie">
+                    <?php echo '<input type="file" name="zdjecie">' ?>
+                </div>
                 <div class="staty" id="imie">
                     <?php $imie = $row['IMIE'];
                     echo '<input type="text" name="imie" value="'.$imie.'">' ?>

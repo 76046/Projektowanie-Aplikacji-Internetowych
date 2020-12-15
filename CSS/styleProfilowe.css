@@ -185,6 +185,11 @@ a{
 .staty{
     margin: 0px 0px 10px 0px;
     font-family: Comic Sans MS,Impact,Arial,sans-serif;
+
+}
+
+.staty .prawy_szcz{
+    height: 23px;
 }
 
 .lewy_szcz{
@@ -334,7 +339,6 @@ textarea{
 .kom_profilowe{
     height: 80px;
     width: 80px;
-
     margin: 20px 10px 10px 10px;
     border-radius: 40px;
 }

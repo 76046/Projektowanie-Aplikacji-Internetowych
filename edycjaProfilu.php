@@ -52,7 +52,7 @@ rysowanieGlownegoMenu();
                     echo '<div class="p_avatar" style="background-image:url("data:image/jpeg;base64,' . base64_decode($row['ZDJECIE']) . '");" alt="zdjecie profilowe" />';
                 } else {
 
-                    echo '<div class="p_avatar" alt="zmienilo"/>';
+                    echo '<div class="p_avatar" alt="zmienilo" style="background-image:url("../img/un.jpg ")/>';
                 }
                 echo '<div class="staty" id="zdjecie">';
                 echo '<input type="file" name="zdjecie">';

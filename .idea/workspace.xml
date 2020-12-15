@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b66e8ea2-378a-4cec-84c3-d67acd077d7b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/styleGlowne.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleGlowne.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logowanie.php" beforeDir="false" afterPath="$PROJECT_DIR$/logowanie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/polaczeniezMySQL.php" beforeDir="false" afterPath="$PROJECT_DIR$/polaczeniezMySQL.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rejestracja.php" beforeDir="false" afterPath="$PROJECT_DIR$/rejestracja.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rysowanieMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/rysowanieMenu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zalogowanie.php" beforeDir="false" afterPath="$PROJECT_DIR$/zalogowanie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/styleProfilowe.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleProfilowe.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edycjaProfilu.php" beforeDir="false" afterPath="$PROJECT_DIR$/edycjaProfilu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profilowe.php" beforeDir="false" afterPath="$PROJECT_DIR$/profilowe.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

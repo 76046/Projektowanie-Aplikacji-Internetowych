@@ -88,7 +88,15 @@ session_start();
                 </div>
             </div>
 
-            <?php
+            <div class="slider">
+                <div class="slides">
+
+                    <input type="radio" name="radio-btn" id="radio1">
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <input type="radio" name="radio-btn" id="radio4">
+
+                    <?php
                 require_once "polaczeniezMySQL.php";
 
                 $polaczenie = @new mysqli($host,$db_user,$db_password,$db_name);
@@ -110,14 +118,6 @@ session_start();
                       while($row = mysqli_fetch_assoc($rezultat))
                       {
             ?>
-            <div class="slider">
-                <div class="slides">
-
-                    <input type="radio" name="radio-btn" id="radio1">
-                    <input type="radio" name="radio-btn" id="radio2">
-                    <input type="radio" name="radio-btn" id="radio3">
-                    <input type="radio" name="radio-btn" id="radio4">
-
                     <div class="slide first">
                         <div class="slide-img">
                             <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKUL'].'"><img src="data:image/jpeg;base64,'.base64_encode( $row['ZDJECIE_ARTYKUL'] ).'" alt="zdjecie1"/></a>;' ?>
@@ -158,6 +158,14 @@ session_start();
                             <!-- <h2>Nagłówek artykułu 4</h2> -->
                         </div>
                     </div>
+                    <?php
+                }
+                }
+                $rezultat->close();
+                }
+                $polaczenie->close();
+
+            ?>
 
                     <div class="navigation-auto">
                         <div class="auto-btn1"></div>
@@ -176,14 +184,6 @@ session_start();
                 </div>
 
             </div>
-            <?php
-                }
-                }
-                $rezultat->close();
-                }
-                $polaczenie->close();
-
-            ?>
 
             <div class="nagrody">
                 <div class="nagrody-tytul">

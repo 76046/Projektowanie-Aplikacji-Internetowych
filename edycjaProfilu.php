@@ -1,13 +1,13 @@
 <?php
 session_start();
 
-require_once "polaczeniezMySQL.php";
+require_once "PolaczeniezMySQL.php";
 
 $polaczenie = @new mysqli($host,$db_user,$db_password,$db_name);
 
 if($polaczenie->connect_errno!=0)
 {
-    echo "Error: ".$polaczenie->connect_errno;
+    echo "Error: ".$polaczenie->connect_errno;//." Opis ".$polaczenie->connect_error;
 }
 else
 {
@@ -43,21 +43,44 @@ rysowanieGlownegoMenu();
 <main>
     <article class="artykol">
 
-    <form method="post" enctype="multipart/form-data">
-            <div class="lewy_szcz">
-                <div class="staty">Zdjecie:</div>
-                <div class="staty">Imie:</div>
-                <div class="staty">Nazwisko:</div>
-                <div class="staty">Email:</div>
-                <div class="staty">Miasto:</div>
-                <div class="staty">Wiek:</div>
-                <div class="staty">Kraj:</div>
-                <div class="staty">Opis profilu:</div>
-            </div>
-            <div class="prawy_szcz">
+        <form method="post" enctype="multipart/form-data">
+        <div class="lewybaner">
+            <div class="pro_avatar">
+
+                <?php
+                if ($row['ZDJECIE'] != NULL) {
+                    echo '<div class="p_avatar" style="background-image:url("data:image/jpeg;base64,' . base64_decode($row['ZDJECIE']) . '");" alt="zdjecie profilowe" />';
+                } else {
+
+                    echo '<div class="p_avatar" alt="zmienilo"/>';
+                }
                 <div class="staty" id="zdjecie">
                     <?php echo '<input type="file" name="zdjecie">' ?>
                 </div>
+                //<!--  DO ZROBIENIA -->
+                //style="background-image:url("'.$row_usera['ZDJECIE'].'");"
+                //style="background-image:url("../OBRAZY/un.jpg ");"
+
+                ?>
+
+            </div>
+        </div>
+        </div>
+        <div class="prawybaner">
+            <div class="pro_nicname">
+
+            </div>
+            <div class="pro_szczegolowe">
+                <div class="lewy_szcz">
+                    <div class="staty">Imie:</div>
+                    <div class="staty">Nazwisko:</div>
+                    <div class="staty">Email:</div>
+                    <div class="staty">Miasto:</div>
+                    <div class="staty">Wiek:</div>
+                    <div class="staty">Kraj:</div>
+                    <div class="staty">Opis:</div>
+                </div>
+                <div class="prawy_szcz">
                 <div class="staty" id="imie">
                     <?php $imie = $row['IMIE'];
                     echo '<input type="text" name="imie" value="'.$imie.'">' ?>
@@ -84,12 +107,12 @@ rysowanieGlownegoMenu();
                 </div>
                 <div class="staty" id="opis">
                     <?php $opisProfilu = $row['OPIS_PROFILU'];
-                    echo '<input type="text" name="imie" value="'.$opisProfilu.'">' ?>
+                    echo '<input type="textarea" name="imie" value="'.$opisProfilu.'">' ?>
                 </div>
             </div>
 
             <a href="profilowe.php"><button type="submit">Wprowadź zmiany</button></a>
-    </form>
+            </form>
 
     </article>
     <?php

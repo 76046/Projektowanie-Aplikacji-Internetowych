@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once "PolaczeniezMySQL.php";
+require_once "polaczeniezMySQL.php";
 
 $polaczenie = @new mysqli($host,$db_user,$db_password,$db_name);
 
@@ -53,9 +53,7 @@ rysowanieGlownegoMenu();
 
                     echo '<div class="p_avatar" alt="zmienilo" />';
                 }
-                //<!--  DO ZROBIENIA -->
-                //style="background-image:url("'.$row_usera['ZDJECIE'].'");"
-                //style="background-image:url("../OBRAZY/un.jpg ");"
+
 
                 ?>
 

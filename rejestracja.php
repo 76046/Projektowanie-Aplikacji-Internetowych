@@ -28,7 +28,6 @@
   $email=$_POST['email'];
   $emailb = filter_var($email,FILTER_SANITIZE_EMAIL);
 
-
   if((filter_var($emailb,FILTER_VALIDATE_EMAIL)==false) || ($email != $emailb))
   {
     $wszystko_ok = false;
@@ -66,9 +65,7 @@
   $sekret = "6LfZrQcaAAAAAGVAYwhAzxPxGTdRjqxnNicGUi5K";
 
   $sprawdz = file_get_contents('https://google.com/recaptcha/api/siteverify?secret='.$sekret.'&response='.$_POST['g-recaptcha-response']);
-
   $odp = json_decode($sprawdz);
-
   if($odp->success==false)
   {
     $wszystko_ok==false;
@@ -112,7 +109,6 @@ mysqli_report(MYSQLI_REPORT_STRICT);
             $wszystko_ok = false;
             $_SESSION['e_email']="Istnieje już konto przypisane do tego adresu !";
           }
-
           //Sprawdzenie loginu ------------------------------------------------
           $rezultat = $polaczenie->query("SELECT ID_USER FROM user WHERE EMAIL = '$nick'");
 
@@ -124,9 +120,7 @@ mysqli_report(MYSQLI_REPORT_STRICT);
           {
             $wszystko_ok = false;
             $_SESSION['e_nick']="Istnieje już konto z takim Loginem !";
-
           }
-
           //jesli wszystko jest ok ---------------------------------------------------
 
             if($wszystko_ok==true)
@@ -140,20 +134,14 @@ mysqli_report(MYSQLI_REPORT_STRICT);
               {
                 throw new Exception($polaczenie->error);
               }
-
             }
-
-
           $polaczenie->close();
         }
-
-
       }
       catch (Exception $e)
       {
         echo 'Błąd serwera Zapraszamy za chwilę !';
-
-        echo 'informacja deweloperska: '.$e;
+        //echo 'informacja deweloperska: '.$e;
       }
 
 }

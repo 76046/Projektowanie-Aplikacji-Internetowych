@@ -107,20 +107,20 @@ rysowanieGlownegoMenu();
             {
                 echo '<div class="kom_kom">';
 
-                if(isset($_POST['komentarz_user'])&& strlen($_POST['komentarz_user'])<=2000)
+                if(isset($_POST['komentarz_watek'])&& strlen($_POST['komentarz_watek'])<=2000)
                 {
                     echo 'Skomentuj: max 2000 znaków: ';
 
                     // dodanie do bazy komentarza
                     $id_watku = $_GET['id'];
                     $id_zalogowanego = $_SESSION['id_usera_zalog'];
-                    $tresc = $_POST['komentarz_user'];
+                    $tresc = $_POST['komentarz_watek'];
 
 
                     if($polaczenie->query("INSERT INTO `komentarz` (`ID_WATEK`,`ID_USER`,`TRESC_KOMENTARZA`) VALUES ('$id_watku','$id_zalogowanego','$tresc');"))
                     {
                         echo ' ';
-                        $_POST['komentarz_user']=0;
+                        $_POST['komentarz_watek']=0;
 
                         $row_usera = mysqli_fetch_array($polaczenie->query("SELECT * FROM user WHERE ID_USER=".$_SESSION['id_usera_zalog']));
                         $liczba_komentarzy = $row_usera['LICZ_KOMENTARZY'];
@@ -141,7 +141,7 @@ rysowanieGlownegoMenu();
                     }
 
                 }
-                elseif (isset($_POST['komentarz_user'])&& strlen($_POST['komentarz_user'])>2000)
+                elseif (isset($_POST['komentarz_watek'])&& strlen($_POST['komentarz_watek'])>2000)
                 {
                 echo 'Wpisany przez ciebie komentarz jest za długi ( max 2000 znaków)';
                 }
@@ -151,8 +151,8 @@ rysowanieGlownegoMenu();
                 }
 
                 echo '</div>';
-                echo '<form method="post" action="watek.php?id='.$_GET[''].'">';
-                echo '<textarea name="komentarz_user" required="required" ></textarea>';
+                echo '<form method="post" action="watek.php?id='.$_GET['id'].'">';
+                echo '<textarea name="komentarz_watek" required="required" ></textarea>';
                 echo '<input class="przycisk_dodaj" type="submit" value="Dodaj">';
                 echo '</form>';
             }
@@ -165,9 +165,9 @@ rysowanieGlownegoMenu();
         ?>
 
         <?php
-        $row_komentarze_profil1 = $polaczenie->query("SELECT * FROM komentarz WHERE ID_WATEK=".$_GET['id']);
-        //var_dump($row_komentarze_profil);
-        $row_pom = mysqli_fetch_array($row_komentarze_profil1);
+        $row_komentarze_wstep = $polaczenie->query("SELECT * FROM komentarz WHERE ID_WATEK=".$_GET['id']);
+        //var_dump($row_komentarze_watku);
+        $row_pom = mysqli_fetch_array($row_komentarze_wstep);
         echo'<div class="kom_kom">';
         if($row_pom==NULL){
             echo    '<center>Skomentuj jako pierwszy !</center>';
@@ -175,13 +175,13 @@ rysowanieGlownegoMenu();
             echo    'Komentarze: ';
         }
         echo '</div>';
-        $row_komentarze_profil1->close();
+        $row_komentarze_wstep->close();
 
 
 
-        $row_komentarze_profil = $polaczenie->query("SELECT * FROM komentarz WHERE ID_WATEK=".$_GET['id']);
+        $row_komentarze_watku = $polaczenie->query("SELECT * FROM komentarz WHERE ID_WATEK=".$_GET['id']);
 
-        while($row_komentarz = mysqli_fetch_array($row_komentarze_profil))
+        while($row_komentarz = mysqli_fetch_array($row_komentarze_watku))
         {
         $row_usera = mysqli_fetch_array($wyciagniecie_kom_usera = $polaczenie->query("SELECT * FROM user WHERE ID_USER=".$row_komentarz['ID_USER']));
         //var_dump($row_usera);
@@ -217,14 +217,13 @@ rysowanieGlownegoMenu();
 
             <div class="licznik"><?php
 
-
                 ?>
             </div>
             <?php
             if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true))
             {
-                echo '<button type="button" class="plus_button">+</button></a>';
-                echo '<button type="button" class="minus_button">-</button></a>';
+                //echo '<button type="button" class="plus_button">+</button></a>';
+                //echo '<button type="button" class="minus_button">-</button></a>';
             }
             ?>
         </div>
@@ -237,7 +236,7 @@ rysowanieGlownegoMenu();
             <?php
             if((isset($_SESSION['admin']))&&($_SESSION['admin']==true)){
                 echo '<div class="kom_adminpanel2">';
-                echo '<a href="admin.php?idkom='.$row_komentarz['ID_KOMENTARZA'].'&add='.$_GET['user'].'&w=u"><button type="button" class="del_button">Usuń</button></a>';
+                echo '<button type="button" class="del_button">Usuń</button></a>';
                 echo '</div>';
             } else {
                 echo '<div class="kom_adminpanel2">';
@@ -250,7 +249,7 @@ rysowanieGlownegoMenu();
     <?php
     $wyciagniecie_kom_usera->close();
     }
-    $row_komentarze_profil->close();
+    $row_komentarze_watku->close();
     $polaczenie->close();
     ?>
     <!-- jeden komentarz -->

@@ -20,7 +20,6 @@ if($polaczenie->connect_errno!=0)
 }
 else
 {
-
   $login=$_POST['User'];
   $haslo=$_POST['Password'];
 
@@ -66,7 +65,7 @@ mysqli_real_escape_string($polaczenie,$login))))
         else {
           $_SESSION['BladLogowania'] = true;
           echo "nie weszlo1";
-          //header('Location: logowanie.php');
+          header('Location: logowanie.php');
         }
 
     }
@@ -74,7 +73,7 @@ mysqli_real_escape_string($polaczenie,$login))))
     {
       $_SESSION['BladLogowania'] = true;
       echo "nie weszlo2";
-      //header('Location: logowanie.php');
+      header('Location: logowanie.php');
     }
 
   }

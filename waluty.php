@@ -117,10 +117,7 @@ rysowanieGlownegoMenu();
                     ?>
                 </table>
         </section>
-
     </article>
-
-
 </main>
 <?php
 include_once('rysowanieStopki.php');

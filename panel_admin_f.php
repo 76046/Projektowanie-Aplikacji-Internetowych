@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 ?>
 <!DOCTYPE HTML>
@@ -91,31 +91,32 @@ rysowanieGlownegoMenu();
                         <td class="liczba_odwiedzin"></td>
                         <td class="panel_admin">
 
-                            <a><button type="button" class="mute_glowna" name="butt_glowna" method="post">Glow</button></a>
+                            <a><button type="button" class="mute_glowna" name="butt_glowna" method="post">G</button></a>
 
-                            <a><button type="button" class="mute_glowna" name="butt_glowna" method="post">Pocz</button></a>
+                            <a><button type="button" class="mute_glowna" name="butt_glowna" method="post">P</button></a>
 
-                            <a><button type="button" class="ban_button" name="butt_ban" method="post">UiB</button></a>
 
-                            <a ><button type="button" class="del_button" name="butt_del" method="post">Usu</button></a>
+                            <a><button type="button" class="ban_button" name="butt_ban" method="post">B</button></a>
+
+                            <a ><button type="button" class="del_button" name="butt_del" method="post">X</button></a>
                         </td>
 
                     </tr>
                     <tr class="codrugi">
                         <td class="ID"></td>
                         <td class="uzytkownik_wst"></td>
-                        <td class="miejsce_mema"></td>
-                        <td class="Lkom"></td>
-                        <td class="Padmin">
+                        <td class="czas_wstawienia"></td>
+                        <td class="liczba_odwiedzin"></td>
+                        <td class="panel_admin">
 
-                            <a><button type="button" class="mute_glowna" name="butt_glowna" method="post">Glow</button></a>
+                            <a><button type="button" class="mute_glowna" name="butt_glowna" method="post">G</button></a>
 
-                            <a><button type="button" class="mute_glowna" name="butt_glowna" method="post">Pocz</button></a>
+                            <a><button type="button" class="mute_glowna" name="butt_glowna" method="post">P</button></a>
 
 
-                            <a><button type="button" class="ban_button" name="butt_ban" method="post">UiB</button></a>
+                            <a><button type="button" class="ban_button" name="butt_ban" method="post">B</button></a>
 
-                            <a ><button type="button" class="del_button" name="butt_del" method="post">Usu</button></a>
+                            <a ><button type="button" class="del_button" name="butt_del" method="post">X</button></a>
 
                         </td>
                     </tr>

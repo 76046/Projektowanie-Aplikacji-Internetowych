@@ -3,10 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="b66e8ea2-378a-4cec-84c3-d67acd077d7b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/styleWalutyKruszce.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleWalutyKruszce.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/styleWatek.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleWatek.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel_admin_a.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel_admin_a.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel_admin_f.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel_admin_f.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel_admin_u.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel_admin_u.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel_admin_z.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel_admin_z.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polaczeniezMySQL.php" beforeDir="false" afterPath="$PROJECT_DIR$/polaczeniezMySQL.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profilowe.php" beforeDir="false" afterPath="$PROJECT_DIR$/profilowe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rejestracja.php" beforeDir="false" afterPath="$PROJECT_DIR$/rejestracja.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rysowanieMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/rysowanieMenu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rysowanieStopki.php" beforeDir="false" afterPath="$PROJECT_DIR$/rysowanieStopki.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/waluty.php" beforeDir="false" afterPath="$PROJECT_DIR$/waluty.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/watek.php" beforeDir="false" afterPath="$PROJECT_DIR$/watek.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wylogowanie.php" beforeDir="false" afterPath="$PROJECT_DIR$/wylogowanie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zalogowanie.php" beforeDir="false" afterPath="$PROJECT_DIR$/zalogowanie.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

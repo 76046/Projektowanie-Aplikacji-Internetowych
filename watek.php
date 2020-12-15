@@ -52,7 +52,14 @@ rysowanieGlownegoMenu();
                 <div class="wiadomosc-profil">
                     <?php $row_autor = mysqli_fetch_array($wyciagniecie_danych_autora = $polaczenie->query("SELECT * FROM user WHERE ID_USER=" . $row['ID_USER'])); ?>
                     <div class="awatar">
-                        <?php echo '<img src="data:image/jpeg;base64,' . base64_decode($row_autor['ZDJECIE']) . '" alt="zdjecie"/>;' ?>
+                        <?php
+                        if($row_autor['ZDJECIE']!=NULL)
+                        {
+                            echo '<img src="data:image/jpeg;base64,' . base64_decode($row_autor['ZDJECIE']) . '" alt="zdjecie"/>;';
+                        }else {
+
+                        }
+                        ?>
                     </div>
                     <div class="nickname">
                         <?php echo '<a href="profilowe.php?user=' . $row['ID_USER'] . '"><k style=" font-weight: 700;">' . $row_autor['LOGIN'] . '</k></a>'; ?>
@@ -144,7 +151,7 @@ rysowanieGlownegoMenu();
                 }
 
                 echo '</div>';
-                echo '<form method="post" action="watek.php?id='.$_GET['id'].'">';
+                echo '<form method="post" action="watek.php?id='.$_GET[''].'">';
                 echo '<textarea name="komentarz_user" required="required" ></textarea>';
                 echo '<input class="przycisk_dodaj" type="submit" value="Dodaj">';
                 echo '</form>';

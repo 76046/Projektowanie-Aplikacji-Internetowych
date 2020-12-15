@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b66e8ea2-378a-4cec-84c3-d67acd077d7b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/styleProfilowe.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleProfilowe.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSS/styleWalutyKruszce.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleWalutyKruszce.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edycjaProfilu.php" beforeDir="false" afterPath="$PROJECT_DIR$/edycjaProfilu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profilowe.php" beforeDir="false" afterPath="$PROJECT_DIR$/profilowe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/styleWatek.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleWatek.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/waluty.php" beforeDir="false" afterPath="$PROJECT_DIR$/waluty.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/watek.php" beforeDir="false" afterPath="$PROJECT_DIR$/watek.php" afterDir="false" />
     </list>

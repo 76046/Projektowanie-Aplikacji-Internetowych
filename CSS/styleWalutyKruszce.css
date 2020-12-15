@@ -76,7 +76,9 @@ th{
     text-align: center;
 }
 tr.codrugi{
-    background-color: #8e8787;
+    background-color: #768e0a;
+    border-bottom: 2px solid #999;
+    border-top: 1px solid #999;
 }
 tr:hover{
     background-color: #5c6060;

@@ -58,7 +58,7 @@ rysowanieGlownegoMenu();
                         if(($iterator%2)==0)
                         {
                     ?>
-                    <tr class="co-drugi">
+                    <tr>
                         <td class="nazwa-waluty">
                             <div class="flaga">
                                 <?php echo '<img src="data:image/jpeg;base64,'.base64_decode($row['FLAGA']).'" alt="flaga"/>;' ?>
@@ -84,27 +84,27 @@ rysowanieGlownegoMenu();
                         else
                         {
                         ?>
-                            <tr>
-                                <td class="nazwa-waluty">
-                                    <div class="flaga">
-                                        <?php echo '<img src="data:image/jpeg;base64,'.base64_decode($row['FLAGA']).'" alt="flaga"/>;' ?>
-                                    </div>
-                                    <div class="nazwa-skrocona">
-                                        <?php echo $row['KOD_WALUTA']; ?>
-                                    </div>
-                                    <div class="nazwa-calkowita">
-                                        <?php echo $row['NAZWA']; ?>
-                                    </div>
-                                </td>
-                                <td class="kupno-waluty">
-                                    <?php echo $row['KUPNO']; ?>
-                                </td>
-                                <td class="sprzedaz-waluty">
-                                    <?php echo $row['SPRZEDAZ']; ?>
-                                </td>
-                                <td class="operacje-waluty">
-                                </td>
-                            </tr>
+                    <tr class="co-drugi">
+                        <td class="nazwa-waluty">
+                            <div class="flaga">
+                                <?php echo '<img src="data:image/jpeg;base64,'.base64_decode($row['FLAGA']).'" alt="flaga"/>;' ?>
+                            </div>
+                            <div class="nazwa-skrocona">
+                                <?php echo $row['KOD_WALUTA']; ?>
+                            </div>
+                            <div class="nazwa-calkowita">
+                                <?php echo $row['NAZWA']; ?>
+                            </div>
+                        </td>
+                        <td class="kupno-waluty">
+                            <?php echo $row['KUPNO']; ?>
+                        </td>
+                        <td class="sprzedaz-waluty">
+                            <?php echo $row['SPRZEDAZ']; ?>
+                        </td>
+                        <td class="operacje-waluty">
+                        </td>
+                    </tr>
 
                         <?php
                         }

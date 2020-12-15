@@ -47,7 +47,7 @@ session_start();
                 <article class="artykul">
                     <div class="glowny-kontener-artykulu">
                         <div class="tytul-watku">
-                            <?php echo '<a href="watek.php?id='.$row['ID_WATEK'].'"  target=" blank" >'.$row['TEMAT'].'</a>'; ?>
+                            <?php echo '<a href="watek.php?id='.$row['ID_WATEK'].'">'.$row['TEMAT'].'</a>'; ?>
 
                         </div>
                         <div class="ilosc-odwiedzin">
@@ -57,7 +57,7 @@ session_start();
                         <div class="autor">
                             <?php 
                                 $row_autor = mysqli_fetch_array($wyciagniecie_nicku_autora = $polaczenie->query("SELECT * FROM user WHERE ID_USER=".$row['ID_USER']));
-                                echo '<a href="profilowe.php?user='.$row['ID_USER'].'" target=" blank"><k style=" font-weight: 700;">'.$row_autor['LOGIN'].'</k></a>';
+                                echo '<a href="profilowe.php?user='.$row['ID_USER'].'"><k style=" font-weight: 700;">'.$row_autor['LOGIN'].'</k></a>';
                             ?>
 
                         </div>

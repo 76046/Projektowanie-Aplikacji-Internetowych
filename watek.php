@@ -52,10 +52,10 @@ rysowanieGlownegoMenu();
                 <div class="wiadomosc-profil">
                     <?php $row_autor = mysqli_fetch_array($wyciagniecie_danych_autora = $polaczenie->query("SELECT * FROM user WHERE ID_USER=" . $row['ID_USER'])); ?>
                     <div class="awatar">
-                        <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($row_autor['ZDJECIE']) . '" alt="zdjecie"/>;' ?>
+                        <?php echo '<img src="data:image/jpeg;base64,' . base64_decode($row_autor['ZDJECIE']) . '" alt="zdjecie"/>;' ?>
                     </div>
                     <div class="nickname">
-                        <?php echo '<a href="profilowe.php?user=' . $row['ID_USER'] . '" target=" blank"><k style=" font-weight: 700;">' . $row_autor['LOGIN'] . '</k></a>'; ?>
+                        <?php echo '<a href="profilowe.php?user=' . $row['ID_USER'] . '"><k style=" font-weight: 700;">' . $row_autor['LOGIN'] . '</k></a>'; ?>
                     </div>
                 </div>
                 <div class="wiadomosc-tresc">
@@ -186,7 +186,7 @@ rysowanieGlownegoMenu();
                 <?php
                 if($row_usera['ZDJECIE']!=NULL)
                 {
-                    echo '<div class="kom_profilowe" style="background-image:url("data:image/jpeg;base64,'.base64_encode( $row_usera['ZDJECIE'] ).'");" alt="zdjecie profilowe" />';
+                    echo '<div class="kom_profilowe" style="background-image:url("data:image/jpeg;base64,'.base64_decode( $row_usera['ZDJECIE'] ).'");" alt="zdjecie profilowe" />';
                 }else {
 
                     echo '<div class="kom_profilowe" alt="zdjecie b" />';
@@ -225,12 +225,12 @@ rysowanieGlownegoMenu();
             <div class="kom_adminpanel1">
             </div>
             <div class="kom_nickdzien">
-                <?php echo $row_komentarz['DATA'].' przez <a href="profilowe.php?user='.$row_usera['ID_USER'].'" target=" blank"><k style=" font-weight: 700;">'.$row_usera['LOGIN'].'</k></a>'; ?>
+                <?php echo $row_komentarz['DATA'].' przez <a href="profilowe.php?user='.$row_usera['ID_USER'].'"><k style=" font-weight: 700;">'.$row_usera['LOGIN'].'</k></a>'; ?>
             </div>
             <?php
             if((isset($_SESSION['admin']))&&($_SESSION['admin']==true)){
                 echo '<div class="kom_adminpanel2">';
-                echo '<a href="admin.php?idkom='.$row_komentarz['ID_KOMENTARZA'].'&add='.$_GET['user'].'&w=u" target=" blank"><button type="button" class="del_button">Usuń</button></a>';
+                echo '<a href="admin.php?idkom='.$row_komentarz['ID_KOMENTARZA'].'&add='.$_GET['user'].'&w=u"><button type="button" class="del_button">Usuń</button></a>';
                 echo '</div>';
             } else {
                 echo '<div class="kom_adminpanel2">';

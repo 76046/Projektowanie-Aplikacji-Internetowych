@@ -125,11 +125,12 @@ rysowanieGlownegoMenu();
 
     </article>
 
-    <?php
+
+</main>
+<?php
 include_once('rysowanieStopki.php');
 rysowanieStopki();
 ?>
-</main>
 
 
 </body>

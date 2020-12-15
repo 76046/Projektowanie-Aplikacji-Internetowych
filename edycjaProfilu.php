@@ -7,7 +7,7 @@ $polaczenie = @new mysqli($host,$db_user,$db_password,$db_name);
 
 if($polaczenie->connect_errno!=0)
 {
-    echo "Error: ".$polaczenie->connect_errno;//." Opis ".$polaczenie->connect_error;
+    echo "Error: ".$polaczenie->connect_errno;
 }
 else
 {
@@ -48,7 +48,7 @@ rysowanieGlownegoMenu();
 
                 <?php
                 if ($row['ZDJECIE'] != NULL) {
-                    echo '<div class="p_avatar" style="background-image:url("data:image/jpeg;base64,' . base64_decode($row['ZDJECIE']) . '");" alt="zdjecie profilowe" />';
+                    echo '<input type="file" name="zdjecie">';
                 } else {
 
                     echo '<div class="p_avatar" alt="zmienilo"/>';
@@ -60,14 +60,7 @@ rysowanieGlownegoMenu();
                 ?>
 
             </div>
-            <div class="pro_statystyki">
-                <div class="staty">Statystyki</div>
-                <div class="staty">Liczba utworzonych wątków</div>
-                <div class="staty"><?php echo $row['STW_WATKI']; ?></div>
-                <div class="staty">Liczba komentarzy</div>
-                <div class="staty"><?php echo $row['LICZ_KOMENTARZY']; ?></div>
 
-            </div>
         </div>
         </div>
         <div class="prawybaner">
@@ -84,17 +77,39 @@ rysowanieGlownegoMenu();
                     <div class="staty">Kraj:</div>
                 </div>
                 <div class="prawy_szcz">
-                    <div class="staty" id="imie"><?php echo $row['IMIE']; ?></div>
-                    <div class="staty" id="nazwisko"><?php echo $row['NAZWISKO']; ?></div>
-                    <div class="staty" id="email"><?php echo $row['EMAIL']; ?></div>
-                    <div class="staty" id="miasto"><?php echo $row['MIASTO']; ?></div>
-                    <div class="staty" id="wiek"><?php echo $row['WIEK']; ?></div>
-                    <div class="staty" id="kraj"><?php echo $row['KRAJ']; ?></div>
+                <?php ?>
+                    <div class="staty" id="imie">
+                    <?php $imie = $row['IMIE'];
+                    echo '<input type="text" name="imie" value="'.$imie.'">' ?>
+                    </div>
+                    <div class="staty" id="nazwisko">
+                    <?php $nazwisko = $row['NAZWISKO'];
+                    echo '<input type="text" name="imie" value="'.$nazwisko.'">' ?>
+                    </div>
+                    <div class="staty" id="email">
+                    <?php $email = $row['EMAIL'];
+                    echo '<input type="text" name="imie" value="'.$email.'">' ?>
+                    </div>
+                    <div class="staty" id="miasto">
+                    <?php $miasto = $row['MIASTO'];
+                    echo '<input type="text" name="imie" value="'.$miasto.'">' ?>
+                    </div>
+                    <div class="staty" id="wiek">
+                    <?php $wiek = $row['WIEK'];
+                    echo '<input type="text" name="imie" value="'.$wiek.'">' ?>
+                    </div>
+                    <div class="staty" id="kraj">
+                    <?php $kraj = $row['KRAJ'];
+                    echo '<input type="text" name="imie" value="'.$kraj.'">' ?>
+                    </div>
                 </div>
                 <div class="o_sobie">Coś o sobie:</div>
-                <div class="staty_opis"><?php echo $row['OPIS_PROFILU']; ?></div>
+                <div class="staty_opis">
+                <?php $opisProfilu = $row['OPIS_PROFILU'];
+                echo '<input type="text" name="imie" value="'.$opisProfilu.'">' ?>
+                </div>
             </div>
-            <div class="edycjaProfilu"><a href="edycjaProfilu.php"><input type="submit" value="Edytuj profil" name="edytuj_profil"></a></div>
+            <div class="edycjaProfilu"><a href="profilowe.php"><input type="submit" value="Wprowadź zmiany" name="wprowadz_zmiany"></a></div>
         </div>
         <div class="koniec"></div>
 
@@ -117,4 +132,3 @@ rysowanieStopki();
 
 </body>
 </html>
-

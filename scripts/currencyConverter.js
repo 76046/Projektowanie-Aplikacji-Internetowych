@@ -2,7 +2,7 @@ const from = document.getElementById("from");
 const to = document.getElementById("to");
 const fromAmount = document.getElementById("fromAmount");
 const toAmount = document.getElementById("toAmount");
-const API_URL = "https://api.exchangeratesapi.io/latest";
+const API_URL = "https://api.exchangeratesapi.io/latest?base=PLN";
 let html = '';
             
 async function currency(){

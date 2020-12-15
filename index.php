@@ -46,14 +46,14 @@ session_start();
                         </div>
                     </div>
                     <div class="transakcja-prawa">
-                        <img src="" alt="zdjęcie">
+                        <img src="img/waluty/waluty.jpg" alt="zdjęcie">
                     </div>
                     <div style="clear: both;"></div>
                 </div>
                 <div class="benefity">
                     <div class="benefit1">
                         <div class="benefit1-img">
-                            <img src="" alt="ikonka1">
+                            <img src="img/benefity/hands.png" alt="ikonka1">
                         </div>
                         <div class="benefit1-naglowek">
                             <h3>Zaufanie</h3>
@@ -64,7 +64,7 @@ session_start();
                     </div> 
                     <div class="benefit2">
                         <div class="benefit2-img">
-                            <img src="" alt="ikonka2">
+                            <img src="img/benefity/tarcza.jpg" alt="ikonka2">
                         </div>
                         <div class="benefit2-naglowek">
                             <h3>Bezpieczeństwo</h3>
@@ -75,7 +75,7 @@ session_start();
                     </div>
                     <div class="benefit3">
                         <div class="benefit3-img">
-                            <img src="" alt="ikonka3">
+                            <img src="img/benefity/star.png" alt="ikonka3">
                         </div>
                         <div class="benefit3-naglowek">
                             <h3>Najlepsza jakość obsługi</h3>
@@ -192,15 +192,15 @@ session_start();
                 <div class="nagrody-dolne">
                     <div class="nagroda1">
                         <div class="nagroda1-img">
-                            <img src="" alt="obrazek1">
+                            <img src="img/nagrody/laur-konsumenta.png" alt="obrazek1">
                         </div>
                         <div class="nagroda1-info">
-                            <p>Laur Konsumenta</p> 
+                            <p>Laur Konsumenta 2021</p> 
                         </div>
                     </div>
                     <div class="nagroda2">
                         <div class="nagroda2-img">
-                            <img src="" alt="obrazek2">
+                            <img src="img/nagrody/puchar.jpg" alt="obrazek2">
                         </div>
                         <div class="nagroda2-info">
                             <p>Nagroda za najlepszą obsługę</p> 
@@ -208,7 +208,7 @@ session_start();
                     </div>
                     <div class="nagroda3">
                         <div class="nagroda3-img">
-                            <img src="" alt="obrazek3">
+                            <img src="img/nagrody/medal.jpg" alt="obrazek3">
                         </div>
                         <div class="nagroda3-info">
                             <p>Otrzymanie tytułu kantora roku</p> 

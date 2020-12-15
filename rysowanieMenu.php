@@ -6,7 +6,7 @@ function rysowanieGlownegoMenu()
     <header>
         <nav class="nawigacja-menu">
             <div class="nawigacja-czesc-gorna">
-                <div class="logo"><a href="index.php"><img src="img/logo-duze.png" alt="logo"></a></div>
+                <div class="logo"><a href="index.php"><img src="img/logo/logo-duze.png" alt="logo"></a></div>
                 <div class="logowanie-rejestracja">
                     <?php
 //                    if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true))

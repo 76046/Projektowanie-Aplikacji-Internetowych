@@ -18,14 +18,15 @@ rysowanieGlownegoMenu();
 ?>
 
 
-<main>
+<main id="main">
     <article>
         <div class="pas-tytulowy">
                 Kursy Walut
         </div>
-
+        <form method="post" enctype="multipart/form-data">
         <section class="tablica-walut">
             <div class="tabliczki">
+                <!-- <input type="submit" value="Aktualizuj kursy walut" name="aktualizuj" id="aktualizuj"> -->
                 <table>
                     <tr>
                         <th class="nazwa-waluty">Waluta</th>
@@ -64,17 +65,20 @@ rysowanieGlownegoMenu();
                                 <?php echo '<img src="data:image/jpeg;base64,'.base64_decode($row['FLAGA']).'" alt="flaga"/>;' ?>
                             </div>
                             <div class="nazwa-skrocona">
-                                <?php echo $row['KOD_WALUTA']; ?>
+                                <?php echo $row['KOD_WALUTA']; 
+                                echo '<input class="kod-input" type="hidden" name="kod" value="'.$row['KOD_WALUTA'].'">' ?>
                             </div>
                             <div class="nazwa-calkowita">
                                 <?php echo $row['NAZWA']; ?>
                             </div>
                         </td>
                         <td class="kupno-waluty">
-                            <?php echo $row['KUPNO']; ?>
+                            <input class="kupno-input" name="kupno-input" id="fromAmount" type="hidden" disabled>
+                            
                         </td>
                         <td class="sprzedaz-waluty">
-                            <?php echo $row['SPRZEDAZ']; ?>
+                            <input class="sprzedaz-input" name="sprzedaz-input" id="fromAmount" type="hidden" disabled>
+                            
                         </td>
                         <td class="operacje-waluty">
                         </td>
@@ -90,23 +94,27 @@ rysowanieGlownegoMenu();
                                 <?php echo '<img src="data:image/jpeg;base64,'.base64_decode($row['FLAGA']).'" alt="flaga"/>;' ?>
                             </div>
                             <div class="nazwa-skrocona">
-                                <?php echo $row['KOD_WALUTA']; ?>
+                                <?php echo $row['KOD_WALUTA']; 
+                                echo '<input class="kod-input" type="hidden" name="kod" value="'.$row['KOD_WALUTA'].'">' ?>
                             </div>
                             <div class="nazwa-calkowita">
                                 <?php echo $row['NAZWA']; ?>
                             </div>
                         </td>
                         <td class="kupno-waluty">
-                            <?php echo $row['KUPNO']; ?>
+                            <input class="kupno-input" name="kupno-input" id="fromAmount" type="hidden" disabled>
+                            
                         </td>
                         <td class="sprzedaz-waluty">
-                            <?php echo $row['SPRZEDAZ']; ?>
+                            <input class="sprzedaz-input" name="sprzedaz-input" id="fromAmount" type="hidden" disabled>
+                            
                         </td>
                         <td class="operacje-waluty">
                         </td>
                     </tr>
 
                         <?php
+                            
                         }
                         $iterator++;
                     }
@@ -117,6 +125,7 @@ rysowanieGlownegoMenu();
                     ?>
                 </table>
         </section>
+        </form>
     </article>
 </main>
 <?php
@@ -124,6 +133,19 @@ include_once('rysowanieStopki.php');
 rysowanieStopki();
 ?>
 
+<script type="text/javascript" src="scripts/rates.js"></script>
 
 </body>
 </html>
+<?php
+    if(isset($_POST['aktualizuj'])){
+        $kupno = $_POST['kupno-input'];
+        $sprzedaz = $_POST['sprzedaz-input'];
+        if($polaczenie->query("UPDATE waluta SET KUPNO='$kupno',SPRZEDAZ='$sprzedaz' WHERE KOD_WALUTA=".$row['KOD_WALUTA'])){
+            echo ' ';
+        }  
+        else{
+            echo $polaczenie->error;
+        }     
+    }
+?>

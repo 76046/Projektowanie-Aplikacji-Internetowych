@@ -50,6 +50,14 @@ article{
 
 }
 
+.kupno-input{
+    width: auto;
+}
+
+.sprzedaz-input{
+    width: auto;
+}
+
 .operacje-waluty{
     width:220px;
     height:50px;

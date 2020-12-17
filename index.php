@@ -124,7 +124,7 @@ session_start();
                             <!-- <img src="" alt="zdjęcie1"> -->
                         </div>                       
                         <div class="slide-naglowek">
-                            <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKUL'].'"  target=" blank" >'.$row['TEMAT'].'</a>'; ?>
+                            <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKUL'].'">'.$row['TEMAT'].'</a>'; ?>
                             <!-- <h2>Nagłówek artykułu 1</h2> -->
                         </div>
                     </div>
@@ -134,7 +134,7 @@ session_start();
                             <!-- <img src="" alt="zdjęcie2"> -->
                         </div> 
                         <div class="slide-naglowek">
-                            <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKUL'].'"  target=" blank" >'.$row['TEMAT'].'</a>'; ?>
+                            <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKUL'].'">'.$row['TEMAT'].'</a>'; ?>
                             <!-- <h2>Nagłówek artykułu 2</h2> -->
                         </div>
                     </div>
@@ -144,7 +144,7 @@ session_start();
                             <!-- <img src="" alt="zdjęcie3"> -->
                         </div> 
                         <div class="slide-naglowek">
-                            <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKUL'].'"  target=" blank" >'.$row['TEMAT'].'</a>'; ?>
+                            <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKUL'].'">'.$row['TEMAT'].'</a>'; ?>
                             <!-- <h2>Nagłówek artykułu 3</h2> -->
                         </div>
                     </div>
@@ -154,7 +154,7 @@ session_start();
                             <!-- <img src="" alt="zdjęcie4"> -->
                         </div> 
                         <div class="slide-naglowek">
-                            <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKUL'].'"  target=" blank" >'.$row['TEMAT'].'</a>'; ?>
+                            <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKUL'].'">'.$row['TEMAT'].'</a>'; ?>
                             <!-- <h2>Nagłówek artykułu 4</h2> -->
                         </div>
                     </div>

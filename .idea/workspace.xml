@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b66e8ea2-378a-4cec-84c3-d67acd077d7b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/styleDodaj_artykul.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleDodaj_artykul.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/styleForum.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleForum.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/styleGlowne.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleGlowne.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/styleLogowanie.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleLogowanie.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/stylePanelAdmina.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/stylePanelAdmina.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/styleProfilowe.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleProfilowe.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/styleRejestracja.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleRejestracja.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/styleWalutyKruszce.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleWalutyKruszce.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kruszce.php" beforeDir="false" afterPath="$PROJECT_DIR$/kruszce.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +70,8 @@
       <workItem from="1608042824937" duration="1794000" />
       <workItem from="1608046289422" duration="6000" />
       <workItem from="1608046872554" duration="10519000" />
-      <workItem from="1608074602950" duration="387000" />
+      <workItem from="1608074602950" duration="410000" />
+      <workItem from="1608103887925" duration="2213000" />
     </task>
     <servers />
   </component>
@@ -106,10 +100,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2381" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603309318351" />
-    <state x="2576" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1608074650420">
+    <state x="2528" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1608103897762">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605016640140" />
-    <state x="2576" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608074650420" />
+    <state x="2528" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608103897762" />
   </component>
 </project>

@@ -107,61 +107,48 @@ session_start();
                 }
                 else
                 {
-                    $rezultat = $polaczenie->query("SELECT * FROM artykul");
-
+                    $rezultat1 = $polaczenie->query("SELECT * FROM artykul WHERE ID_ARTYKULU='1'");
+                    $rezultat = $polaczenie->query("SELECT * FROM artykul WHERE ID_ARTYKULU>'1'");
+                    
                     if(!$rezultat)
                     {
                       throw new Exception($polaczenie->error);
                     }
                     else
                     {
-                      while($row = mysqli_fetch_assoc($rezultat))
-                      {
-            ?>
-                    <div class="slide first">
-                        <div class="slide-img">
-                            <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKUL'].'"><img src="data:image/jpeg;base64,'.base64_encode( $row['ZDJECIE_ARTYKUL'] ).'" alt="zdjecie1"/></a>;' ?>
-                            <!-- <img src="" alt="zdjęcie1"> -->
-                        </div>                       
-                        <div class="slide-naglowek">
-                            <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKUL'].'">'.$row['TEMAT'].'</a>'; ?>
-                            <!-- <h2>Nagłówek artykułu 1</h2> -->
+                        $row1 = mysqli_fetch_assoc($rezultat1); ?>
+
+                        <div class="slide first">
+                            <div class="slide-img">
+                                <?php echo '<a href="artykul.php?id='.$row1['ID_ARTYKULU'].'"><img src="data:image/jpeg;base64,'.base64_encode( $row1['ZDJECIE_ARTYKUL'] ).'" alt="zdjecie1"/></a>' ?>
+                                <!-- <img src="" alt="zdjęcie1"> -->
+                            </div>                       
+                            <div class="slide-naglowek">
+                                <?php echo '<a href="artykul.php?id='.$row1['ID_ARTYKULU'].'">'.$row1['TEMAT'].'</a>'; ?>
+                                <!-- <h2>Nagłówek artykułu 1</h2> -->
+                            </div>
                         </div>
-                    </div>
-                    <div class="slide" id="sld2">
+
+                    <?php $counter=2; 
+                    while($row = mysqli_fetch_assoc($rezultat)){?>
+                    
+                    <div class="slide">
                         <div class="slide-img">
-                            <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKUL'].'"><img src="data:image/jpeg;base64,'.base64_encode( $row['ZDJECIE_ARTYKUL'] ).'" alt="zdjecie2"/></a>;' ?>
+                            <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKULU'].'"><img src="data:image/jpeg;base64,'.base64_encode( $row['ZDJECIE_ARTYKUL'] ).'" alt="zdjecie'.$counter.'"/></a>' ?>
                             <!-- <img src="" alt="zdjęcie2"> -->
                         </div> 
                         <div class="slide-naglowek">
-                            <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKUL'].'">'.$row['TEMAT'].'</a>'; ?>
+                            <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKULU'].'">'.$row['TEMAT'].'</a>'; ?>
                             <!-- <h2>Nagłówek artykułu 2</h2> -->
                         </div>
                     </div>
-                    <div class="slide" id="sld3">
-                        <div class="slide-img">
-                            <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKUL'].'"><img src="data:image/jpeg;base64,'.base64_encode( $row['ZDJECIE_ARTYKUL'] ).'" alt="zdjecie3"/></a>;' ?>
-                            <!-- <img src="" alt="zdjęcie3"> -->
-                        </div> 
-                        <div class="slide-naglowek">
-                            <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKUL'].'">'.$row['TEMAT'].'</a>'; ?>
-                            <!-- <h2>Nagłówek artykułu 3</h2> -->
-                        </div>
-                    </div>
-                    <div class="slide" id="sld4">
-                        <div class="slide-img">
-                            <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKUL'].'"><img src="data:image/jpeg;base64,'.base64_encode( $row['ZDJECIE_ARTYKUL'] ).'" alt="zdjecie4"/></a>;' ?>
-                            <!-- <img src="" alt="zdjęcie4"> -->
-                        </div> 
-                        <div class="slide-naglowek">
-                            <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKUL'].'">'.$row['TEMAT'].'</a>'; ?>
-                            <!-- <h2>Nagłówek artykułu 4</h2> -->
-                        </div>
-                    </div>
+                    
                     <?php
+                    $counter++;
                 }
                 }
                 $rezultat->close();
+                $rezultat1->close();
                 }
                 $polaczenie->close();
 

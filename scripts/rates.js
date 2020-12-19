@@ -15,6 +15,9 @@ async function updateRates(){
         for(let i = 0; i<kupnoInput.length; i++){
             var kod = kodWaluty[i].value;
             kupnoInput[i].value = (1/rates[kod]).toFixed(2);
+            if(kupnoInput[i].value == 0.00){
+                kupnoInput[i].value = 0.01;
+            }
             sprzedazInput[i].value = (1/rates[kod]+0.05).toFixed(2);
             kupnoWaluty[i+1].innerHTML += kupnoInput[i].value;
             sprzedazWaluty[i+1].innerHTML += sprzedazInput[i].value;

@@ -62,7 +62,7 @@ rysowanieGlownegoMenu();
                     <tr>
                         <td class="nazwa-waluty">
                             <div class="flaga">
-                                <?php echo '<img src="data:image/jpeg;base64,'.base64_decode($row['FLAGA']).'" alt="flaga"/>;' ?>
+                                <?php echo '<img src="data:image/svg+xml;base64,'.$row['FLAGA'].'" alt="flaga"/>' ?>
                             </div>
                             <div class="nazwa-skrocona">
                                 <?php echo $row['KOD_WALUTA']; 
@@ -91,7 +91,7 @@ rysowanieGlownegoMenu();
                     <tr class="co-drugi">
                         <td class="nazwa-waluty">
                             <div class="flaga">
-                                <?php echo '<img src="data:image/jpeg;base64,'.base64_decode($row['FLAGA']).'" alt="flaga"/>;' ?>
+                                <?php echo '<img src="data:image/svg+xml;base64,'.$row['FLAGA'].'" alt="flaga"/>' ?>
                             </div>
                             <div class="nazwa-skrocona">
                                 <?php echo $row['KOD_WALUTA']; 

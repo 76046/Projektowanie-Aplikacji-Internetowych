@@ -75,10 +75,12 @@ else
 
                     if (isset($_POST['wybor_kontynentu'])) {
                         $value = $_POST['wybor_kontynentu'];
+                        var_dump($_POST['wybor_kontynentu']);
+                        echo '</br>';
                         if ($value == "wszystkie") {
                             $rezultat = $polaczenie->query("SELECT * FROM waluta");
                         } else {
-                            $rezultat = $polaczenie->query("SELECT * FROM waluta WHERE KONTYNENT=".$value);
+                            $rezultat = $polaczenie->query("SELECT * FROM waluta WHERE KONTYNENT='$value'");
                             echo var_dump($rezultat);
                             echo '</br>';
                             echo var_dump($value);

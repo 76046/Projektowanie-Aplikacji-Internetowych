@@ -92,7 +92,12 @@ rysowanieGlownegoMenu();
                 <div class="o_sobie">Coś o sobie:</div>
                 <div class="staty_opis"><?php echo $row['OPIS_PROFILU']; ?></div>
             </div>
+            <?php if($_SESSION['id_usera_zalog'] == $row['ID_USER'] || $_SESSION['admin'] == true){ ?>
             <div class="edycjaProfilu"><?php echo '<a href="edycjaProfilu.php?user=' . $row['ID_USER'] . '">'?><input type="submit" value="Edytuj profil"></a></div>
+            <?php } 
+            else{
+                echo ' ';
+            }?>
 
         </div>
         <div class="koniec"></div>

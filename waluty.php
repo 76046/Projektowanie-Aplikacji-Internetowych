@@ -24,6 +24,7 @@ if($polaczenie->connect_errno!=0)
 }
 else
 {
+$_POST['wybor_kontynentu'] = "wszystkie";
 ?>
 
 
@@ -42,16 +43,15 @@ else
                             <form method="post">
                                 <select name="wybor_kontynentu">
                                     <?php
-                                    echo '<option value="wszystkie">Wszystkie</option>';
+                                    echo '<option value="wszystkie"';
+                                    echo '>Wszystkie</option>';
                                     $rezultat = $polaczenie->query("SELECT DISTINCT kontynent FROM waluta");
                                     while ($row = mysqli_fetch_assoc($rezultat)) {
                                         echo '<option value="' . $row['kontynent'].'"';
-
-                                        if($_POST['wybor_kontynentu'] == $row['kontynent'])
+                                        if(isset($_POST['wybor_kontynentu'])&&$_POST['wybor_kontynentu'] == $row['kontynent'])
                                         {
                                             echo 'selected';
                                         }
-
                                         echo '>';
                                         if ($row['kontynent'] == "AM_N") {
                                             echo 'Ameryka Północna';

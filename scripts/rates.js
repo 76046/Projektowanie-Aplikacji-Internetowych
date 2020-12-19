@@ -14,11 +14,11 @@ async function updateRates(){
     // przycisk.addEventListener('click', () => {
         for(let i = 0; i<kupnoInput.length; i++){
             var kod = kodWaluty[i].value;
-            kupnoInput[i].value = (1/rates[kod]).toFixed(2);
+            kupnoInput[i].value = (1/rates[kod]).toFixed(4);
             if(kupnoInput[i].value == 0.00){
                 kupnoInput[i].value = 0.01;
             }
-            sprzedazInput[i].value = (1/rates[kod]+0.05).toFixed(2);
+            sprzedazInput[i].value = (1/rates[kod]+0.05).toFixed(4);
             kupnoWaluty[i+1].innerHTML += kupnoInput[i].value;
             sprzedazWaluty[i+1].innerHTML += sprzedazInput[i].value;
         };

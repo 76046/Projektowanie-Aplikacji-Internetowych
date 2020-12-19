@@ -92,7 +92,7 @@ rysowanieGlownegoMenu();
                 <div class="o_sobie">Coś o sobie:</div>
                 <div class="staty_opis"><?php echo $row['OPIS_PROFILU']; ?></div>
             </div>
-            <div class="edycjaProfilu"><?php echo '<a href="edycjaProfilu.php?user=' . $row['ID_USER'] . '">'?><input type="submit" value="Edytuj profil" name="edytuj_profil"></a></div>
+            <div class="edycjaProfilu"><?php echo '<a href="edycjaProfilu.php?user=' . $row['ID_USER'] . '">'?><input type="submit" value="Edytuj profil"></a></div>
 
         </div>
         <div class="koniec"></div>

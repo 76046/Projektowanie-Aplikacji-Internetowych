@@ -449,3 +449,61 @@ a{
     margin: 5px;
     height: 20px;
 }
+
+@media (max-width: 900px){
+
+    /* .nawigacja-menu{
+        height: auto;
+    }
+
+    .nawigacja-czesc-gorna{
+        height: auto;
+    }
+
+    .logo, .logowanie-rejestracja{
+        float: none;
+    }
+
+    .nawigacja-czesc-dolna{
+        height: auto;
+    }
+
+    .strona-glowna, .kurs-walut, .kurs-kruszcow, .forum{
+        float: none;
+    } */
+
+    .informacje{
+        height: 1210px;
+    }
+
+    .transakcja{
+        height: 580px;
+    }
+
+    .transakcja-lewa, .transakcja-prawa{
+        float: none;
+    }
+
+    .benefity{
+        height: 740px;
+        clear: both;
+    }
+
+    .benefit1, .benefit2, .benefit3{
+        float: none;
+    }
+
+    .nagrody{
+        height: 550px;
+        text-align: center;
+        clear:both;
+    }
+
+    .nagrody-dolne{
+        height: 420px;
+    }
+
+    .nagroda1, .nagroda2, .nagroda3{
+        float: none;
+    }
+}

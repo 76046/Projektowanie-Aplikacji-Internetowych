@@ -81,6 +81,8 @@ rysowanieGlownegoMenu();
                     <div class="staty">Kraj:</div>
                 </div>
                 <div class="prawy_szcz">
+                <?php $id = $row['ID_USER'];
+                echo '<input type="hidden" name="id" value="'.$id.'">' ?>
                 <div class="staty" id="imie">
                     <?php $imie = $row['IMIE'];
                     echo '<input type="text" name="imie" value="'.$imie.'">' ?>
@@ -120,7 +122,7 @@ rysowanieGlownegoMenu();
     </article>
     <?php
     }
-    $polaczenie->close();
+    
     }
     ?>
 
@@ -136,7 +138,8 @@ rysowanieStopki();
 </html>
 <?php
       if(isset($_POST['edytuj_profil'])){
-        $zdjecie = $_POST['zdjecie'];
+        $id = $_POST['id'];
+        //$zdjecie = $_POST['zdjecie'];
         $imie = $_POST['imie'];
         $nazwisko = $_POST['nazwisko'];
         $email = $_POST['email'];
@@ -146,11 +149,13 @@ rysowanieStopki();
         $opis = $_POST['opis'];
         //$query = "UPDATE user SET IMIE='$imie',NAZWISKO='$nazwisko', EMAIL='$email', MIASTO='$miasto', WIEK=$wiek, KRAJ='$kraj', OPIS='$opis' WHERE USER_ID=".$_GET['user'];
         // $result = mysqli_query($db, $query) or die(mysqli_error($db));
-        if($polaczenie->query("UPDATE user SET IMIE='$imie',NAZWISKO='$nazwisko', EMAIL='$email', MIASTO='$miasto', WIEK=$wiek, KRAJ='$kraj', OPIS='$opis' WHERE ID_USER=".$_GET['user'])){
-            echo ' ';
+        if($polaczenie->query("UPDATE user SET IMIE='$imie',NAZWISKO='$nazwisko', EMAIL='$email', MIASTO='$miasto', WIEK=$wiek, KRAJ='$kraj', OPIS_PROFILU='$opis' WHERE ID_USER='$id'")){
+            header('refresh : 1');
         }  
         else{
             echo $polaczenie->error;
         }     
-       }              
+       }
+
+       $polaczenie->close();              
 ?>

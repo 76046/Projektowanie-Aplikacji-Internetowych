@@ -118,7 +118,7 @@ rysowanieGlownegoMenu();
                         echo '<a href="zglos.php?watek='.$row['ID_WATEK'].'&user='.$row['ID_USER'].'"><button type="button" class="zglos_button">Zgłoś</button></a>';
                     }
                         if((isset($_SESSION['admin']))&&($_SESSION['admin']==true)){
-                            echo '<a href="admin.php?kom='.$row['ID_WATEK'].'"><button type="button" class="del_button2">Usuń</button></a>';
+                            echo '<a href="admin.php?watek='.$row['ID_WATEK'].'"><button type="button" class="del_button2">Usuń</button></a>';
                         }
                     ?>
                     </div>
@@ -298,7 +298,7 @@ rysowanieGlownegoMenu();
             <?php
             if((isset($_SESSION['admin']))&&($_SESSION['admin']==true)){
                 echo '<div class="kom_adminpanel2">';
-                echo '<a href="admin.php?kom='.$row_komentarz['ID_KOMENTARZ'].'"><button type="button" class="del_button">Usuń</button></a>';
+                echo '<a href="admin.php?komentarz='.$row_komentarz['ID_KOMENTARZ'].'"><button type="button" class="del_button">Usuń</button></a>';
                 echo '</div>';
             } else {
                 echo '<div class="kom_adminpanel2">';

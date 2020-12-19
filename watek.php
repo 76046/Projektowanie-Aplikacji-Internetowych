@@ -74,8 +74,53 @@ rysowanieGlownegoMenu();
                         <?php echo $row['TRESC_WATKU']; ?>
 
                     </div>
-                    <div class="panel-spolecznosci-admina">
+                    <div class="panel-spolecznosci-admina"><?php
 
+                    if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true))
+                    {
+                        $Czy_ocenione = mysqli_fetch_array($polaczenie->query("SELECT * FROM ocenawatek WHERE ID_WATKU=".$_GET['id']." AND ID_UZYTKOWNIKA=".$_SESSION['id_usera_zalog']));
+                        if($Czy_ocenione==NULL){
+                            echo '<a href="dodajocenew.php?user='.$_SESSION['id_usera_zalog'].'&idwatku='.$_GET['id'].'&z=m&update=n"><button type="button" class="minu_button">-</button></a>';
+                            if($row['OCENA'] < 0)
+                            {
+                                echo '<k class="licznik1">'.$row['OCENA'].'</k>';
+                            }elseif ($row['OCENA'] > 0) {
+                                echo '<k class="licznik2">'.$row['OCENA'].'</k>';
+                            }else {
+                                echo '<k class="licznik3">'.$row['OCENA'].'</k>';
+                            }
+                            echo '<a href="dodajocenew.php?user='.$_SESSION['id_usera_zalog'].'&idwatku='.$_GET['id'].'&z=p&update=n"><button type="button" class="plu_button">+</button></a>';
+                        }else{
+                            if($Czy_ocenione['WARTOSC_OCENY']=="PLUS"){
+                                echo '<a href="dodajocenew.php?user='.$_SESSION['id_usera_zalog'].'&idwatku='.$_GET['id'].'&z=m&update=y"><button type="button" class="minu_button">-</button></a>';
+                                    if($row['OCENA'] < 0)
+                                    {
+                                        echo '<k class="licznik1">'.$row['OCENA'].'</k>';
+                                    }elseif ($row['OCENA'] > 0) {
+                                        echo '<k class="licznik2">'.$row['OCENA'].'</k>';
+                                    }else {
+                                        echo '<k class="licznik3">'.$row['OCENA'].'</k>';
+                                    }
+                            }else{
+                                echo '<a href="dodajocenew.php?user='.$_SESSION['id_usera_zalog'].'&idwatku='.$_GET['id'].'&z=p&update=y"><button type="button" class="plu_button">+</button></a>';
+                                    if($row['OCENA'] < 0)
+                                    {
+                                        echo '<k class="licznik1">'.$row['OCENA'].'</k>';
+                                    }elseif ($row['OCENA'] > 0) {
+                                        echo '<k class="licznik2">'.$row['OCENA'].'</k>';
+                                    }else {
+                                        echo '<k class="licznik3">'.$row['OCENA'].'</k>';
+                                    }
+
+                                }
+
+                            }
+                        echo '<a href="zglos.php?watek='.$row['ID_WATEK'].'&user='.$row['ID_USER'].'"><button type="button" class="zglos_button">Zgłoś</button></a>';
+                    }
+                        if((isset($_SESSION['admin']))&&($_SESSION['admin']==true)){
+                            echo '<a href="admin.php?kom='.$row['ID_WATEK'].'"><button type="button" class="del_button2">Usuń</button></a>';
+                        }
+                    ?>
                     </div>
                 </div>
                 <div style="clear: both;"></div>
@@ -216,14 +261,31 @@ rysowanieGlownegoMenu();
         <div class="kom_oceny">
 
             <div class="licznik"><?php
-
+                if($row_komentarz['OCENA'] < 0)
+                {
+                    echo '<k style="color: #D20D0D; font-weight: 700; ">'.$row_komentarz['OCENA'].'</k>';
+                }elseif ($row_komentarz['OCENA'] > 0) {
+                    echo '<k style="color: #11C911; font-weight: 700;">'.$row_komentarz['OCENA'].'</k>';
+                }else {
+                    echo '<k style="color: #E9E94B; font-weight: 700;">'.$row_komentarz['OCENA'].'</k>';
+                }
                 ?>
             </div>
             <?php
             if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true))
             {
-                //echo '<button type="button" class="plus_button">+</button></a>';
-                //echo '<button type="button" class="minus_button">-</button></a>';
+                $Czy_ocenione = mysqli_fetch_array($polaczenie->query("SELECT * FROM ocenakomentarz WHERE ID_KOMENTARZA_OCENIONEGO=".$row_komentarz['ID_KOMENTARZ']." AND ID_UZYTKOWNIKA=".$_SESSION['id_usera_zalog']));
+
+                    if($Czy_ocenione==NULL){
+                        echo '<a href="dodajocenek.php?user='.$_SESSION['id_usera_zalog'].'&kom='.$row_komentarz['ID_KOMENTARZ'].'&idwatku='.$_GET['id'].'&z=p&update=n"><button type="button" class="plus_button">+</button></a>';
+                        echo '<a href="dodajocenek.php?user='.$_SESSION['id_usera_zalog'].'&kom='.$row_komentarz['ID_KOMENTARZ'].'&idwatku='.$_GET['id'].'&z=m&update=n"><button type="button" class="minus_button">-</button></a>';
+                    }else{
+                        if($Czy_ocenione['WARTOSC_OCENY']=="PLUS"){
+                            echo '<a href="dodajocenek.php?user='.$_SESSION['id_usera_zalog'].'&kom='.$row_komentarz['ID_KOMENTARZ'].'&idwatku='.$_GET['id'].'&z=m&update=y"><button type="button" class="minus_button">-</button></a>';
+                        }else{
+                            echo '<a href="dodajocenek.php?user='.$_SESSION['id_usera_zalog'].'&kom='.$row_komentarz['ID_KOMENTARZ'].'&idwatku='.$_GET['id'].'&z=p&update=y"><button type="button" class="plus_button">+</button></a>';
+                        }
+                    }
             }
             ?>
         </div>
@@ -236,10 +298,11 @@ rysowanieGlownegoMenu();
             <?php
             if((isset($_SESSION['admin']))&&($_SESSION['admin']==true)){
                 echo '<div class="kom_adminpanel2">';
-                echo '<button type="button" class="del_button">Usuń</button></a>';
+                echo '<a href="admin.php?kom='.$row_komentarz['ID_KOMENTARZ'].'"><button type="button" class="del_button">Usuń</button></a>';
                 echo '</div>';
             } else {
                 echo '<div class="kom_adminpanel2">';
+                echo '<a href="zglos.php?user='.$row_usera['ID_USER'].'&kom='.$row_komentarz['ID_KOMENTARZ'].'"><button type="button" class="zglos_button">Zgłoś</button></a>';
                 echo '</div>';
             }
 

@@ -83,7 +83,7 @@
 }
 
 .panel-spolecznosci-admina{
-    height: 20px;
+    height: 40px;
     width: 820px;
 }
 
@@ -223,3 +223,70 @@ textarea{
     background-color: #7b7977;
 
 }
+
+.plus_button,.minus_button{
+    margin: 5px 50px 0px 50px;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+
+}
+.zglos_button,.del_button2{
+    margin: 5px 25px 0px 25px;
+    text-align: center;
+    width: 60px;
+    height: 30px;
+    background-color: #9e8a23;
+    border-radius: 50px;
+    float: right;
+}
+.plus_button,.minus_button,.ban_button,.mute_button,.del_button,.del_button2,.plu_button,.minu_button{
+    border-radius: 50px;
+    transition: background .6s;
+}
+.plus_button,.plu_button{
+    background-color: #2f8424;
+}
+.minus_button,.minu_button,.ban_button{
+    background-color: #a03232;
+}
+
+.plus_button{
+    background-color: #2f8424;
+}
+.minus_button,.ban_button{
+    background-color: #a03232;
+}
+
+.del_button,.del_button2{
+    background-color: #87a032;
+}
+.ban_button:hover,.mute_button:hover,.del_button:hover,.del_button2:hover{
+    background-color:  #687d90;
+}
+
+.minu_button,.plu_button{
+    float: right;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    margin: 5px 20px 0px 20px;
+}
+
+.licznik1,.licznik2,.licznik3{
+    font-weight: 700;
+    float: right;
+    margin: 10px 10px 0px 10px;
+}
+
+.licznik1{
+    color: #D20D0D;
+}
+.licznik2{
+    color: #11C911;
+}
+.licznik3{
+    color: #E9E94B;
+}
+
+

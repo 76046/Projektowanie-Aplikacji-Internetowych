@@ -45,7 +45,14 @@ else
                                     echo '<option value="wszystkie">Wszystkie</option>';
                                     $rezultat = $polaczenie->query("SELECT DISTINCT kontynent FROM waluta");
                                     while ($row = mysqli_fetch_assoc($rezultat)) {
-                                        echo '<option value="' . $row['kontynent'] . '">';
+                                        echo '<option value="' . $row['kontynent'].'"';
+
+                                        if($_POST['wybor_kontynentu'] == $row['kontynent'])
+                                        {
+                                            echo 'selected';
+                                        }
+
+                                        echo '>';
                                         if ($row['kontynent'] == "AM_N") {
                                             echo 'Ameryka Północna';
                                         } elseif ($row['kontynent'] == "AM_S") {
@@ -75,15 +82,13 @@ else
 
                     if (isset($_POST['wybor_kontynentu'])) {
                         $value = $_POST['wybor_kontynentu'];
-                        var_dump($_POST['wybor_kontynentu']);
-                        echo '</br>';
                         if ($value == "wszystkie") {
                             $rezultat = $polaczenie->query("SELECT * FROM waluta");
                         } else {
                             $rezultat = $polaczenie->query("SELECT * FROM waluta WHERE KONTYNENT='$value'");
-                            echo var_dump($rezultat);
-                            echo '</br>';
-                            echo var_dump($value);
+//                            echo var_dump($rezultat);
+//                            echo '</br>';
+//                            echo var_dump($value);
                         }
 
                         if (!$rezultat) {

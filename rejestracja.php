@@ -110,7 +110,7 @@ mysqli_report(MYSQLI_REPORT_STRICT);
             $_SESSION['e_email']="Istnieje już konto przypisane do tego adresu !";
           }
           //Sprawdzenie loginu ------------------------------------------------
-          $rezultat = $polaczenie->query("SELECT ID_USER FROM user WHERE EMAIL = '$nick'");
+          $rezultat = $polaczenie->query("SELECT ID_USER FROM user WHERE LOGIN = '$nick'");
 
           if(!$rezultat){throw new Exception($polaczenie->error);}
 

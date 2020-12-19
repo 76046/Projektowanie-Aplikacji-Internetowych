@@ -34,7 +34,6 @@ if(!isset($_POST['wybor_kontynentu'])){
         <div class="pas-tytulowy">
             Kursy Walut
         </div>
-
         <section class="tablica-walut">
             <div class="tabliczki">
                 <!-- <input type="submit" value="Aktualizuj kursy walut" name="aktualizuj" id="aktualizuj"> -->

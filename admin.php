@@ -32,8 +32,6 @@ else
             }
             $polaczenie->query("DELETE FROM `komentarz` WHERE `ID_KOMENTARZ` =" . $_GET['komentarz']);
         }
-
-
     }
 //usuwanie watku poprzez ukrycie go
 //    if ($_GET['watek']) {

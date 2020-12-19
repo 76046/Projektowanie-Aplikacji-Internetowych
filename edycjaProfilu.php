@@ -42,11 +42,9 @@ rysowanieGlownegoMenu();
 
 <main>
     <article class="artykol">
-
     <form method="post" enctype="multipart/form-data">
         <div class="lewybaner">
             <div class="pro_avatar">
-
                 <?php
                 if ($row['ZDJECIE'] != NULL) {
                     echo '<div class="p_avatar" style="background-image:url("data:image/jpeg;base64,' . base64_decode($row['ZDJECIE']) . '");" alt="zdjecie profilowe" />';
@@ -54,7 +52,6 @@ rysowanieGlownegoMenu();
                     echo '<div class="p_avatar" alt="zmienilo" />';
                 }
                 ?>
-
             </div>
             <div class="pro_statystyki">
                 <div class="staty" id="zdjecie"><input type="file" name="zdjecie"></div>
@@ -63,13 +60,11 @@ rysowanieGlownegoMenu();
                 <div class="staty"><?php echo $row['STW_WATKI']; ?></div>
                 <div class="staty">Liczba komentarzy</div>
                 <div class="staty"><?php echo $row['LICZ_KOMENTARZY']; ?></div>
-
             </div>
         </div>
         </div>
         <div class="prawybaner">
             <div class="pro_nicname">
-
             </div>
             <div class="pro_szczegolowe">
                 <div class="lewy_szcz">
@@ -105,9 +100,7 @@ rysowanieGlownegoMenu();
                 </div>
                 <div class="staty" id="kraj">
                     <?php $kraj = $row['KRAJ'];
-
                     echo '<input type="text" name="kraj" value="'.$kraj.'">'; ?>
-
                 </div>
                 </div>
                 <div class="o_sobie">Coś o sobie:</div>
@@ -116,9 +109,7 @@ rysowanieGlownegoMenu();
                     echo '<input type="textarea" name="opis" value="'.$opisProfilu.'">'; ?>
                 </div>
             </div>
-
             <div class="edycjaProfilu"><input type="submit" value="Zapisz i wróć" name="edytuj_profil"></div>
-
         </div>
         <div class="koniec"></div>
     </form>
@@ -153,6 +144,7 @@ rysowanieStopki();
         //$query = "UPDATE user SET IMIE='$imie',NAZWISKO='$nazwisko', EMAIL='$email', MIASTO='$miasto', WIEK=$wiek, KRAJ='$kraj', OPIS='$opis' WHERE USER_ID=".$_GET['user'];
         // $result = mysqli_query($db, $query) or die(mysqli_error($db));
         if($polaczenie->query("UPDATE user SET IMIE='$imie',NAZWISKO='$nazwisko', EMAIL='$email', MIASTO='$miasto', WIEK=$wiek, KRAJ='$kraj', OPIS_PROFILU='$opis' WHERE ID_USER='$id'")){
+            $polaczenie->close();
             echo("<script>document.location.href = 'profilowe.php?user=".$row['ID_USER']."';</script>");
         }
         else{
@@ -160,5 +152,5 @@ rysowanieStopki();
         }
 
        }
-       $polaczenie->close();
+$polaczenie->close();
 ?>

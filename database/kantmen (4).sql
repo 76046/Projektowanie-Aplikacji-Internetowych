@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 17 Gru 2020, 12:08
+-- Czas generowania: 19 Gru 2020, 21:20
 -- Wersja serwera: 10.4.11-MariaDB
 -- Wersja PHP: 7.4.2
 
@@ -58,19 +58,21 @@ CREATE TABLE `komentarz` (
   `ID_WATEK` int(10) NOT NULL,
   `ID_USER` int(10) NOT NULL,
   `DATA` timestamp NOT NULL DEFAULT current_timestamp(),
-  `TRESC_KOMENTARZA` longtext COLLATE utf8_polish_ci NOT NULL
+  `TRESC_KOMENTARZA` longtext COLLATE utf8_polish_ci NOT NULL,
+  `OCENA` int(10) NOT NULL DEFAULT 0,
+  `STATUS` varchar(10) COLLATE utf8_polish_ci NOT NULL DEFAULT 'UKRYTE'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
 -- Zrzut danych tabeli `komentarz`
 --
 
-INSERT INTO `komentarz` (`ID_KOMENTARZ`, `ID_WATEK`, `ID_USER`, `DATA`, `TRESC_KOMENTARZA`) VALUES
-(1, 2, 4, '2020-12-14 19:32:50', 'Tak tak '),
-(2, 2, 1, '2020-12-14 19:32:50', 'Tak tak '),
-(3, 2, 1, '2020-12-14 19:32:50', 'Nie Nie '),
-(4, 2, 4, '2020-12-14 19:32:50', 'Nie nie'),
-(5, 2, 7, '2020-12-15 20:17:36', 'Siemka');
+INSERT INTO `komentarz` (`ID_KOMENTARZ`, `ID_WATEK`, `ID_USER`, `DATA`, `TRESC_KOMENTARZA`, `OCENA`, `STATUS`) VALUES
+(2, 2, 1, '2020-12-14 19:32:50', 'Tak tak ', 10, 'UKRYTE'),
+(3, 2, 1, '2020-12-14 19:32:50', 'Nie Nie ', 1, 'UKRYTE'),
+(4, 2, 4, '2020-12-14 19:32:50', 'Nie nie', 0, 'UKRYTE'),
+(5, 2, 7, '2020-12-15 20:17:36', 'Siemka', 0, 'UKRYTE'),
+(6, 3, 7, '2020-12-19 11:58:09', 'dfghgfdgdf', 0, 'UKRYTE');
 
 -- --------------------------------------------------------
 
@@ -103,6 +105,46 @@ INSERT INTO `kruszec` (`ID_KRUSZEC`, `NAZWA`, `CENA`, `JEDNOSTKA`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktura tabeli dla tabeli `ocenakomentarz`
+--
+
+CREATE TABLE `ocenakomentarz` (
+  `ID_OCENY` int(10) NOT NULL,
+  `ID_KOMENTARZA_OCENIONEGO` int(10) NOT NULL,
+  `ID_UZYTKOWNIKA` int(10) NOT NULL,
+  `WARTOSC_OCENY` varchar(10) COLLATE utf8_polish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+--
+-- Zrzut danych tabeli `ocenakomentarz`
+--
+
+INSERT INTO `ocenakomentarz` (`ID_OCENY`, `ID_KOMENTARZA_OCENIONEGO`, `ID_UZYTKOWNIKA`, `WARTOSC_OCENY`) VALUES
+(39, 2, 7, 'MINUS');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `ocenawatek`
+--
+
+CREATE TABLE `ocenawatek` (
+  `ID_OCENY` int(11) NOT NULL,
+  `ID_WATKU` int(11) NOT NULL,
+  `ID_UZYTKOWNIKA` int(11) NOT NULL,
+  `WARTOSC_OCENY` varchar(11) COLLATE utf8_polish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+--
+-- Zrzut danych tabeli `ocenawatek`
+--
+
+INSERT INTO `ocenawatek` (`ID_OCENY`, `ID_WATKU`, `ID_UZYTKOWNIKA`, `WARTOSC_OCENY`) VALUES
+(20, 2, 7, 'MINUS');
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabeli dla tabeli `user`
 --
 
@@ -128,9 +170,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`ID_USER`, `LOGIN`, `HASLO`, `IMIE`, `NAZWISKO`, `EMAIL`, `WIEK`, `MIASTO`, `KRAJ`, `OPIS_PROFILU`, `ZDJECIE`, `STW_WATKI`, `LICZ_KOMENTARZY`, `UPRAWNIENIA`) VALUES
-(1, 'Adam', '3c6e3550e97b872da67938d34f3740f11c94102a5bfd3ddd4501820e980b5ca778c2fbe88d2695affe9a53bb5064c5a8a717360db3ecb87e2c0c74feea2f37a8', 'imie1', 'nazwisko1', 'email1@wp.pl', 11, 'Białystok', 'Polska', NULL, NULL, 0, 0, 'USER'),
+(1, 'Adam', '3c6e3550e97b872da67938d34f3740f11c94102a5bfd3ddd4501820e980b5ca778c2fbe88d2695affe9a53bb5064c5a8a717360db3ecb87e2c0c74feea2f37a8', 'Marek', 'Korzeniewski', 'email1@wp.pl', 15, 'Białys', 'Polska', ':O', NULL, 0, 0, 'USER'),
 (4, 'Admin', '3c6e3550e97b872da67938d34f3740f11c94102a5bfd3ddd4501820e980b5ca778c2fbe88d2695affe9a53bb5064c5a8a717360db3ecb87e2c0c74feea2f37a8', 'imie1', 'nazwisko1', 'email@wp.pl', 11, 'Białystok', 'Polska', NULL, NULL, 0, 0, 'USER'),
-(7, 'Marek', '3c6e3550e97b872da67938d34f3740f11c94102a5bfd3ddd4501820e980b5ca778c2fbe88d2695affe9a53bb5064c5a8a717360db3ecb87e2c0c74feea2f37a8', '', '', 'markor88@wp.pl', 0, '', '', NULL, NULL, 0, 1, 'ADMIN');
+(7, 'Marek', '3c6e3550e97b872da67938d34f3740f11c94102a5bfd3ddd4501820e980b5ca778c2fbe88d2695affe9a53bb5064c5a8a717360db3ecb87e2c0c74feea2f37a8', 'M', 'K', 'markor88@wp.pl', 16, 'Kraków', 'Poland', '', NULL, 0, 2, 'ADMIN'),
+(8, 'KONTOZ BANOWANE', 'zaq1@WSX', '', '', '', 0, '', '', NULL, NULL, 0, 0, 'MOD');
 
 -- --------------------------------------------------------
 
@@ -200,16 +243,20 @@ CREATE TABLE `watek` (
   `DATA` timestamp NOT NULL DEFAULT current_timestamp(),
   `TRESC_WATKU` longtext COLLATE utf8_polish_ci NOT NULL,
   `LICZBA_KOMENTARZY` int(10) NOT NULL DEFAULT 0,
-  `ILOSC_ODWIEDZIN` int(10) NOT NULL DEFAULT 0
+  `ILOSC_ODWIEDZIN` int(10) NOT NULL DEFAULT 0,
+  `OCENA` int(10) NOT NULL DEFAULT 0,
+  `STATUS` varchar(10) COLLATE utf8_polish_ci NOT NULL DEFAULT 'UKRYTE'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
 -- Zrzut danych tabeli `watek`
 --
 
-INSERT INTO `watek` (`ID_WATEK`, `ID_USER`, `TEMAT`, `DATA`, `TRESC_WATKU`, `LICZBA_KOMENTARZY`, `ILOSC_ODWIEDZIN`) VALUES
-(2, 1, 'temattemattemat', '2020-12-11 18:41:17', 'tresctresctresctresctresctresctresctresc', 0, 63),
-(3, 1, 'temattemattemat', '2020-12-11 18:42:57', 'tresctresctresctresctresctresctresctresc', 0, 3);
+INSERT INTO `watek` (`ID_WATEK`, `ID_USER`, `TEMAT`, `DATA`, `TRESC_WATKU`, `LICZBA_KOMENTARZY`, `ILOSC_ODWIEDZIN`, `OCENA`, `STATUS`) VALUES
+(2, 1, 'temattemattemat', '2020-12-11 18:41:17', 'tresctresctresctresctresctresctresctresc', 0, 306, -1, 'UKRYTE'),
+(3, 1, 'temattemattemat', '2020-12-11 18:42:57', 'tresctresctresctresctresctresctresctresc', 0, 6, 0, 'UKRYTE'),
+(4, 8, 'Czy dolar będzie tanieć', '2020-12-19 18:30:15', 'hahahha nie będzie.', 0, 1, 0, 'UKRYTE'),
+(5, 1, 'Euro', '2020-12-19 18:30:15', 'Euro oo', 0, 0, 0, 'UKRYTE');
 
 -- --------------------------------------------------------
 
@@ -249,6 +296,18 @@ ALTER TABLE `komentarz`
 --
 ALTER TABLE `kruszec`
   ADD PRIMARY KEY (`ID_KRUSZEC`);
+
+--
+-- Indeksy dla tabeli `ocenakomentarz`
+--
+ALTER TABLE `ocenakomentarz`
+  ADD PRIMARY KEY (`ID_OCENY`);
+
+--
+-- Indeksy dla tabeli `ocenawatek`
+--
+ALTER TABLE `ocenawatek`
+  ADD PRIMARY KEY (`ID_OCENY`);
 
 --
 -- Indeksy dla tabeli `user`
@@ -294,7 +353,7 @@ ALTER TABLE `artykul`
 -- AUTO_INCREMENT dla tabeli `komentarz`
 --
 ALTER TABLE `komentarz`
-  MODIFY `ID_KOMENTARZ` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID_KOMENTARZ` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT dla tabeli `kruszec`
@@ -303,10 +362,22 @@ ALTER TABLE `kruszec`
   MODIFY `ID_KRUSZEC` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT dla tabeli `ocenakomentarz`
+--
+ALTER TABLE `ocenakomentarz`
+  MODIFY `ID_OCENY` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+
+--
+-- AUTO_INCREMENT dla tabeli `ocenawatek`
+--
+ALTER TABLE `ocenawatek`
+  MODIFY `ID_OCENY` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
 -- AUTO_INCREMENT dla tabeli `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID_USER` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID_USER` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT dla tabeli `waluta`
@@ -318,7 +389,7 @@ ALTER TABLE `waluta`
 -- AUTO_INCREMENT dla tabeli `watek`
 --
 ALTER TABLE `watek`
-  MODIFY `ID_WATEK` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID_WATEK` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT dla tabeli `zgloszenie`

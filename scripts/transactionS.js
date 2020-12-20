@@ -10,7 +10,11 @@ async function transactionSprzedaz(){
     const rates = data.rates;
 
         from.addEventListener('keyup', () => {
-            to.value = (from.value * rates.PLN / rates[kod]+0.05).toFixed(2);
+            if(from.value == 0 || from.value == null){
+                to.value = 0.00;
+            } else{
+                to.value = (from.value * rates.PLN / rates[kod]+0.05).toFixed(2);
+            }
         });
 
         sprzedaz.value = (rates.PLN/rates[kod]+0.05).toFixed(4);

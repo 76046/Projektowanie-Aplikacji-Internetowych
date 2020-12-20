@@ -26,7 +26,8 @@ main{
 }
 
 .artykol{
-    background-color:rgb(85, 81, 74);
+    background-color: white;
+    /* background-color:rgb(85, 81, 74); */
     position:relative;
     top: 50px;
     padding-bottom: 1px;
@@ -37,7 +38,8 @@ main{
 
 .sekcja{
     position:relative;
-    background-color: rgb(111, 111, 111);
+    background-color: white;
+    /* background-color: rgb(111, 111, 111); */
     margin: 20px 10px 10px 10px;
     padding: 10px 10px 10px 10px;
     text-align: center;
@@ -51,7 +53,9 @@ a{
 
 .tytul_artykulu{
     position: relative;
-    background-color:rgb(124, 113, 104);
+    background-color: white;
+    color: orangered;
+    /* background-color:rgb(124, 113, 104); */
     width: auto;
     margin: 10px;
     padding: 10px;
@@ -80,10 +84,12 @@ tr.codrugi{
     background-color: #8e8787;
 }
 tr:hover{
-    background-color: #5c6060;
+    /* background-color: #5c6060; */
+    background-color: orange;
 }
 td:hover{
-    background-color: #7a7c7a;
+    /* background-color: #7a7c7a; */
+    background-color: orange;
 }
 
 td.panel_admin ,td.wstawione_memy,td.liczba_odwiedzin{
@@ -95,7 +101,8 @@ th.panel_uzytkownicy, th.panel_forum, th.panel_artykuly, th.panel_zgloszenia{
     width: 25%;
 }
 th.panel_uzytkownicy:hover, th.panel_forum:hover, th.panel_artykuly:hover, th.panel_zgloszenia:hover{
-    background-color: #af9f27;
+    /* background-color: #af9f27; */
+    background-color: yellow;
 }
 
 .wymiana{
@@ -108,14 +115,20 @@ th.panel_uzytkownicy:hover, th.panel_forum:hover, th.panel_artykuly:hover, th.pa
 }
 
 .kontener1{
-    background-color: #2f8424;
+    background-color: white;
+    color: orangered;
+    /* background-color: #2f8424; */
     margin-top: 30px;
     text-align: center;
     padding-top: 20px;
     height: 60px;
+    font-size: 20px;
 }
 .kontener2{
-    background-color: #841616;
+    /* background-color: #841616; */
+    background-color: orange;
+    border-radius: 10px;
+    margin-bottom: 5px;
 }
 .kontener2 .input1,.kontener2 .input2{
     width: 200px;
@@ -131,14 +144,18 @@ th.panel_uzytkownicy:hover, th.panel_forum:hover, th.panel_artykuly:hover, th.pa
 }
 
 .kontener3{
-    background-color: #094284;
+    background-color: white;
+    /* background-color: #094284; */
     margin-bottom: 30px;
     height: 100px;
 }
 .kontener3 .lewa{
     width: 510px;
     height: 75px;
-    background-color: #ff3b3b;
+    /* background-color: #ff3b3b; */
+    background-color: orange;
+    color: orangered;
+    border-radius: 10px;
     float: left;
     text-align: center;
     font-size: 20px;
@@ -146,9 +163,12 @@ th.panel_uzytkownicy:hover, th.panel_forum:hover, th.panel_artykuly:hover, th.pa
 }
 
 .kontener3 .prawa{
-    width: 250px;
+    width: 245px;
     height: 100px;
-    background-color: #3c2aff;
+    /* background-color: #3c2aff; */
+    background-color: orange;
+    border-radius: 10px;
+    margin-left: 5px;
     float: left;
 }
 

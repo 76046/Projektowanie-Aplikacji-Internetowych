@@ -21,7 +21,7 @@ rysowanieGlownegoMenu();
     <article class="artykol">
 
         <div class="tytul_artykulu">
-            Wybrana waluta:
+            Wybrana waluta: <?php echo $_GET['name']; ?>
         </div>
 
 
@@ -67,7 +67,7 @@ rysowanieGlownegoMenu();
                 <div class="kontener1">Wymieniasz PLN na <?php echo $_GET['name']; ?></div>
                 <div class="kontener2"><input type="number" id="from" name="from_kupno" class="input1" min="1" max="9999"> ===> <input type="number" id="to" name="to_kupno" class="input2" disabled></div>
                 <div class="kontener3">
-                    <div class="lewa">Waluta <?php echo $_GET['name']; ?> ma: <br>
+                    <div class="lewa">Dla waluty <?php echo $_GET['name']; ?> : <br>
                         Kupno: <input type="number" id="rate" disabled>PLN<br>
                     </div>
                     <div class="prawa">

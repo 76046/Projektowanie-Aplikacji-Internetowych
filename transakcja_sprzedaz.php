@@ -67,7 +67,7 @@ rysowanieGlownegoMenu();
                     <div class="kontener1">Wymieniasz <?php echo $_GET['name']; ?> na PLN</div>
                     <div class="kontener2"><input type="number" id="from" name="from_sprzedaz" class="input1" min="1" max="9999"> ===> <input type="number" id="to" name="to_sprzedaz" class="input2" disabled></div>
                     <div class="kontener3">
-                        <div class="lewa">Waluta <?php echo $_GET['name']; ?> ma: <br>
+                        <div class="lewa">Dla waluty <?php echo $_GET['name']; ?> : <br>
                             Sprzedaż: <input type="number" id="rate" disabled>PLN<br>
                         </div>
                         <div class="prawa">

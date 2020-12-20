@@ -128,6 +128,7 @@
     background-color:#7b7977;
     transition: background .6s;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .kom_komentarz{
@@ -252,6 +253,7 @@ textarea{
     background-color: #9e8a23;
     border-radius: 50px;
     float: right;
+    cursor: pointer;
 }
 .zglos_buttonuser{
     margin: 2px 35px 0px 25px;
@@ -261,10 +263,12 @@ textarea{
     background-color: #9e8a23;
     border-radius: 50px;
     float: right;
+    cursor: pointer;
 }
 .plus_button,.minus_button,.ban_button,.mute_button,.del_button,.del_button2,.plu_button,.minu_button{
     border-radius: 50px;
     transition: background .6s;
+    cursor: pointer;
 }
 .plus_button,.plu_button{
     background-color: #2f8424;

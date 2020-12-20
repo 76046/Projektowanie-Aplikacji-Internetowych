@@ -1,5 +1,6 @@
 body{
-    background-color: #ffaf5c;
+    background-color: white;
+    /* background-color: #ffaf5c; */
 }
 
 header{
@@ -8,7 +9,8 @@ header{
     top: 0px;
     left: 0px;
     height: 120px;
-    background-color:#3c3c3c;
+    background-color: orangered;
+    /* background-color:#3c3c3c; */
     z-index: 10;
     /*text-align: center;*/
     clear: both;
@@ -28,7 +30,8 @@ footer{
 }
 
 .artykol-logowanie{
-    background-color:#3c3c3c;
+    background-color: white;
+    /* background-color:#3c3c3c; */
     position:relative;
     padding-bottom: 1px;
     margin-bottom: 10px;
@@ -38,7 +41,8 @@ footer{
 
 .sekcja-logowania{
     position:relative;
-    background-color: #3c3c3c;
+    background-color: white;
+    /* background-color: #3c3c3c; */
     margin: 20px 10px 10px 10px;
     padding: 10px 10px 10px 10px;
     text-align: center;
@@ -47,7 +51,7 @@ footer{
 .artykulu-tytul-logowanie{
     text-transform: uppercase;
     position: relative;
-    background-color:rgb(124, 113, 104);
+    background-color:rgba(201, 189, 186, 0.78);
     width: 400px;
     margin: 100px 10px 10px 10px;
     padding: 0px;

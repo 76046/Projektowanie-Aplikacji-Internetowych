@@ -51,7 +51,8 @@ session_start();
 
                         </div>
                         <div class="ilosc-odwiedzin">
-                            <?php echo $row['ILOSC_ODWIEDZIN']; ?>
+                            <?php echo "Wyświetlenia:</br>";
+                            echo $row['ILOSC_ODWIEDZIN']; ?>
 
                         </div>
                         <div class="autor">

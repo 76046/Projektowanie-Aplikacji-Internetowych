@@ -37,10 +37,7 @@ if(!isset($_POST['wybor_kontynentu'])){
         <section class="tablica-walut">
             <div class="tabliczki">
                 <!-- <input type="submit" value="Aktualizuj kursy walut" name="aktualizuj" id="aktualizuj"> -->
-                <table>
-                    <tr>
-                        <th class="nazwa-waluty">Waluta
-                            <form method="post">
+                <form method="post">
                                 <select name="wybor_kontynentu">
                                     <?php
                                     echo '<option value="wszystkie"';
@@ -81,6 +78,10 @@ if(!isset($_POST['wybor_kontynentu'])){
                                 </select>
                                 <input type="submit" name="refresh" value="Odśwież"/>
                             </form>
+                <table class="table">
+                    <tr class="thead">
+                        <th class="nazwa-waluty">Waluta
+                            
                         </th>
                         <th class="kupno-waluty">Kupno</th>
                         <th class="sprzedaz-waluty">Sprzedaż</th>
@@ -107,7 +108,7 @@ if(!isset($_POST['wybor_kontynentu'])){
                             while ($row = mysqli_fetch_assoc($rezultat)) {
                                 if (($iterator % 2) == 0) {
                                     ?>
-                                    <tr>
+                                    <tr class="tr">
                                         <td class="nazwa-waluty">
                                             <div class="flaga">
                                                 <?php echo '<img src="data:image/svg+xml;base64,' . $row['FLAGA'] . '" alt="flaga"/>' ?>
@@ -120,17 +121,17 @@ if(!isset($_POST['wybor_kontynentu'])){
                                                 <?php echo $row['NAZWA']; ?>
                                             </div>
                                         </td>
-                                        <td class="kupno-waluty">
+                                        <td data-label="Kupno" class="kupno-waluty">
                                             <input class="kupno-input" name="kupno-input" id="fromAmount" type="hidden"
                                                    disabled>
 
                                         </td>
-                                        <td class="sprzedaz-waluty">
+                                        <td data-label="Sprzedaż" class="sprzedaz-waluty">
                                             <input class="sprzedaz-input" name="sprzedaz-input" id="fromAmount"
                                                    type="hidden" disabled>
 
                                         </td>
-                                        <td class="operacje-waluty">
+                                        <td data-label="Operacje" class="operacje-waluty">
                                         </td>
                                     </tr>
                                     <?php
@@ -149,17 +150,17 @@ if(!isset($_POST['wybor_kontynentu'])){
                                                 <?php echo $row['NAZWA']; ?>
                                             </div>
                                         </td>
-                                        <td class="kupno-waluty">
+                                        <td data-label="Kupno" class="kupno-waluty">
                                             <input class="kupno-input" name="kupno-input" id="fromAmount" type="hidden"
                                                    disabled>
 
                                         </td>
-                                        <td class="sprzedaz-waluty">
+                                        <td data-label="Sprzedaż" class="sprzedaz-waluty">
                                             <input class="sprzedaz-input" name="sprzedaz-input" id="fromAmount"
                                                    type="hidden" disabled>
 
                                         </td>
-                                        <td class="operacje-waluty">
+                                        <td data-label="Operacje" class="operacje-waluty">
                                         </td>
                                     </tr>
 

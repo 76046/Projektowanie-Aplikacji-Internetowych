@@ -15,7 +15,7 @@ main{
 
 .tytul-artykulu-rejestracji{
     position: relative;
-    background-color:rgba(124, 113, 104, 0);
+    background-color:rgba(201, 189, 186, 0.78);
     width: auto;
     margin: 10px;
     padding: 10px;
@@ -23,7 +23,7 @@ main{
     font-family: Impact,Arial,sans-serif;
     font-size: 30px;
     top: 10px;
-    color:white;
+    color:black;
 }
 
 .sekcja{

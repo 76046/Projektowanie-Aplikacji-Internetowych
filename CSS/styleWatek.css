@@ -240,6 +240,15 @@ textarea{
     border-radius: 50px;
     float: right;
 }
+.zglos_buttonuser{
+    margin: 2px 35px 0px 25px;
+    text-align: center;
+    width: 60px;
+    height: 22px;
+    background-color: #9e8a23;
+    border-radius: 50px;
+    float: right;
+}
 .plus_button,.minus_button,.ban_button,.mute_button,.del_button,.del_button2,.plu_button,.minu_button{
     border-radius: 50px;
     transition: background .6s;

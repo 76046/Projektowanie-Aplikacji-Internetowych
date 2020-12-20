@@ -54,7 +54,7 @@ mysqli_real_escape_string($polaczenie,$login))))
         echo $_SESSION['admin'];
         $_SESSION['admin'] = false;
       }
-      if($wiersz['UPRAWNIENIA']=='MUTE')
+      if($wiersz['UPRAWNIENIA']=='MUTED')
       {
         $_SESSION['mute'] = true;
       }

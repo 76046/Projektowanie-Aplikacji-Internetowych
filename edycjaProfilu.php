@@ -54,12 +54,12 @@ rysowanieGlownegoMenu();
                 ?>
             </div>
             <div class="pro_statystyki">
-                <div class="staty" id="zdjecie"><input type="file" name="zdjecie"></div>
-                <div class="staty">Statystyki</div>
-                <div class="staty">Liczba utworzonych wątków</div>
-                <div class="staty"><?php echo $row['STW_WATKI']; ?></div>
-                <div class="staty">Liczba komentarzy</div>
-                <div class="staty"><?php echo $row['LICZ_KOMENTARZY']; ?></div>
+                <div class="staty2" id="zdjecie"><input type="file" name="zdjecie" accept=".jpg, .jpeg, .png"></div>
+                <div class="staty2">Statystyki</div>
+                <div class="staty2">Liczba utworzonych wątków</div>
+                <div class="staty2"><?php echo $row['STW_WATKI']; ?></div>
+                <div class="staty2">Liczba</br>komentarzy</div>
+                <div class="staty2"><?php echo $row['LICZ_KOMENTARZY']; ?></div>
             </div>
         </div>
         </div>

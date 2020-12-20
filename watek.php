@@ -1,6 +1,8 @@
 <?php
 session_start();
-
+if(isset($_SESSION['zgloszenie'])){
+    unset($_SESSION['zgloszenie']);
+}
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -35,6 +37,7 @@ rysowanieGlownegoMenu();
 
     if (!$rezultat)
     {
+        var_dump($_GET['id']);
         throw new Exception($polaczenie->error);
     }
     else
@@ -79,8 +82,12 @@ rysowanieGlownegoMenu();
                     if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true))
                     {
                         $Czy_ocenione = mysqli_fetch_array($polaczenie->query("SELECT * FROM ocenawatek WHERE ID_WATKU=".$_GET['id']." AND ID_UZYTKOWNIKA=".$_SESSION['id_usera_zalog']));
+
                         if($Czy_ocenione==NULL){
+
+                            if(!((isset($_SESSION['mute']))&&$_SESSION['mute']=='true'))
                             echo '<a href="dodajocenew.php?user='.$_SESSION['id_usera_zalog'].'&idwatku='.$_GET['id'].'&z=m&update=n"><button type="button" class="minu_button">-</button></a>';
+
                             if($row['OCENA'] < 0)
                             {
                                 echo '<k class="licznik1">'.$row['OCENA'].'</k>';
@@ -89,9 +96,12 @@ rysowanieGlownegoMenu();
                             }else {
                                 echo '<k class="licznik3">'.$row['OCENA'].'</k>';
                             }
+                            if(!((isset($_SESSION['mute']))&&$_SESSION['mute']=='true'))
                             echo '<a href="dodajocenew.php?user='.$_SESSION['id_usera_zalog'].'&idwatku='.$_GET['id'].'&z=p&update=n"><button type="button" class="plu_button">+</button></a>';
                         }else{
                             if($Czy_ocenione['WARTOSC_OCENY']=="PLUS"){
+
+                                if(!((isset($_SESSION['mute']))&&$_SESSION['mute']=='true'))
                                 echo '<a href="dodajocenew.php?user='.$_SESSION['id_usera_zalog'].'&idwatku='.$_GET['id'].'&z=m&update=y"><button type="button" class="minu_button">-</button></a>';
                                     if($row['OCENA'] < 0)
                                     {
@@ -102,6 +112,7 @@ rysowanieGlownegoMenu();
                                         echo '<k class="licznik3">'.$row['OCENA'].'</k>';
                                     }
                             }else{
+                                if(!((isset($_SESSION['mute']))&&$_SESSION['mute']=='true'))
                                 echo '<a href="dodajocenew.php?user='.$_SESSION['id_usera_zalog'].'&idwatku='.$_GET['id'].'&z=p&update=y"><button type="button" class="plu_button">+</button></a>';
                                     if($row['OCENA'] < 0)
                                     {
@@ -111,11 +122,10 @@ rysowanieGlownegoMenu();
                                     }else {
                                         echo '<k class="licznik3">'.$row['OCENA'].'</k>';
                                     }
-
                                 }
-
                             }
-                        echo '<a href="zglos.php?watek='.$row['ID_WATEK'].'&user='.$row['ID_USER'].'"><button type="button" class="zglos_button">Zgłoś</button></a>';
+                        if(!((isset($_SESSION['mute']))&&$_SESSION['mute']=='true'))
+                        echo '<a href="zglos_watek.php?watek='.$row['ID_WATEK'].'&user='.$row['ID_USER'].'"><button type="button" class="zglos_button">Zgłoś</button></a>';
                     }
                         if((isset($_SESSION['admin']))&&($_SESSION['admin']==true)){
                             echo '<a href="admin.php?watek='.$row['ID_WATEK'].'"><button type="button" class="del_button2">Usuń</button></a>';
@@ -275,7 +285,7 @@ rysowanieGlownegoMenu();
             if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true))
             {
                 $Czy_ocenione = mysqli_fetch_array($polaczenie->query("SELECT * FROM ocenakomentarz WHERE ID_KOMENTARZA_OCENIONEGO=".$row_komentarz['ID_KOMENTARZ']." AND ID_UZYTKOWNIKA=".$_SESSION['id_usera_zalog']));
-
+                if(!((isset($_SESSION['mute']))&&$_SESSION['mute']=='true'))
                     if($Czy_ocenione==NULL){
                         echo '<a href="dodajocenek.php?user='.$_SESSION['id_usera_zalog'].'&kom='.$row_komentarz['ID_KOMENTARZ'].'&idwatku='.$_GET['id'].'&z=p&update=n"><button type="button" class="plus_button">+</button></a>';
                         echo '<a href="dodajocenek.php?user='.$_SESSION['id_usera_zalog'].'&kom='.$row_komentarz['ID_KOMENTARZ'].'&idwatku='.$_GET['id'].'&z=m&update=n"><button type="button" class="minus_button">-</button></a>';
@@ -302,7 +312,12 @@ rysowanieGlownegoMenu();
                 echo '</div>';
             } else {
                 echo '<div class="kom_adminpanel2">';
-                echo '<a href="zglos.php?user='.$row_usera['ID_USER'].'&kom='.$row_komentarz['ID_KOMENTARZ'].'"><button type="button" class="zglos_button">Zgłoś</button></a>';
+                if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true)) {
+
+                    if(!((isset($_SESSION['mute']))&&$_SESSION['mute']=='true'))
+                    echo '<a href="zglos_komentarz.php?user=' . $row_usera['ID_USER'] . '&kom=' . $row_komentarz['ID_KOMENTARZ'] .'&watek=' . $_GET['id'] . '"><button type="button" class="zglos_buttonuser">Zgłoś</button></a>';
+
+                }
                 echo '</div>';
             }
 

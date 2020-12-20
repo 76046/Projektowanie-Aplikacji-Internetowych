@@ -59,11 +59,11 @@ rysowanieGlownegoMenu();
 
             </div>
             <div class="pro_statystyki">
-                <div class="staty">Statystyki</div>
-                <div class="staty">Liczba utworzonych wątków</div>
-                <div class="staty"><?php echo $row['STW_WATKI']; ?></div>
-                <div class="staty">Liczba komentarzy</div>
-                <div class="staty"><?php echo $row['LICZ_KOMENTARZY']; ?></div>
+                <div class="staty2">Statystyki</div>
+                <div class="staty2">Liczba utworzonych wątków</div>
+                <div class="staty2"><?php echo $row['STW_WATKI']; ?></div>
+                <div class="staty2">Liczba</br>komentarzy</div>
+                <div class="staty2"><?php echo $row['LICZ_KOMENTARZY']; ?></div>
 
             </div>
         </div>
@@ -92,12 +92,18 @@ rysowanieGlownegoMenu();
                 <div class="o_sobie">Coś o sobie:</div>
                 <div class="staty_opis"><?php echo $row['OPIS_PROFILU']; ?></div>
             </div>
-            <?php if($_SESSION['id_usera_zalog'] == $row['ID_USER'] || $_SESSION['admin'] == true){ ?>
-            <div class="edycjaProfilu"><?php echo '<a href="edycjaProfilu.php?user=' . $row['ID_USER'] . '">'?><input type="submit" value="Edytuj profil"></a></div>
-            <?php } 
-            else{
-                echo ' ';
-            }?>
+            <?php
+            if(isset($_SESSION['zalogowany'])){
+                if($_SESSION['id_usera_zalog'] == $row['ID_USER'] || $_SESSION['admin'] == 'true'){ ?>
+                    <div class="edycjaProfilu"><?php echo '<a href="edycjaProfilu.php?user=' . $row['ID_USER'] . '">'?><input type="submit" value="Edytuj profil"></a></div>
+                <?php }
+                else{
+                    echo ' ';
+                }
+            }
+
+
+            ?>
 
         </div>
         <div class="koniec"></div>

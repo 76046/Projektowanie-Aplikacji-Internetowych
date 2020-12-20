@@ -186,13 +186,22 @@ a{
     margin: 0px 0px 10px 0px;
     font-family: Comic Sans MS,Impact,Arial,sans-serif;
     height: 23px;
+}
 
+.staty2{
+    padding: 10px 0px 10px 0px;
+    font-family: Comic Sans MS,Impact,Arial,sans-serif;
+    height: 23px;
 }
 
 .staty .prawy_szcz{
     height: 23px;
 }
 
+.staty2 input{
+    width: 90px;
+    position: center;
+}
 .lewy_szcz{
     width: 80px;
     height: 190px;

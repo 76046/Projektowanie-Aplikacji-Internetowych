@@ -36,7 +36,7 @@ if(!isset($_POST['wybor_kontynentu'])){
         </div>
         <section class="tablica-walut">
             <div class="tabliczki">
-                <!-- <input type="submit" value="Aktualizuj kursy walut" name="aktualizuj" id="aktualizuj"> -->
+                
                 <form method="post">
                                 <select name="wybor_kontynentu">
                                     <?php
@@ -104,8 +104,10 @@ if(!isset($_POST['wybor_kontynentu'])){
                         if (!$rezultat) {
                             throw new Exception($polaczenie->error);
                         } else {
-                            $iterator = 0;
-                            while ($row = mysqli_fetch_assoc($rezultat)) {
+                            $iterator = 0;?>
+                            <!-- <form method="post">
+                            <input type="submit" value="Aktualizuj kursy walut" name="aktualizuj" id="aktualizuj"> -->
+                            <?php while ($row = mysqli_fetch_assoc($rezultat)) {
                                 if (($iterator % 2) == 0) {
                                     ?>
                                     <tr class="tr">
@@ -183,7 +185,7 @@ if(!isset($_POST['wybor_kontynentu'])){
 
                                         </td>
                                     </tr>
-
+                                    <!-- </form> -->
                                     <?php
 
                                 }
@@ -220,4 +222,5 @@ rysowanieStopki();
             echo $polaczenie->error;
         }     
     }
+    // $polaczenie->close();
 ?>

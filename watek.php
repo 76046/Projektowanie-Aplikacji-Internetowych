@@ -72,7 +72,6 @@ rysowanieGlownegoMenu();
 
     if (!$rezultat)
     {
-        var_dump($_GET['id']);
         throw new Exception($polaczenie->error);
     }
     else
@@ -159,11 +158,14 @@ rysowanieGlownegoMenu();
                                     }
                                 }
                             }
+
                         $Czy_zgloszone = mysqli_fetch_array($polaczenie->query("SELECT * FROM zgloszenie WHERE ID_WATEK=".$_GET['id']." AND ID_ZGLASZAJACEGO =".$_SESSION['id_usera_zalog']));
-                        if($Czy_zgloszone==NULL) {
-                            if (!((isset($_SESSION['mute'])) && $_SESSION['mute'] == 'true'))
-                                echo '<a href="zglos_watek.php?watek=' . $row['ID_WATEK'] . '&user=' . $row['ID_USER'] . '"><button type="button" class="zglos_button">Zgłoś</button></a>';
-                        }
+
+                            if ($Czy_zgloszone == NULL) {
+                                if (!((isset($_SESSION['mute'])) && $_SESSION['mute'] == 'true'))
+                                    echo '<a href="zglos_watek.php?watek=' . $row['ID_WATEK'] . '&user=' . $row['ID_USER'] . '"><button type="button" class="zglos_button">Zgłoś</button></a>';
+                            }
+
                     }
                         if((isset($_SESSION['admin']))&&($_SESSION['admin']==true)){
                             echo '<a href="admin.php?watek='.$row['ID_WATEK'].'"><button type="button" class="del_button2">Usuń</button></a>';

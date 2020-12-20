@@ -44,6 +44,12 @@
     background-size: 100px;
 }
 
+.awatar img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+}
+
 .nickname{
     height: 60px;
     width: 150px;
@@ -146,6 +152,13 @@
     border-radius: 40px;
     background-image:url('../img/un.jpg');
     background-size: 80px;
+}
+
+.kom_profilowe img{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    border-radius: 40px;
 }
 
 .kom_tresc{

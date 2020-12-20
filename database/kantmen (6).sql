@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 19 Gru 2020, 23:46
--- Wersja serwera: 10.4.11-MariaDB
--- Wersja PHP: 7.4.2
+-- Czas generowania: 20 Gru 2020, 14:42
+-- Wersja serwera: 10.4.14-MariaDB
+-- Wersja PHP: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -30,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `artykul` (
   `ID_ARTYKULU` int(10) NOT NULL,
-  `ZDJECIE_ARTYKUL` blob DEFAULT NULL,
+  `ZDJECIE_ARTYKUL` varchar(255) COLLATE utf8_polish_ci DEFAULT NULL,
   `TEMAT` varchar(100) COLLATE utf8_polish_ci NOT NULL,
   `TRESC` longtext COLLATE utf8_polish_ci NOT NULL,
   `DATA` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -159,7 +158,7 @@ CREATE TABLE `user` (
   `MIASTO` varchar(50) COLLATE utf8_polish_ci NOT NULL,
   `KRAJ` varchar(50) COLLATE utf8_polish_ci NOT NULL,
   `OPIS_PROFILU` text COLLATE utf8_polish_ci DEFAULT NULL,
-  `ZDJECIE` blob DEFAULT NULL,
+  `ZDJECIE` varchar(255) COLLATE utf8_polish_ci DEFAULT NULL,
   `STW_WATKI` int(10) NOT NULL DEFAULT 0,
   `LICZ_KOMENTARZY` int(10) NOT NULL DEFAULT 0,
   `UPRAWNIENIA` varchar(10) COLLATE utf8_polish_ci NOT NULL DEFAULT 'USER'
@@ -170,9 +169,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`ID_USER`, `LOGIN`, `HASLO`, `IMIE`, `NAZWISKO`, `EMAIL`, `WIEK`, `MIASTO`, `KRAJ`, `OPIS_PROFILU`, `ZDJECIE`, `STW_WATKI`, `LICZ_KOMENTARZY`, `UPRAWNIENIA`) VALUES
-(1, 'Adam', '3c6e3550e97b872da67938d34f3740f11c94102a5bfd3ddd4501820e980b5ca778c2fbe88d2695affe9a53bb5064c5a8a717360db3ecb87e2c0c74feea2f37a8', 'Marek', 'Korzeniewski', 'email1@wp.pl', 15, 'Białys', 'Polska', ':O', NULL, 0, 0, 'USER'),
-(4, 'Admin', '3c6e3550e97b872da67938d34f3740f11c94102a5bfd3ddd4501820e980b5ca778c2fbe88d2695affe9a53bb5064c5a8a717360db3ecb87e2c0c74feea2f37a8', 'imie1', 'nazwisko1', 'email@wp.pl', 11, 'Białystok', 'Polska', NULL, NULL, 0, 0, 'ADMIN'),
-(7, 'Marek', '3c6e3550e97b872da67938d34f3740f11c94102a5bfd3ddd4501820e980b5ca778c2fbe88d2695affe9a53bb5064c5a8a717360db3ecb87e2c0c74feea2f37a8', 'M', 'K', 'markor88@wp.pl', 16, 'Kraków', 'Poland', '', NULL, 0, 2, 'MUTED'),
+(1, 'Adam', '3c6e3550e97b872da67938d34f3740f11c94102a5bfd3ddd4501820e980b5ca778c2fbe88d2695affe9a53bb5064c5a8a717360db3ecb87e2c0c74feea2f37a8', 'Adam', 'Kowalewski', 'email1@wp.pl', 15, 'Białys', 'Polska', ':O', 'profilowe.jpg', 0, 0, 'USER'),
+(4, 'Admin', '3c6e3550e97b872da67938d34f3740f11c94102a5bfd3ddd4501820e980b5ca778c2fbe88d2695affe9a53bb5064c5a8a717360db3ecb87e2c0c74feea2f37a8', 'imie1', 'nazwisko1', 'email@wp.pl', 11, 'Białystok', 'Polska', NULL, NULL, 0, 0, 'USER'),
+(7, 'Marek', '3c6e3550e97b872da67938d34f3740f11c94102a5bfd3ddd4501820e980b5ca778c2fbe88d2695affe9a53bb5064c5a8a717360db3ecb87e2c0c74feea2f37a8', 'M', 'K', 'markor88@wp.pl', 16, 'Kraków', 'Poland', '', NULL, 0, 2, 'ADMIN'),
 (8, 'KONTOZ BANOWANE', 'zaq1@WSX', '', '', '', 0, '', '', NULL, NULL, 0, 0, 'MOD');
 
 -- --------------------------------------------------------
@@ -245,7 +244,7 @@ CREATE TABLE `watek` (
   `LICZBA_KOMENTARZY` int(10) NOT NULL DEFAULT 0,
   `ILOSC_ODWIEDZIN` int(10) NOT NULL DEFAULT 0,
   `OCENA` int(10) NOT NULL DEFAULT 0,
-  `STATUS` varchar(20) COLLATE utf8_polish_ci NOT NULL DEFAULT 'UKRYTE'
+  `STATUS` varchar(10) COLLATE utf8_polish_ci NOT NULL DEFAULT 'UKRYTE'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
@@ -253,9 +252,9 @@ CREATE TABLE `watek` (
 --
 
 INSERT INTO `watek` (`ID_WATEK`, `ID_USER`, `TEMAT`, `DATA`, `TRESC_WATKU`, `LICZBA_KOMENTARZY`, `ILOSC_ODWIEDZIN`, `OCENA`, `STATUS`) VALUES
-(2, 1, 'temattemattemat', '2020-12-11 18:41:17', 'tresctresctresctresctresctresctresctresc', 0, 309, -1, 'UKRYTE'),
-(3, 1, 'temattemattemat', '2020-12-11 18:42:57', 'tresctresctresctresctresctresctresctresc', 0, 11, 0, 'USUNIETE'),
-(4, 8, 'Czy dolar będzie tanieć', '2020-12-19 18:30:15', 'hahahha nie będzie.', 0, 1, 0, 'USUNIETE'),
+(2, 1, 'temattemattemat', '2020-12-11 18:41:17', 'tresctresctresctresctresctresctresctresc', 0, 315, -1, 'UKRYTE'),
+(3, 1, 'temattemattemat', '2020-12-11 18:42:57', 'tresctresctresctresctresctresctresctresc', 0, 6, 0, 'UKRYTE'),
+(4, 8, 'Czy dolar będzie tanieć', '2020-12-19 18:30:15', 'hahahha nie będzie.', 0, 1, 0, 'UKRYTE'),
 (5, 1, 'Euro', '2020-12-19 18:30:15', 'Euro oo', 0, 0, 0, 'UKRYTE');
 
 -- --------------------------------------------------------
@@ -340,7 +339,7 @@ ALTER TABLE `zgloszenie`
   ADD KEY `ID_USER` (`ID_USER`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT dla zrzuconych tabel
 --
 
 --

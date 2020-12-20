@@ -47,7 +47,7 @@ rysowanieGlownegoMenu();
             <div class="pro_avatar">
                 <?php
                 if ($row['ZDJECIE'] != NULL) {
-                    echo '<div class="p_avatar" style="background-image:url("data:image/jpeg;base64,' . base64_decode($row['ZDJECIE']) . '");" alt="zdjecie profilowe" />';
+                    echo '<div class="p_avatar" style="background-image:url("../img/' . $row['ZDJECIE'] . '");" alt="zdjecie profilowe" ><img src="img/'.$row['ZDJECIE'].'" alt="zdjecie profilowe"/></div>';
                 } else {
                     echo '<div class="p_avatar" alt="zmienilo" />';
                 }
@@ -133,7 +133,10 @@ rysowanieStopki();
 <?php
       if(isset($_POST['edytuj_profil'])){
         $id = $_POST['id'];
-        //$zdjecie = $_POST['zdjecie'];
+        $target = "img/".basename($_FILES['zdjecie']['name']);
+        $zdjecie = $_FILES['zdjecie']['name'];
+        move_uploaded_file($_FILES['zdjecie']['tmp_name'], $target);
+        //$zdjecie_kod = base64_encode(file_get_contents($_FILES["zdjecie"]["tmp_name"]));
         $imie = $_POST['imie'];
         $nazwisko = $_POST['nazwisko'];
         $email = $_POST['email'];
@@ -143,7 +146,7 @@ rysowanieStopki();
         $opis = $_POST['opis'];
         //$query = "UPDATE user SET IMIE='$imie',NAZWISKO='$nazwisko', EMAIL='$email', MIASTO='$miasto', WIEK=$wiek, KRAJ='$kraj', OPIS='$opis' WHERE USER_ID=".$_GET['user'];
         // $result = mysqli_query($db, $query) or die(mysqli_error($db));
-        if($polaczenie->query("UPDATE user SET IMIE='$imie',NAZWISKO='$nazwisko', EMAIL='$email', MIASTO='$miasto', WIEK=$wiek, KRAJ='$kraj', OPIS_PROFILU='$opis' WHERE ID_USER='$id'")){
+        if($polaczenie->query("UPDATE user SET IMIE='$imie',NAZWISKO='$nazwisko', EMAIL='$email', MIASTO='$miasto', WIEK=$wiek, KRAJ='$kraj', OPIS_PROFILU='$opis', ZDJECIE='$zdjecie' WHERE ID_USER='$id'")){
             $polaczenie->close();
             echo("<script>document.location.href = 'profilowe.php?user=".$row['ID_USER']."';</script>");
         }

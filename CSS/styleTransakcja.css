@@ -12,7 +12,18 @@ main{
     width: 800px;
 }
 
+#rate{
+    width: 90px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: black;
+}
 
+.input2{
+    background-color: white;
+    color: black;
+}
 
 .artykol{
     background-color:rgb(85, 81, 74);

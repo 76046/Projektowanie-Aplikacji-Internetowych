@@ -49,7 +49,7 @@ rysowanieGlownegoMenu();
             }
             else
             {
-            $rezultat = $polaczenie->query("SELECT * FROM artykul");
+            $rezultat = $polaczenie->query("SELECT * FROM waluta");
 
             if (!$rezultat)
             {
@@ -57,20 +57,21 @@ rysowanieGlownegoMenu();
             }
             else
             {
-            $iterator = 0;
+            //$iterator = 0;
+            $row = mysqli_fetch_assoc($rezultat);
             ?>
             <div class="wymiana">
 
-                <form>
-
-                <div class="kontener1">Wymieniasz PLN na ---</div>
-                <div class="kontener2"><input type="number" class="input1" min="1" max="9999"> ===> <input type="number" class="input2"></div>
+                <form method="post">
+                <?php echo '<input type="hidden" id="kod" value="' . $_GET['name'] . '">' ?>
+                <div class="kontener1">Wymieniasz PLN na <?php echo $_GET['name']; ?></div>
+                <div class="kontener2"><input type="number" id="from" name="from_kupno" class="input1" min="1" max="9999"> ===> <input type="number" id="to" name="to_kupno" class="input2" disabled></div>
                 <div class="kontener3">
-                    <div class="lewa">Waluta USD na -godzina- ma: <br>
-                        Kupno: 222.2222 PLN<br>
-                        </godzina></div>
+                    <div class="lewa">Waluta <?php echo $_GET['name']; ?> ma: <br>
+                        Kupno: <input type="number" id="rate" disabled>PLN<br>
+                    </div>
                     <div class="prawa">
-                        <input type="submit" value="Potwierdź transakcje" class="przycisk_akceptacji">
+                        <input type="submit" name="potwierdz_kupno" value="Potwierdź transakcje" class="przycisk_akceptacji">
                     </div>
                 </div>
 
@@ -85,7 +86,26 @@ rysowanieGlownegoMenu();
     }
 }
 include_once('rysowanieStopki.php');
-//rysowanieStopki();
+rysowanieStopki();
 ?>
+
+<script type="text/javascript" src="scripts/transactionK.js"></script>
+
 </body>
 </html>
+<?php
+if(isset($_POST['potwierdz_kupno'])){
+    $kod = $_GET['name'];
+    $kwotaZ = $_POST['from_kupno'];
+    $kwotaDo = $_POST['to_kupno'];
+    $user = $_SESSION['id_usera_zalog'];
+    if($polaczenie->query("INSERT INTO transakcja VALUES (NULL, $kod, true, $kwotaZ, $kwotaDo, $user)")){
+        $polaczenie->close();
+        echo("<script>document.location.href = 'podziekowanie.php';</script>");
+    }
+    else{
+        echo $polaczenie->error;
+    }
+
+   }
+?>

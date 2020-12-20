@@ -1,24 +1,6 @@
 
-
-body{
-    background-image: linear-gradient(#3c3c3c, #3e3c3a);
-}
-header{
-    position: fixed;
-    width: 100%;
-    top: 0px;
-    left: 0px;
-    margin: 0px;
-    padding: 0px;
-    height: 70px;
-    background-color:#3c3c3c;
-    z-index: 10;
-    /*text-align: center;*/
-    clear: both;
-}
 main{
-    background-color: darkslateblue;
-    width: 800px;
+    width: 1000px;
 }
 
 
@@ -58,7 +40,7 @@ a{
     margin: 10px;
     padding: 10px;
     text-align: center;
-    font-family: Impact,Arial,sans-serif;
+    font-family: sans-serif;
     font-size: 30px;
     top: 10px;
 }
@@ -73,8 +55,8 @@ a{
     margin: 20px auto 10px auto;
 }
 table{
-    width: 760px;
-    font-family: Arial, Verdana, sans-serif;
+    width: 960px;
+    font-family: sans-serif;
 }
 th, td{
     padding: 7px 10px 10px 10px;
@@ -112,6 +94,9 @@ th.panel_uzytkownicy:hover, th.panel_forum:hover, th.panel_artykuly:hover, th.pa
 th.ID,th.uzytkownik_wst, th.czas_wstawienia,th.liczba_odwiedzin,th.panel_admin{
     font-size: 12px;
 }
+td.uzytkownik_wst,td.czas_wstawienia,td.liczba_odwiedzin{
+    font-size: 15px;
+}
 
 .ban_button,.mute_button,.mute_glowna,.del_button,.mod_button{
     border: none;
@@ -139,3 +124,5 @@ th.ID,th.uzytkownik_wst, th.czas_wstawienia,th.liczba_odwiedzin,th.panel_admin{
 .ban_button:hover,.mute_glowna:hover,.del_button:hover,.mute_button:hover,.mod_button:hover{
     background-color:  #FFFAFA;
 }
+
+

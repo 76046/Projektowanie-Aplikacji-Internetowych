@@ -39,7 +39,7 @@ rysowanieGlownegoMenu();
                         <a href="panel_admin_f.php">Forum</a>
                     </th>
                     <th class="panel_zgloszenia">
-                        <a href="panel_admin_z.php">Zgłoszenia</a>
+                        <a href="panel_admin_z_k.php">Zgłoszenia</a>
                     </th>
                 </tr>
             </table>
@@ -68,8 +68,7 @@ rysowanieGlownegoMenu();
             <div class="tabliczki">
                 <table>
                     <tr>
-                        <th class="ID">ID Artykulu</th>
-                        <th class="uzytkownik_wst">Użytkownik wstawiajacy</th>
+                        <th class="uzytkownik_wst">Autor</th>
                         <th class="czas_wstawienia">Czas wstawienia</th>
                         <th class="liczba_odwiedzin">Liczba odwiedzin</th>
                         <th class="panel_admin">Panel Administratora</th>
@@ -85,7 +84,7 @@ rysowanieGlownegoMenu();
                     //                        {
                     //                            ?>
                     <tr>
-                        <td class="ID"></td>
+
                         <td class="uzytkownik_wst"></td>
                         <td class="czas_wstawienia"></td>
                         <td class="liczba_odwiedzin"></td>
@@ -103,7 +102,6 @@ rysowanieGlownegoMenu();
 
                     </tr>
                     <tr class="codrugi">
-                        <td class="ID"></td>
                         <td class="uzytkownik_wst"></td>
                         <td class="czas_wstawienia"></td>
                         <td class="liczba_odwiedzin"></td>

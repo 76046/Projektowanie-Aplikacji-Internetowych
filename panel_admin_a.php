@@ -39,7 +39,7 @@ rysowanieGlownegoMenu();
                         <a href="panel_admin_f.php">Forum</a>
                     </th>
                     <th class="panel_zgloszenia">
-                        <a href="panel_admin_z.php">Zgłoszenia</a>
+                        <a href="panel_admin_z_k.php">Zgłoszenia</a>
                     </th>
                 </tr>
             </table>
@@ -68,9 +68,8 @@ rysowanieGlownegoMenu();
             <div class="tabliczki">
                 <table>
                     <tr>
-                        <th class="ID">ID</th>
                         <th class="uzytkownik_wst">Temat</th>
-                        <th class="czas_wstawienia">Użytkownik wstawiajacy</th>
+                        <th class="czas_wstawienia">Autor</th>
                         <th class="liczba_odwiedzin">Czas wstawienia</th>
                         <th class="panel_admin">Panel Administratora</th>
                     </tr>
@@ -85,13 +84,12 @@ rysowanieGlownegoMenu();
                         {
                             ?>
                             <tr>
-                            <td class="ID"><?php echo $row['ID_ARTYKULU'];?></td>
                             <td class="uzytkownik_wst"><?php echo '<a href="watek.php?id='.$row['ID_ARTYKULU'].'">'.$row['TEMAT'].'</a>' ;?></td>
                             <td class="czas_wstawienia"><?php echo'<a href="profilowe.php?user='.$rezultat_loginu['ID_USER'].'">'.$rezultat_loginu['LOGIN'].'</a>';?></td>
                             <td class="liczba_odwiedzin"><?php echo $row['DATA'];?></td>
                             <td class="panel_admin">
 
-                                <a><button type="button" class="mute_glowna" name="butt_glowna" method="post">G</button></a>
+                                <a><button type="button" class="mute_glowna" name="butt_glowna"  method="post">G</button></a>
 
                                 <a><button type="button" class="mute_glowna" name="butt_glowna" method="post">P</button></a>
 
@@ -108,7 +106,6 @@ rysowanieGlownegoMenu();
                             {
                             ?>
                             <tr class="codrugi">
-                                <td class="ID"><?php echo $row['ID_ARTYKULU'];?></td>
                                 <td class="uzytkownik_wst"><?php echo '<a href="watek.php?id='.$row['ID_ARTYKULU'].'">'.$row['TEMAT'].'</a>' ;?></td>
                                 <td class="czas_wstawienia"><?php echo'<a href="profilowe.php?user='.$rezultat_loginu['ID_USER'].'">'.$rezultat_loginu['LOGIN'].'</a>';?></td>
                                 <td class="liczba_odwiedzin"><?php echo $row['DATA'];?></td>

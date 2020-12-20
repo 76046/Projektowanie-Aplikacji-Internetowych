@@ -39,7 +39,7 @@ rysowanieGlownegoMenu();
                         <a href="panel_admin_f.php">Forum</a>
                     </th>
                     <th class="panel_zgloszenia">
-                        <a href="panel_admin_z.php">Zgłoszenia</a>
+                        <a href="panel_admin_z_k.php">Zgłoszenia</a>
                     </th>
                 </tr>
             </table>
@@ -68,7 +68,6 @@ rysowanieGlownegoMenu();
             <div class="tabliczki">
                 <table>
                     <tr>
-                        <th class="ID">ID</th>
                         <th class="uzytkownik_wst">Login</th>
                         <th class="uzytkownik_wst">Imie</th>
                         <th class="uzytkownik_wst">Nazwisko</th>
@@ -85,7 +84,7 @@ rysowanieGlownegoMenu();
                         {
                         ?>
                     <tr>
-                        <td class="ID"><?php echo $row['ID_USER'];?></td>
+
                         <td class="uzytkownik_wst"><?php echo'<a href="profilowe.php?user='.$row['ID_USER'].'">'.$row['LOGIN'].'</a>';?></td>
                         <td class="uzytkownik_wst"><?php echo $row['IMIE'];?></td>
                         <td class="uzytkownik_wst"><?php echo $row['NAZWISKO'];?></td>
@@ -111,7 +110,6 @@ rysowanieGlownegoMenu();
 
                         ?>
                     <tr class="codrugi">
-                        <td class="ID"><?php echo $row['ID_USER'];?></td>
                         <td class="uzytkownik_wst"><?php echo'<a href="profilowe.php?user='.$row['ID_USER'].'">'.$row['LOGIN'].'</a>';?></td>
                         <td class="uzytkownik_wst"><?php echo $row['IMIE'];?></td>
                         <td class="uzytkownik_wst"><?php echo $row['NAZWISKO'];?></td>

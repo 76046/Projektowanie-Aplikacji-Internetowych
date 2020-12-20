@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b66e8ea2-378a-4cec-84c3-d67acd077d7b" name="Default Changelist" comment="" />
+    <list default="true" id="b66e8ea2-378a-4cec-84c3-d67acd077d7b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/stylePanelAdmina.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/stylePanelAdmina.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel_admin_a.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel_admin_a.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel_admin_f.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel_admin_f.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel_admin_u.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel_admin_u.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel_admin_z.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel_admin_z_k.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zglos_komentarz.php" beforeDir="false" afterPath="$PROJECT_DIR$/zglos_komentarz.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,6 +66,16 @@
       <recent name="C:\Users\MarKo\Desktop\semestr1\Projektowanie Aplikacji Internetowych\Projektowanie-Aplikacji-Internetowych\Projektowanie-Aplikacji-Internetowych" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="panel_admin_z_k.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/panel_admin_z_k.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.panel_admin_z_k.php" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -85,7 +104,7 @@
       <workItem from="1608074602950" duration="410000" />
       <workItem from="1608103887925" duration="2213000" />
       <workItem from="1608372761358" duration="40402000" />
-      <workItem from="1608454117995" duration="22457000" />
+      <workItem from="1608454117995" duration="30708000" />
     </task>
     <servers />
   </component>
@@ -110,10 +129,26 @@
     </state>
     <state x="1206" y="231" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608063367080" />
     <state x="3126" y="231" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608375082157" />
-    <state x="2714" y="443" key="NewPhpFileDialog" timestamp="1608486903543">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1608492167190">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2714" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608486903543" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608492167190" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1608492167190">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608492167190" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1608492167190">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608492167190" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1608492167190">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608492167190" />
+    <state x="2714" y="443" key="NewPhpFileDialog" timestamp="1608492450892">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2714" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608492450892" />
     <state x="2381" y="162" key="SettingsEditor" timestamp="1603309318351">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

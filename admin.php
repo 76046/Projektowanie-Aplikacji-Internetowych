@@ -29,7 +29,6 @@ else {
         }
         $polaczenie->query("DELETE FROM `komentarz` WHERE `ID_KOMENTARZ` =" . $_GET['komentarz']);
     }
-
 //usuwanie watku poprzez ukrycie go
     if (isset($_GET['watek'])) {
         $rezultat = $polaczenie->query("UPDATE `watek` SET `STATUS` = 'USUNIETE' WHERE `watek`.`ID_WATEK`=" . $_GET['watek']);

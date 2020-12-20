@@ -103,9 +103,10 @@ rysowanieGlownegoMenu();
                 $id_kom = $_GET['kom'];
                 $id_zalogowanego = $_SESSION['id_usera_zalog'];
                 $tresc = $_POST['komentarz_watek'];
+                $id_watku = $_GET['watek'];
 
                 $_SESSION['zgloszenie'] = 0;
-                if($polaczenie->query("INSERT INTO `zgloszenie` (`WATEK_CZY_KOM`,`ID_KOMENTARZ`,`ID_ZGLASZAJACEGO`,`POWOD`) VALUES ('KOM','$id_kom','$id_zalogowanego','$tresc');"))
+                if($polaczenie->query("INSERT INTO `zgloszenie` (`WATEK_CZY_KOM`,`ID_WATEK`,`ID_KOMENTARZ`,`ID_ZGLASZAJACEGO`,`POWOD`) VALUES ('KOM','$id_watku','$id_kom','$id_zalogowanego','$tresc');"))
                 {
                     $_SESSION['zgloszenie'] = 5;
                 }

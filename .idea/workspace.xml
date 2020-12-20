@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b66e8ea2-378a-4cec-84c3-d67acd077d7b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watek.php" beforeDir="false" afterPath="$PROJECT_DIR$/watek.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/styleWalutyKruszce.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleWalutyKruszce.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dodaj_artykuł.php" beforeDir="false" afterPath="$PROJECT_DIR$/dodaj_artykul.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/waluty.php" beforeDir="false" afterPath="$PROJECT_DIR$/waluty.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +90,7 @@
       <workItem from="1608074602950" duration="410000" />
       <workItem from="1608103887925" duration="2213000" />
       <workItem from="1608372761358" duration="40402000" />
-      <workItem from="1608454117995" duration="15021000" />
+      <workItem from="1608454117995" duration="19513000" />
     </task>
     <servers />
   </component>
@@ -113,10 +115,10 @@
     </state>
     <state x="1206" y="231" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608063367080" />
     <state x="3126" y="231" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608375082157" />
-    <state x="2714" y="443" key="NewPhpFileDialog" timestamp="1608461468768">
+    <state x="2714" y="443" key="NewPhpFileDialog" timestamp="1608482307489">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2714" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608461468768" />
+    <state x="2714" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608482307489" />
     <state x="2381" y="162" key="SettingsEditor" timestamp="1603309318351">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

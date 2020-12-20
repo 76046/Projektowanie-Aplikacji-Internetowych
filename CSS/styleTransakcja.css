@@ -1,0 +1,106 @@
+
+.glowny_obiekt{
+    background-color: #72e7ff;
+    width: 800px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+main{
+    width: 800px;
+}
+
+
+
+.artykol{
+    background-color:rgb(85, 81, 74);
+    position:relative;
+    top: 50px;
+    padding-bottom: 1px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sekcja{
+    position:relative;
+    background-color: rgb(111, 111, 111);
+    margin: 20px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+}
+
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.tytul_artykulu{
+    position: relative;
+    background-color:rgb(124, 113, 104);
+    width: auto;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    font-family: Impact,Arial,sans-serif;
+    font-size: 30px;
+    top: 10px;
+}
+
+table{
+    width: 760px;
+    font-family: Arial, Verdana, sans-serif;
+}
+th, td{
+    padding: 7px 10px 10px 10px;
+}
+th{
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 90%;
+    border-bottom: 2px solid #999;
+    border-top: 1px solid #999;
+    text-align: center;
+}
+tr.codrugi{
+    background-color: #8e8787;
+}
+tr:hover{
+    background-color: #5c6060;
+}
+td:hover{
+    background-color: #7a7c7a;
+}
+
+td.panel_admin ,td.wstawione_memy,td.liczba_odwiedzin{
+    text-align: center;
+}
+
+
+th.panel_uzytkownicy, th.panel_forum, th.panel_artykuly, th.panel_zgloszenia{
+    width: 25%;
+}
+th.panel_uzytkownicy:hover, th.panel_forum:hover, th.panel_artykuly:hover, th.panel_zgloszenia:hover{
+    background-color: #af9f27;
+}
+
+.wymiana{
+
+}
+.kontener1{
+    background-color: #2f8424;
+    margin-top: 30px;
+}
+.kontener2{
+    background-color: #841616;
+}
+.kontener3{
+    background-color: #094284;
+    margin-bottom: 30px;
+}
+.kontener1,.kontener2,.kontener3{
+    height: 120px;
+}

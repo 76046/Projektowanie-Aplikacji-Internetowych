@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 20 Gru 2020, 14:42
--- Wersja serwera: 10.4.14-MariaDB
--- Wersja PHP: 7.4.11
+-- Czas generowania: 20 Gru 2020, 16:20
+-- Wersja serwera: 10.4.11-MariaDB
+-- Wersja PHP: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -244,7 +245,7 @@ CREATE TABLE `watek` (
   `LICZBA_KOMENTARZY` int(10) NOT NULL DEFAULT 0,
   `ILOSC_ODWIEDZIN` int(10) NOT NULL DEFAULT 0,
   `OCENA` int(10) NOT NULL DEFAULT 0,
-  `STATUS` varchar(10) COLLATE utf8_polish_ci NOT NULL DEFAULT 'UKRYTE'
+  `STATUS` varchar(20) COLLATE utf8_polish_ci NOT NULL DEFAULT 'UKRYTE'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
@@ -339,7 +340,7 @@ ALTER TABLE `zgloszenie`
   ADD KEY `ID_USER` (`ID_USER`);
 
 --
--- AUTO_INCREMENT dla zrzuconych tabel
+-- AUTO_INCREMENT for dumped tables
 --
 
 --

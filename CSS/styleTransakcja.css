@@ -45,14 +45,14 @@ a{
     margin: 10px;
     padding: 10px;
     text-align: center;
-    font-family: Impact,Arial,sans-serif;
+    font-family: sans-serif;
     font-size: 30px;
     top: 10px;
 }
 
 table{
     width: 760px;
-    font-family: Arial, Verdana, sans-serif;
+    font-family: sans-serif;
 }
 th, td{
     padding: 7px 10px 10px 10px;
@@ -90,17 +90,59 @@ th.panel_uzytkownicy:hover, th.panel_forum:hover, th.panel_artykuly:hover, th.pa
 .wymiana{
 
 }
+.kontener1,.kontener2,.kontener3{
+    height: 120px;
+    font-family: sans-serif;
+    font-size: 30px;
+}
+
 .kontener1{
     background-color: #2f8424;
     margin-top: 30px;
+    text-align: center;
+    padding-top: 20px;
+    height: 60px;
 }
 .kontener2{
     background-color: #841616;
 }
+.kontener2 .input1,.kontener2 .input2{
+    width: 200px;
+    height: 30px;
+    margin: 40px;
+    font-size: 30px;
+}
+.input1 .kontener2{
+
+}
+.input2 .kontener2{
+
+}
+
 .kontener3{
     background-color: #094284;
     margin-bottom: 30px;
+    height: 100px;
 }
-.kontener1,.kontener2,.kontener3{
-    height: 120px;
+.kontener3 .lewa{
+    width: 510px;
+    height: 75px;
+    background-color: #ff3b3b;
+    float: left;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 25px;
 }
+
+.kontener3 .prawa{
+    width: 250px;
+    height: 100px;
+    background-color: #3c2aff;
+    float: left;
+}
+
+.przycisk_akceptacji{
+    margin-top: 35px;
+    font-size: 15px;
+}
+

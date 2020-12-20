@@ -63,16 +63,16 @@ rysowanieGlownegoMenu();
 
                 <form>
 
-                <div class="kontener1">Wymieniasz PLN na ---</div>
-                <div class="kontener2"><input type="number" class="input1" min="1" max="9999"> ===> <input type="number" class="input2"></div>
-                <div class="kontener3">
-                    <div class="lewa">Waluta USD na -godzina- ma: <br>
-                        Kupno: 222.2222 PLN<br>
-                        </godzina></div>
-                    <div class="prawa">
-                        <input type="submit" value="Potwierdź transakcje" class="przycisk_akceptacji">
+                    <div class="kontener1">Wymieniasz --- na PLN</div>
+                    <div class="kontener2"><input type="number" class="input1" min="1" max="9999"> ===> <input type="number" class="input2"></div>
+                    <div class="kontener3">
+                        <div class="lewa">Waluta USD na -godzina- ma: <br>
+                            Sprzedaż: 222.2222 PLN<br>
+                            </godzina></div>
+                        <div class="prawa">
+                            <input type="submit" value="Potwierdź transakcje" class="przycisk_akceptacji">
+                        </div>
                     </div>
-                </div>
 
                 </form>
 
@@ -82,10 +82,11 @@ rysowanieGlownegoMenu();
     </article>
 </main>
 <?php
-    }
+}
 }
 include_once('rysowanieStopki.php');
 //rysowanieStopki();
 ?>
 </body>
 </html>
+

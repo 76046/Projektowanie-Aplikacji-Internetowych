@@ -1,4 +1,9 @@
 <?php
+
+setcookie("visited", "1", time() + 3600 * 24 * 7);
+//Wysyła cookie na komputer użytkownika
+
+
 session_start();
 if(isset($_SESSION['zgloszenie'])){
     unset($_SESSION['zgloszenie']);
@@ -33,6 +38,36 @@ rysowanieGlownegoMenu();
           }
           else
     {
+
+    if (file_exists("counter.n")) {
+        //Sprawdza czy plik istnieje
+        $file = fopen("counter.n", "r"); // otwiera plik
+        flock($file, 1); // blokuje plik
+        $ile = fgets($file, 100);
+        //Odczytuje wartość z pliku counter.n
+
+        flock($file, 3); // odblokowywuje plik
+        fclose($file); //zamyka plik
+        if ($_COOKIE["visited"] != "1") //Sprawdza, czy użytkownik był na stronie
+        {
+            $ile++;
+            //Zwiększa wartość o jeden tylko po pierwszym wejściu
+        }
+    } else {
+        $ile = 1; //jeśli plik nie istnieje, wyświetli się 1
+    }
+
+    $file = fopen("counter.n", "w"); // otwiera plik do zapisu
+    flock($file, 2); // blokuje do zapisu
+    fwrite($file, $ile); //zapisuje wartość
+    flock($file, 3); // odblokowuje plik
+    fclose($file); //zamyka plik
+
+    //echo($ile); //Wyświetla wartość
+
+    $rezultat = $polaczenie->query("UPDATE `watek` SET `ILOSC_ODWIEDZIN` = '$ile' WHERE ID_WATEK=".$_GET['id']);
+
+
     $rezultat = $polaczenie->query("SELECT * FROM watek WHERE ID_WATEK=" . $_GET['id']);
 
     if (!$rezultat)
@@ -124,8 +159,11 @@ rysowanieGlownegoMenu();
                                     }
                                 }
                             }
-                        if(!((isset($_SESSION['mute']))&&$_SESSION['mute']=='true'))
-                        echo '<a href="zglos_watek.php?watek='.$row['ID_WATEK'].'&user='.$row['ID_USER'].'"><button type="button" class="zglos_button">Zgłoś</button></a>';
+                        $Czy_zgloszone = mysqli_fetch_array($polaczenie->query("SELECT * FROM zgloszenie WHERE ID_WATEK=".$_GET['id']." AND ID_ZGLASZAJACEGO =".$_SESSION['id_usera_zalog']));
+                        if($Czy_zgloszone==NULL) {
+                            if (!((isset($_SESSION['mute'])) && $_SESSION['mute'] == 'true'))
+                                echo '<a href="zglos_watek.php?watek=' . $row['ID_WATEK'] . '&user=' . $row['ID_USER'] . '"><button type="button" class="zglos_button">Zgłoś</button></a>';
+                        }
                     }
                         if((isset($_SESSION['admin']))&&($_SESSION['admin']==true)){
                             echo '<a href="admin.php?watek='.$row['ID_WATEK'].'"><button type="button" class="del_button2">Usuń</button></a>';
@@ -313,10 +351,11 @@ rysowanieGlownegoMenu();
             } else {
                 echo '<div class="kom_adminpanel2">';
                 if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true)) {
-
-                    if(!((isset($_SESSION['mute']))&&$_SESSION['mute']=='true'))
-                    echo '<a href="zglos_komentarz.php?user=' . $row_usera['ID_USER'] . '&kom=' . $row_komentarz['ID_KOMENTARZ'] .'&watek=' . $_GET['id'] . '"><button type="button" class="zglos_buttonuser">Zgłoś</button></a>';
-
+                    $Czy_zgloszone = mysqli_fetch_array($polaczenie->query("SELECT * FROM zgloszenie WHERE ID_KOMENTARZ=".$row_komentarz['ID_KOMENTARZ']." AND ID_ZGLASZAJACEGO =".$_SESSION['id_usera_zalog']));
+                    if($Czy_zgloszone==NULL) {
+                        if (!((isset($_SESSION['mute'])) && $_SESSION['mute'] == 'true'))
+                            echo '<a href="zglos_komentarz.php?user=' . $row_usera['ID_USER'] . '&kom=' . $row_komentarz['ID_KOMENTARZ'] . '&watek=' . $_GET['id'] . '"><button type="button" class="zglos_buttonuser">Zgłoś</button></a>';
+                    }
                 }
                 echo '</div>';
             }

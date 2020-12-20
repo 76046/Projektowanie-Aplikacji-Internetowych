@@ -131,14 +131,14 @@ if(!isset($_POST['wybor_kontynentu'])){
                                                    type="hidden" disabled>
 
                                         </td>
-<<<<<<< Updated upstream
+
                                         <td data-label="Operacje" class="operacje-waluty">
-=======
+
                                         <td class="operacje-waluty">
                                             <?php
                                             echo '<a href="transakcja_kupno.php?name="'.$row['KOD_WALUTA'].'><input type="submit" class="operacje" value="Dokonaj tranzakcji"></a>';
                                             ?>
->>>>>>> Stashed changes
+
                                         </td>
                                     </tr>
                                     <?php
@@ -167,14 +167,14 @@ if(!isset($_POST['wybor_kontynentu'])){
                                                    type="hidden" disabled>
 
                                         </td>
-<<<<<<< Updated upstream
+
                                         <td data-label="Operacje" class="operacje-waluty">
-=======
+
                                         <td class="operacje-waluty">
                                             <?php
                                             echo '<a href="transakcja_kupno.php?name="'.$row['KOD_WALUTA'].'><input type="submit" class="operacje" value="Dokonaj tranzakcji"></a>';
                                             ?>
->>>>>>> Stashed changes
+
                                         </td>
                                     </tr>
 

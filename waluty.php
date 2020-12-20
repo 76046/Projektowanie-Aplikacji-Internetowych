@@ -134,9 +134,12 @@ if(!isset($_POST['wybor_kontynentu'])){
 
                                         <td data-label="Operacje" class="operacje-waluty">
 
-                                        <td class="operacje-waluty">
                                             <?php
-                                            echo '<a href="transakcja_kupno.php?name="'.$row['KOD_WALUTA'].'><input type="submit" class="operacje" value="Dokonaj tranzakcji"></a>';
+                                            if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true)){
+                                            echo '<a href="transakcja_kupno.php?name="'.$row['KOD_WALUTA'].'><input type="submit" class="operacje" value="Dokonaj transakcji"></a>';
+                                            } else {
+                                                echo 'Aby dokonać transakcji</br> zaloguj się!';
+                                            }
                                             ?>
 
                                         </td>
@@ -170,9 +173,12 @@ if(!isset($_POST['wybor_kontynentu'])){
 
                                         <td data-label="Operacje" class="operacje-waluty">
 
-                                        <td class="operacje-waluty">
-                                            <?php
-                                            echo '<a href="transakcja_kupno.php?name="'.$row['KOD_WALUTA'].'><input type="submit" class="operacje" value="Dokonaj tranzakcji"></a>';
+                                        <?php
+                                            if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true)){
+                                            echo '<a href="transakcja_kupno.php?name="'.$row['KOD_WALUTA'].'><input type="submit" class="operacje" value="Dokonaj transakcji"></a>';
+                                            } else {
+                                                echo 'Aby dokonać transakcji</br> zaloguj się!';
+                                            }
                                             ?>
 
                                         </td>

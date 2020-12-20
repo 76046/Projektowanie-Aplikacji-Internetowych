@@ -21,7 +21,7 @@ rysowanieGlownegoMenu();
     <article class="artykol">
 
         <div class="tytul_artykulu">
-            Wybrana waluta:
+            Wybrana waluta: <?php echo $_GET['name']; ?>
         </div>
 
 
@@ -30,10 +30,10 @@ rysowanieGlownegoMenu();
             <table>
                 <tr>
                     <th class="panel_artykuly">
-                        <a href="transakcja_kupno.php">Kupno</a>
+                        <?php echo '<a href="transakcja_kupno.php?name='.$_GET['name'].'">Kupno</a>'; ?>
                     </th>
                     <th class="panel_uzytkownicy">
-                        <a href="transakcja_sprzedaz.php">Sprzedaż</a>
+                        <?php echo '<a href="transakcja_sprzedaz.php?name='.$_GET['name'].'">Sprzedaż</a>'; ?>
                     </th>
                 </tr>
             </table>

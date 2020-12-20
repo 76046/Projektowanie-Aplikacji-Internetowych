@@ -48,7 +48,7 @@ rysowanieGlownegoMenu();
 
                 <?php
                 if ($row['ZDJECIE'] != NULL) {
-                    echo '<div class="p_avatar" style="background-image:url("../img/' . $row['ZDJECIE'] . '");" alt="zdjecie profilowe" ><img src="img/'.$row['ZDJECIE'].'" alt="zdjecie profilowe"/></div>';
+                    echo '<div class="p_avatar" style="background-image:url("../img/profile/' . $row['ZDJECIE'] . '");" alt="zdjecie profilowe" ><img src="img/profile/'.$row['ZDJECIE'].'" alt="zdjecie profilowe"/></div>';
                 } else {
 
                     echo '<div class="p_avatar" alt="zmienilo" />';

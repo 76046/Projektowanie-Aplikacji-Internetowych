@@ -47,7 +47,7 @@ rysowanieGlownegoMenu();
             <div class="pro_avatar">
                 <?php
                 if ($row['ZDJECIE'] != NULL) {
-                    echo '<div class="p_avatar" style="background-image:url("../img/' . $row['ZDJECIE'] . '");" alt="zdjecie profilowe" ><img src="img/'.$row['ZDJECIE'].'" alt="zdjecie profilowe"/></div>';
+                    echo '<div class="p_avatar" style="background-image:url("../img/profile/' . $row['ZDJECIE'] . '");" alt="zdjecie profilowe" ><img src="img/profile/'.$row['ZDJECIE'].'" alt="zdjecie profilowe"/></div>';
                 } else {
                     echo '<div class="p_avatar" alt="zmienilo" />';
                 }
@@ -133,7 +133,7 @@ rysowanieStopki();
 <?php
       if(isset($_POST['edytuj_profil'])){
         $id = $_POST['id'];
-        $target = "img/".basename($_FILES['zdjecie']['name']);
+        $target = "img/profile/".basename($_FILES['zdjecie']['name']);
         $zdjecie = $_FILES['zdjecie']['name'];
         move_uploaded_file($_FILES['zdjecie']['tmp_name'], $target);
         //$zdjecie_kod = base64_encode(file_get_contents($_FILES["zdjecie"]["tmp_name"]));

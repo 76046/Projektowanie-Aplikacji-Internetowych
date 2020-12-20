@@ -92,7 +92,7 @@ rysowanieGlownegoMenu();
                         <?php
                         if($row_autor['ZDJECIE']!=NULL)
                         {
-                            echo '<img src="img/'.$row_autor['ZDJECIE'].'" alt="zdjecie"/>';
+                            echo '<img src="img/profile/'.$row_autor['ZDJECIE'].'" alt="zdjecie"/>';
                         }else {
 
                         }
@@ -288,7 +288,7 @@ rysowanieGlownegoMenu();
                 <?php
                 if($row_usera['ZDJECIE']!=NULL)
                 {
-                    echo '<div class="kom_profilowe" style="background-image:url("../img/' . $row_usera['ZDJECIE'] . '");" alt="zdjecie profilowe" ><img src="img/'.$row_usera['ZDJECIE'].'" alt="zdjecie profilowe"/>';
+                    echo '<div class="kom_profilowe" style="background-image:url("../img/profile/' . $row_usera['ZDJECIE'] . '");" alt="zdjecie profilowe" ><img src="img/profile/'.$row_usera['ZDJECIE'].'" alt="zdjecie profilowe"/>';
                 }else {
 
                     echo '<div class="kom_profilowe" alt="zdjecie b" />';

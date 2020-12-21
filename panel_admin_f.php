@@ -55,7 +55,12 @@ rysowanieGlownegoMenu();
                         }
                         else
                         {
-                        $rezultat = $polaczenie->query("SELECT * FROM watek");
+                        if((isset($_SESSION['admin']))&&($_SESSION['admin']==true)){
+                            $rezultat = $polaczenie->query("SELECT * FROM watek ORDER BY `watek`.`DATA` DESC");
+                        }  else{
+                            $rezultat = $polaczenie->query("SELECT * FROM watek WHERE ID_MODERACJA=".$_SESSION['id_usera_zalog']." ORDER BY `watek`.`DATA` DESC");
+                        }
+
 
                         if(!$rezultat)
                         {
@@ -73,7 +78,7 @@ rysowanieGlownegoMenu();
                         <th class="liczba_odwiedzin">Autor</th>
                         <th class="liczba_odwiedzin">Data wstawienia</th>
                         <th class="liczba_odwiedzin">STAN</th>
-                        <th class="panel_admin">Panel Administratora</th>
+                        <th class="panel_admin">Panel</th>
                     </tr>
                     <?php
                     while($row = mysqli_fetch_array($rezultat))
@@ -94,28 +99,44 @@ rysowanieGlownegoMenu();
                         <td class="uzytkownik_wst"><?php  echo $rezultat_watku['DATA'];?></td>
                         <td class="uzytkownik_wst"><?php  echo $rezultat_watku['STATUS'];?></td>
                         <td class="panel_admin">
-                            <select name=<?php echo $row['ID_WATEK'];?> >
-                                <?php
-                                if($rezultat_watku['ID_MODERACJA']==0){
-                                    echo '<option value="Brak" selected>Nie wybrano</option>';
-                                }else{
-                                    echo '<option value="Brak">Nie wybrano</option>';
-                                }
-                                $rezultat_modow = $polaczenie->query("SELECT * FROM user WHERE UPRAWNIENIA='MOD'");
-                                while ($mody = mysqli_fetch_assoc($rezultat_modow)) {
-                                    echo '<option value="'.$mody['ID_USER'].'"';
-
-                                    if($row['ID_MODERACJA'] == $mody['ID_USER'])
-                                    {
-                                        echo 'selected';
-                                    }
-
-                                    echo '>';
-                                    echo $mody['LOGIN'];
-                                    echo '</option>';
-                                }
+                            <?php
+                            if((isset($_SESSION['admin']))&&($_SESSION['admin']==true)) {
                                 ?>
-                            </select>
+                                <select name=<?php echo $row['ID_WATEK']; ?>>
+                                    <?php
+                                    if ($rezultat_watku['ID_MODERACJA'] == 0) {
+                                        echo '<option value="Brak" selected>Nie wybrano</option>';
+                                    } else {
+                                        echo '<option value="Brak">Nie wybrano</option>';
+                                    }
+                                    $rezultat_modow = $polaczenie->query("SELECT * FROM user WHERE UPRAWNIENIA='MOD'");
+                                    while ($mody = mysqli_fetch_assoc($rezultat_modow)) {
+                                        echo '<option value="' . $mody['ID_USER'] . '"';
+
+                                        if ($row['ID_MODERACJA'] == $mody['ID_USER']) {
+                                            echo 'selected';
+                                        }
+
+                                        echo '>';
+                                        echo $mody['LOGIN'];
+                                        echo '</option>';
+                                    }
+                                    ?>
+                                </select>
+                                <?php
+                            }else{
+                                if ($row['STATUS']=='OCZEKUJACE'){
+                                    echo'<a href="admin.php?panel=forum&akcja=akceptuj&idwatku='.$row['ID_WATEK'].'"><button type="button" class="mute_button" name="butt_ban" title="Zakceptuj temat" method="post">✅</button></a>';
+                                    echo'<a href="admin.php?panel=forum&akcja=odrzuc&idwatku='.$row['ID_WATEK'].'"><button type="button" class="ban_button" name="butt_ban" title="Odrzuć temat" method="post">❌</button></a>';
+
+                                }else if($row['STATUS']=='POTWIERDZONE') {
+                                    echo '<a href="admin.php?panel=forum&akcja=odrzuc&idwatku=' . $row['ID_WATEK'] . '"><button type="button" class="ban_button" name="butt_ban" title="Odrzuć temat" method="post">❌</button></a>';
+                                }else{
+                                    echo'<a href="admin.php?panel=forum&akcja=akceptuj&idwatku='.$row['ID_WATEK'].'"><button type="button" class="mute_button" name="butt_ban" title="Zakceptuj temat" method="post">✅</button></a>';
+                                }
+                            }
+
+                                ?>
                         </td>
 
                     </tr>
@@ -130,6 +151,9 @@ rysowanieGlownegoMenu();
                         <td class="uzytkownik_wst"><?php  echo $rezultat_watku['DATA'];?></td>
                         <td class="uzytkownik_wst"><?php  echo $rezultat_watku['STATUS'];?></td>
                         <td class="panel_admin">
+                            <?php
+                            if((isset($_SESSION['admin']))&&($_SESSION['admin']==true)) {
+                                ?>
                             <select name=<?php echo $row['ID_WATEK'];?> >
                                 <?php
                                 if($rezultat_watku['ID_MODERACJA']==0){
@@ -152,15 +176,28 @@ rysowanieGlownegoMenu();
                                 }
                                 ?>
                             </select>
+                            <?php
+                            }else{
+                                if ($row['STATUS']=='OCZEKUJACE'){
+                                    echo'<a href="admin.php?panel=forum&akcja=akceptuj&idwatku='.$row['ID_WATEK'].'"><button type="button" class="mute_button" name="butt_ban" title="Zakceptuj temat" method="post">✅</button></a>';
+                                    echo'<a href="admin.php?panel=forum&akcja=odrzuc&idwatku='.$row['ID_WATEK'].'"><button type="button" class="ban_button" name="butt_ban" title="Odrzuć temat" method="post">❌</button></a>';
+
+                                }else if($row['STATUS']=='POTWIERDZONE') {
+                                    echo '<a href="admin.php?panel=forum&akcja=odrzuc&idwatku=' . $row['ID_WATEK'] . '"><button type="button" class="ban_button" name="butt_ban" title="Odrzuć temat" method="post">❌</button></a>';
+                                }else{
+                                    echo'<a href="admin.php?panel=forum&akcja=akceptuj&idwatku='.$row['ID_WATEK'].'"><button type="button" class="mute_button" name="butt_ban" title="Zakceptuj temat" method="post">✅</button></a>';
+                                }
+                            }
+                            ?>
                         </td>
                     </tr>
                                         <?php
                                             }
                                             $iterator++;
                                         }
-
-                                        echo '<tr><td colspan="5"><a href="panel_admin_f.php"><input type="submit" name="Zaktualizuj" value="Zaktualizuj"/></a></td></tr>';
-
+                                            if((isset($_SESSION['admin']))&&($_SESSION['admin']==true)){
+                                                echo '<tr><td colspan="5"><a href="panel_admin_f.php"><input type="submit" name="Zaktualizuj" value="Zaktualizuj"/></a></td></tr>';
+                                            }
                                         }
                                         $rezultat->close();
                                         }

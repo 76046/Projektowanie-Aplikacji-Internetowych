@@ -33,7 +33,7 @@ session_start();
                     }
                     else
                     {
-                        $rezultat = $polaczenie->query("SELECT * FROM watek");
+                        $rezultat = $polaczenie->query("SELECT * FROM watek WHERE STATUS='POTWIERDZONE' ORDER BY `watek`.`DATA` DESC");
 
                         if(!$rezultat)
                         {

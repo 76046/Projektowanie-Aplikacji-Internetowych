@@ -15,7 +15,7 @@ function rysowanieGlownegoMenu()
                         echo '<a href="profilowe.php?user='.$_SESSION['id_usera_zalog'].'">'.$_SESSION['login_wyswietlanie'].'</a>';
                         echo '<br>';
                         echo '<a href="wylogowanie.php">Wyloguj</a>';
-                        if((isset($_SESSION['admin']))&&($_SESSION['admin']==true)){
+                        if((isset($_SESSION['admin']))&&($_SESSION['admin']==true)||(isset($_SESSION['mod']))&&($_SESSION['mod']==true)){
                             echo '<a href="panel_admin_a.php" ><input type="submit" value="PANEL ADMINA"
                                           style="background-color: #4CAF50;
                                           border: none;

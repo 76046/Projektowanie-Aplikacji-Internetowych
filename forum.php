@@ -95,6 +95,9 @@ session_start();
                                 }
                                 $iterator++;
                             }
+                            echo '<tr>
+                                              <td colspan="5"><center><a href="stworz_watek.php"><input type="submit" name="stworz_watek" value="Stworz wątek"/></a></center></td>
+                                              </tr>';
                             }
                             $rezultat->close();
                             }

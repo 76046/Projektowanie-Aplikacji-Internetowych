@@ -67,7 +67,7 @@ rysowanieGlownegoMenu();
                         ?>
             <div class="tabliczki">
                 <table>
-                    <form method="post">
+                    <form method="post" action="#">
                     <tr>
                         <th class="uzytkownik_wst">Temat</th>
                         <th class="liczba_odwiedzin">Autor</th>
@@ -102,16 +102,17 @@ rysowanieGlownegoMenu();
                                     echo '<option value="Brak">Nie wybrano</option>';
                                 }
                                 $rezultat_modow = $polaczenie->query("SELECT * FROM user WHERE UPRAWNIENIA='MOD'");
-                            while ($mody = mysqli_fetch_assoc($rezultat_modow)) {
-                                echo '<option value="'.$row['LOGIN'].'"';
+                                while ($mody = mysqli_fetch_assoc($rezultat_modow)) {
+                                    echo '<option value="'.$mody['ID_USER'].'"';
 
-                                if($row['ID_MODERACJA'] == $mody['ID_USER'])
-                                {
-                                    echo 'selected';
-                                }
-                                echo '>';
-                                echo $mody['LOGIN'];
-                                echo '</option>';
+                                    if($row['ID_MODERACJA'] == $mody['ID_USER'])
+                                    {
+                                        echo 'selected';
+                                    }
+
+                                    echo '>';
+                                    echo $mody['LOGIN'];
+                                    echo '</option>';
                                 }
                                 ?>
                             </select>
@@ -138,7 +139,7 @@ rysowanieGlownegoMenu();
                                 }
                                 $rezultat_modow = $polaczenie->query("SELECT * FROM user WHERE UPRAWNIENIA='MOD'");
                                 while ($mody = mysqli_fetch_assoc($rezultat_modow)) {
-                                    echo '<option value="'.$row['LOGIN'].'"';
+                                    echo '<option value="'.$mody['ID_USER'].'"';
 
                                     if($row['ID_MODERACJA'] == $mody['ID_USER'])
                                     {
@@ -158,19 +159,27 @@ rysowanieGlownegoMenu();
                                             $iterator++;
                                         }
                                         echo '<tr>
-                                              <td colspan="5"><input type="submit" name="Zaktualizuj" value="Zaktualizuj"/></td>
+                                              <td colspan="5"><a href="panel_admin_f.php"><input type="submit" name="Zaktualizuj" value="Zaktualizuj"/></a></td>
                                               </tr>';
                                         }
                                         $rezultat->close();
                                         }
-                                        $polaczenie->close();
                                         ?>
                     </form>
                     <?php
-                    if (isset($_POST['wybor_kontynentu'])) {}
+                    if (isset($_POST['Zaktualizuj'])) {
+                        $wczytanie = $polaczenie->query("SELECT * FROM watek");
 
-
-
+                    while($row = mysqli_fetch_array($wczytanie))
+                    {
+                        //echo 'IDWatku:'.$row['ID_WATEK'].'</br>';
+                        $zmienna = $row['ID_WATEK'];
+                        //echo 'IDAdmina:'.$_POST[$zmienna].'</br>';
+                        $rezultat = $polaczenie->query("UPDATE `watek` SET `ID_MODERACJA` = '.$_POST[$zmienna].' WHERE `ID_WATEK`=".$row['ID_WATEK']);
+                    }
+                        $polaczenie->close();
+                        echo("<script>document.location.href = 'panel_admin_f.php';</script>");
+                    }
                     ?>
                 </table>
             </div>
@@ -179,3 +188,6 @@ rysowanieGlownegoMenu();
 </main>
 </body>
 </html>
+<?php
+$polaczenie->close();
+?>

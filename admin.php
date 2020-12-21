@@ -167,10 +167,22 @@ if($_GET['panel']=='uzytkownicy'){
 
         }
         if ($_GET['akcja'] == 'odrzuc') {
-            //idzgloszenia
             $rezultat = $polaczenie->query("UPDATE `watek` SET `STATUS` = 'USUNIETY' WHERE `ID_WATEK`=".$_GET['idwatku']);
 
         }
+
+        if ($_GET['akcja'] == 'zmutujtworcekomentarza') {
+            $rezultat = $polaczenie->query("UPDATE `user` SET `UPRAWNIENIA` = 'MUTE' WHERE `ID_USER`=".$_GET['idusera']);
+        }
+
+        if ($_GET['akcja'] == 'akceptujkomentarz') {
+            $rezultat = $polaczenie->query("UPDATE `komentarz` SET `STATUS` = 'POTWIERDZONY' WHERE `ID_KOMENTARZ`=".$_GET['idkomentarza']);
+
+        }
+        if ($_GET['akcja'] == 'usunkomentarz') {
+            $rezultat = $polaczenie->query("UPDATE `komentarz` SET `STATUS` = 'USUNIETY' WHERE `ID_KOMENTARZ`=".$_GET['idkomentarza']);
+        }
+
         if (!$rezultat) {
             throw new Exception($polaczenie->error);
         }

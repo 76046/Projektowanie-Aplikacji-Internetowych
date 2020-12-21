@@ -141,36 +141,47 @@ rysowanieGlownegoMenu();
                     </tr>
                         <?php
                             $wyciagniecie_oczekujacych_komentarzy = $polaczenie->query("SELECT * FROM komentarz WHERE ID_WATEK=".$row['ID_WATEK']." AND STATUS='OCZEKUJACY'");
+                            $wyciagniecie_oczekujacych_komentarzyLICZBA = mysqli_fetch_array($polaczenie->query("SELECT * FROM komentarz WHERE ID_WATEK=".$row['ID_WATEK']." AND STATUS='OCZEKUJACY'"));
 
-                            if(!($wyciagniecie_oczekujacych_komentarzy==NULL)){
+                            if((!($wyciagniecie_oczekujacych_komentarzy==NULL))&&(!($wyciagniecie_oczekujacych_komentarzyLICZBA==NULL))){
 
-                            echo '<tr><td colspan="5">Niezakceptowane komentarze</td></tr>';
+                            echo '<tr><td colspan="5">Niezakceptowane komentarze<br>
+                                </tr>
+                            
+                        <tr>
+                        <th class="uzytkownik_wst">Komentarz</th>
+                        <th class="liczba_odwiedzin">Autor</th>
+                        <th class="liczba_odwiedzin">Data wstawienia</th>
+                        <th class="liczba_odwiedzin">STAN</th>
+                        <th class="panel_admin">Panel</th>
+                        </tr>';
+                                while($wiersz_oczekujacy = mysqli_fetch_array($wyciagniecie_oczekujacych_komentarzy)) {
 
-                            ?>
-                            <tr>
-                                <td class="uzytkownik_wst"></td>
-                                <td class="liczba_odwiedzin"><?php echo '<a href="profilowe.php?user='.$rezultat_usera_watku['ID_USER'].'" target=" blank">ID'.$rezultat_usera_watku['ID_USER'].' '.$rezultat_usera_watku['LOGIN']; ?></td>
-                                <td class="uzytkownik_wst"><?php  echo $rezultat_watku['DATA'];?></td>
-                                <td class="uzytkownik_wst"><?php  echo $rezultat_watku['STATUS'];?></td>
-                                <td class="panel_admin">
-                                    <?php
-
-
+                                    $rezultat_usera = mysqli_fetch_array($polaczenie->query("SELECT * FROM `user` WHERE ID_USER=".$wiersz_oczekujacy['ID_USER']));
                                     ?>
-                                </td>
-                            </tr>
+                                    <tr>
+                                        <td class="uzytkownik_wst"><?php echo $wiersz_oczekujacy['TRESC_KOMENTARZA']; ?></td>
+                                        <td class="liczba_odwiedzin"><?php echo '<a title="Osoba komentujaca" href="profilowe.php?user='.$rezultat_usera['ID_USER'].'">' .$rezultat_usera['LOGIN'].'</a>'; ?></td>
+                                        <td class="uzytkownik_wst"><?php echo $wiersz_oczekujacy['DATA']; ?></td>
+                                        <td class="uzytkownik_wst"><?php echo $wiersz_oczekujacy['STATUS']; ?></td>
+                                        <td class="panel_admin">
+                                            <?php
+                                            if(!($rezultat_usera['UPRAWNIENIA']=='MUTE')){
+                                                echo'<a href="admin.php?panel=forum&akcja=zmutujtworcekomentarza&idusera='.$rezultat_usera['ID_USER'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Zmutuj użytkownika, który to napisał" method="post">🔇</button></a> ';
+                                            }
+                                            echo'<a href="admin.php?panel=forum&akcja=akceptujkomentarz&idkomentarza='.$wiersz_oczekujacy['ID_KOMENTARZ'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Zakceptuj komentarz" method="post">✅</button></a>';
+
+                                            echo'<a href="admin.php?panel=forum&akcja=usunkomentarz&idkomentarza='.$wiersz_oczekujacy['ID_KOMENTARZ'].'"><button type="button" class="ban_button" name="butt_del" title="Usuń komentarz" method="post">❌</button></a>';
+
+                                            ?>
+                                        </td>
+                                    </tr>
 
 
-
-
-
-
-
-
-
-
-                            <?php
+                                    <?php
+                                }
                             }
+                            echo '<tr><td colspan="5"><hr style="height: 10px; background-color: rgb(139, 0, 0); border: 0px;"></td></tr>';
                             }
                             else
                             {
@@ -222,6 +233,48 @@ rysowanieGlownegoMenu();
                         </td>
                     </tr>
                                         <?php
+
+                            $wyciagniecie_oczekujacych_komentarzy = $polaczenie->query("SELECT * FROM komentarz WHERE ID_WATEK=".$row['ID_WATEK']." AND STATUS='OCZEKUJACY'");
+                            $wyciagniecie_oczekujacych_komentarzyLICZBA = mysqli_fetch_array($polaczenie->query("SELECT * FROM komentarz WHERE ID_WATEK=".$row['ID_WATEK']." AND STATUS='OCZEKUJACY'"));
+                            if((!($wyciagniecie_oczekujacych_komentarzy==NULL))&&(!($wyciagniecie_oczekujacych_komentarzyLICZBA==NULL))){
+
+                                echo '<tr class="codrugi"><td colspan="5">Niezakceptowane komentarze<br>
+                                <tr class="codrugi">
+                            
+                        <tr class="codrugi">
+                        <th class="uzytkownik_wst">Komentarz</th>
+                        <th class="liczba_odwiedzin">Autor</th>
+                        <th class="liczba_odwiedzin">Data wstawienia</th>
+                        <th class="liczba_odwiedzin">STAN</th>
+                        <th class="panel_admin">Panel</th>
+                        </tr>';
+                                while($wiersz_oczekujacy = mysqli_fetch_array($wyciagniecie_oczekujacych_komentarzy)) {
+
+                                    $rezultat_usera = mysqli_fetch_array($polaczenie->query("SELECT * FROM `user` WHERE ID_USER=".$wiersz_oczekujacy['ID_USER']));
+                                    ?>
+                                    <tr class="codrugi">
+                                        <td class="uzytkownik_wst"><?php echo $wiersz_oczekujacy['TRESC_KOMENTARZA']; ?></td>
+                                        <td class="liczba_odwiedzin"><?php echo '<a title="Osoba komentujaca" href="profilowe.php?user='.$rezultat_usera['ID_USER'].'">' .$rezultat_usera['LOGIN'].'</a>'; ?></td>
+                                        <td class="uzytkownik_wst"><?php echo $wiersz_oczekujacy['DATA']; ?></td>
+                                        <td class="uzytkownik_wst"><?php echo $wiersz_oczekujacy['STATUS']; ?></td>
+                                        <td class="panel_admin">
+                                            <?php
+                                            if(!($rezultat_usera['UPRAWNIENIA']=='MUTE')){
+                                                echo'<a href="admin.php?panel=forum&akcja=zmutujtworcekomentarza&idusera='.$rezultat_usera['ID_USER'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Zmutuj użytkownika, który to napisał" method="post">🔇</button></a> ';
+                                            }
+                                            echo'<a href="admin.php?panel=forum&akcja=akceptujkomentarz&idkomentarza='.$wiersz_oczekujacy['ID_KOMENTARZ'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Zakceptuj komentarz" method="post">✅</button></a>';
+
+                                            echo'<a href="admin.php?panel=forum&akcja=usunkomentarz&idkomentarza='.$wiersz_oczekujacy['ID_KOMENTARZ'].'"><button type="button" class="ban_button" name="butt_del" title="Usuń komentarz" method="post">❌</button></a>';
+
+                                            ?>
+                                        </td>
+                                    </tr>
+
+
+                                    <?php
+                                }
+                            }
+                            echo '<tr><td colspan="5"><hr style="height: 10px; background-color: rgb(139, 0, 0); border: 0px;"></td></tr>';
                                             }
                                             $iterator++;
                                         }

@@ -101,22 +101,22 @@ rysowanieGlownegoMenu();
                             if(!($_SESSION['id_usera_zalog']==$row['ID_USER'])){
                                 if(!($row['UPRAWNIENIA']=='BAN')){
                                     if(!($row['UPRAWNIENIA']=='MUTE')){
-                                        echo'<a href="admin.php?panel=uzytkownicy&akcja=zmutuj&idusera='.$row['ID_USER'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Zmutuj użytkownika" method="post">ZU</button></a> ';
+                                        echo'<a href="admin.php?panel=uzytkownicy&akcja=zmutuj&idusera='.$row['ID_USER'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Zmutuj użytkownika" method="post">🔇</button></a> ';
                                     }else{
-                                        echo'<a href="admin.php?panel=uzytkownicy&akcja=odmutuj&idusera='.$row['ID_USER'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Odmutuj użytkownika"method="post">OMU</button></a> ';
+                                        echo'<a href="admin.php?panel=uzytkownicy&akcja=odmutuj&idusera='.$row['ID_USER'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Odmutuj użytkownika"method="post">🔊</button></a> ';
                                     }
                                     if($_SESSION['admin'] == 'true'){
                                         if($row['UPRAWNIENIA']=='MOD'){
-                                            echo'<a href="admin.php?panel=uzytkownicy&akcja=zabierzmoda&idusera='.$row['ID_USER'].'"><button type="button" class="mod_button" name="butt_ban" title="Zabierz uprawniena Moderatora" method="post">UM</button></a>';
+                                            echo'<a href="admin.php?panel=uzytkownicy&akcja=zabierzmoda&idusera='.$row['ID_USER'].'"><button type="button" class="mod_button" name="butt_ban" title="Zabierz uprawniena Moderatora" method="post">🔻</button></a>';
                                         }else{
-                                            echo'<a href="admin.php?panel=uzytkownicy&akcja=nadajmoda&idusera='.$row['ID_USER'].'"><button type="button" class="mod_button" name="butt_ban" title="Nadaj uprawniena Moderatora" method="post">NM</button></a>';
+                                            echo'<a href="admin.php?panel=uzytkownicy&akcja=nadajmoda&idusera='.$row['ID_USER'].'"><button type="button" class="mod_button" name="butt_ban" title="Nadaj uprawniena Moderatora" method="post">🔺</button></a>';
                                         }
                                     }
                                 }
                                 if(!($row['UPRAWNIENIA']=='BAN')){
-                                    echo'<a href="admin.php?panel=uzytkownicy&akcja=banuj&idusera='.$row['ID_USER'].'"><button type="button" class="ban_button" name="butt_ban" title="Banuj użytkownika" method="post">BU</button></a>';
+                                    echo'<a href="admin.php?panel=uzytkownicy&akcja=banuj&idusera='.$row['ID_USER'].'"><button type="button" class="ban_button" name="butt_ban" title="Banuj użytkownika" method="post">🚫</button></a>';
                                 }else{
-                                    echo'<a href="admin.php?panel=uzytkownicy&akcja=odbanuj&idusera='.$row['ID_USER'].'"><button type="button" class="ban_button" name="butt_ban" title="Odbanuj użytkownika" method="post">OBU</button></a>';
+                                    echo'<a href="admin.php?panel=uzytkownicy&akcja=odbanuj&idusera='.$row['ID_USER'].'"><button type="button" class="ban_button" name="butt_ban" title="Odbanuj użytkownika" method="post">🟢</button></a>';
                                 }
 
                             }
@@ -142,22 +142,22 @@ rysowanieGlownegoMenu();
                             if(!($_SESSION['id_usera_zalog']==$row['ID_USER'])){
                                 if(!($row['UPRAWNIENIA']=='BAN')){
                                     if(!($row['UPRAWNIENIA']=='MUTE')){
-                                        echo'<a href="admin.php?panel=uzytkownicy&akcja=zmutuj&idusera='.$row['ID_USER'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Zmutuj użytkownika" method="post">ZU</button></a> ';
+                                        echo'<a href="admin.php?panel=uzytkownicy&akcja=zmutuj&idusera='.$row['ID_USER'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Zmutuj użytkownika" method="post">🔇</button></a> ';
                                     }else{
-                                        echo'<a href="admin.php?panel=uzytkownicy&akcja=odmutuj&idusera='.$row['ID_USER'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Odmutuj użytkownika"method="post">OMU</button></a> ';
+                                        echo'<a href="admin.php?panel=uzytkownicy&akcja=odmutuj&idusera='.$row['ID_USER'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Odmutuj użytkownika"method="post">🔊</button></a> ';
                                     }
                                     if($_SESSION['admin'] == 'true'){
                                         if($row['UPRAWNIENIA']=='MOD'){
-                                            echo'<a href="admin.php?panel=uzytkownicy&akcja=zabierzmoda&idusera='.$row['ID_USER'].'"><button type="button" class="mod_button" name="butt_ban" title="Zabierz uprawniena Moderatora" method="post">UM</button></a>';
+                                            echo'<a href="admin.php?panel=uzytkownicy&akcja=zabierzmoda&idusera='.$row['ID_USER'].'"><button type="button" class="mod_button" name="butt_ban" title="Zabierz uprawniena Moderatora" method="post">🔻</button></a>';
                                         }else{
-                                            echo'<a href="admin.php?panel=uzytkownicy&akcja=nadajmoda&idusera='.$row['ID_USER'].'"><button type="button" class="mod_button" name="butt_ban" title="Nadaj uprawniena Moderatora" method="post">NM</button></a>';
+                                            echo'<a href="admin.php?panel=uzytkownicy&akcja=nadajmoda&idusera='.$row['ID_USER'].'"><button type="button" class="mod_button" name="butt_ban" title="Nadaj uprawniena Moderatora" method="post">🔺</button></a>';
                                         }
                                     }
                                 }
                                 if(!($row['UPRAWNIENIA']=='BAN')){
-                                    echo'<a href="admin.php?panel=uzytkownicy&akcja=banuj&idusera='.$row['ID_USER'].'"><button type="button" class="ban_button" name="butt_ban" title="Banuj użytkownika" method="post">BU</button></a>';
+                                    echo'<a href="admin.php?panel=uzytkownicy&akcja=banuj&idusera='.$row['ID_USER'].'"><button type="button" class="ban_button" name="butt_ban" title="Banuj użytkownika" method="post">🚫</button></a>';
                                 }else{
-                                    echo'<a href="admin.php?panel=uzytkownicy&akcja=odbanuj&idusera='.$row['ID_USER'].'"><button type="button" class="ban_button" name="butt_ban" title="Odbanuj użytkownika" method="post">OBU</button></a>';
+                                    echo'<a href="admin.php?panel=uzytkownicy&akcja=odbanuj&idusera='.$row['ID_USER'].'"><button type="button" class="ban_button" name="butt_ban" title="Odbanuj użytkownika" method="post">🟢</button></a>';
                                 }
 
                             }

@@ -56,9 +56,9 @@ rysowanieGlownegoMenu();
                         else
                         {
                         if((isset($_SESSION['admin']))&&($_SESSION['admin']==true)){
-                            $rezultat = $polaczenie->query("SELECT * FROM watek ORDER BY `watek`.`DATA` DESC");
+                            $rezultat = $polaczenie->query("SELECT * FROM watek ORDER BY `DATA` DESC");
                         }  else{
-                            $rezultat = $polaczenie->query("SELECT * FROM watek WHERE ID_MODERACJA=".$_SESSION['id_usera_zalog']." ORDER BY `watek`.`DATA` DESC");
+                            $rezultat = $polaczenie->query("SELECT * FROM watek WHERE ID_MODERACJA=".$_SESSION['id_usera_zalog']." ORDER BY `DATA` DESC");
                         }
 
 
@@ -138,12 +138,42 @@ rysowanieGlownegoMenu();
 
                                 ?>
                         </td>
-
                     </tr>
-                                                <?php
-                                            }
-                                            else
-                                            {
+                        <?php
+                            $wyciagniecie_oczekujacych_komentarzy = $polaczenie->query("SELECT * FROM komentarz WHERE ID_WATEK=".$row['ID_WATEK']." AND STATUS='OCZEKUJACY'");
+
+                            if(!($wyciagniecie_oczekujacych_komentarzy==NULL)){
+
+                            echo '<tr><td colspan="5">Niezakceptowane komentarze</td></tr>';
+
+                            ?>
+                            <tr>
+                                <td class="uzytkownik_wst"></td>
+                                <td class="liczba_odwiedzin"><?php echo '<a href="profilowe.php?user='.$rezultat_usera_watku['ID_USER'].'" target=" blank">ID'.$rezultat_usera_watku['ID_USER'].' '.$rezultat_usera_watku['LOGIN']; ?></td>
+                                <td class="uzytkownik_wst"><?php  echo $rezultat_watku['DATA'];?></td>
+                                <td class="uzytkownik_wst"><?php  echo $rezultat_watku['STATUS'];?></td>
+                                <td class="panel_admin">
+                                    <?php
+
+
+                                    ?>
+                                </td>
+                            </tr>
+
+
+
+
+
+
+
+
+
+
+                            <?php
+                            }
+                            }
+                            else
+                            {
                                                 ?>
                     <tr class="codrugi">
                         <td class="uzytkownik_wst"><?php  echo '<a href="watek.php?id=' . $row['ID_WATEK'] . '">' . $rezultat_watku['TEMAT'] . '</a>';?></td>

@@ -102,7 +102,7 @@ td.uzytkownik_wst,td.czas_wstawienia,td.liczba_odwiedzin{
     border: none;
     border-radius: 50px;
     transition: background .6s;
-    font-size: 15px;
+    font-size: 17px;
 }
 
 .ban_button{

@@ -159,6 +159,26 @@ if($_GET['panel']=='uzytkownicy'){
         header('Location: panel_admin_z_w.php');
     }
 
+    if($_GET['panel']=='forum') {
+        //panel=forum&akcja=akceptuj&idwatku='.$row['ID_WATEK'].'"
+        if ($_GET['akcja'] == 'akceptuj') {
+            //idzgloszenia
+            $rezultat = $polaczenie->query("UPDATE `watek` SET `STATUS` = 'POTWIERDZONE' WHERE `ID_WATEK`=".$_GET['idwatku']);
+
+        }
+        if ($_GET['akcja'] == 'odrzuc') {
+            //idzgloszenia
+            $rezultat = $polaczenie->query("UPDATE `watek` SET `STATUS` = 'USUNIETY' WHERE `ID_WATEK`=".$_GET['idwatku']);
+
+        }
+        if (!$rezultat) {
+            throw new Exception($polaczenie->error);
+        }
+        $polaczenie->close();
+        header('Location: panel_admin_f.php');
+}
+
+
 
 
 }

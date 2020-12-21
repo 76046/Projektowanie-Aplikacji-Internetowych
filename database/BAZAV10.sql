@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 20 Gru 2020, 16:48
+-- Czas generowania: 21 Gru 2020, 22:23
 -- Wersja serwera: 10.4.11-MariaDB
 -- Wersja PHP: 7.4.2
 
@@ -34,18 +34,22 @@ CREATE TABLE `artykul` (
   `TEMAT` varchar(100) COLLATE utf8_polish_ci NOT NULL,
   `TRESC` longtext COLLATE utf8_polish_ci NOT NULL,
   `DATA` timestamp NOT NULL DEFAULT current_timestamp(),
-  `ID_AUTOR` varchar(10) COLLATE utf8_polish_ci NOT NULL
+  `ID_AUTOR` varchar(10) COLLATE utf8_polish_ci NOT NULL,
+  `STATUS` varchar(10) COLLATE utf8_polish_ci NOT NULL DEFAULT 'UKRYTY' COMMENT 'UKRYTY,POKAZANY'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
 -- Zrzut danych tabeli `artykul`
 --
 
-INSERT INTO `artykul` (`ID_ARTYKULU`, `ZDJECIE_ARTYKUL`, `TEMAT`, `TRESC`, `DATA`, `ID_AUTOR`) VALUES
-(1, NULL, 'temat1', 'blablabla', '2020-12-11 18:52:02', '1'),
-(2, NULL, 'temat2', 'blablabla', '2020-12-11 18:52:06', '4'),
-(3, NULL, 'temat3', 'blablabla', '2020-12-11 18:53:04', '1'),
-(4, NULL, 'temat4', 'blablablabla', '2020-12-11 18:53:36', '4');
+INSERT INTO `artykul` (`ID_ARTYKULU`, `ZDJECIE_ARTYKUL`, `TEMAT`, `TRESC`, `DATA`, `ID_AUTOR`, `STATUS`) VALUES
+(1, 'artykul1.png', 'Warto inwestować w złotego', '\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"\r\n\r\nSection 1.10.32 of \"de Finibus Bonorum et Malorum\", written by Cicero in 45 BC\r\n\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"\r\n\r\n1914 translation by H. Rackham\r\n\"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?\"\r\n\r\nSection 1.10.33 of \"de Finibus Bonorum et Malorum\", written by Cicero in 45 BC\r\n\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.\"', '2020-12-11 18:52:02', '1', 'POKAZANY'),
+(2, 'artykul2.jpg', 'Czy kurs dolara będzie spadać?', '\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"\r\n\r\nSection 1.10.32 of \"de Finibus Bonorum et Malorum\", written by Cicero in 45 BC\r\n\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"\r\n\r\n1914 translation by H. Rackham\r\n\"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?\"\r\n\r\nSection 1.10.33 of \"de Finibus Bonorum et Malorum\", written by Cicero in 45 BC\r\n\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.\"', '2020-12-11 18:52:06', '4', 'POKAZANY'),
+(3, 'artykul3.jpg', '5 najmocniejszych walut świata', '\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"\r\n\r\nSection 1.10.32 of \"de Finibus Bonorum et Malorum\", written by Cicero in 45 BC\r\n\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"\r\n\r\n1914 translation by H. Rackham\r\n\"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?\"\r\n\r\nSection 1.10.33 of \"de Finibus Bonorum et Malorum\", written by Cicero in 45 BC\r\n\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.\"', '2020-12-11 18:53:04', '1', 'POKAZANY'),
+(4, 'artykul4.jpg', 'Co dalej z kursem franka?', '\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"\r\n\r\nSection 1.10.32 of \"de Finibus Bonorum et Malorum\", written by Cicero in 45 BC\r\n\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"\r\n\r\n1914 translation by H. Rackham\r\n\"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?\"\r\n\r\nSection 1.10.33 of \"de Finibus Bonorum et Malorum\", written by Cicero in 45 BC\r\n\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.\"', '2020-12-11 18:53:36', '4', 'POKAZANY'),
+(5, 'artykul2.jpg', 'Czy kurs dolara będzie spadać?', '\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"\r\n\r\nSection 1.10.32 of \"de Finibus Bonorum et Malorum\", written by Cicero in 45 BC\r\n\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"\r\n\r\n1914 translation by H. Rackham\r\n\"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?\"\r\n\r\nSection 1.10.33 of \"de Finibus Bonorum et Malorum\", written by Cicero in 45 BC\r\n\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.\"', '2020-12-11 18:52:06', '4', 'UKRYTY'),
+(6, 'artykul3.jpg', '5 najmocniejszych walut świata', '\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"\r\n\r\nSection 1.10.32 of \"de Finibus Bonorum et Malorum\", written by Cicero in 45 BC\r\n\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"\r\n\r\n1914 translation by H. Rackham\r\n\"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?\"\r\n\r\nSection 1.10.33 of \"de Finibus Bonorum et Malorum\", written by Cicero in 45 BC\r\n\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.\"', '2020-12-11 18:53:04', '1', 'UKRYTY'),
+(7, 'artykul4.jpg', 'Co dalej z kursem franka?', '\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"\r\n\r\nSection 1.10.32 of \"de Finibus Bonorum et Malorum\", written by Cicero in 45 BC\r\n\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"\r\n\r\n1914 translation by H. Rackham\r\n\"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?\"\r\n\r\nSection 1.10.33 of \"de Finibus Bonorum et Malorum\", written by Cicero in 45 BC\r\n\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.\"', '2020-12-11 18:53:36', '4', 'UKRYTY');
 
 -- --------------------------------------------------------
 
@@ -60,7 +64,7 @@ CREATE TABLE `komentarz` (
   `DATA` timestamp NOT NULL DEFAULT current_timestamp(),
   `TRESC_KOMENTARZA` longtext COLLATE utf8_polish_ci NOT NULL,
   `OCENA` int(10) NOT NULL DEFAULT 0,
-  `STATUS` varchar(10) COLLATE utf8_polish_ci NOT NULL DEFAULT 'UKRYTE'
+  `STATUS` varchar(20) COLLATE utf8_polish_ci NOT NULL DEFAULT 'OCZEKUJACY' COMMENT 'OCZEKUJACY,USUNIETY,POTWIERDZONY'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
@@ -68,11 +72,12 @@ CREATE TABLE `komentarz` (
 --
 
 INSERT INTO `komentarz` (`ID_KOMENTARZ`, `ID_WATEK`, `ID_USER`, `DATA`, `TRESC_KOMENTARZA`, `OCENA`, `STATUS`) VALUES
-(2, 2, 1, '2020-12-14 19:32:50', 'Tak tak ', 11, 'UKRYTE'),
-(3, 2, 1, '2020-12-14 19:32:50', 'Nie Nie ', 0, 'UKRYTE'),
-(4, 2, 4, '2020-12-14 19:32:50', 'Nie nie', -1, 'UKRYTE'),
-(5, 2, 7, '2020-12-15 20:17:36', 'Siemka', 1, 'UKRYTE'),
-(6, 3, 7, '2020-12-19 11:58:09', 'dfghgfdgdf', 0, 'UKRYTE');
+(2, 2, 1, '2020-12-14 19:32:50', 'Tak tak ', 11, 'OCZEKUJACY'),
+(3, 2, 1, '2020-12-14 19:32:50', 'Nie Nie ', 0, 'OCZEKUJACY'),
+(4, 2, 4, '2020-12-14 19:32:50', 'Nie nie', -1, 'OCZEKUJACY'),
+(5, 2, 7, '2020-12-15 20:17:36', 'Siemka', 1, 'OCZEKUJACY'),
+(6, 3, 7, '2020-12-19 11:58:09', 'dfghgfdgdf', 0, 'OCZEKUJACY'),
+(7, 5, 7, '2020-12-21 21:09:33', 'Bardzo dobre jest euro', 0, 'OCZEKUJACY');
 
 -- --------------------------------------------------------
 
@@ -150,6 +155,21 @@ INSERT INTO `ocenawatek` (`ID_OCENY`, `ID_WATKU`, `ID_UZYTKOWNIKA`, `WARTOSC_OCE
 -- --------------------------------------------------------
 
 --
+-- Struktura tabeli dla tabeli `transakcja`
+--
+
+CREATE TABLE `transakcja` (
+  `ID_TRANSAKCJA` int(11) NOT NULL,
+  `WALUTA` varchar(3) COLLATE utf8_polish_ci NOT NULL,
+  `RODZAJ` varchar(255) COLLATE utf8_polish_ci NOT NULL,
+  `KWOTA_Z` int(11) NOT NULL,
+  `KWOTA_DO` int(11) NOT NULL,
+  `ID_USER` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabeli dla tabeli `user`
 --
 
@@ -167,7 +187,7 @@ CREATE TABLE `user` (
   `ZDJECIE` varchar(255) COLLATE utf8_polish_ci DEFAULT NULL,
   `STW_WATKI` int(10) NOT NULL DEFAULT 0,
   `LICZ_KOMENTARZY` int(10) NOT NULL DEFAULT 0,
-  `UPRAWNIENIA` varchar(10) COLLATE utf8_polish_ci NOT NULL DEFAULT 'USER'
+  `UPRAWNIENIA` varchar(10) COLLATE utf8_polish_ci NOT NULL DEFAULT 'USER' COMMENT 'BAN,MUTE,USER,MOD,ADMIN'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
@@ -176,9 +196,13 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`ID_USER`, `LOGIN`, `HASLO`, `IMIE`, `NAZWISKO`, `EMAIL`, `WIEK`, `MIASTO`, `KRAJ`, `OPIS_PROFILU`, `ZDJECIE`, `STW_WATKI`, `LICZ_KOMENTARZY`, `UPRAWNIENIA`) VALUES
 (1, 'Adam', '3c6e3550e97b872da67938d34f3740f11c94102a5bfd3ddd4501820e980b5ca778c2fbe88d2695affe9a53bb5064c5a8a717360db3ecb87e2c0c74feea2f37a8', 'Adam', 'Kowalewski', 'email1@wp.pl', 15, 'Białys', 'Polska', ':O', 'profilowe.jpg', 0, 0, 'USER'),
-(4, 'Admin', '3c6e3550e97b872da67938d34f3740f11c94102a5bfd3ddd4501820e980b5ca778c2fbe88d2695affe9a53bb5064c5a8a717360db3ecb87e2c0c74feea2f37a8', 'imie1', 'nazwisko1', 'email@wp.pl', 11, 'Białystok', 'Polska', NULL, NULL, 0, 0, 'USER'),
-(7, 'Marek', '3c6e3550e97b872da67938d34f3740f11c94102a5bfd3ddd4501820e980b5ca778c2fbe88d2695affe9a53bb5064c5a8a717360db3ecb87e2c0c74feea2f37a8', 'M', 'K', 'markor88@wp.pl', 16, 'Kraków', 'Poland', '', NULL, 0, 2, 'ADMIN'),
-(8, 'KONTOZ BANOWANE', 'zaq1@WSX', '', '', '', 0, '', '', NULL, NULL, 0, 0, 'MOD');
+(4, 'Admin', '3c6e3550e97b872da67938d34f3740f11c94102a5bfd3ddd4501820e980b5ca778c2fbe88d2695affe9a53bb5064c5a8a717360db3ecb87e2c0c74feea2f37a8', 'imie1', 'nazwisko1', 'email@wp.pl', 11, 'Białystok', 'Polska', NULL, NULL, 0, 0, 'ADMIN'),
+(7, 'Marek', '3c6e3550e97b872da67938d34f3740f11c94102a5bfd3ddd4501820e980b5ca778c2fbe88d2695affe9a53bb5064c5a8a717360db3ecb87e2c0c74feea2f37a8', 'M', 'K', 'mk@wp.pl', 16, 'Kraków', 'Poland', '', NULL, 0, 3, 'MOD'),
+(8, 'Karo', 'zaq1@WSX', '', '', '', 0, '', '', NULL, NULL, 0, 0, 'MUTE'),
+(11, 'Tomek', '3c6e3550e97b872da67938d34f3740f11c94102a5bfd3ddd4501820e980b5ca778c2fbe88d2695affe9a53bb5064c5a8a717360db3ecb87e2c0c74feea2f37a8', '', '', 'atomek@wp.pl', 0, '', '', NULL, NULL, 0, 0, 'MUTE'),
+(12, 'Albert', '3c6e3550e97b872da67938d34f3740f11c94102a5bfd3ddd4501820e980b5ca778c2fbe88d2695affe9a53bb5064c5a8a717360db3ecb87e2c0c74feea2f37a8', 'albi', 'kalbi', 'atek@wp.pl', 0, '', '', NULL, NULL, 0, 0, 'MOD'),
+(13, 'Albert2', '3c6e3550e97b872da67938d34f3740f11c94102a5bfd3ddd4501820e980b5ca778c2fbe88d2695affe9a53bb5064c5a8a717360db3ecb87e2c0c74feea2f37a8', 'albigfd', 'kalbihdg', 'athfdek@wp.pl', 0, '', '', NULL, NULL, 0, 0, 'MOD'),
+(14, 'Plutonowy', '3c6e3550e97b872da67938d34f3740f11c94102a5bfd3ddd4501820e980b5ca778c2fbe88d2695affe9a53bb5064c5a8a717360db3ecb87e2c0c74feea2f37a8', 'Macek', 'Mońko', 'moniek@wp.pl', 0, 'Białystok', 'Polska', 'Plutonowy XD', NULL, 0, 0, 'USER');
 
 -- --------------------------------------------------------
 
@@ -250,18 +274,23 @@ CREATE TABLE `watek` (
   `LICZBA_KOMENTARZY` int(10) NOT NULL DEFAULT 0,
   `ILOSC_ODWIEDZIN` int(10) NOT NULL DEFAULT 0,
   `OCENA` int(10) NOT NULL DEFAULT 0,
-  `STATUS` varchar(20) COLLATE utf8_polish_ci NOT NULL DEFAULT 'UKRYTE'
+  `STATUS` varchar(20) COLLATE utf8_polish_ci NOT NULL DEFAULT 'OCZEKUJACE' COMMENT 'OCZEKUJACE,POTWIERDZONE,USUNIETY',
+  `ID_MODERACJA` int(10) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
 -- Zrzut danych tabeli `watek`
 --
 
-INSERT INTO `watek` (`ID_WATEK`, `ID_USER`, `TEMAT`, `DATA`, `TRESC_WATKU`, `LICZBA_KOMENTARZY`, `ILOSC_ODWIEDZIN`, `OCENA`, `STATUS`) VALUES
-(2, 1, 'temattemattemat', '2020-12-11 18:41:17', 'tresctresctresctresctresctresctresctresc', 0, 2, -2, 'UKRYTE'),
-(3, 1, 'temattemattemat', '2020-12-11 18:42:57', 'tresctresctresctresctresctresctresctresc', 0, 6, 0, 'UKRYTE'),
-(4, 8, 'Czy dolar będzie tanieć', '2020-12-19 18:30:15', 'hahahha nie będzie.', 0, 1, 0, 'UKRYTE'),
-(5, 1, 'Euro', '2020-12-19 18:30:15', 'Euro oo', 0, 0, 0, 'UKRYTE');
+INSERT INTO `watek` (`ID_WATEK`, `ID_USER`, `TEMAT`, `DATA`, `TRESC_WATKU`, `LICZBA_KOMENTARZY`, `ILOSC_ODWIEDZIN`, `OCENA`, `STATUS`, `ID_MODERACJA`) VALUES
+(2, 1, 'Czy Frank będzie taniec', '2020-12-11 18:41:17', 'tresctresctresctresctresctresctresctresc', 0, 2, -2, 'OCZEKUJACE', 7),
+(3, 1, 'USD a PLN', '2020-12-11 18:42:57', 'tresctresctresctresctresctresctresctresc', 0, 2, 0, 'POTWIERDZONE', 7),
+(4, 8, 'Czy dolar będzie tanieć', '2020-12-19 18:30:15', 'hahahha nie będzie.', 0, 2, 0, 'OCZEKUJACE', 7),
+(5, 1, 'Euro', '2020-12-19 18:30:15', 'Euro oo', 0, 2, 0, 'POTWIERDZONE', 7),
+(6, 13, 'Dlaczego Brazylia ma słabą walutę', '2020-12-21 20:00:40', 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu.Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu.', 0, 2, 0, 'OCZEKUJACE', 0),
+(7, 1, 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper.', '2020-12-21 20:00:40', 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis.', 0, 2, 0, 'OCZEKUJACE', 0),
+(8, 11, 'Suspendisse a pellentesque dui, non felis.', '2020-12-21 20:01:35', 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu.', 0, 2, 0, 'OCZEKUJACE', 0),
+(9, 8, 'Maecenas malesuada elit lectus felis, malesuada ultricies. ', '2020-12-21 20:01:35', 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu.Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu.', 0, 2, 0, 'OCZEKUJACE', 0);
 
 -- --------------------------------------------------------
 
@@ -276,17 +305,19 @@ CREATE TABLE `zgloszenie` (
   `ID_KOMENTARZ` int(10) DEFAULT NULL,
   `ID_ZGLASZAJACEGO` int(10) NOT NULL,
   `POWOD` text COLLATE utf8_polish_ci DEFAULT NULL,
-  `ID_MODERACJA` int(10) NOT NULL DEFAULT 0
+  `ID_MODERACJA` int(10) NOT NULL DEFAULT 0,
+  `STATUS` varchar(20) COLLATE utf8_polish_ci NOT NULL DEFAULT 'DO_ROSPATRZENIA' COMMENT 'DO_ROSPATRZENIA,USUNIENTY'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
 -- Zrzut danych tabeli `zgloszenie`
 --
 
-INSERT INTO `zgloszenie` (`ID_ZGLOSZENIE`, `WATEK_CZY_KOM`, `ID_WATEK`, `ID_KOMENTARZ`, `ID_ZGLASZAJACEGO`, `POWOD`, `ID_MODERACJA`) VALUES
-(1, 'WATEK', 2, NULL, 7, 'Tak', 0),
-(2, 'KOM', NULL, 3, 4, 'Nie', 0),
-(3, 'WATEK', 2, NULL, 4, 'Zglaszam', 0);
+INSERT INTO `zgloszenie` (`ID_ZGLOSZENIE`, `WATEK_CZY_KOM`, `ID_WATEK`, `ID_KOMENTARZ`, `ID_ZGLASZAJACEGO`, `POWOD`, `ID_MODERACJA`, `STATUS`) VALUES
+(1, 'WATEK', 2, NULL, 7, 'Tak', 0, 'DO_ROSPATRZENIA'),
+(2, 'KOM', 2, 3, 4, 'Nie', 0, 'DO_ROSPATRZENIA'),
+(3, 'WATEK', 2, NULL, 4, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 0, 'DO_ROSPATRZENIA'),
+(4, 'KOM', 3, 6, 11, 'zgłaszam', 0, 'DO_ROSPATRZENIA');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -323,6 +354,12 @@ ALTER TABLE `ocenakomentarz`
 --
 ALTER TABLE `ocenawatek`
   ADD PRIMARY KEY (`ID_OCENY`);
+
+--
+-- Indeksy dla tabeli `transakcja`
+--
+ALTER TABLE `transakcja`
+  ADD PRIMARY KEY (`ID_TRANSAKCJA`);
 
 --
 -- Indeksy dla tabeli `user`
@@ -362,13 +399,13 @@ ALTER TABLE `zgloszenie`
 -- AUTO_INCREMENT dla tabeli `artykul`
 --
 ALTER TABLE `artykul`
-  MODIFY `ID_ARTYKULU` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID_ARTYKULU` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT dla tabeli `komentarz`
 --
 ALTER TABLE `komentarz`
-  MODIFY `ID_KOMENTARZ` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID_KOMENTARZ` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT dla tabeli `kruszec`
@@ -389,10 +426,16 @@ ALTER TABLE `ocenawatek`
   MODIFY `ID_OCENY` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
+-- AUTO_INCREMENT dla tabeli `transakcja`
+--
+ALTER TABLE `transakcja`
+  MODIFY `ID_TRANSAKCJA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT dla tabeli `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID_USER` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID_USER` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT dla tabeli `waluta`
@@ -404,13 +447,13 @@ ALTER TABLE `waluta`
 -- AUTO_INCREMENT dla tabeli `watek`
 --
 ALTER TABLE `watek`
-  MODIFY `ID_WATEK` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID_WATEK` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT dla tabeli `zgloszenie`
 --
 ALTER TABLE `zgloszenie`
-  MODIFY `ID_ZGLOSZENIE` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID_ZGLOSZENIE` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Ograniczenia dla zrzutów tabel

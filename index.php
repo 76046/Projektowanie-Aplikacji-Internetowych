@@ -107,7 +107,7 @@ session_start();
                 }
                 else
                 {
-                    //status POKAZANY aby sie wyswietlal na głownej
+                    //status POKAZANY aby sie wyswietlal na głownej WHERE `STATUS` = 'POKAZANY' AND ID_ARTYKULU=
                     $rezultat1 = $polaczenie->query("SELECT * FROM artykul WHERE ID_ARTYKULU='1'");
                     $rezultat = $polaczenie->query("SELECT * FROM artykul WHERE ID_ARTYKULU>'1'");
                     

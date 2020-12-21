@@ -97,7 +97,7 @@ session_start();
                             }
 
                             if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true)) {
-                                echo '<tr><td colspan="5"><center><a href="stworz_watek.php"><input type="submit" name="stworz_watek" value="Stworz wątek"/></a></center></td></tr>';
+                                echo '<tr><td colspan="5"><center><a href="dodaj_watek.php"><input type="submit" name="stworz_watek" value="Stworz wątek"/></a></center></td></tr>';
                             }else{
                                 echo '<tr><td colspan="5"><center>Jeśli chcesz dodać wątek musisz sie zalogować!</center></td> </tr>';
                             }

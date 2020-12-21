@@ -124,6 +124,7 @@ rysowanieGlownegoMenu();
                         }
                         $iterator++;
                     }
+                    echo '<tr><td colspan="4"><a href="dodaj_artykul.php"><input type="submit" name="dodaj_artykul" value="Dodaj Artykuł"/></a></td></tr>';
                     }
                     $rezultat->close();
                     }

@@ -85,13 +85,13 @@ rysowanieGlownegoMenu();
                             ?>
                             <tr>
                             <td class="uzytkownik_wst"><?php echo '<a href="artykul.php?id='.$row['ID_ARTYKULU'].'">'.$row['TEMAT'].'</a>' ;?></td>
-                            <td class="czas_wstawienia"><?php echo'<a href="profilowe.php?user='.$rezultat_loginu['ID_USER'].'">'.$rezultat_loginu['LOGIN'].'</a>';?></td>
+                            <td class="czas_wstawienia"><?php echo'<a href="profilowe.php?user='.$rezultat_loginu['ID_USER'].'">ID'.$rezultat_loginu['ID_USER'].' '.$rezultat_loginu['LOGIN'].'</a>';?></td>
                             <td class="liczba_odwiedzin"><?php echo $row['DATA'];?></td>
                             <td class="panel_admin">
                             <?php
 
                             if($row['STATUS']=='POKAZANY'){
-                                echo'<a href="admin.php?panel=artykuly&akcja=ukryj&idartykul='.$row['ID_ARTYKULU'].'"><button type="button" class="mod_button" name="butt_ban" title="Ukryj Artykuł" method="post">Ukryj</button></a>';
+                                echo'<a href="admin.php?panel=artykuly&akcja=ukryj&idartykul='.$row['ID_ARTYKULU'].'"><button type="button" class="ban_button" name="butt_ban" title="Ukryj Artykuł" method="post">Ukryj</button></a>';
                             }else{
                                 echo'<a href="admin.php?panel=artykuly&akcja=stronaglowna&idartykul='.$row['ID_ARTYKULU'].'"><button type="button" class="mod_button" name="butt_ban" title="Ustaw artykul jako jeden z czterech na stronie głownej" method="post">Wstaw</button></a>';
                             }
@@ -106,14 +106,14 @@ rysowanieGlownegoMenu();
                             ?>
                             <tr class="codrugi">
                                 <td class="uzytkownik_wst"><?php echo '<a href="artykul.php?id='.$row['ID_ARTYKULU'].'">'.$row['TEMAT'].'</a>' ;?></td>
-                                <td class="czas_wstawienia"><?php echo'<a href="profilowe.php?user='.$rezultat_loginu['ID_USER'].'">'.$rezultat_loginu['LOGIN'].'</a>';?></td>
+                                <td class="czas_wstawienia"><?php echo'<a href="profilowe.php?user='.$rezultat_loginu['ID_USER'].'">ID'.$rezultat_loginu['ID_USER'].' '.$rezultat_loginu['LOGIN'].'</a>';?></td>
                                 <td class="liczba_odwiedzin"><?php echo $row['DATA'];?></td>
                                 <td class="panel_admin">
 
                                     <?php
 
                                     if($row['STATUS']=='POKAZANY'){
-                                        echo'<a href="admin.php?panel=artykuly&akcja=ukryj&idartykul='.$row['ID_ARTYKULU'].'"><button type="button" class="mod_button" name="butt_ban" title="Ukryj Artykuł" method="post">Ukryj</button></a>';
+                                        echo'<a href="admin.php?panel=artykuly&akcja=ukryj&idartykul='.$row['ID_ARTYKULU'].'"><button type="button" class="ban_button" name="butt_ban" title="Ukryj Artykuł" method="post">Ukryj</button></a>';
                                     }else{
                                         echo'<a href="admin.php?panel=artykuly&akcja=stronaglowna&idartykul='.$row['ID_ARTYKULU'].'"><button type="button" class="mod_button" name="butt_ban" title="Ustaw artykul jako jeden z czterech na stronie głownej" method="post">Wstaw</button></a>';
                                     }

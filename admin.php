@@ -110,7 +110,62 @@ if($_GET['panel']=='uzytkownicy'){
         header('Location: panel_admin_a.php');
     }
 
+    if($_GET['panel']=='zgloszenie1'){
+        //komentarze
+        if($_GET['akcja']=='usunzgloszenie'){
+            //idzgloszenia
+            $rezultat = $polaczenie->query("UPDATE `zgloszenie` SET `STATUS` = 'USUNIENTY' WHERE `ID_ZGLOSZENIE`=".$_GET['idzgloszenia']);
+
+        }
+        if($_GET['akcja']=='usunkomentarz'){
+            //idzgloszenia
+            $rezultat = $polaczenie->query("UPDATE `komentarz` SET `STATUS` = 'USUNIETY' WHERE `ID_KOMENTARZ`=".$_GET['idkomentarza']);
+
+        }
+        if($_GET['akcja']=='zmutuj'){
+            $rezultat = $polaczenie->query("UPDATE `user` SET `UPRAWNIENIA` = 'MUTE' WHERE `ID_USER`=".$_GET['idusera']);
+            var_dump($rezultat);
+            echo -3;
+            echo '</br>';
+        }
+        if (!$rezultat) {
+            throw new Exception($polaczenie->error);
+        }
+        $polaczenie->close();
+        header('Location: panel_admin_z_k.php');
+    }
+    if($_GET['panel']=='zgloszenie2') {
+        //watki
+        if ($_GET['akcja'] == 'usunwatek') {
+            //idzgloszenia
+            $rezultat = $polaczenie->query("UPDATE `watek` SET `STATUS` = 'USUNIETY' WHERE `ID_WATEK`=".$_GET['idwatku']);
+
+        }
+        if($_GET['akcja']=='usunzgloszenie'){
+            //idzgloszenia
+            $rezultat = $polaczenie->query("UPDATE `zgloszenie` SET `STATUS` = 'USUNIENTY' WHERE `ID_ZGLOSZENIE`=".$_GET['idzgloszenia']);
+
+        }
+        if($_GET['akcja']=='zmutuj'){
+            $rezultat = $polaczenie->query("UPDATE `user` SET `UPRAWNIENIA` = 'MUTE' WHERE `ID_USER`=".$_GET['idusera']);
+            var_dump($rezultat);
+            echo -3;
+            echo '</br>';
+        }
+        if (!$rezultat) {
+            throw new Exception($polaczenie->error);
+        }
+        $polaczenie->close();
+        header('Location: panel_admin_z_w.php');
+    }
+
+
+
 }
+
+
+
+
 $polaczenie->close();
 
 ?>

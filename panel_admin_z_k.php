@@ -97,17 +97,18 @@ rysowanieGlownegoMenu();
                     <tr>
                         <td class="uzytkownik_wst"><?php  echo '<a href="watek.php?id=' . $row['ID_WATEK'] . '">' . $rezultat_watku['TEMAT'] . '</a>';?></td>
                         <td class="czas_wstawienia"><?php echo '<a title="Osoba komentujaca" href="profilowe.php?user='.$rezultat_komentarza['ID_USER'].'">' .$rezultat_komentarza['TRESC_KOMENTARZA'].'</a>'; ?></td>
-                        <td class="liczba_odwiedzin"><?php echo '<a href="profilowe.php?user='.$row['ID_ZGLASZAJACEGO'].'" target=" blank">'.$rezultat_usera['LOGIN']; ?></td>
+                        <td class="liczba_odwiedzin"><?php echo '<a href="profilowe.php?user='.$row['ID_ZGLASZAJACEGO'].'" target=" blank">ID'.$row['ID_ZGLASZAJACEGO'].' '.$rezultat_usera['LOGIN']; ?></td>
                         <td class="liczba_odwiedzin"><?php echo $row['POWOD']; ?></td>
                         <td class="panel_admin">
+<?php
+if(!($rezultat_usera['UPRAWNIENIA']=='MUTE')){
+echo'<a href="admin.php?panel=zgloszenie1&akcja=zmutuj&idusera='.$rezultat_usera['ID_USER'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Zmutuj użytkownika, który to napisał" method="post">ZU</button></a> ';
+}
+echo'<a href="admin.php?panel=zgloszenie1&akcja=usunzgloszenie&idzgloszenia='.$row['ID_ZGLOSZENIE'].'"><button type="button" class="del_zgloszenie" name="butt_glowna" title="Usuń zgłoszenie" method="post">UZ</button></a>';
 
-                            <a><button type="button" class="mute_glowna" name="butt_glowna" title="Zmutuj użytkownika" method="post">ZU</button></a>
+echo'<a href="admin.php?panel=zgloszenie1&akcja=usunkomentarz&idkomentarza='.$rezultat_komentarza['ID_KOMENTARZ'].'"><button type="button" class="del_button" name="butt_del" title="Usuń komentarz" method="post">UK</button></a>';
 
-                            <a><button type="button" class="ban_button" name="butt_ban" title="Banuj użytkownika" method="post">BU</button></a>
-
-                            <a><button type="button" class="del_button" name="butt_del" title="Usuń komentarz" method="post">UK</button></a>
-
-                            <a><button type="button" class="del_zgloszenie" name="butt_glowna" title="Usuń zgłoszenie" method="post">UZ</button></a>
+?>
                         </td>
                     </tr>
                                 <?php
@@ -118,18 +119,18 @@ rysowanieGlownegoMenu();
                     <tr class="codrugi">
                         <td class="uzytkownik_wst"><?php  echo '<a href="watek.php?id=' . $row['ID_WATEK'] . '">' . $rezultat_watku['TEMAT'] . '</a>';?></td>
                         <td class="czas_wstawienia"><?php echo '<a title="Osoba komentujaca" href="profilowe.php?user='.$rezultat_komentarza['ID_USER'].'">' .$rezultat_komentarza['TRESC_KOMENTARZA'].'</a>'; ?></td>
-                        <td class="liczba_odwiedzin"><?php echo '<a href="profilowe.php?user='.$row['ID_ZGLASZAJACEGO'].'" target=" blank">'.$rezultat_usera['LOGIN']; ?></td>
+                        <td class="liczba_odwiedzin"><?php echo '<a href="profilowe.php?user='.$row['ID_ZGLASZAJACEGO'].'" target=" blank">ID'.$row['ID_ZGLASZAJACEGO'].' '.$rezultat_usera['LOGIN']; ?></td>
                         <td class="liczba_odwiedzin"><?php echo $row['POWOD']; ?></td>
                         <td class="panel_admin">
+                            <?php
+                            if(!($rezultat_usera['UPRAWNIENIA']=='MUTE')){
+                            echo'<a href="admin.php?panel=zgloszenie1&akcja=zmutuj&idusera='.$rezultat_usera['ID_USER'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Zmutuj użytkownika, który to napisał" method="post">ZU</button></a> ';
+                            }
+                            echo'<a href="admin.php?panel=zgloszenie1&akcja=usunzgloszenie&idzgloszenia='.$row['ID_ZGLOSZENIE'].'"><button type="button" class="del_zgloszenie" name="butt_glowna" title="Usuń zgłoszenie" method="post">UZ</button></a>';
 
-                            <a><button type="button" class="mute_glowna" name="butt_glowna" title="Zmutuj użytkownika" method="post">ZU</button></a>
+                            echo'<a href="admin.php?panel=zgloszenie1&akcja=usunkomentarz&idzgloszenia='.$row['ID_ZGLOSZENIE'].'"><button type="button" class="del_button" name="butt_del" title="Usuń komentarz" method="post">UK</button></a>';
 
-                            <a><button type="button" class="ban_button" name="butt_ban" title="Banuj użytkownika" method="post">BU</button></a>
-
-                            <a><button type="button" class="del_button" name="butt_del" title="Usuń komentarz" method="post">UK</button></a>
-
-                            <a><button type="button" class="del_zgloszenie" name="butt_glowna" title="Usuń zgłoszenie" method="post">UZ</button></a>
-
+                            ?>
                         </td>
                     </tr>
                                                 <?php

@@ -50,7 +50,7 @@ session_start();
                         }
                 ?>
                 <div class="tabliczki">
-                    <table>
+                    <table class="table">
                         <form method="post">
                             <tr class="thead">
                                 <th class="uzytkownik_wst">Temat</th>
@@ -64,17 +64,17 @@ session_start();
                                 if(($iterator%2)==0)
                                 {
                                     ?>
-                                    <tr>
+                                    <tr class="tr">
                                         <article>
-                                            <td data-label="Temat" class="uzytkownik_wst"><?php echo '<a href="watek.php?id='.$row['ID_WATEK'].'">'.$row['TEMAT'].'</a>'; ?></td>
-                                            <td data-label="Wyświetlenia" class="liczba_odwiedzin"><?php echo $row['ILOSC_ODWIEDZIN']; ?></td>
-                                            <td data-label="Autor" class="uzytkownik_wst">
+                                            <td data-label="Temat:" class="uzytkownik_wst"><?php echo '<a href="watek.php?id='.$row['ID_WATEK'].'">'.$row['TEMAT'].'</a>'; ?></td>
+                                            <td data-label="Wyświetlenia:" class="liczba_odwiedzin"><?php echo $row['ILOSC_ODWIEDZIN']; ?></td>
+                                            <td data-label="Autor:" class="uzytkownik_wst">
                                                 <?php
                                                 $row_autor = mysqli_fetch_array($wyciagniecie_nicku_autora = $polaczenie->query("SELECT * FROM user WHERE ID_USER=".$row['ID_USER']));
                                                 echo '<a href="profilowe.php?user='.$row['ID_USER'].'">'.$row_autor['LOGIN'].'</a>';
                                                 ?>
                                             </td>
-                                            <td data-label="Data wstawienia" class="uzytkownik_wst"><?php echo $row['DATA']; ?></td>
+                                            <td data-label="Data wstawienia:" class="uzytkownik_wst"><?php echo $row['DATA']; ?></td>
                                         </article>
                                     </tr>
                                     <?php
@@ -84,15 +84,15 @@ session_start();
                                     ?>
                                     <tr class="codrugi">
                                         <article>
-                                        <td data-label="Temat" class="uzytkownik_wst"><?php echo '<a href="watek.php?id='.$row['ID_WATEK'].'">'.$row['TEMAT'].'</a>'; ?></td>
-                                        <td data-label="Wyświetlenia" class="liczba_odwiedzin"><?php echo $row['ILOSC_ODWIEDZIN']; ?></td>
-                                        <td data-label="Autor" class="uzytkownik_wst">
+                                        <td data-label="Temat:" class="uzytkownik_wst"><?php echo '<a href="watek.php?id='.$row['ID_WATEK'].'">'.$row['TEMAT'].'</a>'; ?></td>
+                                        <td data-label="Wyświetlenia:" class="liczba_odwiedzin"><?php echo $row['ILOSC_ODWIEDZIN']; ?></td>
+                                        <td data-label="Autor:" class="uzytkownik_wst">
                                             <?php
                                             $row_autor = mysqli_fetch_array($wyciagniecie_nicku_autora = $polaczenie->query("SELECT * FROM user WHERE ID_USER=".$row['ID_USER']));
                                             echo '<a href="profilowe.php?user='.$row['ID_USER'].'">'.$row_autor['LOGIN'].'</a>';
                                             ?>
                                         </td>
-                                        <td data-label="Data wstawienia" class="uzytkownik_wst"><?php echo $row['DATA']; ?></td>
+                                        <td data-label="Data wstawienia:" class="uzytkownik_wst"><?php echo $row['DATA']; ?></td>
                                         </article>
                                     </tr>
                                     <?php

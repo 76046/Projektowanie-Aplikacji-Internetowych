@@ -41,47 +41,68 @@ session_start();
                         }
                         else
                         {
-                        while($row = mysqli_fetch_array($rezultat))
-                        {
+                        $iterator =0;
+
+
                 ?>
-                <article class="artykul">
-                    <div class="glowny-kontener-artykulu">
-                        <div class="tytul-watku">
-                            <?php echo '<a href="watek.php?id='.$row['ID_WATEK'].'">'.$row['TEMAT'].'</a>'; ?>
-
-                        </div>
-                        <div class="ilosc-odwiedzin">
-                            <?php echo "Wyświetlenia:</br>";
-                            echo $row['ILOSC_ODWIEDZIN']; ?>
-
-                        </div>
-                        <div class="autor">
-                            <?php 
-                                $row_autor = mysqli_fetch_array($wyciagniecie_nicku_autora = $polaczenie->query("SELECT * FROM user WHERE ID_USER=".$row['ID_USER']));
-                                echo '<a href="profilowe.php?user='.$row['ID_USER'].'"><k style=" font-weight: 700;">Autor:</br>'.$row_autor['LOGIN'].'</k></a>';
+                <div class="tabliczki">
+                    <table>
+                        <form method="post">
+                            <tr>
+                                <th class="uzytkownik_wst">Temat</th>
+                                <th class="liczba_odwiedzin">Wyswietlenia</th>
+                                <th class="liczba_odwiedzin">Autor</th>
+                                <th class="liczba_odwiedzin">Data Wstawienia</th>
+                            </tr>
+                            <?php
+                            while($row = mysqli_fetch_array($rezultat))
+                            {
+                                if(($iterator%2)==0)
+                                {
+                                    ?>
+                                    <tr>
+                                        <article>
+                                            <td class="uzytkownik_wst"><?php echo '<a href="watek.php?id='.$row['ID_WATEK'].'">'.$row['TEMAT'].'</a>'; ?></td>
+                                            <td class="liczba_odwiedzin"><?php echo $row['ILOSC_ODWIEDZIN']; ?></td>
+                                            <td class="uzytkownik_wst">
+                                                <?php
+                                                $row_autor = mysqli_fetch_array($wyciagniecie_nicku_autora = $polaczenie->query("SELECT * FROM user WHERE ID_USER=".$row['ID_USER']));
+                                                echo '<a href="profilowe.php?user='.$row['ID_USER'].'">'.$row_autor['LOGIN'].'</a>';
+                                                ?>
+                                            </td>
+                                            <td class="uzytkownik_wst"><?php echo $row['DATA']; ?></td>
+                                        </article>
+                                    </tr>
+                                    <?php
+                                }
+                                else
+                                {
+                                    ?>
+                                    <tr class="codrugi">
+                                        <article>
+                                        <td class="uzytkownik_wst"><?php echo '<a href="watek.php?id='.$row['ID_WATEK'].'">'.$row['TEMAT'].'</a>'; ?></td>
+                                        <td class="liczba_odwiedzin"><?php echo $row['ILOSC_ODWIEDZIN']; ?></td>
+                                        <td class="uzytkownik_wst">
+                                            <?php
+                                            $row_autor = mysqli_fetch_array($wyciagniecie_nicku_autora = $polaczenie->query("SELECT * FROM user WHERE ID_USER=".$row['ID_USER']));
+                                            echo '<a href="profilowe.php?user='.$row['ID_USER'].'">'.$row_autor['LOGIN'].'</a>';
+                                            ?>
+                                        </td>
+                                        <td class="uzytkownik_wst"><?php echo $row['DATA']; ?></td>
+                                        </article>
+                                    </tr>
+                                    <?php
+                                }
+                                $iterator++;
+                            }
+                            }
+                            $rezultat->close();
+                            }
+                            $polaczenie->close();
                             ?>
-
-                        </div>
-                        <div class="czas-wstawienia">
-                            <?php echo $row['DATA']; ?>
-
-                        </div>
-                        <div class="admin-mini-panel">
-                            X
-                        </div>
-                    </div>
-                </article>
-                <?php
-                    }
-                    }
-
-                    $rezultat->close();
-                    }
-                    $polaczenie->close();
-                ?>
-
-
-
+                        </form>
+                    </table>
+                </div>
             </section>
         </main>
 

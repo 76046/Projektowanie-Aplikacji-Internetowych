@@ -88,6 +88,52 @@ article{
 .czas-wstawienia:hover{
     background-color: yellow;
 }
+.tabliczki{
+
+    color: #111111;
+    margin: 20px auto 10px auto;
+}
+table{
+    width: 960px;
+    font-family: sans-serif;
+}
+th, td{
+    padding: 7px 10px 10px 10px;
+}
+th{
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 90%;
+    border-bottom: 2px solid #999;
+    border-top: 1px solid #999;
+    text-align: center;
+}
+tr.codrugi{
+    background-color: #8e8787;
+}
+tr:hover{
+    background-color: #5c6060;
+}
+td:hover{
+    background-color: #7a7c7a;
+}
+
+td.panel_admin ,td.wstawione_memy,td.liczba_odwiedzin{
+    text-align: center;
+}
+
+
+th.panel_uzytkownicy, th.panel_forum, th.panel_artykuly, th.panel_zgloszenia{
+    width: 25%;
+}
+th.panel_uzytkownicy:hover, th.panel_forum:hover, th.panel_artykuly:hover, th.panel_zgloszenia:hover{
+    background-color: #af9f27;
+}
+
+
+
+
+
 
 @media (max-width: 900px){
 

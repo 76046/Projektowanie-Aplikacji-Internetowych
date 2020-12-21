@@ -167,7 +167,7 @@ rysowanieGlownegoMenu();
                                         ?>
                     </form>
                     <?php
-                    if (isset($_POST['wybor_kontynentu'])) {
+                    if (isset($_POST['wybor_kontynentu'])) {}
 
 
 

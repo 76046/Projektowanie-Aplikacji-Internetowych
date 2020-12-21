@@ -28,6 +28,7 @@ main{
     margin-right: auto;
     width: 1000px;
     height: auto;
+    min-height: 400px;
     margin-top: 130px;
     align-items: center;
     justify-content: center;

@@ -43,12 +43,16 @@ session_start();
                         {
                         $iterator =0;
 
-
+                        if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true)) {
+                            echo '<tr><td colspan="5"><center><a href="dodaj_watek.php"><input type="submit" name="stworz_watek" id="stworz_watek" value="Stworz wątek"/></a></center></td></tr>';
+                        }else{
+                            echo '<tr><td colspan="5"><center>Jeśli chcesz dodać wątek musisz sie zalogować!</center></td> </tr>';
+                        }
                 ?>
                 <div class="tabliczki">
                     <table>
                         <form method="post">
-                            <tr>
+                            <tr class="thead">
                                 <th class="uzytkownik_wst">Temat</th>
                                 <th class="liczba_odwiedzin">Wyswietlenia</th>
                                 <th class="liczba_odwiedzin">Autor</th>
@@ -62,15 +66,15 @@ session_start();
                                     ?>
                                     <tr>
                                         <article>
-                                            <td class="uzytkownik_wst"><?php echo '<a href="watek.php?id='.$row['ID_WATEK'].'">'.$row['TEMAT'].'</a>'; ?></td>
-                                            <td class="liczba_odwiedzin"><?php echo $row['ILOSC_ODWIEDZIN']; ?></td>
-                                            <td class="uzytkownik_wst">
+                                            <td data-label="Temat" class="uzytkownik_wst"><?php echo '<a href="watek.php?id='.$row['ID_WATEK'].'">'.$row['TEMAT'].'</a>'; ?></td>
+                                            <td data-label="Wyświetlenia" class="liczba_odwiedzin"><?php echo $row['ILOSC_ODWIEDZIN']; ?></td>
+                                            <td data-label="Autor" class="uzytkownik_wst">
                                                 <?php
                                                 $row_autor = mysqli_fetch_array($wyciagniecie_nicku_autora = $polaczenie->query("SELECT * FROM user WHERE ID_USER=".$row['ID_USER']));
                                                 echo '<a href="profilowe.php?user='.$row['ID_USER'].'">'.$row_autor['LOGIN'].'</a>';
                                                 ?>
                                             </td>
-                                            <td class="uzytkownik_wst"><?php echo $row['DATA']; ?></td>
+                                            <td data-label="Data wstawienia" class="uzytkownik_wst"><?php echo $row['DATA']; ?></td>
                                         </article>
                                     </tr>
                                     <?php
@@ -80,15 +84,15 @@ session_start();
                                     ?>
                                     <tr class="codrugi">
                                         <article>
-                                        <td class="uzytkownik_wst"><?php echo '<a href="watek.php?id='.$row['ID_WATEK'].'">'.$row['TEMAT'].'</a>'; ?></td>
-                                        <td class="liczba_odwiedzin"><?php echo $row['ILOSC_ODWIEDZIN']; ?></td>
-                                        <td class="uzytkownik_wst">
+                                        <td data-label="Temat" class="uzytkownik_wst"><?php echo '<a href="watek.php?id='.$row['ID_WATEK'].'">'.$row['TEMAT'].'</a>'; ?></td>
+                                        <td data-label="Wyświetlenia" class="liczba_odwiedzin"><?php echo $row['ILOSC_ODWIEDZIN']; ?></td>
+                                        <td data-label="Autor" class="uzytkownik_wst">
                                             <?php
                                             $row_autor = mysqli_fetch_array($wyciagniecie_nicku_autora = $polaczenie->query("SELECT * FROM user WHERE ID_USER=".$row['ID_USER']));
                                             echo '<a href="profilowe.php?user='.$row['ID_USER'].'">'.$row_autor['LOGIN'].'</a>';
                                             ?>
                                         </td>
-                                        <td class="uzytkownik_wst"><?php echo $row['DATA']; ?></td>
+                                        <td data-label="Data wstawienia" class="uzytkownik_wst"><?php echo $row['DATA']; ?></td>
                                         </article>
                                     </tr>
                                     <?php
@@ -96,11 +100,7 @@ session_start();
                                 $iterator++;
                             }
 
-                            if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true)) {
-                                echo '<tr><td colspan="5"><center><a href="dodaj_watek.php"><input type="submit" name="stworz_watek" value="Stworz wątek"/></a></center></td></tr>';
-                            }else{
-                                echo '<tr><td colspan="5"><center>Jeśli chcesz dodać wątek musisz sie zalogować!</center></td> </tr>';
-                            }
+                            
                             }
                             $rezultat->close();
                             }

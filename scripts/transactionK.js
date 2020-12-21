@@ -9,11 +9,11 @@ async function transactionKupno(){
     const data = await res.json();
     const rates = data.rates;
 
-        from.addEventListener('keyup', () => {
-            to.value = (from.value * rates.PLN/rates[kod]).toFixed(2);
-        });
+    kupno.value = (rates.PLN/rates[kod]).toFixed(4);
 
-        kupno.value = (rates.PLN/rates[kod]).toFixed(4);
+        from.addEventListener('keyup', () => {
+            to.value = (from.value /kupno.value).toFixed(2);
+        });
 };
     
 transactionKupno();

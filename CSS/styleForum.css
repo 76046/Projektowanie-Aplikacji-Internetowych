@@ -109,13 +109,16 @@ th{
     text-align: center;
 }
 tr.codrugi{
-    background-color: #8e8787;
+    /* background-color: #8e8787; */
+    background-color: orange;
 }
 tr:hover{
-    background-color: #5c6060;
+    /* background-color: #5c6060; */
+    background-color: orange;
 }
 td:hover{
-    background-color: #7a7c7a;
+    /* background-color: #7a7c7a; */
+    background-color: yellow;
 }
 
 td.panel_admin ,td.wstawione_memy,td.liczba_odwiedzin{
@@ -138,6 +141,11 @@ th.panel_uzytkownicy:hover, th.panel_forum:hover, th.panel_artykuly:hover, th.pa
 @media (max-width: 900px){
 
     .pas-tytulowy{
+        /* display: inline-block; */
+        margin-right: 270px;
+    }
+
+    #stworz_watek{
         /* display: inline-block; */
         margin-right: 270px;
     }

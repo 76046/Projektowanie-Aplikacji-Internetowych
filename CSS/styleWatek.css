@@ -338,17 +338,7 @@ textarea{
     color: #E9E94B;
 }
 
-/* @media (max-width: 900px){
+@media (max-width: 900px){
 
-    .artykul-glowny{
-        width: 700px;
-    }
-
-    .wiadomosc-trescwiadomosci{
-        width: 670px;
-    }
-
-    .wiadomosc-profil, .wiadomosc-tresc{
-        float: none;
-    }
-} */
+    
+}

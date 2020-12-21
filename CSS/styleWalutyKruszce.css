@@ -166,6 +166,14 @@ td:hover{
         width: auto;
     }
 
+    .nazwa-waluty, .kupno-waluty, .sprzedaz-waluty, .operacje-waluty{
+        width: 100px;
+    }
+
+    tr:hover{
+        background-color: white;
+    }
+
     .operacje-waluty{
         border-bottom: solid black 2px;
     }
@@ -178,6 +186,7 @@ td:hover{
         text-align: right;
         padding-left: 50%;
         position: relative;
+        height: auto;
     }
 
     .table td::before{
@@ -186,5 +195,14 @@ td:hover{
         left: 0;
         width: 50%;
         padding-left: 15px;
+    }
+
+    .nazwa-waluty{
+        position: absolute;
+        width: 50%;
+    }
+
+    .kupno-waluty, .sprzedaz-waluty, .operacje-waluty{
+        display: inline-block;
     }
 }

@@ -134,7 +134,7 @@ if(!isset($_POST['wybor_kontynentu'])){
 
                                         </td>
 
-                                        <td data-label="Operacje" class="operacje-waluty">
+                                        <td class="operacje-waluty">
 
                                             <?php
                                             if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true)){
@@ -173,7 +173,7 @@ if(!isset($_POST['wybor_kontynentu'])){
 
                                         </td>
 
-                                        <td data-label="Operacje" class="operacje-waluty">
+                                        <td class="operacje-waluty">
 
 
                                         <?php

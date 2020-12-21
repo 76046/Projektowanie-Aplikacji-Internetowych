@@ -52,7 +52,7 @@ rysowanieGlownegoMenu();
                     <?php
                     if($row_autor['ZDJECIE']!=NULL)
                     {
-                        echo '<img src="data:image/jpeg;base64,' . base64_decode($row_autor['ZDJECIE']) . '" alt="zdjecie"/>;';
+                        echo '<img src="img/profile/'.$row_autor['ZDJECIE'].'" alt="zdjecie"/>';
                     }else {
 
                     }

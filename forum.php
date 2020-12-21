@@ -95,9 +95,12 @@ session_start();
                                 }
                                 $iterator++;
                             }
-                            echo '<tr>
-                                              <td colspan="5"><center><a href="stworz_watek.php"><input type="submit" name="stworz_watek" value="Stworz wątek"/></a></center></td>
-                                              </tr>';
+
+                            if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true)) {
+                                echo '<tr><td colspan="5"><center><a href="stworz_watek.php"><input type="submit" name="stworz_watek" value="Stworz wątek"/></a></center></td></tr>';
+                            }else{
+                                echo '<tr><td colspan="5"><center>Jeśli chcesz dodać wątek musisz sie zalogować!</center></td> </tr>';
+                            }
                             }
                             $rezultat->close();
                             }

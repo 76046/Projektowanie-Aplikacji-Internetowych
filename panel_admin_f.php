@@ -158,9 +158,9 @@ rysowanieGlownegoMenu();
                                             }
                                             $iterator++;
                                         }
-                                        echo '<tr>
-                                              <td colspan="5"><a href="panel_admin_f.php"><input type="submit" name="Zaktualizuj" value="Zaktualizuj"/></a></td>
-                                              </tr>';
+
+                                        echo '<tr><td colspan="5"><a href="panel_admin_f.php"><input type="submit" name="Zaktualizuj" value="Zaktualizuj"/></a></td></tr>';
+
                                         }
                                         $rezultat->close();
                                         }

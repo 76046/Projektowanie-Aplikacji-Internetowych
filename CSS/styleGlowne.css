@@ -30,6 +30,7 @@ main{
     height: auto;
     margin-top: 130px;
     align-items: center;
+    justify-content: center;
 }
 
 
@@ -216,11 +217,19 @@ a{
     height: 420px;
 }
 
+.slide-img img{
+    width: 960px;
+    height: 520px;
+}
+
 .slide-naglowek{
     background-color: transparent;
     /* background-color: cadetblue; */
     margin: 10px;
     width: 910px;
+    font-family: sans-serif;
+    color: orangered;
+    font-size: 50px;
 }
 
 /* #sld2, #sld3, #sld4{
@@ -329,7 +338,7 @@ a{
     border-radius: 10px;
     /* background-color: coral; */
     width: 470px;
-    height: 280px;
+    height: 140px;
     float: left;
 }
 .transakcja-lewa-naglowek{
@@ -343,7 +352,7 @@ a{
     border-radius: 10px;
     /* background-color: deepskyblue; */
     margin: 10px 10px 10px 10px;
-    height: 200px;
+    height: 60px;
 }
 .transakcja-prawa{
     background-color: white;
@@ -472,8 +481,12 @@ a{
         float: none;
     } */
 
+    .slider{
+        display: none;
+    }
+
     .informacje{
-        height: 1210px;
+        height: 1070px;
     }
 
     .transakcja{

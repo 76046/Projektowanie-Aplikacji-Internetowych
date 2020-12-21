@@ -120,7 +120,7 @@ session_start();
 
                         <div class="slide first">
                             <div class="slide-img">
-                                <?php echo '<a href="artykul.php?id='.$row1['ID_ARTYKULU'].'"><img src="data:image/jpeg;base64,'.base64_encode( $row1['ZDJECIE_ARTYKUL'] ).'" alt="zdjecie1"/></a>' ?>
+                                <?php echo '<a href="artykul.php?id='.$row1['ID_ARTYKULU'].'"><img src="img/artykuly/'.$row1['ZDJECIE_ARTYKUL'].'" alt="zdjecie1"/></a>' ?>
                                 <!-- <img src="" alt="zdjęcie1"> -->
                             </div>                       
                             <div class="slide-naglowek">
@@ -134,7 +134,7 @@ session_start();
                     
                     <div class="slide">
                         <div class="slide-img">
-                            <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKULU'].'"><img src="data:image/jpeg;base64,'.base64_encode( $row['ZDJECIE_ARTYKUL'] ).'" alt="zdjecie'.$counter.'"/></a>' ?>
+                            <?php echo '<a href="artykul.php?id='.$row['ID_ARTYKULU'].'"><img src="img/artykuly/'.$row['ZDJECIE_ARTYKUL'].'" alt="zdjecie'.$counter.'"/></a>' ?>
                             <!-- <img src="" alt="zdjęcie2"> -->
                         </div> 
                         <div class="slide-naglowek">

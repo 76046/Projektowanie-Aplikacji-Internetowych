@@ -1,0 +1,47 @@
+.zdjecie_artykulu, .temat_artykulu{
+    position: relative;
+    /* background-color: rgb(124, 113, 104); */
+    background-color: white;
+    color: orangered;
+    width: auto;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    font-family: Impact,Arial,sans-serif;
+    font-size: 30px;
+    top: 10px;
+}
+.tresc{
+    position: relative;
+    /* background-color: rgb(124, 113, 104); */
+    background-color: white;
+    width: auto;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 20px;
+    top: 10px;
+}
+.dane, .kontener{
+    position: relative;
+    /* background-color: rgb(124, 113, 104); */
+    background-color: orange;
+    width: auto;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 20px;
+    top: 10px;
+}
+.kontener{
+    border-radius: 10px;
+    margin-bottom: 30px;
+    /* display: flex; */
+}
+.autor, .data{
+
+}

@@ -63,17 +63,17 @@ rysowanieGlownegoMenu();
             <div class="wymiana">
 
                 <form method="post">
-                <?php echo '<input type="hidden" id="kod" value="' . $_GET['name'] . '">' ?>
-                <div class="kontener1">Wymieniasz PLN na <?php echo $_GET['name']; ?></div>
-                <div class="kontener2"><input type="number" id="from" name="from_kupno" class="input1" min="1" max="9999"> ===> <input type="number" id="to" name="to_kupno" class="input2" disabled></div>
-                <div class="kontener3">
-                    <div class="lewa">Dla waluty <?php echo $_GET['name']; ?> : <br>
-                        Kupno: <input type="number" id="rate" disabled>PLN<br>
+                    <?php echo '<input type="hidden" id="kod" name="kod" value="' . $_GET['name'] . '">' ?>
+                    <div class="kontener1">Wymieniasz PLN na <?php echo $_GET['name']; ?></div>
+                    <div class="kontener2"><input type="number" id="from" name="from_kupno" class="input1" min="1" max="9999"> ===> <input type="number" id="to" name="to_kupno" step="0.01" class="input2" disabled></div>
+                    <div class="kontener3">
+                        <div class="lewa">Dla waluty <?php echo $_GET['name']; ?> : <br>
+                            Kupno: <input type="number" id="rate" disabled>PLN<br>
+                        </div>
+                        <div class="prawa">
+                            <input type="submit" name="potwierdz_kupno" value="Potwierdź transakcje" class="przycisk_akceptacji">
+                        </div>
                     </div>
-                    <div class="prawa">
-                        <input type="submit" name="potwierdz_kupno" value="Potwierdź transakcje" class="przycisk_akceptacji">
-                    </div>
-                </div>
 
                 </form>
 
@@ -99,7 +99,7 @@ if(isset($_POST['potwierdz_kupno'])){
     $kwotaZ = $_POST['from_kupno'];
     $kwotaDo = $_POST['to_kupno'];
     $user = $_SESSION['id_usera_zalog'];
-    if($polaczenie->query("INSERT INTO transakcja VALUES (NULL, $kod, true, $kwotaZ, $kwotaDo, $user)")){
+    if($polaczenie->query("INSERT INTO transakcja VALUES (NULL, '$kod', 'kupno', '$kwotaZ', '$kwotaDo', '$user')")){
         $polaczenie->close();
         echo("<script>document.location.href = 'podziekowanie.php';</script>");
     }

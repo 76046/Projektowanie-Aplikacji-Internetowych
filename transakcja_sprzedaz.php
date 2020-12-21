@@ -62,10 +62,10 @@ rysowanieGlownegoMenu();
             ?>
             <div class="wymiana">
 
-                <form>
+                <form method="post">
                     <?php echo '<input type="hidden" id="kod" value="' . $_GET['name'] . '">' ?>
                     <div class="kontener1">Wymieniasz <?php echo $_GET['name']; ?> na PLN</div>
-                    <div class="kontener2"><input type="number" id="from" name="from_sprzedaz" class="input1" min="1" max="9999"> ===> <input type="number" id="to" name="to_sprzedaz" class="input2" disabled></div>
+                    <div class="kontener2"><input type="number" id="from" name="from_sprzedaz" class="input1" min="1" max="9999"> ===> <input type="number" id="to" name="to_sprzedaz" step="0.01" class="input2" disabled></div>
                     <div class="kontener3">
                         <div class="lewa">Dla waluty <?php echo $_GET['name']; ?> : <br>
                             Sprzedaż: <input type="number" id="rate" disabled>PLN<br>
@@ -99,7 +99,7 @@ if(isset($_POST['potwierdz_sprzedaz'])){
     $kwotaZ = $_POST['from_sprzedaz'];
     $kwotaDo = $_POST['to_sprzedaz'];
     $user = $_SESSION['id_usera_zalog'];
-    if($polaczenie->query("INSERT INTO transakcja VALUES (NULL, $kod, false, $kwotaZ, $kwotaDo, $user)")){
+    if($polaczenie->query("INSERT INTO transakcja VALUES (NULL, '$kod', 'sprzedaż', '$kwotaZ', '$kwotaDo', '$user')")){
         $polaczenie->close();
         echo("<script>document.location.href = 'podziekowanie.php';</script>");
     }

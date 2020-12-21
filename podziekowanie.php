@@ -8,6 +8,7 @@ session_start();
         <meta charset="utf-8">
         <title>KANT-MEN</title>
         <link href="CSS/styleGlowne.css" rel="stylesheet" type="text/css">
+        <link href="CSS/stylePodziekowanie.css" rel="stylesheet" type="text/css">
 
     </head>
     <body>

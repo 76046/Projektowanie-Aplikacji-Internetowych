@@ -28,3 +28,11 @@ section p{
     color: #999999;
     font-size: 30px;
 }
+#dodaj{
+    background-color: transparent;
+    height: auto;
+    cursor: pointer;
+}
+#zdjecie{
+    height: auto;
+}

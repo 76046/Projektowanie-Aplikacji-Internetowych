@@ -39,7 +39,7 @@ function rysowanieGlownegoMenu()
             <div class="nawigacja-czesc-dolna">
                 <div class="strona-glowna"> <a href="index.php" >Strona główna</a></div>
                 <div class="kurs-walut"> <a href="waluty.php">Kursy Walut</a></div>
-                <div class="kurs-kruszcow"> <a href="kruszce.php">Kursy Kruszców</a></div>
+<!--                <div class="kurs-kruszcow"> <a href="kruszce.php">Kursy Kruszców</a></div>-->
                 <div class="forum"> <a href="forum.php">Forum</a></div>
                 <div style="clear: both;"></div>
             </div>

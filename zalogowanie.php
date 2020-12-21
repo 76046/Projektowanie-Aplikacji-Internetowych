@@ -46,15 +46,20 @@ mysqli_real_escape_string($polaczenie,$login))))
         $_SESSION['zalogowany'] = true; // flaga ze jestesmy zalogowany
         $_SESSION['login_wyswietlanie'] = $_POST['User'];
         $_SESSION['id_usera_zalog'] = $wiersz['ID_USER'];
-        if($wiersz['UPRAWNIENIA']=='ADMIN' || $wiersz['UPRAWNIENIA']=='MOD')
+        if($wiersz['UPRAWNIENIA']=='MOD'){
+            $_SESSION['mod'] = true;
+        }
+        if($wiersz['UPRAWNIENIA']=='ADMIN')
         {
         echo $wiersz['UPRAWNIENIA'];
         $_SESSION['admin'] = true;
-      }else{
+        }else{
         echo $_SESSION['admin'];
         $_SESSION['admin'] = false;
-      }
-      if($wiersz['UPRAWNIENIA']=='MUTED')
+        }
+
+
+      if($wiersz['UPRAWNIENIA']=='MUTE')
       {
         $_SESSION['mute'] = true;
       }

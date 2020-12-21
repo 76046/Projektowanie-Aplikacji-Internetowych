@@ -487,12 +487,12 @@ a{
         width: 100%;
     }
 
-    .logo{
+    /* .logo{
         background-color: orange;
         background-image: url('../img/logo/logo-male.png');
         width: 50px;
         height: 50px;
-    }
+    } */
 
     .logowanie-rejestracja{
         float: left;

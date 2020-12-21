@@ -6,7 +6,8 @@ function rysowanieGlownegoMenu()
     <header>
         <nav class="nawigacja-menu">
             <div class="nawigacja-czesc-gorna">
-                <div class="logo"><a href="index.php"><img src="img/logo/logo-duze.png" alt="logo"></a></div>
+                <a href="index.php"><div class="logo"></div></a>
+                <!-- <img src="img/logo/logo-duze.png" alt="logo"> -->
                 <div class="logowanie-rejestracja">
                     <?php
                     if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true))
@@ -36,12 +37,16 @@ function rysowanieGlownegoMenu()
 
                 <div style="clear: both;"></div>
             </div>
-            <div class="nawigacja-czesc-dolna">
-                <div class="strona-glowna"> <a href="index.php" >Strona główna</a></div>
-                <div class="kurs-walut"> <a href="waluty.php">Kursy Walut</a></div>
-<!--                <div class="kurs-kruszcow"> <a href="kruszce.php">Kursy Kruszców</a></div>-->
-                <div class="forum"> <a href="forum.php">Forum</a></div>
-                <div style="clear: both;"></div>
+            <div class="nav">
+                <label id="label" for="toggle">&#9776;</label>
+                <input type="checkbox" id="toggle"/>
+                <div class="nawigacja-czesc-dolna">
+                    <div class="strona-glowna"> <a href="index.php" >Strona główna</a></div>
+                    <div class="kurs-walut"> <a href="waluty.php">Kursy Walut</a></div>
+                    <!--<div class="kurs-kruszcow"> <a href="kruszce.php">Kursy Kruszców</a></div>-->
+                    <div class="forum"> <a href="forum.php">Forum</a></div>
+                    <div style="clear: both;"></div>
+                </div>
             </div>
         </nav>
     </header>

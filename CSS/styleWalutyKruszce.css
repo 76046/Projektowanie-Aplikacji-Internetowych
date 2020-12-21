@@ -136,19 +136,41 @@ td:hover{
 
 @media (max-width: 900px){
 
+    .pas-tytulowy{
+        display: inline-block;
+    }
+
+    .tablica-walut{
+        width: 700px;
+    }
+
+    .tabliczki{
+        width: auto;
+    }
+
     .thead{
         display: none;
     }
 
+    .table{
+        width: auto;
+    }
+
+    .nazwa-skrocona, .nazwa-calkowita{
+        float: none;
+    }
+
     .table, .tr, .table td{
         display: block;
-        width: 100%;
+        width: auto;
+    }
+
+    .operacje-waluty{
+        border-bottom: solid black 2px;
     }
 
     .tr{
         margin-bottom: 15px;
-        border-top: solid black 1px;
-        border-bottom: solid black 1px;
     }
 
     .table td{

@@ -81,3 +81,34 @@ article{
 .admin-mini-panel:hover{
     background-color: orange;
 }
+
+.ilosc-odwiedzin:hover{
+    background-color: yellow;
+}
+.czas-wstawienia:hover{
+    background-color: yellow;
+}
+
+@media (max-width: 900px){
+
+    .pas-tytulowy{
+        display: inline-block;
+    }
+
+    .artykul{
+        height: auto;
+        width: 700px;
+        transition: 2s;
+    }
+
+    .glowny-kontener-artykulu{
+        height: auto;
+        width: 100%;
+    }
+
+    .tytul-watku, .ilosc-odwiedzin, .autor, .czas-wstawienia, .admin-mini-panel{
+        float: none;
+        width: 100%;
+        height: auto;
+    }
+}

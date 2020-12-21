@@ -72,7 +72,8 @@ a{
 } */
 
 .nawigacja-menu{
-    background-color: #72e7ff;
+    /* background-color: #72e7ff; */
+    background-color: orangered;
     position:relative;
     width: 800px;
     height: 100%;
@@ -101,7 +102,16 @@ a{
     background-color: orange;
     border-radius: 10px;
     /* background-image: linear-gradient(#267e1a, #b2b106); */
+    background-image: url('../img/logo/logo-duze.png');
     float: left;
+}
+
+.logo:hover{
+    background-color: yellow;
+}
+
+.logowanie-rejestracja:hover{
+    background-color: thistle;
 }
 
 .logowanie-rejestracja{
@@ -114,6 +124,14 @@ a{
 .logo, .logowanie-rejestracja{
     box-sizing: border-box;
     text-align: center;
+}
+
+#label, #toggle{
+    display: none;
+}
+
+.nav{
+    
 }
 
 .nawigacja-czesc-dolna{
@@ -135,6 +153,10 @@ a{
     margin-left: 40px;
     text-align: center;
     box-sizing: border-box;
+}
+
+.strona-glowna:hover, .kurs-walut:hover, .kurs-kruszcow:hover, .forum:hover{
+    background-color: yellow;
 }
 
 .calculator{
@@ -461,6 +483,40 @@ a{
 
 @media (max-width: 900px){
 
+    body{
+        width: 100%;
+    }
+
+    .logo{
+        background-color: orange;
+        background-image: url('../img/logo/logo-male.png');
+        width: 50px;
+        height: 50px;
+    }
+
+    .logowanie-rejestracja{
+        float: left;
+        margin-left: 5px;
+        width: 200px;
+    }
+
+    #label{
+        display: block;
+        cursor: pointer;
+        font-size: 30px;
+        color: orange;
+    }
+
+    /* .nawigacja-czesc-gorna{
+        text-align: center;
+        height: 100px;
+    } */
+
+    .nawigacja-czesc-dolna{
+        text-align: center;
+        width: 100%;
+    }
+
     /* .nawigacja-menu{
         height: auto;
     }
@@ -475,18 +531,41 @@ a{
 
     .nawigacja-czesc-dolna{
         height: auto;
+    }*/
+
+    .strona-glowna a, .kurs-walut a, .kurs-kruszcow a, .forum a{
+        display: block;
     }
 
     .strona-glowna, .kurs-walut, .kurs-kruszcow, .forum{
+        display: block;
         float: none;
-    } */
+        margin: 5px;
+    }
+
+    .nawigacja-czesc-dolna{
+        display: none;
+    }
+
+    #toggle:checked + .nawigacja-czesc-dolna{
+        display: block;
+        height: auto;
+        border-bottom: solid black 3px;
+        justify-content: center;
+        width: 160px;
+    }
+
+    .calculator{
+        display: inline-block;
+        margin-left: 110px;
+    }
 
     .slider{
         display: none;
     }
 
     .informacje{
-        height: 1070px;
+        height: 400px;
     }
 
     .transakcja{
@@ -498,18 +577,31 @@ a{
     }
 
     .benefity{
-        height: 740px;
+        height: 750px;
         clear: both;
+        display: none;
     }
 
     .benefit1, .benefit2, .benefit3{
         float: none;
     }
 
+    .benefit3-tresc{
+        background-color: orange;
+        border-radius: 10px;
+    }
+
     .nagrody{
         height: 550px;
         text-align: center;
         clear:both;
+        display: inline-block;
+        margin-left: 80px;
+    }
+
+    .nagrody-tytul{
+        width: 290px;
+        margin-top: 20px;
     }
 
     .nagrody-dolne{
@@ -518,5 +610,12 @@ a{
 
     .nagroda1, .nagroda2, .nagroda3{
         float: none;
+    }
+
+    footer{
+        height: auto;
+    }
+    .domena, .o-nas{
+        
     }
 }

@@ -137,7 +137,8 @@ td:hover{
 @media (max-width: 900px){
 
     .pas-tytulowy{
-        display: inline-block;
+        /* display: inline-block; */
+        margin-right: 200px;
     }
 
     .tablica-walut{

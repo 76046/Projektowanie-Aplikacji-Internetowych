@@ -138,7 +138,8 @@ th.panel_uzytkownicy:hover, th.panel_forum:hover, th.panel_artykuly:hover, th.pa
 @media (max-width: 900px){
 
     .pas-tytulowy{
-        display: inline-block;
+        /* display: inline-block; */
+        margin-right: 270px;
     }
 
     .artykul{

@@ -108,8 +108,12 @@ session_start();
                 else
                 {
                     //status POKAZANY aby sie wyswietlal na głownej WHERE `STATUS` = 'POKAZANY' AND ID_ARTYKULU=
-                    $rezultat1 = $polaczenie->query("SELECT * FROM artykul WHERE ID_ARTYKULU='1'");
-                    $rezultat = $polaczenie->query("SELECT * FROM artykul WHERE ID_ARTYKULU>'1'");
+                    //$rezultat1 = $polaczenie->query("SELECT * FROM artykul WHERE ID_ARTYKULU='1' OR `STATUS`='POKAZANY'");
+                    //$rezultat = $polaczenie->query("SELECT * FROM artykul WHERE ID_ARTYKULU>'1' OR `STATUS`='POKAZANY'");
+                    //$minIndex = $polaczenie->query("SELECT MIN(ID_ARTYKULU) FROM artykul WHERE `STATUS`='POKAZANY'");
+                    $rezultat1 = $polaczenie->query("SELECT * FROM artykul WHERE `STATUS`='POKAZANY'");
+                    $row1 = mysqli_fetch_assoc($rezultat1);
+                    $rezultat = $polaczenie->query("SELECT * FROM artykul WHERE ID_ARTYKULU >".$row1['ID_ARTYKULU']." AND `STATUS`='POKAZANY'");
                     
                     if(!$rezultat)
                     {
@@ -117,7 +121,7 @@ session_start();
                     }
                     else
                     {
-                        $row1 = mysqli_fetch_assoc($rezultat1); ?>
+                         ?>
 
                         <div class="slide first">
                             <div class="slide-img">

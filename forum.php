@@ -71,10 +71,10 @@ session_start();
                                             <td data-label="Autor:" class="uzytkownik_wst">
                                                 <?php
                                                 $row_autor = mysqli_fetch_array($wyciagniecie_nicku_autora = $polaczenie->query("SELECT * FROM user WHERE ID_USER=".$row['ID_USER']));
-                                                echo '<a href="profilowe.php?user='.$row['ID_USER'].'">'.$row_autor['LOGIN'].'</a>';
+                                                echo '<center><a href="profilowe.php?user='.$row['ID_USER'].'">'.$row_autor['LOGIN'].'</a></center>';
                                                 ?>
                                             </td>
-                                            <td data-label="Data wstawienia:" class="uzytkownik_wst"><?php echo $row['DATA']; ?></td>
+                                            <td data-label="Data wstawienia" class="uzytkownik_wst"><center><?php echo $row['DATA']; ?></center></td>
                                         </article>
                                     </tr>
                                     <?php
@@ -89,10 +89,10 @@ session_start();
                                         <td data-label="Autor:" class="uzytkownik_wst">
                                             <?php
                                             $row_autor = mysqli_fetch_array($wyciagniecie_nicku_autora = $polaczenie->query("SELECT * FROM user WHERE ID_USER=".$row['ID_USER']));
-                                            echo '<a href="profilowe.php?user='.$row['ID_USER'].'">'.$row_autor['LOGIN'].'</a>';
+                                            echo '<center><a href="profilowe.php?user='.$row['ID_USER'].'">'.$row_autor['LOGIN'].'</a></center>';
                                             ?>
                                         </td>
-                                        <td data-label="Data wstawienia:" class="uzytkownik_wst"><?php echo $row['DATA']; ?></td>
+                                        <td data-label="Data wstawienia" class="uzytkownik_wst"><center><?php echo $row['DATA']; ?></center></td>
                                         </article>
                                     </tr>
                                     <?php

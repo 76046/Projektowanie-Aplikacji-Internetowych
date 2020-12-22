@@ -75,7 +75,7 @@ if(isset($_POST['dodaj_artykul'])){
     $target = "img/artykuly/".basename($_FILES['zdjecie']['name']);
     $zdjecie = $_FILES['zdjecie']['name'];
     move_uploaded_file($_FILES['zdjecie']['tmp_name'], $target);
-    if($polaczenie->query("INSERT INTO artykul VALUES (NULL, '$zdjecie', '$temat', '$tresc', NULL, '$user', 'UKRYTY')")){
+    if($polaczenie->query("INSERT INTO artykul (ID_ARTYKULU, ZDJECIE_ARTYKUL, TEMAT, TRESC, DATA, ID_AUTOR, STATUS) VALUES (NULL, '$zdjecie', '$temat', '$tresc', NULL, '$user', 'UKRYTY')")){
         $polaczenie->close();
         echo("<script>document.location.href = 'panel_admin_a.php';</script>");
     }

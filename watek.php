@@ -349,9 +349,14 @@ rysowanieGlownegoMenu();
                 <?php echo $row_komentarz['DATA'].' przez <a href="profilowe.php?user='.$row_usera['ID_USER'].'"><k style=" font-weight: 700;">'.$row_usera['LOGIN'].'</k></a>'; ?>
             </div>
             <?php
-            if(((isset($_SESSION['admin']))&&($_SESSION['admin']==true))||(isset($_SESSION['id_usera_zalog'])&&($_SESSION['id_usera_zalog']==$row['ID_MODERACJA']))){
+            if(((isset($_SESSION['admin']))&&($_SESSION['admin']==true))
+                ||
+                (isset($_SESSION['id_usera_zalog'])
+                    &&
+                    ($_SESSION['id_usera_zalog']==$wynik_dla_admina349['ID_MODERACJA']))){
+
                 echo '<div class="kom_adminpanel2">';
-                echo '<a href="admin.php?komentarz='.$row_komentarz['ID_KOMENTARZ'].'"><button type="button" class="del_button">Usuń</button></a>';
+                echo '<a href="admin.php?komentarz='.$row_komentarz['ID_KOMENTARZ'].'&id='.$row_komentarz['ID_WATEK'].'"><button type="button" class="del_button">Usuń</button></a>';
                 echo '</div>';
             } else {
                 echo '<div class="kom_adminpanel2">';

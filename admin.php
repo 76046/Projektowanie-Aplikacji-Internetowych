@@ -104,7 +104,7 @@ if($_GET['panel']=='uzytkownicy'){
     }
 
     if($_GET['panel']=='zgloszenie1'){
-        //komentarze
+        //komentarze  &idzgloszenia
         if($_GET['akcja']=='usunzgloszenie'){
             //idzgloszenia
             $rezultat = $polaczenie->query("UPDATE `zgloszenie` SET `STATUS` = 'USUNIENTY' WHERE `ID_ZGLOSZENIE`=".$_GET['idzgloszenia']);

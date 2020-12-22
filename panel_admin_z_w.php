@@ -64,8 +64,7 @@ rysowanieGlownegoMenu();
             }
             else
             {
-            $rezultat = $polaczenie->query("SELECT * FROM zgloszenie WHERE watek_czy_kom='WATEK'");
-
+            $rezultat = $polaczenie->query("SELECT * FROM zgloszenie WHERE watek_czy_kom='WATEK' AND STATUS='DO_ROSPATRZENIA'");
             if(!$rezultat)
             {
                 throw new Exception($polaczenie->error);

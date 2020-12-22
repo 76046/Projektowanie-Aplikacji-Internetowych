@@ -31,7 +31,7 @@ rysowanieGlownegoMenu();
         {
         ?>
     <section>
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
         <div class="pas-tytulowy">
             Dodanie nowego artykułu
         </div>

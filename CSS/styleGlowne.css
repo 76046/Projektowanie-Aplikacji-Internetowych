@@ -506,6 +506,7 @@ a{
         cursor: pointer;
         font-size: 30px;
         color: orange;
+        margin-left: 320px;
     }
 
     /* .nawigacja-czesc-gorna{
@@ -554,6 +555,7 @@ a{
         border-bottom: solid black 3px;
         justify-content: center;
         width: 160px;
+        margin-left: 255px;
     }
 
     .calculator{

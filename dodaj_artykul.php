@@ -69,7 +69,9 @@ rysowanieStopki();
 if(isset($_POST['dodaj_artykul'])){
     $user = $_SESSION['id_usera_zalog'];
     $temat = $_POST['temat'];
+    $temat = htmlentities($temat,ENT_QUOTES,"UTF-8");
     $tresc = $_POST['tresc'];
+    $tresc = htmlentities($tresc,ENT_QUOTES,"UTF-8");
     $target = "img/artykuly/".basename($_FILES['zdjecie']['name']);
     $zdjecie = $_FILES['zdjecie']['name'];
     move_uploaded_file($_FILES['zdjecie']['tmp_name'], $target);

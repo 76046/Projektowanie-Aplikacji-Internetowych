@@ -100,15 +100,15 @@ rysowanieGlownegoMenu();
                         <td class="liczba_odwiedzin"><?php echo '<a href="profilowe.php?user='.$row['ID_ZGLASZAJACEGO'].'" target=" blank">ID'.$row['ID_ZGLASZAJACEGO'].' '.$rezultat_usera['LOGIN']; ?></td>
                         <td class="liczba_odwiedzin"><?php echo $row['POWOD']; ?></td>
                         <td class="panel_admin">
-<?php
-if(!($rezultat_usera['UPRAWNIENIA']=='MUTE')){
-echo'<a href="admin.php?panel=zgloszenie1&akcja=zmutuj&idusera='.$rezultat_usera['ID_USER'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Zmutuj użytkownika, który to napisał" method="post">ZU</button></a> ';
-}
-echo'<a href="admin.php?panel=zgloszenie1&akcja=usunzgloszenie&idzgloszenia='.$row['ID_ZGLOSZENIE'].'"><button type="button" class="del_zgloszenie" name="butt_glowna" title="Usuń zgłoszenie" method="post">UZ</button></a>';
+                            <?php
+                            if(!($rezultat_usera['UPRAWNIENIA']=='MUTE')){
+                                echo'<a href="admin.php?panel=zgloszenie1&akcja=zmutuj&idusera='.$rezultat_usera['ID_USER'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Zmutuj użytkownika, który to napisał" method="post">📩</button></a> ';
+                            }
+                            echo'<a href="admin.php?panel=zgloszenie1&akcja=usunzgloszenie&idzgloszenia='.$row['ID_ZGLOSZENIE'].'"><button type="button" class="del_button" name="butt_glowna" title="Usuń zgłoszenie" method="post">❌</button></a>';
 
-echo'<a href="admin.php?panel=zgloszenie1&akcja=usunkomentarz&idkomentarza='.$rezultat_komentarza['ID_KOMENTARZ'].'"><button type="button" class="del_button" name="butt_del" title="Usuń komentarz" method="post">UK</button></a>';
+                            echo'<a href="admin.php?panel=zgloszenie1&akcja=usunkomentarz&idzgloszenia='.$row['ID_ZGLOSZENIE'].'"><button type="button" class="del_button" name="butt_del" title="Usuń komentarz" method="post">📕</button></a>';
 
-?>
+                            ?>
                         </td>
                     </tr>
                                 <?php
@@ -124,11 +124,11 @@ echo'<a href="admin.php?panel=zgloszenie1&akcja=usunkomentarz&idkomentarza='.$re
                         <td class="panel_admin">
                             <?php
                             if(!($rezultat_usera['UPRAWNIENIA']=='MUTE')){
-                            echo'<a href="admin.php?panel=zgloszenie1&akcja=zmutuj&idusera='.$rezultat_usera['ID_USER'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Zmutuj użytkownika, który to napisał" method="post">ZU</button></a> ';
+                            echo'<a href="admin.php?panel=zgloszenie1&akcja=zmutuj&idusera='.$rezultat_usera['ID_USER'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Zmutuj użytkownika, który to napisał" method="post">📩</button></a> ';
                             }
-                            echo'<a href="admin.php?panel=zgloszenie1&akcja=usunzgloszenie&idzgloszenia='.$row['ID_ZGLOSZENIE'].'"><button type="button" class="del_zgloszenie" name="butt_glowna" title="Usuń zgłoszenie" method="post">UZ</button></a>';
+                            echo'<a href="admin.php?panel=zgloszenie1&akcja=usunzgloszenie&idzgloszenia='.$row['ID_ZGLOSZENIE'].'"><button type="button" class="del_button" name="butt_glowna" title="Usuń zgłoszenie" method="post">❌</button></a>';
 
-                            echo'<a href="admin.php?panel=zgloszenie1&akcja=usunkomentarz&idzgloszenia='.$row['ID_ZGLOSZENIE'].'"><button type="button" class="del_button" name="butt_del" title="Usuń komentarz" method="post">UK</button></a>';
+                            echo'<a href="admin.php?panel=zgloszenie1&akcja=usunkomentarz&idzgloszenia='.$row['ID_ZGLOSZENIE'].'"><button type="button" class="del_button" name="butt_del" title="Usuń komentarz" method="post">📕</button></a>';
 
                             ?>
                         </td>

@@ -102,7 +102,7 @@ rysowanieGlownegoMenu();
                             <?php
                             if((isset($_SESSION['admin']))&&($_SESSION['admin']==true)) {
                                 ?>
-                                <select name=<?php echo $row['ID_WATEK']; ?>>
+                                <select class="sel1" name=<?php echo $row['ID_WATEK']; ?>>
                                     <?php
                                     if ($rezultat_watku['ID_MODERACJA'] == 0) {
                                         echo '<option value="Brak" selected>Nie wybrano</option>';
@@ -195,7 +195,7 @@ rysowanieGlownegoMenu();
                             <?php
                             if((isset($_SESSION['admin']))&&($_SESSION['admin']==true)) {
                                 ?>
-                            <select name=<?php echo $row['ID_WATEK'];?> >
+                            <select class="sel1" name=<?php echo $row['ID_WATEK'];?> >
                                 <?php
                                 if($rezultat_watku['ID_MODERACJA']==0){
                                     echo '<option value="Brak" selected>Nie wybrano</option>';

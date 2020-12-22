@@ -103,6 +103,7 @@ rysowanieGlownegoMenu();
                     $id_watku = $_GET['watek'];
                     $id_zalogowanego = $_SESSION['id_usera_zalog'];
                     $tresc = $_POST['komentarz_watek'];
+                    $tresc = htmlentities($tresc,ENT_QUOTES,"UTF-8");
 
                     $_SESSION['zgloszenie'] = 0;
                     if($polaczenie->query("INSERT INTO `zgloszenie` (`WATEK_CZY_KOM`,`ID_WATEK`,`ID_ZGLASZAJACEGO`,`POWOD`) VALUES ('WATEK','$id_watku','$id_zalogowanego','$tresc');"))

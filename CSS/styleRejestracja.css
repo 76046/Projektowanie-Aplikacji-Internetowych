@@ -16,14 +16,15 @@ main{
 .tytul-artykulu-rejestracji{
     position: relative;
     background-color:rgba(201, 189, 186, 0.78);
-    width: auto;
-    margin: 10px;
+    width: 283px;
     padding: 10px;
     text-align: center;
     font-family: Impact,Arial,sans-serif;
     font-size: 30px;
     top: 10px;
     color:black;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .sekcja{
@@ -35,8 +36,8 @@ main{
 }
 
 .rejestracja{
-    width: 300px;
-    height: 440px;
+    width: 302px;
+    height: 540px;
     background-color:rgba(167, 181, 179, 0.69);
     margin-left: auto;
     margin-right: auto;
@@ -74,6 +75,7 @@ main{
     border-style: none;
     height: 40px;
     color: #fff;
+    bottom: 20px;
 
 }
 

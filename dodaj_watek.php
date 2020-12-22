@@ -65,7 +65,9 @@ session_start();
 if(isset($_POST['dodaj_watek'])){
     $user = $_SESSION['id_usera_zalog'];
     $temat = $_POST['temat'];
+    $temat = htmlentities($temat,ENT_QUOTES,"UTF-8");
     $tresc = $_POST['tresc'];
+    $tresc = htmlentities($tresc,ENT_QUOTES,"UTF-8");
     if($polaczenie->query("INSERT INTO watek VALUES (NULL, '$user', '$temat', NULL, '$tresc', 0, 0, 0, 'OCZEKUJACE', 0)")){
         $polaczenie->close();
         echo("<script>document.location.href = 'forum.php';</script>");

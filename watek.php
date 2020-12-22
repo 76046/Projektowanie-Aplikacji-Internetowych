@@ -68,7 +68,7 @@ rysowanieGlownegoMenu();
     $rezultat = $polaczenie->query("UPDATE `watek` SET `ILOSC_ODWIEDZIN` = '$ile' WHERE ID_WATEK=".$_GET['id']);
 
 
-    $rezultat = $polaczenie->query("SELECT * FROM watek WHERE ID_WATEK=" . $_GET['id']);
+    $rezultat = $polaczenie->query("SELECT * FROM watek WHERE ID_WATEK=".$_GET['id']);
 
     if (!$rezultat)
     {
@@ -167,7 +167,7 @@ rysowanieGlownegoMenu();
                             }
 
                     }
-                        if((isset($_SESSION['admin']))&&($_SESSION['admin']==true)){
+                        if(((isset($_SESSION['admin']))&&($_SESSION['admin']==true))||(isset($_SESSION['id_usera_zalog'])&&($_SESSION['id_usera_zalog']==$row['ID_MODERACJA']))){
                             echo '<a href="admin.php?watek='.$row['ID_WATEK'].'"><button type="button" class="del_button2">Usuń</button></a>';
                         }
                     ?>
@@ -210,6 +210,7 @@ rysowanieGlownegoMenu();
                     $id_watku = $_GET['id'];
                     $id_zalogowanego = $_SESSION['id_usera_zalog'];
                     $tresc = $_POST['komentarz_watek'];
+                    $tresc = htmlentities($tresc,ENT_QUOTES,"UTF-8");
 
 
                     if($polaczenie->query("INSERT INTO `komentarz` (`ID_WATEK`,`ID_USER`,`TRESC_KOMENTARZA`) VALUES ('$id_watku','$id_zalogowanego','$tresc');"))
@@ -274,7 +275,9 @@ rysowanieGlownegoMenu();
 
 
 
-        $row_komentarze_watku = $polaczenie->query("SELECT * FROM komentarz WHERE ID_WATEK=".$_GET['id']);
+        $row_komentarze_watku = $polaczenie->query("SELECT * FROM komentarz WHERE ID_WATEK=".$_GET['id']." AND STATUS='POTWIERDZONY'");
+
+        $wynik_dla_admina349 = mysqli_fetch_array($polaczenie->query("SELECT * FROM watek WHERE ID_WATEK=".$_GET['id']));
 
         while($row_komentarz = mysqli_fetch_array($row_komentarze_watku))
         {
@@ -346,7 +349,7 @@ rysowanieGlownegoMenu();
                 <?php echo $row_komentarz['DATA'].' przez <a href="profilowe.php?user='.$row_usera['ID_USER'].'"><k style=" font-weight: 700;">'.$row_usera['LOGIN'].'</k></a>'; ?>
             </div>
             <?php
-            if((isset($_SESSION['admin']))&&($_SESSION['admin']==true)){
+            if(((isset($_SESSION['admin']))&&($_SESSION['admin']==true))||(isset($_SESSION['id_usera_zalog'])&&($_SESSION['id_usera_zalog']==$row['ID_MODERACJA']))){
                 echo '<div class="kom_adminpanel2">';
                 echo '<a href="admin.php?komentarz='.$row_komentarz['ID_KOMENTARZ'].'"><button type="button" class="del_button">Usuń</button></a>';
                 echo '</div>';

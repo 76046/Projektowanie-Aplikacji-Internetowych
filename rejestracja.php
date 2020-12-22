@@ -23,6 +23,7 @@
     $_SESSION['e_nick']="Nick musi składać się tylko z liter i cyfr!";
 
   }
+      $nick = htmlentities($nick,ENT_QUOTES,"UTF-8");
 
 //email----------------------------------------------------------------
   $email=$_POST['email'];
@@ -188,15 +189,15 @@ rysowanieGlownegoMenu();
                            ?>"
 
                            placeholder="Login" size="20" maxlength="15" >
+                        <div class="error_f" style="height: 17px;">
+                            <?php if(isset($_SESSION['e_nick']))
+                            {
+                                echo $_SESSION['e_nick'];
+                                unset($_SESSION['e_nick']);
+                            }
 
-                    <?php if(isset($_SESSION['e_nick']))
-                    {
-                        echo '<div class="error_f">'.$_SESSION['e_nick'].'<div>';
-                        unset($_SESSION['e_nick']);
-                    }
-
-                    ?>
-
+                            ?>
+                        </div>
                     <input class="form_rejestracja" type="email" name="email"
 
                            value="<?php
@@ -209,14 +210,15 @@ rysowanieGlownegoMenu();
                            ?>"
 
                            placeholder="Email" size="20" maxlength="40" >
-
+                    <div class="error_f" style="height: 17px;">
                     <?php if(isset($_SESSION['e_email']))
                     {
-                        echo '<div class="error_f">'.$_SESSION['e_email'].'<div>';
+                        echo $_SESSION['e_email'];
                         unset($_SESSION['e_email']);
                     }
 
                     ?>
+                    </div>
                     <input class="form_rejestracja" type="password" name="haslo1"
 
                            value="<?php
@@ -229,13 +231,15 @@ rysowanieGlownegoMenu();
                            ?>"
 
                            placeholder="Haslo" size="20" maxlength="40">
-                    <?php if(isset($_SESSION['e_haslo']))
-                    {
-                        echo '<div class="error_f">'.$_SESSION['e_haslo'].'<div>';
-                        unset($_SESSION['e_haslo']);
-                    }
+                        <div class="error_f" style="height: 17px;">
+                            <?php if(isset($_SESSION['e_haslo']))
+                            {
+                                echo '<div class="error_f">'.$_SESSION['e_haslo'].'<div>';
+                                unset($_SESSION['e_haslo']);
+                            }
 
-                    ?>
+                            ?>
+                        </div>
                     <input class="form_rejestracja" type="password" name="haslo2"
 
                            value="<?php
@@ -416,24 +420,27 @@ rysowanieGlownegoMenu();
                             ?>
                         > Akceptuje</label> Regulamin.
 
+                    <div class="error_f" style="height: 17px;">
                     <?php if(isset($_SESSION['e_regulamin']))
                     {
-                        echo '<div class="error_f">'.$_SESSION['e_regulamin'].'<div>';
+                        echo $_SESSION['e_regulamin'];
                         unset($_SESSION['e_regulamin']);
                     }
 
                     ?>
+                    </div>
 
 
                     <div class="g-recaptcha" data-sitekey="6LfZrQcaAAAAAHw47IW1vJUx_12vla_yS0ofDVc6"></div>
+                    <div class="error_f" style="height: 17px;">
                     <?php if(isset($_SESSION['e_bot']))
                     {
-                        echo '<div class="error_f">'.$_SESSION['e_bot'].'<div>';
+                        echo $_SESSION['e_bot'];
                         unset($_SESSION['e_bot']);
                     }
 
                     ?>
-
+                    </div>
 
 
                     <input type="submit" value="Załóż Konto" name="zaloz_konto">

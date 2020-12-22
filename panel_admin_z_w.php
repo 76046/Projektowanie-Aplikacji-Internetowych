@@ -101,15 +101,15 @@ rysowanieGlownegoMenu();
                                 <td class="panel_admin">
                                     <?php
                                     if(!($rezultat_usera['UPRAWNIENIA']=='MUTE')){
-                                        echo'<a href="admin.php?panel=zgloszenie2&akcja=zmutuj&idusera='.$rezultat_usera['ID_USER'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Zmutuj użytkownika zgłaszajacego" method="post">ZUZ</button></a> ';
+                                        echo'<a href="admin.php?panel=zgloszenie2&akcja=zmutuj&idusera='.$rezultat_usera['ID_USER'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Zmutuj użytkownika zgłaszajacego" method="post">📩</button></a> ';
                                     }
                                     if(!($rezultat_usera_watku['UPRAWNIENIA']=='MUTE')){
-                                        echo'<a href="admin.php?panel=zgloszenie2&akcja=zmutuj&idusera='.$rezultat_usera_watku['ID_USER'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Zmutuj użytkownika piszacego wątek" method="post">ZUW</button></a> ';
+                                        echo'<a href="admin.php?panel=zgloszenie2&akcja=zmutuj&idusera='.$rezultat_usera_watku['ID_USER'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Zmutuj użytkownika piszacego wątek" method="post">📄</button></a> ';
                                     }
 
-                                    echo'<a href="admin.php?panel=zgloszenie2&akcja=usunzgloszenie&idzgloszenia='.$row['ID_ZGLOSZENIE'].'"><button type="button" class="del_zgloszenie" name="butt_glowna" title="Usuń zgłoszenie" method="post">UZ</button></a>';
+                                    echo'<a href="admin.php?panel=zgloszenie2&akcja=usunzgloszenie&idzgloszenia='.$row['ID_ZGLOSZENIE'].'"><button type="button" class="del_button" name="butt_glowna" title="Usuń zgłoszenie" method="post">❌</button></a>';
 
-                                    echo'<a href="admin.php?panel=zgloszenie2&akcja=usunwatek&idwatku='.$rezultat_watku['ID_WATEK'].'"><button type="button" class="del_button" name="butt_del" title="Usuń wątek" method="post">UW</button></a>';
+                                    echo'<a href="admin.php?panel=zgloszenie2&akcja=usunwatek&idwatku='.$rezultat_watku['ID_WATEK'].'"><button type="button" class="del_button" name="butt_del" title="Usuń wątek" method="post">📕</button></a>';
 
                                     ?>
                                 </td>
@@ -127,15 +127,15 @@ rysowanieGlownegoMenu();
                                 <td class="panel_admin">
                                     <?php
                                     if(!($rezultat_usera['UPRAWNIENIA']=='MUTE')){
-                                        echo'<a href="admin.php?panel=zgloszenie2&akcja=zmutuj&idusera='.$rezultat_usera['ID_USER'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Zmutuj użytkownika zgłaszajacego" method="post">ZUZ</button></a> ';
+                                        echo'<a href="admin.php?panel=zgloszenie2&akcja=zmutuj&idusera='.$rezultat_usera['ID_USER'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Zmutuj użytkownika zgłaszajacego" method="post">📩</button></a> ';
                                     }
                                     if(!($rezultat_usera_watku['UPRAWNIENIA']=='MUTE')){
-                                        echo'<a href="admin.php?panel=zgloszenie2&akcja=zmutuj&idusera='.$rezultat_usera_watku['ID_USER'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Zmutuj użytkownika piszacego wątek" method="post">ZUW</button></a> ';
+                                        echo'<a href="admin.php?panel=zgloszenie2&akcja=zmutuj&idusera='.$rezultat_usera_watku['ID_USER'].'"><button type="button" class="mute_glowna" name="butt_glowna" title="Zmutuj użytkownika piszacego wątek" method="post">📄</button></a> ';
                                     }
 
-                                    echo'<a href="admin.php?panel=zgloszenie2&akcja=usunzgloszenie&idzgloszenia='.$row['ID_ZGLOSZENIE'].'"><button type="button" class="del_zgloszenie" name="butt_glowna" title="Usuń zgłoszenie" method="post">UZ</button></a>';
+                                    echo'<a href="admin.php?panel=zgloszenie2&akcja=usunzgloszenie&idzgloszenia='.$row['ID_ZGLOSZENIE'].'"><button type="button" class="del_button" name="butt_glowna" title="Usuń zgłoszenie" method="post">❌</button></a>';
 
-                                    echo'<a href="admin.php?panel=zgloszenie2&akcja=usunwatek&idwatku='.$rezultat_watku['ID_WATEK'].'"><button type="button" class="del_button" name="butt_del" title="Usuń wątek" method="post">UW</button></a>';
+                                    echo'<a href="admin.php?panel=zgloszenie2&akcja=usunwatek&idwatku='.$rezultat_watku['ID_WATEK'].'"><button type="button" class="del_button" name="butt_del" title="Usuń wątek" method="post">📕</button></a>';
 
                                     ?>
                                 </td>

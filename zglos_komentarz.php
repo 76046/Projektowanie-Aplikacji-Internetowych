@@ -103,6 +103,7 @@ rysowanieGlownegoMenu();
                 $id_kom = $_GET['kom'];
                 $id_zalogowanego = $_SESSION['id_usera_zalog'];
                 $tresc = $_POST['komentarz_watek'];
+                $tresc = htmlentities($tresc,ENT_QUOTES,"UTF-8");
                 $id_watku = $_GET['watek'];
 
                 $_SESSION['zgloszenie'] = 0;

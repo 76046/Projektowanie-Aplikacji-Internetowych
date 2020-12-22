@@ -80,7 +80,7 @@ $_SESSION['zap_haslo1'] = $haslo1;
 $_SESSION['zap_haslo2'] = $haslo2;
 //if(isset($_POST['regulamin']))$_SESSION['zap_regulamin']=true;
 
-
+$urodziny = $_POST['dzien'].' '.$_POST['miesiac'].' '.$_POST['rok'];
 
 
 // polaczenie
@@ -126,7 +126,7 @@ mysqli_report(MYSQLI_REPORT_STRICT);
 
             if($wszystko_ok==true)
             {
-              if($polaczenie->query("INSERT INTO user VALUES (NULL,'$nick','$haslo_hash','','','$email','','','',NULL,NULL,0,0,'USER')"))
+              if($polaczenie->query("INSERT INTO user VALUES (NULL,'$nick','$haslo_hash','','','$email','$urodziny','','',NULL,NULL,0,0,'USER')"))
               {
                 $_SESSION['udanarejestracja']=true;
                 header('Location: index.php '); //sciezka po udanym logowaniu
@@ -256,10 +256,7 @@ rysowanieGlownegoMenu();
                     <h6>Podaj datę urodzenia</h6>
 
                     <?php
-                    //pobieranie aktualnej daty
-                    $rok = date("Y");
-                    //$miesiac = date("m");
-                    //$dzien = date("d");
+
 
                     ?>
 

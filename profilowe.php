@@ -78,7 +78,7 @@ rysowanieGlownegoMenu();
                     <div class="staty">Nazwisko:</div>
                     <div class="staty">Email:</div>
                     <div class="staty">Miasto:</div>
-                    <div class="staty">Wiek:</div>
+                    <div class="staty">Urodziny:</div>
                     <div class="staty">Kraj:</div>
                 </div>
                 <div class="prawy_szcz">

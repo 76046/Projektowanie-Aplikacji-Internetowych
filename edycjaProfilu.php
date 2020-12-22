@@ -72,7 +72,7 @@ rysowanieGlownegoMenu();
                     <div class="staty">Nazwisko:</div>
                     <div class="staty">Email:</div>
                     <div class="staty">Miasto:</div>
-                    <div class="staty">Wiek:</div>
+                    <div class="staty">Urodziny:</div>
                     <div class="staty">Kraj:</div>
                 </div>
                 <div class="prawy_szcz">
@@ -87,16 +87,14 @@ rysowanieGlownegoMenu();
                     echo '<input type="text" name="nazwisko" value="'.$nazwisko.'">'; ?>
                 </div>
                 <div class="staty" id="email">
-                    <?php $email = $row['EMAIL'];
-                    echo '<input type="text" name="email" value="'.$email.'">'; ?>
+                    <?php echo $row['EMAIL']; ?>
                 </div>
                 <div class="staty" id="miasto">
                     <?php $miasto = $row['MIASTO'];
                     echo '<input type="text" name="miasto" value="'.$miasto.'">'; ?>
                 </div>
                 <div class="staty" id="wiek">
-                    <?php $wiek = $row['WIEK'];
-                    echo '<input type="text" name="wiek" value="'.$wiek.'">'; ?>
+                    <?php echo $row['WIEK'];?>
                 </div>
                 <div class="staty" id="kraj">
                     <?php $kraj = $row['KRAJ'];
@@ -106,7 +104,7 @@ rysowanieGlownegoMenu();
                 <div class="o_sobie">Coś o sobie:</div>
                 <div class="staty-opis" id="opis">
                     <?php $opisProfilu = $row['OPIS_PROFILU'];
-                    echo '<input type="textarea" name="opis" value="'.$opisProfilu.'">'; ?>
+                    echo '<input type="textarea" rows="4" style="width: 340px; height: 60px;" name="opis" value="'.$opisProfilu.'">'; ?>
                 </div>
             </div>
             <div class="edycjaProfilu"><input type="submit" value="Zapisz i wróć" name="edytuj_profil"></div>
@@ -138,15 +136,18 @@ rysowanieStopki();
         move_uploaded_file($_FILES['zdjecie']['tmp_name'], $target);
         //$zdjecie_kod = base64_encode(file_get_contents($_FILES["zdjecie"]["tmp_name"]));
         $imie = $_POST['imie'];
+            $imie  = htmlentities($imie ,ENT_QUOTES,"UTF-8");
         $nazwisko = $_POST['nazwisko'];
-        $email = $_POST['email'];
+            $imie  = htmlentities($imie ,ENT_QUOTES,"UTF-8");
         $miasto = $_POST['miasto'];
-        $wiek = $_POST['wiek'];
+          $miasto  = htmlentities($miasto ,ENT_QUOTES,"UTF-8");
         $kraj = $_POST['kraj'];
+          $kraj  = htmlentities($kraj ,ENT_QUOTES,"UTF-8");
         $opis = $_POST['opis'];
+          $opis  = htmlentities($opis ,ENT_QUOTES,"UTF-8");
         //$query = "UPDATE user SET IMIE='$imie',NAZWISKO='$nazwisko', EMAIL='$email', MIASTO='$miasto', WIEK=$wiek, KRAJ='$kraj', OPIS='$opis' WHERE USER_ID=".$_GET['user'];
         // $result = mysqli_query($db, $query) or die(mysqli_error($db));
-        if($polaczenie->query("UPDATE user SET IMIE='$imie',NAZWISKO='$nazwisko', EMAIL='$email', MIASTO='$miasto', WIEK=$wiek, KRAJ='$kraj', OPIS_PROFILU='$opis', ZDJECIE='$zdjecie' WHERE ID_USER='$id'")){
+        if($polaczenie->query("UPDATE user SET IMIE='$imie',NAZWISKO='$nazwisko', MIASTO='$miasto', KRAJ='$kraj', OPIS_PROFILU='$opis', ZDJECIE='$zdjecie' WHERE ID_USER='$id'")){
             $polaczenie->close();
             echo("<script>document.location.href = 'profilowe.php?user=".$row['ID_USER']."';</script>");
         }

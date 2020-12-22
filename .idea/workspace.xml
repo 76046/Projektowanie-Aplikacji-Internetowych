@@ -3,19 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b66e8ea2-378a-4cec-84c3-d67acd077d7b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/styleGlowne.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleGlowne.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/stylePanelAdmina.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/stylePanelAdmina.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/styleRejestracja.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styleRejestracja.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dodaj_artykul.php" beforeDir="false" afterPath="$PROJECT_DIR$/dodaj_artykul.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dodaj_watek.php" beforeDir="false" afterPath="$PROJECT_DIR$/dodaj_watek.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel_admin_f.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel_admin_f.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel_admin_z_k.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel_admin_z_k.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel_admin_z_w.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel_admin_z_w.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edycjaProfilu.php" beforeDir="false" afterPath="$PROJECT_DIR$/edycjaProfilu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profilowe.php" beforeDir="false" afterPath="$PROJECT_DIR$/profilowe.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rejestracja.php" beforeDir="false" afterPath="$PROJECT_DIR$/rejestracja.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rysowanieMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/rysowanieMenu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watek.php" beforeDir="false" afterPath="$PROJECT_DIR$/watek.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zglos_komentarz.php" beforeDir="false" afterPath="$PROJECT_DIR$/zglos_komentarz.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zglos_watek.php" beforeDir="false" afterPath="$PROJECT_DIR$/zglos_watek.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +102,7 @@
       <workItem from="1608372761358" duration="40402000" />
       <workItem from="1608454117995" duration="33095000" />
       <workItem from="1608539085256" duration="35953000" />
-      <workItem from="1608606239740" duration="6043000" />
+      <workItem from="1608606239740" duration="7215000" />
     </task>
     <servers />
   </component>

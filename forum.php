@@ -66,8 +66,8 @@ session_start();
                                     ?>
                                     <tr class="tr">
                                         <article>
-                                            <td data-label="Temat:" class="uzytkownik_wst"><?php echo '<a href="watek.php?id='.$row['ID_WATEK'].'">'.$row['TEMAT'].'</a>'; ?></td>
-                                            <td data-label="Wyświetlenia:" class="liczba_odwiedzin"><?php echo $row['ILOSC_ODWIEDZIN']; ?></td>
+                                            <td data-label="Temat:" class="uzytkownik_wst"><center><?php echo '<a href="watek.php?id='.$row['ID_WATEK'].'">'.$row['TEMAT'].'</a>'; ?></center></td>
+                                            <td data-label="Wyświetlenia:" class="liczba_odwiedzin"><center><?php echo $row['ILOSC_ODWIEDZIN']; ?></center></td>
                                             <td data-label="Autor:" class="uzytkownik_wst">
                                                 <?php
                                                 $row_autor = mysqli_fetch_array($wyciagniecie_nicku_autora = $polaczenie->query("SELECT * FROM user WHERE ID_USER=".$row['ID_USER']));
@@ -84,8 +84,8 @@ session_start();
                                     ?>
                                     <tr class="codrugi">
                                         <article>
-                                        <td data-label="Temat:" class="uzytkownik_wst"><?php echo '<a href="watek.php?id='.$row['ID_WATEK'].'">'.$row['TEMAT'].'</a>'; ?></td>
-                                        <td data-label="Wyświetlenia:" class="liczba_odwiedzin"><?php echo $row['ILOSC_ODWIEDZIN']; ?></td>
+                                        <td data-label="Temat:" class="uzytkownik_wst"><center><?php echo '<a href="watek.php?id='.$row['ID_WATEK'].'">'.$row['TEMAT'].'</a>'; ?></center></td>
+                                        <td data-label="Wyświetlenia:" class="liczba_odwiedzin"><center><?php echo $row['ILOSC_ODWIEDZIN']; ?></center></td>
                                         <td data-label="Autor:" class="uzytkownik_wst">
                                             <?php
                                             $row_autor = mysqli_fetch_array($wyciagniecie_nicku_autora = $polaczenie->query("SELECT * FROM user WHERE ID_USER=".$row['ID_USER']));

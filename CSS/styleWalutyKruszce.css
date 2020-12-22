@@ -134,7 +134,7 @@ td:hover{
     padding-top: 4px;
 }
 
-@media (max-width: 620px){
+@media (max-width: 950px){
 
     .pas-tytulowy{
         /* display: inline-block; */

@@ -116,11 +116,11 @@ if(!isset($_POST['wybor_kontynentu'])){
                                                 <?php echo '<img src="data:image/svg+xml;base64,' . $row['FLAGA'] . '" alt="flaga"/>' ?>
                                             </div>
                                             <div class="nazwa-skrocona">
-                                                <?php echo $row['KOD_WALUTA'];
+                                                <?php echo ' '.$row['KOD_WALUTA'];
                                                 echo '<input class="kod-input" type="hidden" name="kod" value="' . $row['KOD_WALUTA'] . '">' ?>
                                             </div>
                                             <div class="nazwa-calkowita">
-                                                <?php echo $row['NAZWA']; ?>
+                                                <?php echo ' '.$row['NAZWA']; ?>
                                             </div>
                                         </td>
                                         <td data-label="Kupno" class="kupno-waluty">
@@ -155,11 +155,11 @@ if(!isset($_POST['wybor_kontynentu'])){
                                                 <?php echo '<img src="data:image/svg+xml;base64,' . $row['FLAGA'] . '" alt="flaga"/>' ?>
                                             </div>
                                             <div class="nazwa-skrocona">
-                                                <?php echo $row['KOD_WALUTA'];
+                                                <?php echo ' '.$row['KOD_WALUTA'];
                                                 echo '<input class="kod-input" type="hidden" name="kod" value="' . $row['KOD_WALUTA'] . '">' ?>
                                             </div>
                                             <div class="nazwa-calkowita">
-                                                <?php echo $row['NAZWA']; ?>
+                                                <?php echo ' '.$row['NAZWA']; ?>
                                             </div>
                                         </td>
                                         <td data-label="Kupno" class="kupno-waluty">

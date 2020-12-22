@@ -69,6 +69,10 @@ if(isset($_POST['dodaj_watek'])){
     $tresc = $_POST['tresc'];
     $tresc = htmlentities($tresc,ENT_QUOTES,"UTF-8");
     if($polaczenie->query("INSERT INTO watek VALUES (NULL, '$user', '$temat', NULL, '$tresc', 0, 0, 0, 'OCZEKUJACE', 0)")){
+        $row_usera = mysqli_fetch_array($polaczenie->query("SELECT * FROM user WHERE ID_USER=".$_SESSION['id_usera_zalog']));
+        $liczba_komentarzy = $row_usera['LICZ_KOMENTARZY'];
+        $liczba_komentarzy++;
+        if($polaczenie->query("UPDATE `user` SET `LICZ_KOMENTARZY`= $liczba_komentarzy WHERE `ID_USER`=".$_SESSION['id_usera_zalog']))
         $polaczenie->close();
         echo("<script>document.location.href = 'forum.php';</script>");
     }

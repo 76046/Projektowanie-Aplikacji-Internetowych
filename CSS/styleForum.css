@@ -92,6 +92,7 @@ article{
 
     color: #111111;
     margin: 20px auto 10px auto;
+    min-height: 500px;
 }
 table{
     width: 960px;
